@@ -8378,9 +8378,13 @@ textarea.form-control {
     color: rgba(255, 255, 255, 0.4); }
 
 .intro-T {
+  font-size: 150px;
+  font-weight: bold;
+  outline-width: 5px;
   color: orange;
 }
 
 .intro-M {
+  font-size: 30px;
   color: orange;
 }
