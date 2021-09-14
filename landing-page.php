@@ -29,8 +29,65 @@
         </div>
     </header>
 
+    
 
-    <!-- ABOUT US -->
+    <!-- DEVELOPERS -->
+    <section class="bg-dark" id="team">
+    <div class="container" style="color:white;">
+        <div class="row" >
+            <div class="col-sm-3">
+                <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/pakalu.jpg"/>
+                    <h4>Alexis Soriano</h4>
+                    <p>May Jowa #1</p>
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/pakalu.jpg" />
+                    <h4>Thomas Broñola</h4>
+                    <p>Single #1</p>
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/pakalu.jpg" />
+                    <h4>Eris Lacsamana</h4>
+                    <p class="text-secondary">Single #2</p>
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/pakalu.jpg" />
+                    <h4>Perf Gomera</h4>
+                    <p class="text-muted">May Jowa #2</p>
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+    <!-- ABOUT THE PROJECT -->
     <section id="about">
         <div class="container">
             <div class="row">
