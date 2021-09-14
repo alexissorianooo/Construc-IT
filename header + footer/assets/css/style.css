@@ -8376,3 +8376,11 @@ textarea.form-control {
   --color: rgba(255,255,255,.4); }
   .form-check.disabled .fill-checkbox .fill-control-description {
     color: rgba(255, 255, 255, 0.4); }
+
+.intro-T {
+  color: orange;
+}
+
+.intro-M {
+  color: orange;
+}
