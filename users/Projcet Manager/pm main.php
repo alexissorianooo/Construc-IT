@@ -15,7 +15,7 @@
 <body id="page-top">
 
     <!-- NAVIGATION TAB -->
-    <?php include '../../layout/header-client.php' ?>
+    <?php include '../../layout/header-pm.php' ?>
 
     <br>
     <br>
@@ -27,7 +27,7 @@
     <br>
 
     <div>
-        <p>Client</p>
+        <p>Project Manager</p>
     </div>
 
 
