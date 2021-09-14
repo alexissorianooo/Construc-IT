@@ -1,4 +1,4 @@
-<?php include_once 'header + footer/header2.php' ?>
+<?php include_once '../header + footer/header2.php' ?>
 <html>
 <head>
 
