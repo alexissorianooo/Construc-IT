@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     
-    <link rel="stylesheet" href="header + footer/HF assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="header + footer/HF assets/css/Navigation-with-Button.css">
-    <link rel="stylesheet" href="header + footer/HF assets/css/styles.css">
+    <link rel="stylesheet" href="asset/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="asset/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="asset/css/styles.css">
 </head>
 
 <body>
@@ -16,15 +16,14 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Construction Estimator</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Projects Viewer</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Message</a></li>
                 </ul><span class="navbar-text actions"> <a class="login" href="#">Log out</a></span>
             </div>
         </div>
     </nav>
-    <script src="header + footer/HF assets/js/jquery.min.js"></script>
-    <script src="header + footer/HF assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="asset/js/jquery.min.js"></script>
+    <script src="asset/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

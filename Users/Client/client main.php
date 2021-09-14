@@ -1,11 +1,11 @@
-<?php include_once '../header + footer/header2.php' ?>
+<?php include_once 'header2.php' ?>
 <html>
 <head>
 
 </head>
 <body>
 
-    <p>CLient</p>
+    <p>Client</p>
 
 </body>
 
