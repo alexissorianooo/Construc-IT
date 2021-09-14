@@ -8380,8 +8380,9 @@ textarea.form-control {
 .intro-T {
   font-size: 150px;
   font-weight: bold;
-  outline-width: 5px;
   color: orange;
+  -webkit-text-stroke: 5px;
+  -webkit-text-stroke-color: #000;
 }
 
 .intro-M {
