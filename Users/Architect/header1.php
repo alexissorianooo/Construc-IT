@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     
-    <link rel="stylesheet" href="asset/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="asset/css/Navigation-with-Button.css">
-    <link rel="stylesheet" href="asset/css/styles.css">
+    <link rel="stylesheet" href="header + footer/HF assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="header + footer/HF assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="header + footer/HF assets/css/styles.css">
 </head>
 
 <body>
@@ -23,8 +23,8 @@
             </div>
         </div>
     </nav>
-    <script src="asset/js/jquery.min.js"></script>
-    <script src="asset/bootstrap/js/bootstrap.min.js"></script>
+    <script src="header + footer/HF assets/js/jquery.min.js"></script>
+    <script src="header + footer/HF assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>
