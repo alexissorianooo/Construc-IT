@@ -36,14 +36,14 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="text-uppercase">About</h2>
-                    <h3 class="text-muted section-subheading">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="text-muted section-subheading">Make Life Easy.</h3>
                 </div>
             </div>            
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="list-group timeline">
 
-                        <!-- FIRST CIRLCE -->
+                        <!-- FIRST CIRCLE -->
                         <li class="list-group-item">                            
                             <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg"></div>
                             <div class="timeline-panel">
