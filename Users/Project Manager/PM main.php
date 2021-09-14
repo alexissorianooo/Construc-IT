@@ -2,11 +2,13 @@
 <html>
 <head>
     <title>project manager</title>
+    
 </head>
 <body>
 
     <p>Project Manager</p>
-</body>
 
+    <?php include_once '../../header + footer/footer.php' ?>
+</body>
 </html>
 

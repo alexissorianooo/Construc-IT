@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="asset/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="asset/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="asset/css/styles.css">
+
+    <!-- PARA SA FOOTER -->
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">  
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.min.css"> 
 </head>
 
 <body>
