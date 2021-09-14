@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
     <link rel="stylesheet" href="assets/css/Simple-Slider.css">
     <link rel="icon" href="assets/img/logo3-white.png">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="header + footer/assets/css/style.css">
 </head>
 
 <body id="page-top">    
@@ -23,8 +23,8 @@
     <header class="masthead" style="background: url(&quot;assets/img/wallpaper1.jpg&quot;) no-repeat;">
         <div class="container">            
             <div class="intro-text" id="home">  
-                <div class="intro-heading text-uppercase"><span style="color: #E28C05;filter: contrast(200%);">CONSTRUC-IT</span></div>                          
-                <div class="intro-lead-in"><span style="color: #E28C05;filter: contrast(200%);">QUALITY PLANNING * EFFICIENT MANAGING * ACCURATE TRACKING</span></div>                             
+                <div class="intro-T">CONSTRUC-IT</div>                          
+                <div class="intro-M">QUALITY PLANNING * EFFICIENT MANAGING * ACCURATE TRACKING</div>                             
             </div>
         </div>
     </header>
