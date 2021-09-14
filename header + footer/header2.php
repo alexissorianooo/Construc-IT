@@ -15,7 +15,7 @@
         <div class="container"><a class="navbar-brand" href="#">Construc-IT</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Projects Viewer</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Message</a></li>
                 </ul><span class="navbar-text actions"> <a class="login" href="#">Log out</a></span>
