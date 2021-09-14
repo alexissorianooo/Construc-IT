@@ -12,6 +12,7 @@
     <link rel="icon" href="assets/img/logo3-white.png">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
     <div class="container">
@@ -36,6 +37,3 @@
 
 </body>
 </html>
-
-
-
