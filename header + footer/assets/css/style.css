@@ -8378,7 +8378,7 @@ textarea.form-control {
     color: rgba(255, 255, 255, 0.4); }
 
 .intro-T {
-  margin-top: -50px;
+  margin-top: -10px;
   font-size: 130px;
   font-weight: bold;
   color: orange;
@@ -8387,7 +8387,6 @@ textarea.form-control {
 }
 
 .intro-M {
-  margin-top: -30px;
   font-size: 30px;
   font-weight: bold;
   color: orange;
