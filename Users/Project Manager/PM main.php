@@ -5,8 +5,7 @@
 </head>
 <body>
 
-    <p>hello testing lang</p>
-    <h1>Testing lang talaga</h1>
+    <p>Project Manager</p>
 </body>
 
 </html>
