@@ -37,9 +37,6 @@
                         </div>
                     </h4>
                 </div>        
-<!-- 
-                <div class="intro-T">CONSTRUC-IT</div>                          
-                <div class="intro-M">QUALITY PLANNING * EFFICIENT MANAGING * ACCURATE TRACKING</div>                              -->
             </div>
         </div>
     </header>
