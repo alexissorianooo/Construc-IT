@@ -15,7 +15,8 @@
                 <ul class="navbar-nav ml-auto text-uppercase">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#home">HOME</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">TEAM</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">ABOUT</a></li>                    
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">ABOUT</a></li> 
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#c-it">Construc-IT</a></li>                   
                     <li class="nav-item"><a class="nav-link" data-toggle="modal" href="#las-modal">LOGIN</a></li>
                 </ul>
             </div>

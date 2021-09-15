@@ -40,6 +40,7 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+  
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -8378,7 +8379,6 @@ textarea.form-control {
     color: rgba(255, 255, 255, 0.4); }
 
 
-
 .intro-T {
   font-size: 120px;
   font-weight: bold;
@@ -8404,7 +8404,7 @@ textarea.form-control {
   letter-spacing: 2px;
   color: orange;
   -webkit-text-stroke: 1px;
-  -webkit-text-stroke-color: rgba(0, 0, 0, 0.014);
+  -webkit-text-stroke-color: black;
 }
 
 
@@ -8418,6 +8418,7 @@ textarea.form-control {
   .intro-T{
     font-size: 40px;
   }
+
 
 }
 

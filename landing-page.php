@@ -20,12 +20,12 @@
     <?php require 'layout/header.php' ?>
 
     <!-- LOGO WITH WELCOME LABELS -->
-    <header class="masthead" style="background: url(&quot;assets/img/wallpaper1.jpg&quot;) no-repeat; margin-top: 60px;">
+    <header class="masthead" style="background: url(&quot;assets/img/wallpaper1.jpg&quot;); background-size: cover; margin-top: 60px;">
         <div class="container">            
             <div class="intro-text" id="home" style="margin-top:-20px;">
 
                 <div class="intro-heading text-uppercase">
-                     <span style="font-weight:bold; color:orange; -webkit-text-stroke: 2.5px; -webkit-text-stroke-color: #000;">CONSTRUC IT</span> 
+                     <span style="font-size:120px; font-weight:500px; color:orange; -webkit-text-stroke: 2.5px; -webkit-text-stroke-color: #000;">CONSTRUC IT</span> 
                 </div>    
 
                 <div class="intro-lead-in ">
@@ -47,6 +47,12 @@
     <!-- DEVELOPERS -->
     <section class="bg-dark" id="team">
     <div class="container" style="color:white;">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase">Development Team</h2>
+                <h3 class="text-muted section-subheading">The People Behind The Scenes</h3>
+            </div>
+        </div>   
         <div class="row" >
             <div class="col-sm-6">
                 <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/pakalu.jpg"/>
@@ -101,13 +107,13 @@
 
 
     <!-- ABOUT THE PROJECT -->
-    <section id="about">
+    <section class="masthead" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="text-uppercase">About</h2>
-                    <h3 class="text-muted section-subheading">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
+                    <h3 class="text-muted section-subheading">The Inspiration to Develop</h3>
+                </div> 
             </div>            
             <div class="row">
                 <div class="col-lg-12">
@@ -178,6 +184,35 @@
             </div>
         </div>
     </section>
+
+    <!--The Construc-IT Pages -->
+    <section class="py-5" id="c-it" style="background-color: #343a40;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase" style="color: white; padding-bottom:20px; -webkit-text-stroke:1px;">Join Us! Use Construc-IT Now!</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="simple-slider">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <section id="accomplishments"></section>
+                                <div class="swiper-slide" style="background: url(&quot;assets/img/a9aecfcd0c474899a57da07176a929c4.jpg&quot;) center center / cover no-repeat;"></div>
+                                <div class="swiper-slide" style="background: url(&quot;assets/img/sk2.jpg&quot;) center center / cover no-repeat;"></div>
+                                <div class="swiper-slide" style="background: url(&quot;assets/img/sk3.jpg&quot;) center center / cover no-repeat;"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
     <?php require_once 'layout/footer.php' ?>
@@ -270,7 +305,6 @@
           </div>
         </div>
       </div>
-    
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
