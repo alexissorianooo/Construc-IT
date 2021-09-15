@@ -8384,7 +8384,7 @@ textarea.form-control {
   font-weight: bold;
   color: orange;
   -webkit-text-stroke: 2.5px;
-  -webkit-text-stroke-color: #000;
+  -webkit-text-stroke-color: peachpuff;
 }
     
 
@@ -8399,12 +8399,12 @@ textarea.form-control {
 
 
 .intro-M {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   letter-spacing: 2px;
   color: orange;
-  -webkit-text-stroke: 1px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke: 0.5px;
+  -webkit-text-stroke-color: peachpuff;
 }
 
 
@@ -8412,7 +8412,7 @@ textarea.form-control {
 
 @media screen and (max-width:360px) {
   .intro-M{
-    font-size: 10px;
+    font-size: 13px;
   }
 
   .intro-T{
