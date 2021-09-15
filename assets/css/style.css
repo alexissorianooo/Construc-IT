@@ -8377,19 +8377,48 @@ textarea.form-control {
   .form-check.disabled .fill-checkbox .fill-control-description {
     color: rgba(255, 255, 255, 0.4); }
 
+
+
 .intro-T {
-  argin-top: -10px;
-  font-size: 130px;
+  font-size: 120px;
   font-weight: bold;
   color: orange;
   -webkit-text-stroke: 2.5px;
   -webkit-text-stroke-color: #000;
 }
     
+
+
+@media screen and (max-width:769px) {
+  .intro-T{
+    font-size: 20px;
+  }
+
+}
+
+
+
 .intro-M {
   font-size: 30px;
   font-weight: bold;
+  letter-spacing: 2px;
   color: orange;
   -webkit-text-stroke: 1px;
-  -webkit-text-stroke-color: #000;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.014);
 }
+
+
+
+
+@media screen and (max-width:360px) {
+  .intro-M{
+    font-size: 13px;
+  }
+
+  .intro-T{
+    font-size: 40px;
+  }
+
+}
+
+

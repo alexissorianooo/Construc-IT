@@ -20,62 +20,75 @@
     <?php require 'layout/header.php' ?>
 
     <!-- LOGO WITH WELCOME LABELS -->
-    <header class="masthead" style="background: url(&quot;assets/img/wallpaper1.jpg&quot;) no-repeat;">
+    <header class="masthead" style="background: url(&quot;assets/img/wallpaper1.jpg&quot;) no-repeat; margin-top: 60px;">
         <div class="container">            
-            <div class="intro-text" id="home">  
+            <div class="intro-text" id="home" style="margin-top:-20px;">
+
+                <div class="intro-heading text-uppercase">
+                     <span style="font-weight:bold; color:orange; -webkit-text-stroke: 2.5px; -webkit-text-stroke-color: #000;">CONSTRUC IT</span> 
+                </div>    
+
+                <div class="intro-lead-in ">
+                    <h4>                        
+                        <span class="intro-M"> 
+                            QUALITY PLANNING, EFFICIENT MANAGING, ACCURATE TRACKING                         
+                        </span>
+                    </h4>
+                </div>        
+<!-- 
                 <div class="intro-T">CONSTRUC-IT</div>                          
-                <div class="intro-M">QUALITY PLANNING * EFFICIENT MANAGING * ACCURATE TRACKING</div>                             
+                <div class="intro-M">QUALITY PLANNING * EFFICIENT MANAGING * ACCURATE TRACKING</div>                              -->
             </div>
         </div>
     </header>
 
-    
+
 
     <!-- DEVELOPERS -->
     <section class="bg-dark" id="team">
     <div class="container" style="color:white;">
         <div class="row" >
-            <div class="col-sm-3">
+            <div class="col-sm-6">
                 <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/pakalu.jpg"/>
                     <h4>Alexis Soriano</h4>
                     <p>May Jowa #1</p>
                     <ul class="list-inline social-buttons">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li class="list-inline-item"><a href="https://twitter.com/AlexisSorianooo" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="https://web.facebook.com/alexis.j.soriano" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="https://ph.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-6">
                 <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/pakalu.jpg" />
                     <h4>Thomas Broñola</h4>
                     <p>Single #1</p>
                     <ul class="list-inline social-buttons">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li class="list-inline-item"><a href="https://twitter.com/bronolathomas" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="https://web.facebook.com/thomas.bronola/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="https://ph.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-6">
                 <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/pakalu.jpg" />
                     <h4>Eris Lacsamana</h4>
                     <p class="text-secondary">Single #2</p>
                     <ul class="list-inline social-buttons">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li class="list-inline-item"><a href="https://twitter.com/LaczFeli" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="https://web.facebook.com/Laczie" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="https://ph.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-6">
                 <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/pakalu.jpg" />
-                    <h4>Perf Gomera</h4>
+                    <h4>Perf John Gomera</h4>
                     <p class="text-muted">May Jowa #2</p>
                     <ul class="list-inline social-buttons">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li class="list-inline-item"><a href="https://twitter.com/theperfgomera" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="https://web.facebook.com/perf.gomera" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="https://ph.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -202,17 +215,10 @@
                       </div>
 
                       <!-- REMEMBER ME AND FORGET PASSWORD BUTTONS  -->
-                      <div class="form-group d-md-flex">
-                          <div class="form-check w-50">
-                              <label class="custom-control fill-checkbox">
-                                              <input type="checkbox" class="fill-control-input">
-                                              <span class="fill-control-indicator"></span>
-                                              <span class="fill-control-description">Remember Me</span>
-                                          </label>
-                                      </div>
-                                      <div class="w-50 text-md-right">
-                                          <a href="#" style="color: #fff">Forgot Password</a>
-                                      </div>
+                      <div class="form-group d-md-flex">                 
+                            <div class="w-100 text-md-left">
+                                <a href="#" style="color: #fff">Forgot Password</a>
+                            </div>
                       </div>
                     </form>
 
