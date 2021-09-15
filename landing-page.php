@@ -109,12 +109,12 @@
     <!-- ABOUT THE PROJECT -->
     <section id="about">
         <div class="container">
-            <!--<div class="row">
+            <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="text-uppercase">About</h2>
-                    <h3 class="text-muted section-subheading">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="text-muted section-subheading">The Inspiration to Develop</h3>
                 </div> 
-            </div>-->            
+            </div>            
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="list-group timeline">
@@ -184,6 +184,35 @@
             </div>
         </div>
     </section>
+
+    <!--The Construc-IT Pages -->
+    <section class="py-5" style="background-color: #343a40;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase" style="color: white; padding-bottom:20px; -webkit-text-stroke:1px;">Join Us! Use Construc-IT Now!</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="simple-slider">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <section id="accomplishments"></section>
+                                <div class="swiper-slide" style="background: url(&quot;assets/img/a9aecfcd0c474899a57da07176a929c4.jpg&quot;) center center / cover no-repeat;"></div>
+                                <div class="swiper-slide" style="background: url(&quot;assets/img/sk2.jpg&quot;) center center / cover no-repeat;"></div>
+                                <div class="swiper-slide" style="background: url(&quot;assets/img/sk3.jpg&quot;) center center / cover no-repeat;"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
     <?php require_once 'layout/footer.php' ?>
