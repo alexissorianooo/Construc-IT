@@ -14,9 +14,11 @@ function change(name) {
     }
     if (title==="cement"){
         document.getElementById("changetitle").innerHTML="Cement Calculator";
+        cementcal();
     }
     if (title==="concrete"){
         document.getElementById("changetitle").innerHTML="Concrete Calculator";
+        concretecal();
     }
     if (title==="sand"){
         document.getElementById("changetitle").innerHTML="Sand Calculator";
@@ -69,7 +71,9 @@ $(document).ready(function(){
     });
 });
 
-// for calculations
+// CALCULATIONS
+
+// BRICK CALCULATOR
 function brickcal(){
 
     //declaring variables
@@ -209,4 +213,127 @@ document.getElementById("wallarea").value="";
 document.getElementById("brickswastage").value="";
 document.getElementById("bricksneeded").value="";
 document.getElementById("totalbricksneeded").value="";
+}
+
+// CEMENT CALCULATOR
+
+function cementcal(){
+
+    //for type of concrete - select box
+    var typeofcementJS = document.getElementById("typeofcement");
+    typeofcementJS.addEventListener('change', function(){
+        console.log(typeofcementJS.value);
+        typeofcement = typeofcementJS.value;
+        //brickcal2();
+    })
+
+    var cementwetvolumeJS = document.getElementById("cementwetvolume");
+    cementwetvolumeJS.onkeyup = function(){
+        console.log(cementwetvolumeJS.value);
+        cementwetvolume = cementwetvolumeJS.value;
+        //cementcal2();
+    }
+
+    var cementdryvolumeJS = document.getElementById("cementdryvolume");
+    cementdryvolumeJS.onkeyup = function(){
+        console.log(cementdryvolumeJS.value);
+        cementdryvolume = cementdryvolumeJS.value;
+        //cementcal2();
+    }
+    
+    var cementwasteJS = document.getElementById("cementwaste");
+    cementwasteJS.onkeyup = function(){
+        console.log(cementwasteJS.value);
+        cementwaste = cementwasteJS.value;
+        //cementcal2();
+    }
+
+    var cementtotalvolumeJS = document.getElementById("cementtotalvolume");
+    cementtotalvolumeJS.onkeyup = function(){
+        console.log(cementtotalvolumeJS.value);
+        cementtotalvolume = cementtotalvolumeJS.value;
+        //cementcal2();
+    }
+
+    // select box
+    var concretemixJS = document.getElementById("concretemix");
+    concretemixJS.addEventListener('change', function(){
+        console.log(concretemixJS.value);
+        concretemix = concretemixJS.value;
+        //brickcal2();
+    })
+
+    var volumeofcementJS = document.getElementById("volumeofcement");
+    volumeofcementJS.onkeyup = function(){
+        console.log(volumeofcementJS.value);
+        volumeofcement = volumeofcementJS.value;
+        //cementcal2();
+    }
+
+    var weightofcementJS = document.getElementById("weightofcement");
+    weightofcementJS.onkeyup = function(){
+        console.log(weightofcementJS.value);
+        weightofcement = weightofcementJS.value;
+        //cementcal2();
+    }
+
+    var bagsizeJS = document.getElementById("bagsize");
+    bagsizeJS.onkeyup = function(){
+        console.log(bagsizeJS.value);
+        bagsize = bagsizeJS.value;
+        //cementcal2();
+    }
+}
+
+// Concrete Calculator
+
+function concretecal(){
+
+    var concretelenghtJS = document.getElementById("concretelength");
+    concretelenghtJS.onkeyup = function(){
+        console.log(concretelenghtJS.value);
+        concretelength = concretelenghtJS.value;
+        //cementcal2();
+    }
+
+    var concretewidthJS = document.getElementById("concretewidth");
+    concretewidthJS.onkeyup = function(){
+        console.log(concretewidthJS.value);
+        concretewidth = concretewidthJS.value;
+        //cementcal2();
+    }
+
+    var concreteheightJS = document.getElementById("concreteheight");
+    concreteheightJS.onkeyup = function(){
+        console.log(concreteheightJS.value);
+        concreteheight = concreteheightJS.value;
+        //cementcal2();
+    }
+
+    var concretequantityJS = document.getElementById("concretequantity");
+    concretequantityJS.onkeyup = function(){
+        console.log(concretequantityJS.value);
+        concretequantity = concretequantityJS.value;
+        //cementcal2();
+    }
+
+    var concretebagsizeJS = document.getElementById("concretebagsize");
+    concretebagsizeJS.onkeyup = function(){
+        console.log(concretebagsizeJS.value);
+        concretebagsize = concretebagsizeJS.value;
+        //cementcal2();
+    }
+
+    var concretebagsneededJS = document.getElementById("concretebagsneeded");
+    concretebagsneededJS.onkeyup = function(){
+        console.log(concretebagsneededJS.value);
+        concretebagsneeded = concretebagsneededJS.value;
+        //cementcal2();
+    }
+
+    function concretecal2(){
+        if (concretelength != undefined && concretewidth != undefined && concreteheight != undefined && concretequantity != undefined){
+            
+        }
+    }
 }
