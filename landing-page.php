@@ -31,7 +31,7 @@
                 <div class="intro-lead-in ">
                     <h4>
                         <div class="col-lg-12 text-center">                        
-                            <span class="intro-M"> 
+                            <span class="intro-M" style="margin-left: -20px;"> 
                                 QUALITY PLANNING, EFFICIENT MANAGING, ACCURATE TRACKING                         
                             </span>
                         </div>
