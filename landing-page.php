@@ -219,94 +219,78 @@
 
     <?php require_once 'layout/footer.php' ?>
 
-    <!-- LOGIN AND SIGN UP MODEL -->
-    <div class="modal fade" id="las-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
+    
 
-            <div class="modal-header">
-              <button type="button" class="close d-flex align-items-center justify-content-center" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true" class="ion-ios-close"></span>
-              </button>
-            </div>
+    <!-- LOGIN MODAL -->
+    <div class="modal fade text-center portfolio-modal" role="dialog" tabindex="-1" id="las-modal" >
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="container" style="margin-top: -40px;">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <button data-dismiss="modal" class="close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
 
-            <!-- SIGN IN PORTION -->
-            <div class="row">
-                <div class="col-md mb-md-0 mb-5">
-                    <div class="modal-body p-0">
-                        <h3 class="mb-4">Sign In</h3>
-
-                        <!-- GETTING USER NAME-->
-                        <form action="#" class="signin-form">
-                            <div class="form-group">
-                                <input id="log-email" type="text" class="form-control" placeholder="Username or Email">
+                                <h4 style="background: url(&quot;assets/img/logo3.png&quot;) center / contain no-repeat, transparent;width: 123px;height: 65px;"></h4>
+                                <h2 class="text-uppercase">LOGIN</h2>
+                                <p class="text-muted item-intro" style="font-size: 13px;margin-top: -22px;">No account?<a data-toggle="modal" href="#reg-modal" style="color: var(--blue);">&nbsp;Sign up&nbsp;</a><label>here</label></p>
+                                <div class="d-inline-block">                                    
+                                    <input type="email" id="email" placeholder="Email">
+                                    <br><br>
+                                    <input type="password" id="password" placeholder="Password">                                    
+                                    <a class="text-center d-block" id="forrgot-password" href="#" style="color:blue;border-color: var(--blue);">&nbsp;Forgot Your Password?</a>                                
+                                    <br><br>
+                                    <button class="btn bg-info" id="btn-login" data-dismiss="modal" type="submit" >Login</button>
+                                    
+                                </div>
+                                <div class="d-inline-block">                                   
                             </div>
-                        <!-- GETTING USER PASSWORD-->
-                      <div class="form-group">
-                        <input id="log-pass" type="password" class="form-control" placeholder="Password">
-                      </div>
-
-                      <!-- SIGN IN BUTTON  -->
-                      <div class="form-group">
-                          <button id="sign-in" type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
-                      </div>
-
-                      <!-- REMEMBER ME AND FORGET PASSWORD BUTTONS  -->
-                      <div class="form-group d-md-flex">                 
-                            <div class="w-100 text-md-left">
-                                <a href="#" style="color: #fff">Forgot Password</a>
-                            </div>
-                      </div>
-                    </form>
-
-                    <!-- LOGIN USING FB OR TWITTER -->
-                    <!-- <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
-                    <div class="social d-flex text-center">
-                        <a href="#" class="px-2 py-3 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>
-                        <a href="#" class="px-2 py-3 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a>
-                    </div> -->
-
+                        </div>
                     </div>
-                  </div>
-
-                  <!-- SIGN UP PORTION -->
-                  <div class="col-md-1 divider"></div>
-                  <div class="col-md">
-                    <div class="modal-body p-0">
-
-                        <h3 class="mb-4">Sign Up</h3>
-                        <form action="#" class="signup-form">
-
-                            <!-- GETTING USER INFORMATIONS -->
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="First Name">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Last Name">
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email address">
-                            </div>
-                            <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password">
-                      </div>
-
-                      <!-- SUBMIT BUTTON -->
-                      <div class="form-group">
-                          <button type="submit" class="form-control btn btn-primary rounded submit px-3">Login</button>
-                      </div>
-                      <div class="form-group">
-                                      <div class="w-100">
-                                          <p class="mb-0">By creating an account, your agree to our terms.</p>
-                                      </div>
-                      </div>
-                    </form>
-                    </div>
-                  </div>
                 </div>
-          </div>
+            </div>
         </div>
-      </div>
+    </div>
+
+
+   <!-- SIGN UP MODAL -->
+   <div class="modal fade text-center portfolio-modal" role="dialog" tabindex="-1" id="reg-modal" >
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">   
+                <div class="container" style="margin-top: -40px;">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <button data-dismiss="modal" class="close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+
+                                <h4 style="background: url(&quot;assets/img/logo3.png&quot;) center / contain no-repeat, transparent;width: 123px;height: 65px;"></h4>
+                                <h2 class="text-uppercase">REGISTER</h2>
+                                <div class="d-inline-block">
+                                    
+                                    <input type="email" id="email" placeholder="Email">
+                                    <br> <br>                                   
+                                    <input type="password" id="password" placeholder="Password">                                                                 
+                                    <br> <br>                                
+                                    <input type="password" id="confirm-password" placeholder="Confirm Password">                                                                 
+                                    <br> <br>                                    
+                                    <button class="btn bg-secondary" id="btn-login" data-dismiss="modal" type="submit" >Register</button>
+                                    
+                                </div>
+                                <div class="d-inline-block">                                   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>

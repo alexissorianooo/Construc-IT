@@ -1,7 +1,7 @@
 <link rel="icon" href="../../assets/img/logo3-white.png">
 
 <!-- NAVIGATION BAR -->
-<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark " id="mainNav">
         <div class="container">
 
             <!-- LOGO -->
@@ -13,8 +13,8 @@
             <!-- NAVIGATION LINKS -->
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto text-uppercase">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#item1">ITEM1</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#item2">ITEM2</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#item1">ITEM1</a></li> -->
+                    <li class="nav-item"><a class="nav-link" data-toggle="modal" href="#client-id-modal">VIEW PROJECT</a></li>
                     <li class="nav-item"><a class="nav-link" data-toggle="modal" href="#logout">LOGOUT</a></li>
                 </ul>
             </div>

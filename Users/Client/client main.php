@@ -17,20 +17,27 @@
     <!-- NAVIGATION TAB -->
     <?php include '../../layout/header-client.php' ?>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <section style="height: 650px;margin: 0px;margin-top: 62px;background: white;">
 
-    <div>
-        <p>Client</p>
+    </section>
+
+    <!-- MODAL WHEN INSERTING PROJECT ID -->
+    <div class="modal fade" role="dialog" tabindex="-1" id="client-id-modal" style="border-radius: 24px;margin-top:10%;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header bg-dark" style="color: rgb(255,255,255);">
+                        <h4 class="modal-title" style="background: url(&quot;../../assets/img/logo3-white.png&quot;) center / contain no-repeat, transparent;width: 123px;height: 65px;"></h4>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" style="background:white;width:30px;margin-top:17px;"> x </button>                        
+                    </div>
+                <div class="modal-body text-center bg-dark">
+                    <label class="form-label" style="color: white;">Enter Project ID:</label>
+                    <input id="projectID" type="text" name=viewProject style="background: rgb(128,145,160);border-radius: 125px;width:200px;">
+                </div>
+                <div class="modal-footer justify-content-center bg-dark"><button class="btn btn-primary" type="button">Search</button></div>
+            </div>
+        </div>
     </div>
-
-
 
 
 
