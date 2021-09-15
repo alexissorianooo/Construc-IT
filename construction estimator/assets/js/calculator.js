@@ -8,6 +8,7 @@ function change(name) {
         showtitle.style.display = "block";
     }
     if (title==="brick"){
+        brickcalRESET()
         document.getElementById("changetitle").innerHTML="Brick Calculator";
         brickcal();
     }
@@ -195,4 +196,17 @@ function brickcal(){
             }
         }
     }
+}
+function brickcalRESET(){
+    
+document.getElementById("bricklength").value="";
+document.getElementById("brickheight").value="";
+document.getElementById("brickwidth").value="";
+document.getElementById("mortarjoint").value="";
+document.getElementById("walllength").value="";
+document.getElementById("wallheight").value="";
+document.getElementById("wallarea").value="";
+document.getElementById("brickswastage").value="";
+document.getElementById("bricksneeded").value="";
+document.getElementById("totalbricksneeded").value="";
 }
