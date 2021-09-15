@@ -25,7 +25,7 @@
             <div class="intro-text" id="home" style="margin-top:-20px;">
 
                 <div class="intro-heading text-uppercase">
-                     <span style="font-weight:bold; color:orange; -webkit-text-stroke: 2.5px; -webkit-text-stroke-color: #000;">CONSTRUC IT</span> 
+                     <span style="font-size:120px; font-weight:500px; color:orange; -webkit-text-stroke: 2.5px; -webkit-text-stroke-color: #000;">CONSTRUC IT</span> 
                 </div>    
 
                 <div class="intro-lead-in ">
@@ -276,7 +276,6 @@
           </div>
         </div>
       </div>
-    
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
