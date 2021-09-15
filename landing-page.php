@@ -47,6 +47,12 @@
     <!-- DEVELOPERS -->
     <section class="bg-dark" id="team">
     <div class="container" style="color:white;">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase">Development Team</h2>
+                <h3 class="text-muted section-subheading">The People Behind The Scenes</h3>
+            </div>
+        </div>   
         <div class="row" >
             <div class="col-sm-6">
                 <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/pakalu.jpg"/>
@@ -103,12 +109,12 @@
     <!-- ABOUT THE PROJECT -->
     <section id="about">
         <div class="container">
-            <div class="row">
+            <!--<div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="text-uppercase">About</h2>
                     <h3 class="text-muted section-subheading">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>            
+                </div> 
+            </div>-->            
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="list-group timeline">
