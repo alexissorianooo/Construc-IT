@@ -23,16 +23,18 @@
     <header class="masthead" style="background: url(&quot;assets/img/wallpaper1.jpg&quot;); background-size: cover; margin-top: 60px;">
         <div class="container">            
             <div class="intro-text" id="home" style="margin-top:-20px;">
-
+            <div class="col-lg-12 text-center">
                 <div class="intro-heading text-uppercase">
-                     <span style="font-size:120px; font-weight:500px; color:orange; -webkit-text-stroke: 2.5px; -webkit-text-stroke-color: #000;">CONSTRUC IT</span> 
+                     <span class="intro-T">CONSTRUC IT</span> 
                 </div>    
-
+            </div>
                 <div class="intro-lead-in ">
-                    <h4>                        
-                        <span class="intro-M"> 
-                            QUALITY PLANNING, EFFICIENT MANAGING, ACCURATE TRACKING                         
-                        </span>
+                    <h4>
+                        <div class="col-lg-12 text-center">                        
+                            <span class="intro-M"> 
+                                QUALITY PLANNING, EFFICIENT MANAGING, ACCURATE TRACKING                         
+                            </span>
+                        </div>
                     </h4>
                 </div>        
 <!-- 
