@@ -20,7 +20,7 @@
     <?php require 'layout/header.php' ?>
 
     <!-- LOGO WITH WELCOME LABELS -->
-    <header class="masthead" style="background: url(&quot;assets/img/wallpaper1.jpg&quot;) no-repeat; margin-top: 60px;">
+    <header class="masthead" style="background: url(&quot;assets/img/wallpaper1.jpg&quot;); background-size: cover; margin-top: 60px;">
         <div class="container">            
             <div class="intro-text" id="home" style="margin-top:-20px;">
 
