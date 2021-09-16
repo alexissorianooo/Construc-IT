@@ -34,3 +34,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
     text-align: center;
     padding-top: 10px;
 }
+
+iframe{
+    min-height: 40vw;
+}

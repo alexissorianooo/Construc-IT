@@ -8,17 +8,16 @@ function change(name) {
         showtitle.style.display = "block";
     }
     if (title==="brick"){
-        brickcalRESET()
         document.getElementById("changetitle").innerHTML="Brick Calculator";
-        brickcal();
+        //brickcal();
     }
-    if (title==="cement"){
-        document.getElementById("changetitle").innerHTML="Cement Calculator";
-        cementcal();
+    if (title==="metal"){
+        document.getElementById("changetitle").innerHTML="Metal Weight Calculator";
+        //paintcal();
     }
     if (title==="concrete"){
         document.getElementById("changetitle").innerHTML="Concrete Calculator";
-        concretecal();
+        //concretecal();
     }
     if (title==="sand"){
         document.getElementById("changetitle").innerHTML="Sand Calculator";
@@ -28,6 +27,18 @@ function change(name) {
     }
     if (title==="rebar"){
         document.getElementById("changetitle").innerHTML="Rebar Calculator";
+    }  
+    if (title==="beam"){
+        document.getElementById("changetitle").innerHTML="Beam Load Calculator";
+    } 
+    if (title==="baluster"){
+        document.getElementById("changetitle").innerHTML="Baluster Calculator";
+    }  
+    if (title==="cement"){
+        document.getElementById("changetitle").innerHTML="Cement Calculator";
+    }  
+    if (title==="wallsquare"){
+        document.getElementById("changetitle").innerHTML="Wall Square Calculator";
     }  
 }
 
@@ -41,10 +52,10 @@ $(document).ready(function(){
         currentDIV = "#brickDIV";
         console.log(currentDIV);
     });
-    $("#cement").click(function(){
+    $("#metal").click(function(){
         $(currentDIV).css("display","none");
-        $("#cementDIV").css("display","block");
-        currentDIV = "#cementDIV";
+        $("#metalDIV").css("display","block");
+        currentDIV = "#metalDIV";
         console.log(currentDIV);
     });
     $("#concrete").click(function(){
@@ -67,6 +78,30 @@ $(document).ready(function(){
         $(currentDIV).css("display","none");
         $("#rebarDIV").css("display","block");
         currentDIV = "#rebarDIV";
+        console.log(currentDIV);
+    });
+    $("#beam").click(function(){
+        $(currentDIV).css("display","none");
+        $("#beamDIV").css("display","block");
+        currentDIV = "#beamDIV";
+        console.log(currentDIV);
+    });
+    $("#baluster").click(function(){
+        $(currentDIV).css("display","none");
+        $("#balusterDIV").css("display","block");
+        currentDIV = "#balusterDIV";
+        console.log(currentDIV);
+    });
+    $("#cement").click(function(){
+        $(currentDIV).css("display","none");
+        $("#cementDIV").css("display","block");
+        currentDIV = "#cementDIV";
+        console.log(currentDIV);
+    });
+    $("#wallsquare").click(function(){
+        $(currentDIV).css("display","none");
+        $("#wallsquareDIV").css("display","block");
+        currentDIV = "#wallsquareDIV";
         console.log(currentDIV);
     });
 });
@@ -151,12 +186,14 @@ function brickcal(){
             //for the brick computation
             if (brickheight != undefined && bricklength != undefined && mortarjoint != undefined && walllength != undefined && wallheight != undefined){
 
-                        // bricks needed = (L * H) / ((l + t) * (h + t)),
-                                    // L - Length of the wall;
-                                    // H - Height of the wall;
-                                    // l - Length of a brick;
-                                    // t - Thickness of mortar joint; and
-                                    // h - Height of a brick.
+                        /* 
+                            bricks needed = (L * H) / ((l + t) * (h + t)),
+                                     L - Length of the wall;
+                                     H - Height of the wall;
+                                     l - Length of a brick;
+                                     t - Thickness of mortar joint; and
+                                     h - Height of a brick. 
+                        */
                
                 // answer for BRICKS NEEDED
                 brickcomputation1 = parseFloat(bricklength) + parseFloat(mortarjoint);
@@ -217,7 +254,7 @@ document.getElementById("totalbricksneeded").value="";
 
 // CEMENT CALCULATOR
 
-function cementcal(){
+function paintcal(){
 
     //for type of concrete - select box
     var typeofcementJS = document.getElementById("typeofcement");
@@ -289,51 +326,76 @@ function cementcal(){
 
 function concretecal(){
 
+    //variable declaration
+
+    var concretelength, concretewidth, concreteheight, concretequantity, concretebagsize, concretebagsneeded;
+
     var concretelenghtJS = document.getElementById("concretelength");
     concretelenghtJS.onkeyup = function(){
         console.log(concretelenghtJS.value);
         concretelength = concretelenghtJS.value;
-        //cementcal2();
+        concretecal2();
     }
 
     var concretewidthJS = document.getElementById("concretewidth");
     concretewidthJS.onkeyup = function(){
         console.log(concretewidthJS.value);
         concretewidth = concretewidthJS.value;
-        //cementcal2();
+        concretecal2();
     }
 
     var concreteheightJS = document.getElementById("concreteheight");
     concreteheightJS.onkeyup = function(){
         console.log(concreteheightJS.value);
         concreteheight = concreteheightJS.value;
-        //cementcal2();
+        concretecal2();
     }
 
     var concretequantityJS = document.getElementById("concretequantity");
     concretequantityJS.onkeyup = function(){
         console.log(concretequantityJS.value);
         concretequantity = concretequantityJS.value;
-        //cementcal2();
+        concretecal2();
     }
 
+    //for bag size - select box
     var concretebagsizeJS = document.getElementById("concretebagsize");
-    concretebagsizeJS.onkeyup = function(){
+    concretebagsizeJS.addEventListener('change', function(){
         console.log(concretebagsizeJS.value);
         concretebagsize = concretebagsizeJS.value;
-        //cementcal2();
-    }
+        //brickcal2();
+    })
 
     var concretebagsneededJS = document.getElementById("concretebagsneeded");
     concretebagsneededJS.onkeyup = function(){
         console.log(concretebagsneededJS.value);
         concretebagsneeded = concretebagsneededJS.value;
-        //cementcal2();
+        concretecal2();
     }
 
     function concretecal2(){
         if (concretelength != undefined && concretewidth != undefined && concreteheight != undefined && concretequantity != undefined){
-            
+            /*
+                NOTES:
+
+                40 pound bag yields .011 cubic yards
+                60 pound bag yields .017 cubic yards
+                80 pound bag yields .022 cubic yards
+
+
+                Cubic Yards = Length (in feet) Width (in feet) Depth (in feet) ÷ 27
+                Simply multiply the three dimensions together to find the number of cubic feet, then divide by 27 to find the number of cubic yards.
+
+                1 foot = 12 inches
+            */
+                var concretetemp = parseFloat(concreteheight)/12;
+                concreteheight = concretetemp;
+                console.log(concreteheight);
+                concretecomputation1 = parseFloat(concretelength) * parseFloat(concretewidth) * parseFloat(concreteheight);
+                cubicyard = concretecomputation1 / 27;
+                console.log("cubic yard: " + cubicyard);
+
+
         }
     }
 }
