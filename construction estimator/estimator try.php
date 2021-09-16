@@ -13,15 +13,7 @@
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 
-<<<<<<< Updated upstream
-    <!-- <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css"> -->
-    
-=======
-    
-   
 
-
->>>>>>> Stashed changes
 </head>
 
 <body>
