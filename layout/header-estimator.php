@@ -15,7 +15,7 @@
                 <ul class="navbar-nav ml-auto text-uppercase">
                     
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#item2">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../construction estimator/estimator try.php">ESTIMATOR</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#calculatorcontainer">ESTIMATOR</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#item1">Message</a></li>
                     <li class="nav-item"><a class="nav-link" data-toggle="modal" href="#logout">LOGOUT</a></li>
                 </ul>
