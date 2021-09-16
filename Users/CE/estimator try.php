@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Estimator</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">  
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/Map-Clean.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
@@ -18,7 +18,7 @@
 
 <body id="page-top">
 
-    <section class="text-center">
+    <section class="text-center"> 
         <h1 id="constitle">Construction Estimator</h1>
     </section>
     <section style="margin-bottom: 20px;">
