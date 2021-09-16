@@ -25,7 +25,7 @@
             <div class="intro-text" id="home" style="margin-top:-20px;">
             <div class="col-lg-12 text-center">
                 <div class="intro-heading text-uppercase">
-                     <span class="intro-T">CONSTRUC IT</span> 
+                     <span class="intro-T">CONSTRUC-IT</span> 
                 </div>    
             </div>
                 <div class="intro-lead-in ">
