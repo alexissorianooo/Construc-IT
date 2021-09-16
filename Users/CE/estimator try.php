@@ -1,4 +1,4 @@
-<?php require_once '../../layout/header-architect.php' ?>
+<?php require_once '../../layout/header-estimator.php' ?>
 
 <!DOCTYPE html>
 <html class="text-center" lang="en">
@@ -22,7 +22,7 @@
         <h1 id="constitle">Construction Estimator</h1>
     </section>
     <section style="margin-bottom: 20px;">
-        <div class="container" style="border-style: solid;">
+        <div class="container" style="border-style: solid;" id="calculatorcontainer">
             <div class="row">
                 <div class="col-md-6">
                     <h1 class="text-center" style="padding-bottom: 20px;">Hardware Calculator</h1>
