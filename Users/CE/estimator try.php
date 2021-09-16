@@ -1,4 +1,4 @@
-<?php require_once '../layout/header-architect.php' ?>
+<?php require_once '../../layout/header-architect.php' ?>
 
 <!DOCTYPE html>
 <html class="text-center" lang="en">
@@ -284,7 +284,7 @@
     <script src="assets/js/calculator.js"></script>
 
     <!-- FOOTER -->
-<?php include '../layout/footer.php' ?>
+<?php include '../../layout/footer.php' ?>
 
 
     <script src="../assets/js/jquery.min.js"></script>
