@@ -14,9 +14,11 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 
     <!-- <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css"> -->
+    
 </head>
 
 <body>
+
     <section class="text-center">
         <h1 id="constitle">Construction Estimator</h1>
     </section>

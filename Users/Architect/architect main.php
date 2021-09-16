@@ -17,18 +17,17 @@
     <!-- NAVIGATION TAB -->
     <?php include '../../layout/header-architect.php' ?>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
-    <div>
-        <p>Architect</p>
-    </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
 
 

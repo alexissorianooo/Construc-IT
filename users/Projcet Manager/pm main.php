@@ -26,12 +26,6 @@
     <br>
     <br>
 
-    <div>
-        <p>Project Manager</p>
-    </div>
-
-
-
 
 
     <!-- FOOTER -->
