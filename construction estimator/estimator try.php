@@ -213,7 +213,7 @@
     </div> -->
         <div id="embededcalculator">
             <div class="omni-calculator" data-calculator="construction/wall-square-footage" data-width="auto" data-config='{}' data-currency="PHP" data-show-row-controls="false" data-version="3" data-t="1631789710447">
-            <div class="omni-calculator-header">Wall Square Footage Calculator</div>
+            <div class="omni-calculator-header"></div>
             <div class="omni-calculator-footer">
                 <a href="https://www.omnicalculator.com/construction/wall-square-footage" target="_blank"><img alt="Omni" class="omni-calculator-logo" src="https://cdn.omnicalculator.com/embed/omni-calculator-logo-long.svg" /></a>
             </div>
