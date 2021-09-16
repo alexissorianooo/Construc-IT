@@ -241,31 +241,34 @@
     
 
     <!-- LOGIN MODAL -->
-    <div class="modal fade text-center portfolio-modal" role="dialog" tabindex="-1" id="las-modal" >
-        <div class="modal-dialog modal-lg" role="document">
+    <div class="modal fade portfolio-modal" role="dialog" tabindex="-1" id="las-modal" >
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="container" style="margin-top: -40px;">
+                <div class="container" >
                     <div class="row">
                         <div class="col-lg-8 mx-auto">
-                            <div class="modal-body">
-                                <button data-dismiss="modal" class="close">
+                            <div class="modal-body" style="margin-top:-40px;">
+                                <button id="btn-close" data-dismiss="modal" class="close">
                                     <span aria-hidden="true">×</span>
                                 </button>
 
                                 <h4 style="background: url(&quot;assets/img/logo3.png&quot;) center / contain no-repeat, transparent;width: 123px;height: 65px;"></h4>
                                 <h2 class="text-uppercase">LOGIN</h2>
-                                <p class="text-muted item-intro" style="font-size: 13px;margin-top: -22px;">No account?<a data-toggle="modal" href="#reg-modal" style="color: var(--blue);">&nbsp;Sign up&nbsp;</a><label>here</label></p>
+                                <p class="text-muted item-intro" style="font-size: 13px;margin-top: -22px;">No account?
+                                    <span id="reg-link" data-toggle="modal" data-target="#reg-modal" data style="color: var(--blue); cursor:pointer;">&nbsp;Sign up&nbsp;</span>
+                                    <label>here</label>
+                                </p>
+
                                 <div class="d-inline-block">                                    
-                                    <input type="email" id="email" placeholder="Email">
+                                    <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">
                                     <br><br>
-                                    <input type="password" id="password" placeholder="Password">                                    
-                                    <a class="text-center d-block" id="forrgot-password" href="#" style="color:blue;border-color: var(--blue);">&nbsp;Forgot Your Password?</a>                                
-                                    <br><br>
-                                    <button class="btn bg-info" id="btn-login" data-dismiss="modal" type="submit" >Login</button>
-                                    
-                                </div>
-                                <div class="d-inline-block">                                   
-                            </div>
+                                    <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">
+                                    <br> <br>
+                                    <input type="email" id="proj-id" placeholder="Project ID" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">
+                                    <a class="text-center d-block" id="forgot-password" href="#" style="color:blue;border-color: var(--blue);">&nbsp;Forgot Your Password?</a>                                
+                                    <br>                            
+                                    <button class="btn bg-info" id="btn-login" data-dismiss="modal" type="submit" >Login</button>                                    
+                                </div>                            
                         </div>
                     </div>
                 </div>
@@ -275,10 +278,10 @@
 
 
    <!-- SIGN UP MODAL -->
-   <div class="modal fade text-center portfolio-modal" role="dialog" tabindex="-1" id="reg-modal" >
-        <div class="modal-dialog modal-lg" role="document">
+   <div class="modal fade text-center portfolio-modal" role="dialog" tabindex="-1" id="reg-modal">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">   
-                <div class="container" style="margin-top: -40px;">
+                <div class="container" >
                     <div class="row">
                         <div class="col-lg-8 mx-auto">
                             <div class="modal-body">
@@ -290,17 +293,17 @@
                                 <h2 class="text-uppercase">REGISTER</h2>
                                 <div class="d-inline-block">
                                     
-                                    <input type="email" id="email" placeholder="Email">
+                                    <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">
                                     <br> <br>                                   
-                                    <input type="password" id="password" placeholder="Password">                                                                 
+                                    <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">                                                                 
                                     <br> <br>                                
-                                    <input type="password" id="confirm-password" placeholder="Confirm Password">                                                                 
-                                    <br> <br>                                    
-                                    <button class="btn bg-secondary" id="btn-login" data-dismiss="modal" type="submit" >Register</button>
-                                    
+                                    <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">                                                                 
+                                    <br> <br>   
+                                    <input type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">                                                                 
+                                    <br> <br>                                  
+                                    <button class="btn bg-info" id="btn-login" data-dismiss="modal" type="submit" >Register</button>
+                                                                    
                                 </div>
-                                <div class="d-inline-block">                                   
-                            </div>
                         </div>
                     </div>
                 </div>
