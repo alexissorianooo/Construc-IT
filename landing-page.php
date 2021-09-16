@@ -24,7 +24,7 @@
         <div class="container">            
             <div class="intro-text" id="home" style="margin-top:-20px;">
             <div class="col-lg-12 text-center">
-                <div class="intro-heading text-uppercase">
+                <div class="intro-heading text-uppercase" style="font-size:120px; font-weight:500px; color:orange; -webkit-text-stroke: 2.5px; -webkit-text-stroke-color: #000;">
                      <span class="intro-T">CONSTRUC-IT</span> 
                 </div>    
             </div>
