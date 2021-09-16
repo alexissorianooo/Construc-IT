@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>estimator</title>
+    <title>Estimator</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/Map-Clean.css">
@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body id="page-top">
 
     <section class="text-center">
         <h1 id="constitle">Construction Estimator</h1>
@@ -293,6 +293,8 @@
     <script src="../assets/js/agency.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
     <script src="../assets/js/Simple-Slider.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/calculator.js"></script>
 
 </body>
 </html>
