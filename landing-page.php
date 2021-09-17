@@ -301,7 +301,7 @@
                                     <br> <br>   
                                     <input type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">                                                                 
                                     <br> <br>                                  
-                                    <button class="btn bg-info" id="btn-login" data-dismiss="modal" type="submit" >Register</button>
+                                    <button class="btn bg-info" id="btn-login" data-dismiss="modal" type="submit" name="submit">Register</button>
                                                                     
                                 </div>
                         </div>
