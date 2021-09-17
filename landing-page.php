@@ -292,20 +292,46 @@
                                 <h4 style="background: url(&quot;assets/img/logo3.png&quot;) center / contain no-repeat, transparent;width: 123px;height: 65px;"></h4>
                                 <h2 class="text-uppercase">REGISTER</h2>
                                 <div class="d-inline-block">
+
+                                    <select style="width: 280px;height: 38px;" id="usertype">
+                                        <option value="client" selected>Cient</option>
+                                        <option value="employee">Architect</option>
+                                        <option value="employee" >Project Manager</option>
+                                    </select>
+                                    <br><br>
                                     
-                                        <form action="includes/signupdb.php" method="post">
-                                            <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">
+                                        <!-- FOR ARCHITECTS AND PROJECT MANAGER - REGISTER -->
+                                    <div id="usertype1" style="display: none;">
+                                        <form action="includes/signupdb.php" method="post" >
+                                            <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
                                             <br> <br>  
-                                            <input type="text" id="fullname" placeholder="Full Name" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">
+                                            <input type="text" id="fullname" placeholder="Full Name" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="fullname">
                                             <br> <br>                                 
-                                            <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">                                                                 
+                                            <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">                                                                 
                                             <br> <br>                                
-                                            <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">                                                                 
+                                            <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password">                                                                 
                                             <br> <br>   
-                                            <input type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">                                                                 
+                                            <input type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="usercode">                                                                 
                                             <br> <br>                                  
                                             <button class="btn bg-info" type="submit" name="registerButton">Register</button>
                                         </form>
+                                    </div>
+
+                                        <!-- FOR CLIENT - REGISTER -->
+                                    <div id="usertype2">
+                                        <form action="includes/signupdb.php" method="post" >
+                                            <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
+                                            <br> <br>  
+                                            <input type="text" id="fullname" placeholder="Full Name" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="fullname">
+                                            <br> <br>                                 
+                                            <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">                                                                 
+                                            <br> <br>                                
+                                            <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password">                                                                 
+                                            <br> <br>   
+                                                                          
+                                            <button class="btn bg-info" type="submit" name="registerButton">Register</button>
+                                        </form>
+                                    </div>
                                                                
                                 </div>
                         </div>
@@ -316,6 +342,8 @@
     </div>
 
 
+
+    
     
 
     <script src="assets/js/jquery.min.js"></script>
@@ -324,6 +352,10 @@
     <script src="assets/js/agency.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
     <script src="assets/js/Simple-Slider.js"></script>
+
+    <!-- FOR REGISTER SCRIPT -->
+    
+    <script src="assets/js/register.js"></script>
 </body>
 
 </html>

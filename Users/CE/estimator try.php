@@ -18,12 +18,18 @@
 
 <body id="page-top">
 
+
+<!-- FOR THE CALCULATORS -->
+
     <section class="text-center"> 
         <h1 id="constitle">Construction Estimator</h1>
     </section>
     <section style="margin-bottom: 20px;">
         <div class="container" style="border-style: solid;" id="calculatorcontainer">
             <div class="row">
+
+                <!-- FOR THE CALCULATOR BUTTONS -->
+
                 <div class="col-md-6">
                     <h1 class="text-center" style="padding-bottom: 20px;">Hardware Calculator</h1>
                     <div class="text-center">
@@ -39,6 +45,10 @@
                         <a href="#changetitle"><button class="btn btn-primary" type="button" onclick="change('wallsquare')" id="wallsquare">Wall Square Calculator</button></a>
                     </div>
                 </div>
+
+                <!-- FOR THE CALCULATOR INPUTS -->
+
+                
                 <div class="col-md-6 offset-xl-0" style="background: var(--light);margin-bottom: 20px; min-height: 100px"><h1 class="text-center" id="changetitle" value="none" style="padding-bottom: 20px; display:none;">Heading</h1><div class="text-left" id="brickDIV" style="display:none;">
     <div class="text-center" style="margin-bottom: 15px;"><img class="img-fluid" src="assets/img/brick.png" style="width: 400px;margin: 0px;" alt="brick pricture" /></div>
     <!-- <div><input type="text" class="form-control-plaintext float-left" value="Brick Length (l)" readonly style="width: 250px;font-size: 16px;text-align: left;"/><input type="text" class="d-flex float-right" style="width: 280px;height: 38px;opacity: 1;text-align: right;" placeholder="millimeter (mm)" id="bricklength"/><input type="text" class="form-control-plaintext float-left" value="Brick Height (h)" readonly style="width: 250px;font-size: 16px;text-align: left;" /><input type="text" class="d-flex float-right" style="width: 280px;height: 38px;opacity: 1;text-align: right;" placeholder="millimeter (mm)" id="brickheight"/><input type="text" class="form-control-plaintext float-left" value="Brick Width (w)" readonly style="width: 250px;font-size: 16px;text-align: left;" /><input type="text" class="d-flex float-right" style="width: 280px;height: 38px;text-align: right;" placeholder="millimeter (mm)" id="brickwidth"/><input type="text" class="form-control-plaintext float-left" value="Mortar joint thickness (t)" readonly style="width: 250px;font-size: 16px;text-align: left;" /><input type="text" class="float-right" style="width: 280px;height: 38px;text-align: right;" placeholder="millimeter (mm)" id="mortarjoint"/><input type="text" class="form-control-plaintext float-left" value="Wall length (L)" readonly style="width: 250px;font-size: 16px;text-align: left;" /><input type="text" class="float-right" style="width: 280px;height: 38px;text-align: right;" placeholder="meter (m)" id="walllength"/><input type="text" class="form-control-plaintext float-left" value="Wall Height (H)" readonly style="width: 250px;font-size: 16px;text-align: left;" /><input type="text" class="float-right" style="width: 280px;height: 38px;text-align: right;" placeholder="meter (m)" id="wallheight"/><input type="text" class="form-control-plaintext float-left" value="Wall area" readonly style="width: 250px;font-size: 16px;text-align: left;" /><input type="text" class="float-right" style="width: 280px;height: 38px;text-align: right;" placeholder="square meters (sqm)" id="wallarea" disabled/><input type="text" class="form-control-plaintext float-left" value="Type of wall" readonly style="width: 250px;font-size: 16px;text-align: left;" /><select class="float-right" style="width: 280px;height: 38px;" id="typeofwall">
@@ -264,6 +274,8 @@
             </div>
         </div>
     </section>
+
+    <!-- FOR THE LOCATOR -->
     <section class="text-center">
         <h1 class="text-center">Hardware Locator</h1>
         <form class="d-inline-flex"><input type="text" class="form-control" placeholder="Enter Location" id="locator" /><button class="btn btn-primary" type="button" style="color: var(--white);background: var(--yellow);width: 66px;height: 52px;"><i class="fa fa-search" style="background: var(--warning);"></i></button></form>
