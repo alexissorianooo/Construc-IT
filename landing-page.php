@@ -293,11 +293,14 @@
                                 <h2 class="text-uppercase">REGISTER</h2>
                                 <div class="d-inline-block">
 
-                                    <select style="width: 280px;height: 38px;" id="usertype">
-                                        <option value="client" selected>Cient</option>
-                                        <option value="architect">Architect</option>
-                                        <option value="projectmanager">Project Manager</option>
-                                    </select>
+                                        <!-- FOR USER TYPE OPTIONS -->
+                                    <div class="usertype">
+                                        <select style="width: 280px;height: 38px;" id="usertype">
+                                            <option name="usertype" value="client" selected>Cient</option>
+                                            <option name="usertype" value="architect">Architect</option>
+                                            <option name="usertype" value="projectmanager">Project Manager</option>
+                                        </select>
+                                    </div>
                                     <br><br>
 
                                         <!-- FOR ARCHITECTS AND PROJECT MANAGER - REGISTER -->
@@ -313,7 +316,7 @@
                                             <br> <br>   
                                             <input type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="usercode">                                                                 
                                             <br> <br>                                  
-                                            <button class="btn bg-info" type="submit" name="registerButton">Register</button>
+                                            <button class="btn bg-info" type="submit" name="registerButton1">Register</button>
                                         </form>
                                     </div>
 
@@ -329,7 +332,7 @@
                                             <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password">                                                                 
                                             <br> <br>   
                                                                           
-                                            <button class="btn bg-info" type="submit" name="registerButton">Register</button>
+                                            <button class="btn bg-info" type="submit" name="registerButton2">Register</button>
                                         </form>
                                     </div>
                                                                
