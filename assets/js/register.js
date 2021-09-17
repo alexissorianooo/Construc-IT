@@ -1,6 +1,11 @@
 document.getElementById('usertype').addEventListener('change', function () {
-    if (this.value== "employee"){
-        var style = this.value == "employee" ? 'block' : 'none';
+    if (this.value== "architect"){
+        var style = this.value == "architect" ? 'block' : 'none';
+        document.getElementById('usertype1').style.display = style;
+        document.getElementById('usertype2').style.display = 'none';
+    }
+    if (this.value== "projectmanager"){
+        var style = this.value == "projectmanager" ? 'block' : 'none';
         document.getElementById('usertype1').style.display = style;
         document.getElementById('usertype2').style.display = 'none';
     }

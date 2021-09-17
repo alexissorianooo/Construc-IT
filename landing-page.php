@@ -264,7 +264,7 @@
                                     <br><br>
                                     <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">
                                     <br> <br>
-                                    <input type="text" id="proj-id" placeholder="Project ID" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">
+                                    <!-- <input type="text" id="proj-id" placeholder="Project ID" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;"> -->
                                     <a class="text-center d-block" id="forgot-password" href="#" style="color:blue;border-color: var(--blue);">&nbsp;Forgot Your Password?</a>                                
                                     <br>                            
                                     <button class="btn bg-info" id="btn-login" data-dismiss="modal" type="submit" >Login</button>                                    
@@ -295,11 +295,11 @@
 
                                     <select style="width: 280px;height: 38px;" id="usertype">
                                         <option value="client" selected>Cient</option>
-                                        <option value="employee">Architect</option>
-                                        <option value="employee" >Project Manager</option>
+                                        <option value="architect">Architect</option>
+                                        <option value="projectmanager">Project Manager</option>
                                     </select>
                                     <br><br>
-                                    
+
                                         <!-- FOR ARCHITECTS AND PROJECT MANAGER - REGISTER -->
                                     <div id="usertype1" style="display: none;">
                                         <form action="includes/signupdb.php" method="post" >
