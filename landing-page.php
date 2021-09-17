@@ -264,7 +264,7 @@
                                     <br><br>
                                     <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">
                                     <br> <br>
-                                    <input type="email" id="proj-id" placeholder="Project ID" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">
+                                    <input type="text" id="proj-id" placeholder="Project ID" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">
                                     <a class="text-center d-block" id="forgot-password" href="#" style="color:blue;border-color: var(--blue);">&nbsp;Forgot Your Password?</a>                                
                                     <br>                            
                                     <button class="btn bg-info" id="btn-login" data-dismiss="modal" type="submit" >Login</button>                                    
@@ -293,16 +293,20 @@
                                 <h2 class="text-uppercase">REGISTER</h2>
                                 <div class="d-inline-block">
                                     
-                                    <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">
-                                    <br> <br>                                   
-                                    <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">                                                                 
-                                    <br> <br>                                
-                                    <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">                                                                 
-                                    <br> <br>   
-                                    <input type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">                                                                 
-                                    <br> <br>                                  
-                                    <button class="btn bg-info" id="btn-login" data-dismiss="modal" type="submit" name="submit">Register</button>
-                                                                    
+                                        <form action="includes/signupdb.php" method="post">
+                                            <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">
+                                            <br> <br>  
+                                            <input type="text" id="fullname" placeholder="Full Name" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">
+                                            <br> <br>                                 
+                                            <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">                                                                 
+                                            <br> <br>                                
+                                            <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">                                                                 
+                                            <br> <br>   
+                                            <input type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">                                                                 
+                                            <br> <br>                                  
+                                            <button class="btn bg-info" type="submit" name="registerButton">Register</button>
+                                        </form>
+                                                               
                                 </div>
                         </div>
                     </div>
