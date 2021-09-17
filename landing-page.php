@@ -19,6 +19,9 @@
 
     <?php require 'layout/header.php' ?>
 
+    
+
+
     <!-- LOGO WITH WELCOME LABELS -->
     <header class="masthead" style="background: url(&quot;assets/img/wallpaper1.jpg&quot;); background-size: cover; margin-top: 60px;">
         <div class="container">            
@@ -41,6 +44,28 @@
         </div>
     </header>
 
+    <!-- FOR ERROR NOTIFICATIONS -->
+    <div class="errornotif">
+        <?php
+            if (isset($_GET["error"])) {
+            if ($_GET["error"] == "emptyinput") {
+                echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br><br>Invalid input. Fill all fields</p></div>";
+            }
+            elseif ($_GET["error"] == "passwordnotmatch") {
+                echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br><br>Passwords do not match</p></div>";
+            }
+            elseif ($_GET["error"] == "emailtaken") {
+                echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br><br>Email taken. Try different email.</p></div>";
+            }
+            elseif ($_GET["error"] == "stmtfailed") {
+                echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br><br>Something went wrong! Please try again.</p></div>";
+            }
+            elseif ($_GET["error"] == "none") {
+                echo "<div style='text-align: center; background-color:#2ad5a4; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br><br>Congratulations! You are signed up!</p></div>";
+            }
+            }
+        ?>
+    </div>
 
         <!-- LOGO WITH WELCOME LABELS FROM CAPSTONE TESTER 
         <header class="masthead" style="background: url(&quot;assets/img/wallpaper1.jpg&quot;); background-size: cover; margin-top: 60px;">
@@ -327,31 +352,7 @@
                                         </div>
                                     
                                     
-                                    <!-- FOR ERROR NOTIFICATIONS -->
-                                        <div class="errornotif">
-                                            <?php
-                                                if (isset($_GET["error"])) {
-                                                if ($_GET["error"] == "emptyinput") {
-                                                    echo "<p>Fill all the fields.</p>";
-                                                }
-                                                elseif ($_GET["error"] == "invalidemail") {
-                                                    echo "<p>Invalid Email.</p>";
-                                                }
-                                                elseif ($_GET["error"] == "passwordnotmatch") {
-                                                    echo "<p>Passwords do not match.</p>";
-                                                }
-                                                elseif ($_GET["error"] == "emailtaken") {
-                                                    echo "<p>Email is already taken.</p>";
-                                                }
-                                                elseif ($_GET["error"] == "stmtfailed") {
-                                                    echo "<p>Something went wrong, try again!</p>";
-                                                }
-                                                elseif ($_GET["error"] == "none") {
-                                                    echo "<span><p><br><br>Congratulations! You are signed up!</p></span>";
-                                                }
-                                                }
-                                            ?>
-                                        </div>
+                                    
 
                                 </div>
                         </div>
