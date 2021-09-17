@@ -294,67 +294,34 @@
                                 <div class="d-inline-block">
 
                                     
-                                        <!-- FOR USER TYPE OPTIONS -->
-                                        <div id="">
+                                        
+                                        <div id="usertype2">
                                             <form action="includes/signupdb.php" method="post" >
+
+                                                <!-- FOR USER TYPE OPTIONS -->
                                                 <select style="width: 280px;height: 38px;" id="usertype" name="usertypeSELECT">
-                                                    <option value="client">Client</option>
+                                                    <option value="client" selected>Client</option>
                                                     <option value="architect">Architect</option>
                                                     <option value="projectmanager">Project Manager</option>
                                                 </select>
+
                                                 <br><br>
-                                            </form>
-                                        </div>
-                                        
-
-                                            <!-- FOR ARCHITECTS AND PROJECT MANAGER - REGISTER -->
-                                        <div id="usertype1" style="display: none;">
-                                            <form action="includes/signupdb.php" method="post" >
-                                                <!-- <div id="architectSELECT">
-                                                    <select style="width: 280px;height: 38px;" id="usertype" name="usertypeSELECT">
-                                                        <option value="client">Client</option>
-                                                        <option value="architect" selected>Architect</option>
-                                                        <option value="projectmanager">Project Manager</option>
-                                                    </select>
-                                                    <br><br>
-                                                </div>
-
-                                                <div id="pmSELECT">
-                                                    <select style="width: 280px;height: 38px;" id="usertype" name="usertypeSELECT">
-                                                        <option value="client">Client</option>
-                                                        <option value="architect" >Architect</option>
-                                                        <option value="projectmanager" selected>Project Manager</option>
-                                                    </select>
-                                                    <br><br>
-                                                </div> -->
-
+                                
+                                                <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
+                                                <br> <br>  
+                                                <input type="text" id="fullname" placeholder="Full Name" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="fullname">
+                                                <br> <br>                                 
+                                                <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">                                                                 
+                                                <br> <br>                                
+                                                <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password">                                                                 
+                                                <br> <br>
                                                 
+                                                <!-- FOR ARCHITECT AND PM -->
 
-                                                <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
-                                                <br> <br>  
-                                                <input type="text" id="fullname" placeholder="Full Name" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="fullname">
-                                                <br> <br>                                 
-                                                <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">                                                                 
-                                                <br> <br>                                
-                                                <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password">                                                                 
+                                                <div style="display: none;" id="usertype1" ><input type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="usercode">                                                                 
+                                                </div>
                                                 <br> <br>   
-                                                <input type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="usercode">                                                                 
-                                                <br> <br>                                  
-                                                <button class="btn bg-info" type="submit" name="registerButton">Register</button>
-                                            </form>
-                                        </div>
 
-                                            <!-- FOR CLIENT - REGISTER -->
-                                        <div id="usertype2">
-                                            <form action="includes/signupdb.php" method="post" >
-                                                <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
-                                                <br> <br>  
-                                                <input type="text" id="fullname" placeholder="Full Name" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="fullname">
-                                                <br> <br>                                 
-                                                <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">                                                                 
-                                                <br> <br>                                
-                                                <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password">                                                                 
-                                                <br> <br>               
                                                 <button class="btn bg-info" type="submit" name="registerButton">Register</button>
                                             </form>
                                         </div>
