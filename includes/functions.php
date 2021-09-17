@@ -2,10 +2,9 @@
 
 <?php
 
-
-function emptyInputSignup($email, $fullname, $password, $password2, $usercode){
+function emptyInputSignup($email, $fullname, $password, $password2){
   $result;
-  if (empty($email) || empty($fullname) || empty($password) || empty($password2) || empty($usercode)) {
+  if (empty($email) || empty($fullname) || empty($password) || empty($password2)) {
     $result = true;
   }
   else {
@@ -67,4 +66,4 @@ function createUser($conn, $usertype, $email, $fullname, $password){
     header("location: ../landing-page.php?error=none");
     exit();
   
-  }
+}

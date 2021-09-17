@@ -293,49 +293,99 @@
                                 <h2 class="text-uppercase">REGISTER</h2>
                                 <div class="d-inline-block">
 
+                                    
                                         <!-- FOR USER TYPE OPTIONS -->
-                                    <div class="usertype">
-                                        <select style="width: 280px;height: 38px;" id="usertype">
-                                            <option name="usertype" value="client" selected>Cient</option>
-                                            <option name="usertype" value="architect">Architect</option>
-                                            <option name="usertype" value="projectmanager">Project Manager</option>
-                                        </select>
-                                    </div>
-                                    <br><br>
+                                        <div id="">
+                                            <form action="includes/signupdb.php" method="post" >
+                                                <select style="width: 280px;height: 38px;" id="usertype" name="usertypeSELECT">
+                                                    <option value="client">Client</option>
+                                                    <option value="architect">Architect</option>
+                                                    <option value="projectmanager">Project Manager</option>
+                                                </select>
+                                                <br><br>
+                                            </form>
+                                        </div>
+                                        
 
-                                        <!-- FOR ARCHITECTS AND PROJECT MANAGER - REGISTER -->
-                                    <div id="usertype1" style="display: none;">
-                                        <form action="includes/signupdb.php" method="post" >
-                                            <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
-                                            <br> <br>  
-                                            <input type="text" id="fullname" placeholder="Full Name" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="fullname">
-                                            <br> <br>                                 
-                                            <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">                                                                 
-                                            <br> <br>                                
-                                            <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password">                                                                 
-                                            <br> <br>   
-                                            <input type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="usercode">                                                                 
-                                            <br> <br>                                  
-                                            <button class="btn bg-info" type="submit" name="registerButton1">Register</button>
-                                        </form>
-                                    </div>
+                                            <!-- FOR ARCHITECTS AND PROJECT MANAGER - REGISTER -->
+                                        <div id="usertype1" style="display: none;">
+                                            <form action="includes/signupdb.php" method="post" >
+                                                <!-- <div id="architectSELECT">
+                                                    <select style="width: 280px;height: 38px;" id="usertype" name="usertypeSELECT">
+                                                        <option value="client">Client</option>
+                                                        <option value="architect" selected>Architect</option>
+                                                        <option value="projectmanager">Project Manager</option>
+                                                    </select>
+                                                    <br><br>
+                                                </div>
 
-                                        <!-- FOR CLIENT - REGISTER -->
-                                    <div id="usertype2">
-                                        <form action="includes/signupdb.php" method="post" >
-                                            <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
-                                            <br> <br>  
-                                            <input type="text" id="fullname" placeholder="Full Name" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="fullname">
-                                            <br> <br>                                 
-                                            <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">                                                                 
-                                            <br> <br>                                
-                                            <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password">                                                                 
-                                            <br> <br>   
-                                                                          
-                                            <button class="btn bg-info" type="submit" name="registerButton2">Register</button>
-                                        </form>
-                                    </div>
-                                                               
+                                                <div id="pmSELECT">
+                                                    <select style="width: 280px;height: 38px;" id="usertype" name="usertypeSELECT">
+                                                        <option value="client">Client</option>
+                                                        <option value="architect" >Architect</option>
+                                                        <option value="projectmanager" selected>Project Manager</option>
+                                                    </select>
+                                                    <br><br>
+                                                </div> -->
+
+                                                
+
+                                                <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
+                                                <br> <br>  
+                                                <input type="text" id="fullname" placeholder="Full Name" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="fullname">
+                                                <br> <br>                                 
+                                                <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">                                                                 
+                                                <br> <br>                                
+                                                <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password">                                                                 
+                                                <br> <br>   
+                                                <input type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="usercode">                                                                 
+                                                <br> <br>                                  
+                                                <button class="btn bg-info" type="submit" name="registerButton">Register</button>
+                                            </form>
+                                        </div>
+
+                                            <!-- FOR CLIENT - REGISTER -->
+                                        <div id="usertype2">
+                                            <form action="includes/signupdb.php" method="post" >
+                                                <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
+                                                <br> <br>  
+                                                <input type="text" id="fullname" placeholder="Full Name" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="fullname">
+                                                <br> <br>                                 
+                                                <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">                                                                 
+                                                <br> <br>                                
+                                                <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password">                                                                 
+                                                <br> <br>               
+                                                <button class="btn bg-info" type="submit" name="registerButton">Register</button>
+                                            </form>
+                                        </div>
+                                    
+                                    
+                                    <!-- FOR ERROR NOTIFICATIONS -->
+                                        <div class="errornotif">
+                                            <?php
+                                                if (isset($_GET["error"])) {
+                                                if ($_GET["error"] == "emptyinput") {
+                                                    echo "<p>Fill all the fields.</p>";
+                                                }
+                                                elseif ($_GET["error"] == "invalidemail") {
+                                                    echo "<p>Invalid Email.</p>";
+                                                }
+                                                elseif ($_GET["error"] == "passwordnotmatch") {
+                                                    echo "<p>Passwords do not match.</p>";
+                                                }
+                                                elseif ($_GET["error"] == "emailtaken") {
+                                                    echo "<p>Email is already taken.</p>";
+                                                }
+                                                elseif ($_GET["error"] == "stmtfailed") {
+                                                    echo "<p>Something went wrong, try again!</p>";
+                                                }
+                                                elseif ($_GET["error"] == "none") {
+                                                    echo "<span><p><br><br>Congratulations! You are signed up!</p></span>";
+                                                }
+                                                }
+                                            ?>
+                                        </div>
+
                                 </div>
                         </div>
                     </div>

@@ -7,7 +7,7 @@ $dbname = "capstone";
 
 
 // NOTES
-//open up a connection to a database
+// open up a connection to a database
 // procedual php (mysqli)
 // mysqli functions
 
