@@ -284,16 +284,18 @@
                                     <label>here</label>
                                 </p>
 
-                                <div class="d-inline-block">                                    
-                                    <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">
-                                    <br><br>
-                                    <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">
-                                    <br> <br>
-                                    <!-- <input type="text" id="proj-id" placeholder="Project ID" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;"> -->
-                                    <a class="text-center d-block" id="forgot-password" href="#" style="color:blue;border-color: var(--blue);">&nbsp;Forgot Your Password?</a>                                
-                                    <br>                            
-                                    <button class="btn bg-info" id="btn-login" data-dismiss="modal" type="submit" >Login</button>                                    
-                                </div>                            
+                                <form action="includes/logindb.php" method="post">
+                                    <div class="d-inline-block">                                    
+                                        <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
+                                        <br><br>
+                                        <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">
+                                        <br> <br>
+                                        <!-- <input type="text" id="proj-id" placeholder="Project ID" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;"> -->
+                                        <a class="text-center d-block" id="forgot-password" href="#" style="color:blue;border-color: var(--blue);">&nbsp;Forgot Your Password?</a>                                
+                                        <br>                            
+                                        <button class="btn bg-info" type="submit" name="loginButton">Login</button>                                    
+                                    </div>  
+                                </form>                          
                         </div>
                     </div>
                 </div>

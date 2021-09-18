@@ -1,3 +1,9 @@
+
+<!-- FOR KNOWING WHO IS THE CURRENT USER -->
+<?php
+  session_start();
+?>
+
 <link rel="icon" href="../../assets/img/logo3-white.png">
 
 <!-- NAVIGATION BAR -->
@@ -17,7 +23,7 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#item2">Projects</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../users/CE/estimator try.php">ESTIMATOR</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#item1">Message</a></li>
-                    <li class="nav-item"><a class="nav-link" data-toggle="modal" href="#logout">LOGOUT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../includes/logoutdb.php">LOGOUT</a></li>
                 </ul>
             </div>
         </div>
