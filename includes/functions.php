@@ -49,6 +49,20 @@ function emailExist($conn, $email){
     mysqli_stmt_close($stmt);
 }
 
+function empAccount($usercode, $usertype){
+  $usercodeforArchitect = "architect";
+  $usercodeforProjectmanager = "projectmanager";
+  $result;
+
+  if (($usertype === "architect" && $usercode === $usercodeforArchitect) || ($usertype === "projectmanager" && $usercode === $usercodeforProjectmanager)){
+    $result = true;
+  }
+  else{
+    $result == false;
+  }
+  return $result;
+}
+
 function createUser($conn, $usertype, $email, $fullname, $password){
     $sql = "INSERT INTO user_db (usertype_fk, user_email, user_fullname, user_password) VALUES (? ,? ,?, ?);";
     $stmt = mysqli_stmt_init($conn);
