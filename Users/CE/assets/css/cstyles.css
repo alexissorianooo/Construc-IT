@@ -8,8 +8,19 @@
     color: black;
     text-transform: uppercase;
 }*/
+
+/* backgrounds */
 .bg-dark {
-    background-color: #343a40 !important; }
+    background-color: #343a40 !important; 
+}
+/*
+body {
+	background: linear-gradient(45deg, white, whitesmoke, rgb(245, 148, 148), darkgray, darkslategray);
+	background-size: 400% 400%;
+	animation: animatedgradient 15s ease infinite;
+}
+*/
+/* End of Backgrounds */
 
 #constitle {
     font-family: "Inter", sans-serif;
@@ -51,7 +62,7 @@
     content: '';
     position: absolute;
     top: calc(-1 * var(--borderWidth));
-    left: 20px;
+    left: 5px;
     padding-right: 20px;
     height: calc(100% + var(--borderWidth) * 2);
     width: calc(100% + var(--borderWidth) * 2);
