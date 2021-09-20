@@ -11,22 +11,20 @@
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/Map-Clean.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-
-
+    <link rel="stylesheet" href="./assets/css/cstyles.css">
 </head>
 
-<body id="page-top">
-    
+<body id="page-top" style="background: url(&quot;../../assets/img/2.jpg&quot;); background-size: cover; height:100%">
     <script src="assets/js/google-maps.js"></script>
 
 <!-- FOR THE CALCULATORS -->
-
-    <section class="text-center"> 
-        <h1 id="constitle">Construction Estimator</h1>
+<!--
+    <section class="text-center" > 
+        <h1 class="constyle" id="constitle">Construction Estimator</h1>
     </section>
-    <section style="margin-bottom: 20px;">
-        <div class="container" style="border-style: solid;" id="calculatorcontainer">
+-->
+    <section style="margin-bottom: 20px; margin-top: 50px">
+        <div class="container gradient-border" id="calculatorcontainer box">
             <div class="row">
 
                 <!-- FOR THE CALCULATOR BUTTONS -->
