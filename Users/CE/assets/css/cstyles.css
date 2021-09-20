@@ -8,6 +8,8 @@
     color: black;
     text-transform: uppercase;
 }*/
+.bg-dark {
+    background-color: #343a40 !important; }
 
 #constitle {
     font-family: "Inter", sans-serif;
