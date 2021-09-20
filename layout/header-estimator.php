@@ -9,16 +9,44 @@
             <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
+            <?php
+            session_start();
 
-            <!-- NAVIGATION LINKS -->
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto text-uppercase">
+                // REASON FOR SEPARATION:
+                // PROJECT LINK CONNECTS TO DIFFERENT PROJRECT PAGES
+                // ARCHITECT PROJECT PAGE IS DIFFERENT FROM PROJECT MANAGER
+                // ARCHITECT OPEN THE PROJECT TAB - OPENS PROJECT PAGE WITH COMPILATION OF ONGOING PROJECTS
+                // PROJECT MANAGER OPEN THE PROJECT TAB - OPENS THE SPECIFIC PROJECT ASSIGNED TO
+
+                if($_SESSION["usertype_fk"] == "projectmanager"){
+                    echo  
+                    '<!-- NAVIGATION LINKS -->
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto text-uppercase">
+                            
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Projects</a></li>
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#calculatorcontainer">ESTIMATOR</a></li>
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Message</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../../includes/logoutdb.php">LOGOUT</a></li>
+                        </ul>
+                    </div>';
                     
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#calculatorcontainer">ESTIMATOR</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Message</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#logout">LOGOUT</a></li>
-                </ul>
-            </div>
+                }
+
+                if($_SESSION["usertype_fk"] == "architect"){
+                    echo  
+                    '<!-- NAVIGATION LINKS -->
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto text-uppercase">
+                            
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Projects</a></li>
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#calculatorcontainer">ESTIMATOR</a></li>
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Message</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../../includes/logoutdb.php">LOGOUT</a></li>
+                        </ul>
+                    </div>';
+                }
+                        
+            ?>
         </div>
     </nav>

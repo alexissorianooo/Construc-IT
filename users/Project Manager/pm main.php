@@ -17,6 +17,7 @@
     <!-- NAVIGATION TAB -->
     <?php include '../../layout/header-pm.php' ?>
 
+    
     <br>
     <br>
     <br>
@@ -26,7 +27,7 @@
     <br>
     <br>
 
-
+    <p>HI YOU'RE AT PROJECT MANAGER PAGE</p>
 
     <!-- FOOTER -->
     <?php include '../../layout/footer.php' ?>

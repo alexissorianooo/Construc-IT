@@ -60,6 +60,15 @@
             elseif ($_GET["error"] == "stmtfailed") {
                 echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br><br>Something went wrong! Please try again.</p></div>";
             }
+            elseif ($_GET["error"] == "invalidusercode") {
+                echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br><br>Invalid Usercode.</p></div>";
+            }
+            elseif ($_GET["error"] == "wronglogin") {
+                echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br><br>Wrong Email/Password</p></div>";
+            }
+            elseif ($_GET["error"] == "emailnotexist") {
+                echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br><br>Email does not exist.</p></div>";
+            }
             elseif ($_GET["error"] == "none") {
                 echo "<div style='text-align: center; background-color:#2ad5a4; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br><br>Congratulations! You are signed up!</p></div>";
             }
@@ -284,16 +293,18 @@
                                     <label>here</label>
                                 </p>
 
-                                <div class="d-inline-block">                                    
-                                    <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">
-                                    <br><br>
-                                    <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;">
-                                    <br> <br>
-                                    <!-- <input type="text" id="proj-id" placeholder="Project ID" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;"> -->
-                                    <a class="text-center d-block" id="forgot-password" href="#" style="color:blue;border-color: var(--blue);">&nbsp;Forgot Your Password?</a>                                
-                                    <br>                            
-                                    <button class="btn bg-info" id="btn-login" data-dismiss="modal" type="submit" >Login</button>                                    
-                                </div>                            
+                                <form action="includes/logindb.php" method="post">
+                                    <div class="d-inline-block">                                    
+                                        <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
+                                        <br><br>
+                                        <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">
+                                        <br> <br>
+                                        <!-- <input type="text" id="proj-id" placeholder="Project ID" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;"> -->
+                                        <a class="text-center d-block" id="forgot-password" href="#" style="color:blue;border-color: var(--blue);">&nbsp;Forgot Your Password?</a>                                
+                                        <br>                            
+                                        <button class="btn bg-info" type="submit" name="loginButton">Login</button>                                    
+                                    </div>  
+                                </form>                          
                         </div>
                     </div>
                 </div>

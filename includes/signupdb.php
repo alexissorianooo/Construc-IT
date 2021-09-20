@@ -10,15 +10,14 @@ if(isset($_POST["registerButton"])){
     $fullname = $_POST["fullname"];
     $password = $_POST["password"];
     $password2 = $_POST["confirm-password"];
-    //$usercode = $_POST["usercode"];
+    
     $usertype = $_POST["usertypeSELECT"];
 
-    // echo $email;
-    // echo $usertype;
-    
     require_once 'db.php';
     require_once 'functions.php'; //FOR ERROR FUNCTIONS
 
+    
+    
     if(emptyInputSignup($email, $fullname, $password, $password2) !== false){
         header("location: ../landing-page.php?error=emptyinput");
         exit();
@@ -30,6 +29,23 @@ if(isset($_POST["registerButton"])){
     if (emailExist($conn, $email) !== false) {
         header("location: ../landing-page.php?error=emailtaken");
         exit();
+    }
+
+    // FOR ARCHTIECT AND PROJECT MANAGER
+
+    if ($usertype === "architect" || $usertype === "projectmanager"){
+        
+
+        $usercode = $_POST["usercode"];
+
+        if(empAccount($usercode, $usertype) === true){
+            createUser($conn, $usertype, $email, $fullname, $password);
+        }
+        else{
+            header("location: ../landing-page.php?error=invalidusercode");
+            exit();
+        }
+
     }
 
     // THIS IS WHERE REGISTERING HAPPENS

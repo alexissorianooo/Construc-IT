@@ -16,10 +16,7 @@
 
     <!-- NAVIGATION TAB -->
     <?php include '../../layout/header-architect.php' ?>
-
-
-
-
+    
     <br>
     <br>
     <br>
@@ -29,6 +26,8 @@
     <br>
     <br>
 
+
+    <p>HI YOU'RE AT ARCHITECT PAGE</p>
 
 
 
