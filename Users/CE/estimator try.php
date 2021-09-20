@@ -9,10 +9,10 @@
     <title>Estimator</title>
 
     <!-- ALEXIS BOOTSTRAP -->
-    <!-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     
     <!-- THOMAS BOOTSTRAP -->
-    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css"> -->
 
 
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -304,21 +304,6 @@
                 </div>
             </div>
             
-            <!-- TESTER CODE FOR GMAPS API -->
-            <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBezl5WPT_086R8XoLYRnPElv6G_pBQz7U&callback=initMap&libraries=&v=weekly" defer> </script> -->
-            
-            <!-- IFRAME FOR GENERAL MAP
-            <iframe 
-            width="100%" 
-            height="170" 
-            frameborder="0" 
-            scrolling="no" 
-            marginheight="0" 
-            marginwidth="0" 
-            src="https://maps.google.com/maps?q=14.5979,121.0108&hl=es&z=14&amp;output=embed"
-            >
-            </iframe> -->
-  
 
             <!-- DIV FOR THE MAP -->
             <div id="map" style="min-height:40vw;"> </div>

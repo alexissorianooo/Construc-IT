@@ -1,10 +1,14 @@
 //DECLARATION OF TEMPORARY LOCATION(PUP) IN THE MAP
 // VARIABLES FOR THEIR LOCATION 
-var lati=14.5979;    //NORTH
-var long=121.0108;  //EAST
+var lati;    //NORTH
+var long;  //EAST
+var dest_lati;
+var dest_long;
 var map;
 var service;
 var infowindow;
+var loc;
+var APIKEY = "3VLMJaxNxqrL9irFAm0RJuJ8ELNry3v9";  
 
 
 // GETTING USER COORDINATES 
@@ -17,107 +21,115 @@ function getLocation() {
 function showPosition(position) {
   lati= position.coords.latitude; 
   long= position.coords.longitude;
+  loc = { lat: lati, lng: long };
   tomtom();
+  // search();
 }
         
 
-// Initialize and add the map
-function initMap() {
-  // The location entry
-  var loc = { lat: lati, lng: long };
-  // The map, centered at location
-
-  map = new google.maps.Map(
-    document.getElementById("map"),
-    {
-      zoom: 18,
-      center: loc,
-    }
-  );
-}
-
-
-// CAN GO TO THE LOCATION OF THE USER BUT STILL CANT FIND NEARBY HARDWARE STORES
-//GOOGLE MAPS WANTS MONEY TO USE THIS SERVICE YAWA
-function findStore() {
-  var lugar = new google.maps.LatLng(lati, long);
-
-  infowindow = new google.maps.InfoWindow();
-
-  map = new google.maps.Map(
-      document.getElementById('map'), {center: lugar, zoom: 20});
-
-      var request = {
-        location: lugar,
-        radius: 200,
-        types: ['construction', 'hardware store'] 
-      };
-      infowindow = new google.maps.InfoWindow();
-      var service = new google.maps.places.PlacesService(map);
-      service.nearbySearch(request, callback);
-    }
-    
-    function callback(results, status) {
-      if (status == google.maps.places.PlacesServiceStatus.OK) {
-        for (var i = 0; i < results.length; i++) {
-          createMarker(results[i]);
-        }
-      }
-    }
-    
-    function createMarker(place) {
-      var placeLoc = place.geometry.location;
-      var marker = new google.maps.Marker({
-        map: map,
-        position: place.geometry.location
-      });
-    
-      google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(place.name);
-        infowindow.open(map, this);
-      });
-    }
-    
-    // google.maps.event.addDomListener(window, 'load', initialize);
-
-
-
-
 // TOMTOM DEVS API 
 function tomtom() {
-  var APIKEY = "3VLMJaxNxqrL9irFAm0RJuJ8ELNry3v9";  
-  var loc = { lat: lati, lng: long };
-
-  var map = tt.map({
+  map = tt.map({
       key: APIKEY,
       container: "map",
       center: loc,
       zoom: 17,                    
   });
-  search();
+  search()
 }
 
 
 function search() {
   tt.services.fuzzySearch({
-    query: 'Hardware Store',
-    categorySet: '9361069'
+    key: APIKEY,
+    query: "Hardware Store",
+    relatedPois: 'all',
+    countrySet: 'PH',
+    container: "map",
+    categorySet: '9361069',
+    center: loc,
+    radius: 500,
   })
-  .then(handleResults);
+  .then(function(result) {
+    handleResults(result);
+  });
 }
+
 
 function handleResults(result) {
   if(result.results) {
-    moveMap(result.results[0].position)
+    console.log(result)
+    var current = result.results[0].position
+    if (loc == current){
+
+      // IF THE CURRENT LOCATION IS AT A HARDWARE STORE THE 
+      // MAP WILL REDIRECT THE USER TO THE OTHER NEAREST HARDWARE STORE
+      moveMap(result.results[1].position)
+    } 
+    else 
+      moveMap(result.results[0].position)
   }
 }
 
+
 function moveMap(lnglat) {
+  var daan = [loc, lnglat]
   map.flyTo({
     center: lnglat,
-    zoom: 17
+    zoom: 20
   })
+  tt.services.calculateRoute({
+    key: APIKEY,
+    locations: daan,
+  }).then(function(routeData) {
+    console.log(routeData.toGeoJson());
+    var geojson = routeData.toGeoJson();
+    map.addLayer({
+        'id': 'route',
+        'type': 'line',
+        'source': {
+            'type': 'geojson',
+            'data': geojson
+        },
+        'paint': {
+            'line-color': '#228B22',
+            'line-width': 5
+        }
+    });
+    var bounds = new tt.LngLatBounds();
+    geojson.features[0].geometry.coordinates.forEach(function(point) {
+        bounds.extend(tt.LngLat.convert(point));
+    });
+    map.fitBounds(bounds, {padding: 20});
+  });
 }
+
+
+
+  // .then(function(routeData) {
+  //   var geojson = routeData.toGeoJson();
+  //   map.addLayer({
+  //       'id': 'route',
+  //       'type': 'line',
+  //       'source': {
+  //           'type': 'geojson',
+  //           'data': geojson
+  //       },
+  //       'paint': {
+  //           'line-color': '#00d7ff',
+  //           'line-width': 8
+  //       }
+  //   });
+  //   var bounds = new tt.LngLatBounds();
+  //   geojson.features[0].geometry.coordinates.forEach(function(point) {
+  //       bounds.extend(tt.LngLat.convert(point));
+  //   });
+  //   map.fitBounds(bounds, {padding: 20});
+  // });
+
+
+
+
 
 
 
