@@ -1,11 +1,20 @@
+<!-- NAVIGATION TAB -->
+<!-- PROBLEM: LINKS DISPLAY AT LEFT
+FIX: change .navbar-collapse flex-flow: 1 to flex-flow:0
+CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
+<?php include '../../layout/header-estimator.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
+
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>projects-tab</title>
+    <title>Projects for Architect</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -17,8 +26,15 @@
 
 <body>
     <!-- di pa ayos yung format nung header -->
-    <!-- NAVIGATION TAB -->
-    <?php include '../../layout/header-architect.php' ?>
+    
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
 
     <section class="projects-horizontal">
         <div class="container" style="background: rgba(191,143,0,0.18);border-color: var(--bs-red);">
@@ -47,7 +63,7 @@
                                 <strong>PROGRESS:</strong></p>
                             <div class="progress" style="height: 28px;border: 2px solid var(--bs-dark) ;">
                                 <div class="progress-bar bg-success progress-bar-striped progress-bar-animated"
-                                    aria-valuenow="32" aria-valuemin="0" aria-valuemax="100" style="width: 32%;">32%
+                                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%
                                 </div>
                             </div>
                             <h1></h1><button class="btn btn-warning" data-bs-toggle="tooltip" data-bss-tooltip=""
