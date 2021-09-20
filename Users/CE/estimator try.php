@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./assets/css/cstyles.css">
 </head>
 
-<body id="page-top" style="background: url(&quot;../../assets/img/2.jpg&quot;); background-size: cover; background-repeat: no-repeat; height:120%">
+<body id="page-top" style="background: url(&quot;../../assets/img/2.jpg&quot;); background-size: cover; background-repeat: no-repeat; height:200%">
     <script src="assets/js/google-maps.js"></script>
 
 <!-- FOR THE CALCULATORS -->
@@ -23,8 +23,8 @@
         <h1 class="constyle" id="constitle">Construction Estimator</h1>
     </section>
 -->
-    <section style="margin-bottom: 20px; margin-top: 50px; ">
-        <div class="container gradient-border" id="calculatorcontainer box">
+    <section class="container gradient-border" id="calculatorcontainer box">
+        <div style="margin-bottom: 20px; margin-top: 100px; padding-bottom:-20px;">
             <div class="row">
 
                 <!-- FOR THE CALCULATOR BUTTONS -->
@@ -275,7 +275,7 @@
     </section>
 
     <!-- FOR THE LOCATOR -->
-    <section class="text-center">
+    <section class="text-center" style="padding-top: 50px;">
         <h1 class="text-center">Hardware Locator</h1>        
         <form class="d-inline-flex">
             <!-- <input type="text" class="form-control" placeholder="Enter Location" id="locator" /> -->
