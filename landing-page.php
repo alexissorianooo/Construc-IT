@@ -63,6 +63,9 @@
             elseif ($_GET["error"] == "invalidusercode") {
                 echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br><br>Invalid Usercode.</p></div>";
             }
+            elseif ($_GET["error"] == "wronglogin") {
+                echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br><br>Wrong Email/Password</p></div>";
+            }
             elseif ($_GET["error"] == "none") {
                 echo "<div style='text-align: center; background-color:#2ad5a4; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br><br>Congratulations! You are signed up!</p></div>";
             }
