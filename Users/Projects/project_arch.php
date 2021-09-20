@@ -5,7 +5,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
 <?php include '../../layout/header-estimator.php' ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="text-center">
 
 
 
