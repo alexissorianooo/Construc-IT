@@ -16,11 +16,17 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 
 
+    <script src="assets/js/maps-api.js"></script>
+
+    <!-- TOMTOM MAPS API  -->
+    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/maps/maps.css'>
+    <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/maps/maps-web.min.js'></script>
+    <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/services/services-web.min.js'></script>
 </head>
 
 <body id="page-top">
     
-    <script src="assets/js/google-maps.js"></script>
+    
 
 <!-- FOR THE CALCULATORS -->
 
@@ -283,7 +289,7 @@
         <h1 class="text-center">Hardware Locator</h1>        
         <form class="d-inline-flex">
             <!-- <input type="text" class="form-control" placeholder="Enter Location" id="locator" /> -->
-            <button id="saerch-store" onclick="getLocation()" class="btn btn-primary" type="button" style="color: var(--white);background: var(--yellow);width: 66px;height: 52px;"><i class="fa fa-search" style="background: var(--warning);"></i></button>
+            <button id="search-store" onclick="getLocation()" class="btn btn-primary" type="button" style="color: var(--white);background: var(--yellow);width: 66px;height: 52px;"><i class="fa fa-search" style="background: var(--warning);"></i></button>
         </form>
         <section class="map-clean">
             <div class="container">
@@ -293,28 +299,11 @@
                 </div>
             </div>
             
-            <!-- TESTER CODE FOR GMAPS API -->
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBezl5WPT_086R8XoLYRnPElv6G_pBQz7U&callback=initMap&libraries=&v=weekly" defer> </script>
-            
-            <!-- IFRAME FOR GENERAL MAP
-            <iframe 
-            width="100%" 
-            height="170" 
-            frameborder="0" 
-            scrolling="no" 
-            marginheight="0" 
-            marginwidth="0" 
-            src="https://maps.google.com/maps?q=14.5979,121.0108&hl=es&z=14&amp;output=embed"
-            >
-            </iframe> -->
-  
 
             <!-- DIV FOR THE MAP -->
-            <div id="map" style="min-height:40vw;">
+            <div id="map" style="min-height:40vw;"> </div>
 
-
-            </div>
-
+            <script> document.getElementById("search-store").click(); </script>
         </section>
     </section>
 
