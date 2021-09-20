@@ -22,6 +22,9 @@ function showPosition(position) {
   lati= position.coords.latitude; 
   long= position.coords.longitude;
   loc = { lat: lati, lng: long };
+  // loc = { lat: 14.54467487725304, lng: 121.07992028699084 };
+  // console.log(loc);
+  
   tomtom();
   // search();
 }
@@ -60,6 +63,8 @@ function handleResults(result) {
   if(result.results) {
     console.log(result)
     var current = result.results[0].position
+    
+    
     if (loc == current){
 
       // IF THE CURRENT LOCATION IS AT A HARDWARE STORE THE 
