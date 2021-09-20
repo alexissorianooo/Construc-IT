@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./assets/css/cstyles.css">
 </head>
 
-<body id="page-top" style="background: url(&quot;../../assets/img/2.jpg&quot;); background-size: cover; height:100%">
+<body id="page-top" style="background: url(&quot;../../assets/img/2.jpg&quot;); background-size: cover; background-repeat: no-repeat; height:120%">
     <script src="assets/js/google-maps.js"></script>
 
 <!-- FOR THE CALCULATORS -->
@@ -23,7 +23,7 @@
         <h1 class="constyle" id="constitle">Construction Estimator</h1>
     </section>
 -->
-    <section style="margin-bottom: 20px; margin-top: 50px">
+    <section style="margin-bottom: 20px; margin-top: 50px; ">
         <div class="container gradient-border" id="calculatorcontainer box">
             <div class="row">
 
