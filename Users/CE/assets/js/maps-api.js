@@ -17,7 +17,7 @@ function getLocation() {
 function showPosition(position) {
   lati= position.coords.latitude; 
   long= position.coords.longitude;
-  findStore();
+  tomtom();
 }
         
 
@@ -35,7 +35,6 @@ function initMap() {
     }
   );
 }
-
 
 
 // CAN GO TO THE LOCATION OF THE USER BUT STILL CANT FIND NEARBY HARDWARE STORES
@@ -79,7 +78,48 @@ function findStore() {
       });
     }
     
-    google.maps.event.addDomListener(window, 'load', initialize);
+    // google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+
+// TOMTOM DEVS API 
+function tomtom() {
+  var APIKEY = "3VLMJaxNxqrL9irFAm0RJuJ8ELNry3v9";  
+  var loc = { lat: lati, lng: long };
+
+  var map = tt.map({
+      key: APIKEY,
+      container: "map",
+      center: loc,
+      zoom: 17,                    
+  });
+  search();
+}
+
+
+function search() {
+  tt.services.fuzzySearch({
+    query: 'Hardware Store',
+    categorySet: '9361069'
+  })
+  .then(handleResults);
+}
+
+function handleResults(result) {
+  if(result.results) {
+    moveMap(result.results[0].position)
+  }
+}
+
+function moveMap(lnglat) {
+  map.flyTo({
+    center: lnglat,
+    zoom: 17
+  })
+}
+
+
 
 
 

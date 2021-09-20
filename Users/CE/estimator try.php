@@ -7,18 +7,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Estimator</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">  
+
+    <!-- ALEXIS BOOTSTRAP -->
+    <!-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"> -->
+    
+    <!-- THOMAS BOOTSTRAP -->
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+
+
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/Map-Clean.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 
 
+    <script src="assets/js/maps-api.js"></script>
+
+    <!-- TOMTOM MAPS API  -->
+    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/maps/maps.css'>
+    <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/maps/maps-web.min.js'></script>
+    <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/services/services-web.min.js'></script>
 </head>
 
 <body id="page-top">
     
-    <script src="assets/js/google-maps.js"></script>
+    
 
 <!-- FOR THE CALCULATORS -->
 
@@ -281,7 +294,7 @@
         <h1 class="text-center">Hardware Locator</h1>        
         <form class="d-inline-flex">
             <!-- <input type="text" class="form-control" placeholder="Enter Location" id="locator" /> -->
-            <button id="saerch-store" onclick="getLocation()" class="btn btn-primary" type="button" style="color: var(--white);background: var(--yellow);width: 66px;height: 52px;"><i class="fa fa-search" style="background: var(--warning);"></i></button>
+            <button id="search-store" onclick="getLocation()" class="btn btn-primary" type="button" style="color: var(--white);background: var(--yellow);width: 66px;height: 52px;"><i class="fa fa-search" style="background: var(--warning);"></i></button>
         </form>
         <section class="map-clean">
             <div class="container">
@@ -292,7 +305,7 @@
             </div>
             
             <!-- TESTER CODE FOR GMAPS API -->
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBezl5WPT_086R8XoLYRnPElv6G_pBQz7U&callback=initMap&libraries=&v=weekly" defer> </script>
+            <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBezl5WPT_086R8XoLYRnPElv6G_pBQz7U&callback=initMap&libraries=&v=weekly" defer> </script> -->
             
             <!-- IFRAME FOR GENERAL MAP
             <iframe 
@@ -308,11 +321,9 @@
   
 
             <!-- DIV FOR THE MAP -->
-            <div id="map" style="min-height:40vw;">
+            <div id="map" style="min-height:40vw;"> </div>
 
-
-            </div>
-
+            <script> document.getElementById("search-store").click(); </script>
         </section>
     </section>
 
