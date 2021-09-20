@@ -7,14 +7,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Estimator</title>
-
-    <!-- ALEXIS BOOTSTRAP -->
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    
-    <!-- THOMAS BOOTSTRAP -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">  
+    <!-- THOMAS -->
     <!-- <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css"> -->
-
-
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/Map-Clean.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
