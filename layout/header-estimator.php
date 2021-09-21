@@ -1,7 +1,7 @@
 <link rel="icon" href="../../assets/img/logo3-white.png">
 
 <!-- NAVIGATION BAR -->
-<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav" style="position: fixed;">
         <div class="container">
 
             <!-- LOGO -->
