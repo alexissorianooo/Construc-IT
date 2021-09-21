@@ -10,7 +10,7 @@
     <div class="container">
 
         <!-- LOGO -->
-        <a class="navbar-brand nav-link js-scroll-trigger" href="#page-top"
+        <a class="navbar-brand nav-link js-scroll-trigger" href="../../users/Architect/architect main.php"
             style="background: url(&quot;../../assets/img/logo3-white.png&quot;) center / contain no-repeat, transparent;width: 162px;height: 55px;margin-top: 0px;color: rgb(254, 209, 54);"></a>
         </a>
         <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right"
@@ -23,7 +23,7 @@
             <ul class="navbar-nav ml-auto text-uppercase">
                 <!-- DI PA NAREREAD YUNG SA PROJECTS -->
                 <li class="nav-item"><a class="nav-link js-scroll-trigger"
-                        href="../../Projects/projects_arch.php">Projects</a></li>
+                        href="../../users/Projects/project_arch.php">Projects</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger"
                         href="../../users/CE/estimator try.php">ESTIMATOR</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#item1">Message</a></li>
