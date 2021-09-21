@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="../Create Project/assetsCP/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../Create Project/assetsCP/bootstrap/css/bootstrapCP.min.css">
 <link rel="stylesheet" href="../Create Project/assetsCP/fonts/font-awesome.min.css">
 <link rel="stylesheet" href="../Create Project/assetsCP/css/stylesCP.css">
 
@@ -70,7 +70,7 @@
                 </div>
             </div>
         </div>
-<script src="../Create Project/assetsCP/js/jquery.min.js"></script>
-<script src="../Create Project/assetsCP/bootstrap/js/bootstrap.min.js"></script>
+<script src="../Create Project/assetsCP/js/jqueryCP.min.js"></script>
+<script src="../Create Project/assetsCP/bootstrap/js/bootstrapCP.min.js"></script>
 <script src="../Create Project/assetsCP/js/bs-init.js"></script>
-<script src="../Create Project/assetsCP/js/createproject.js"></script>
+<script src="../Create Project/assetsCP/js/createprojectCP.js"></script>
