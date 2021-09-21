@@ -12,9 +12,11 @@ var APIKEY = "3VLMJaxNxqrL9irFAm0RJuJ8ELNry3v9";
 
 
 // GETTING USER COORDINATES 
+
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
+    //navigator.geolocation.getCurrentPosition(showPosition);
+    navigator.geolocation.watchPosition(showPosition);
   }
 }
 
