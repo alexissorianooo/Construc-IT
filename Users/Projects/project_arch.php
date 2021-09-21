@@ -282,7 +282,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                 </div>
             </div>
         </div> -->
-        <?php include '../../users/Create Project/createprojectTrash.php'; ?>
+        <?php include '../../users/Create Project/createprojectMODAL.php'; ?>
         
     </section>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>

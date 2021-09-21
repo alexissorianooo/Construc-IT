@@ -1,14 +1,10 @@
 <link rel="icon" href="../../assets/img/logo3-white.png">
 
 <!-- NAVIGATION BAR -->
-<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav" style="position: fixed;">
         <div class="container">
 
-            <!-- LOGO -->
-            <a class="navbar-brand nav-link js-scroll-trigger" href="../../users/Architect/architect main.php" style="background: url(&quot;../../assets/img/logo3-white.png&quot;) center / contain no-repeat, transparent;width: 162px;height: 55px;margin-top: 0px;color: rgb(254, 209, 54);"></a>      </a>
-            <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-            </button>
+            
             <?php
             session_start();
 
@@ -20,7 +16,15 @@
 
                 if($_SESSION["usertype_fk"] == "projectmanager"){
                     echo  
-                    '<!-- NAVIGATION LINKS -->
+                    '
+                    <!-- LOGO -->
+                    <a class="navbar-brand nav-link js-scroll-trigger" href="../../users/Project Manager/pm main.php.php" style="background: url(&quot;../../assets/img/logo3-white.png&quot;) center / contain no-repeat, transparent;width: 162px;height: 55px;margin-top: 0px;color: rgb(254, 209, 54);"></a>      </a>
+                    <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    
+                    
+                    <!-- NAVIGATION LINKS -->
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ml-auto text-uppercase">
                             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../users/Projects/project_arch.php">Projects</a></li>
@@ -34,7 +38,14 @@
 
                 if($_SESSION["usertype_fk"] == "architect"){
                     echo  
-                    '<!-- NAVIGATION LINKS -->
+                    '
+                    <!-- LOGO -->
+                    <a class="navbar-brand nav-link js-scroll-trigger" href="../../users/Projects/project_arch.php" style="background: url(&quot;../../assets/img/logo3-white.png&quot;) center / contain no-repeat, transparent;width: 162px;height: 55px;margin-top: 0px;color: rgb(254, 209, 54);"></a>      </a>
+                    <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- NAVIGATION LINKS -->
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ml-auto text-uppercase">
                             <li class="nav-item openModal"><a class="nav-link js-scroll-trigger" data-toggle="modal" href="#createProjectModal">Create Project</a></li>
@@ -48,20 +59,14 @@
                  
                 // echo 
                 //     "<script>
-                //     $(document).ready(function(){
-                //         $('.openModal').on('click',function(){
-                //             var dataURL = $(this).attr('data-href');
-                //             $('.modal-body').load(dataURL,function(){
-                //                 $('#createProjectModal').modal({show:true});
-                //             });
-                //         }); 
-                //     });
+                //         src='../../assets/js/header-estimator.js';
+                    
                 //     </script>";
                 
             ?>
         </div>
         
     </nav>
-    <?php include '../../users/Create Project/createprojectTrash.php'; ?>
+    <?php include '../../users/Create Project/createprojectMODAL.php'; ?>
 
     

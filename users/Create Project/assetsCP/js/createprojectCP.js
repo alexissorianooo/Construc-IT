@@ -47,14 +47,14 @@ function createForm(){
     var input = label.appendChild(document.createElement("input"));
     input.setAttribute("class", "form-control d-inline forID");
     input.setAttribute("type", "text");
-    input.setAttribute("style", "border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px;");
+    input.setAttribute("style", "border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px;");
     input.setAttribute("placeholder", "New Activity " +idnum);
     // input.setAttribute("id", "additional_input"+idnum);
     // inputID = "additional_input"+idnum;
     input.id= "additional_input"+idnum;
     inputID = input.id;
     console.log(inputID);
-    input.disabled=true;
+    // input.disabled=true;
     
     
     //DELETE BUTTON
@@ -63,7 +63,7 @@ function createForm(){
     //getButtonID for getting ID
     
     button1.setAttribute("type", "button");
-    button1.setAttribute("style","height: 53px;background: var(--white);color: var(--dark);border-width: 0px;margin: 1px;");
+    button1.setAttribute("style","height: 53px;background: var(--white);color: var(--dark);border-width: 0px;margin: 1px;max-width: 67px;");
     
     button1.id ="delbutton"+delbuttonnum; //ID
     delbuttonID = button1.id; //ID
@@ -73,7 +73,7 @@ function createForm(){
     
     var icon1 = button1.appendChild(document.createElement("i"));
     icon1.setAttribute("class", "fa fa-trash-o float-right align-items-center align-content-center");
-    icon1.setAttribute("style", "font-size: 38px;color: #000000;");
+    icon1.setAttribute("style", "font-size: 38px;color: #000000; max-width: 67px;");
     
     
     //EDIT BUTTON
