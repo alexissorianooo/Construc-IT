@@ -54,7 +54,7 @@ function createForm(){
     input.id= "additional_input"+idnum;
     inputID = input.id;
     console.log(inputID);
-    input.disabled=true;
+    // input.disabled=true;
     
     
     //DELETE BUTTON

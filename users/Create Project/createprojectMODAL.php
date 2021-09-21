@@ -7,7 +7,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h3 class="text-center">Create Project TRASH</h3><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="max-width: 16.97px">×</span></button>
+                        <h3 class="text-center">Create Project</h3><button type="button" class="close" data-dismiss="modal" aria-label="Close" style="max-width: 64.31px; max-height: 38px;"><span aria-hidden="true" style="max-width: 16.97px">×</span></button>
                     </div>
                     <div class="modal-body">
                         <form method="post">
@@ -24,6 +24,16 @@
                                         </tr>
                                         <tr>
                                             <td>Deadline<input class="form-control" type="date"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Project Manager 
+
+                                                <select style="width: 320px;height: 38px;" id="usertype" name="usertypeSELECT">
+                                                    <option value="client" selected>Client</option>
+                                                    <option value="architect">Architect</option>
+                                                    <option value="projectmanager">Project Manager</option>
+                                                </select>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -66,7 +76,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" type="button" style="max-width: 64.31px; max-height: 38px;">Close</button><button class="btn btn-primary" type="button">Create</button></div>
+                    <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" type="button" style="max-width: 64.31px; max-height: 38px;">Close</button><button class="btn btn-primary" type="button" style="max-width: 64.31px; max-height: 38px;">Create</button></div>
                 </div>
             </div>
         </div>
