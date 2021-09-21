@@ -5,11 +5,9 @@ var long;  //EAST
 var dest_lati;
 var dest_long;
 var map;
-var service;
-var infowindow;
+// var service;
 var loc;
 var APIKEY = "3VLMJaxNxqrL9irFAm0RJuJ8ELNry3v9";  
-
 
 // GETTING USER COORDINATES 
 function getLocation() {
@@ -18,17 +16,30 @@ function getLocation() {
   }
 }
 
+
+
 function showPosition(position) {
   lati= position.coords.latitude; 
   long= position.coords.longitude;
   loc = { lat: lati, lng: long };
-  tomtom();
-  // search();
+  console.log(loc)
+  // ALEXIS COORDINATE 
+  // loc = { lat: '14.544857919758229', lng: '121.07995448358471' };  
+  tomtom();  
 }
-        
+
+
+
+var options = {
+  enableHighAccuracy: true,
+  // timeout: 5000,
+  maximumAge: 0
+};
 
 // TOMTOM DEVS API 
+// INITIALIZING MAP
 function tomtom() {
+  
   map = tt.map({
       key: APIKEY,
       container: "map",
@@ -39,7 +50,10 @@ function tomtom() {
 }
 
 
-function search() {
+
+//FINDING NEAREST HARDWARE STORE NEAR THE 
+//USERS CURRENT LOCATION
+function search() {  
   tt.services.fuzzySearch({
     key: APIKEY,
     query: "Hardware Store",
@@ -56,12 +70,14 @@ function search() {
 }
 
 
+
+// GETS THE LOCATION OF THE HARDWARE STORE 
+// VALIDATES IF THE USER IS ALREADY AT THE HARDWARE STORE, RO RE ROUTING
 function handleResults(result) {
   if(result.results) {
     console.log(result)
-    var current = result.results[0].position
+    var current = result.results[0].position    
     if (loc == current){
-
       // IF THE CURRENT LOCATION IS AT A HARDWARE STORE THE 
       // MAP WILL REDIRECT THE USER TO THE OTHER NEAREST HARDWARE STORE
       moveMap(result.results[1].position)
@@ -69,9 +85,12 @@ function handleResults(result) {
     else 
       moveMap(result.results[0].position)
   }
+  result.results[0].position
 }
 
 
+
+//SETS THE MAP AND DRAWS THE LOCATION OF THE USER AND THE HARDWARE STORE
 function moveMap(lnglat) {
   var daan = [loc, lnglat]
   map.flyTo({
@@ -103,35 +122,3 @@ function moveMap(lnglat) {
     map.fitBounds(bounds, {padding: 20});
   });
 }
-
-
-
-  // .then(function(routeData) {
-  //   var geojson = routeData.toGeoJson();
-  //   map.addLayer({
-  //       'id': 'route',
-  //       'type': 'line',
-  //       'source': {
-  //           'type': 'geojson',
-  //           'data': geojson
-  //       },
-  //       'paint': {
-  //           'line-color': '#00d7ff',
-  //           'line-width': 8
-  //       }
-  //   });
-  //   var bounds = new tt.LngLatBounds();
-  //   geojson.features[0].geometry.coordinates.forEach(function(point) {
-  //       bounds.extend(tt.LngLat.convert(point));
-  //   });
-  //   map.fitBounds(bounds, {padding: 20});
-  // });
-
-
-
-
-
-
-
-
-
