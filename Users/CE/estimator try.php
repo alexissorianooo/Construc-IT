@@ -40,7 +40,7 @@
 -->
 
     <section class="container gradient-border" id="calculatorcontainer box">
-        <div style="margin-bottom: 20px; margin-top: 60px; padding-bottom:-20px;">
+        <div style="margin-bottom: 20px; margin-top: 90px; padding-bottom:-20px;">
             <div class="row">
 
                 <!-- FOR THE CALCULATOR BUTTONS -->
