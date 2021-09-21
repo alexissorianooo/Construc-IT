@@ -2,22 +2,23 @@
 // VARIABLES FOR THEIR LOCATION 
 var lati;    //NORTH
 var long;  //EAST
-var dest_lati;
-var dest_long;
 var map;
-// var service;
 var loc;
+var autocomplete;
 var APIKEY = "3VLMJaxNxqrL9irFAm0RJuJ8ELNry3v9";  
 
 // GETTING USER COORDINATES 
 
 function getLocation() {
-  if (navigator.geolocation) {
-    //navigator.geolocation.getCurrentPosition(showPosition);
-    navigator.geolocation.watchPosition(showPosition);
+  if (navigator.geolocation) {  
+    navigator.geolocation.getCurrentPosition(showPosition, errorCallback);
+    // navigator.geolocation.watchPosition(showPosition);    
   }
 }
 
+const errorCallback = (error)  => {
+  alert ("Application needs access to location for the hardware locator to work");
+}
 
 
 function showPosition(position) {
@@ -31,17 +32,9 @@ function showPosition(position) {
 }
 
 
-
-var options = {
-  enableHighAccuracy: true,
-  // timeout: 5000,
-  maximumAge: 0
-};
-
 // TOMTOM DEVS API 
 // INITIALIZING MAP
 function tomtom() {
-  
   map = tt.map({
       key: APIKEY,
       container: "map",
@@ -79,6 +72,7 @@ function handleResults(result) {
   if(result.results) {
     console.log(result)
     var current = result.results[0].position    
+
     if (loc == current){
       // IF THE CURRENT LOCATION IS AT A HARDWARE STORE THE 
       // MAP WILL REDIRECT THE USER TO THE OTHER NEAREST HARDWARE STORE
@@ -87,7 +81,6 @@ function handleResults(result) {
     else 
       moveMap(result.results[0].position)
   }
-  result.results[0].position
 }
 
 
@@ -124,3 +117,7 @@ function moveMap(lnglat) {
     map.fitBounds(bounds, {padding: 20});
   });
 }
+
+
+
+

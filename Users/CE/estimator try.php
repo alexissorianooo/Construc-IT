@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 
-
     <script src="assets/js/maps-api.js"></script>
 
     <!-- TOMTOM MAPS API  -->
@@ -288,7 +287,7 @@
     <section class="text-center">
         <h1 class="text-center">Hardware Locator</h1>        
         <form class="d-inline-flex">
-            <!-- <input type="text" class="form-control" placeholder="Enter Location" id="locator" /> -->
+            <input type="text" class="form-control" placeholder="Enter Location" id="location" />
             <button id="search-store" onclick="getLocation()" class="btn btn-primary" type="button" style="color: var(--white);background: var(--yellow);width: 66px;height: 52px;"><i class="fa fa-search" style="background: var(--warning);"></i></button>
         </form>
         <section class="map-clean">
@@ -304,6 +303,8 @@
             <div id="map" style="min-height:40vw;"> </div>
 
             <script> document.getElementById("search-store").click(); </script>
+            
+
         </section>
     </section>
 
@@ -330,3 +331,8 @@
 
 </body>
 </html>
+
+
+// <script async
+//     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBezl5WPT_086R8XoLYRnPElv6G_pBQz7U&libraries=places&callback=initMap" async defer>
+// </script>
