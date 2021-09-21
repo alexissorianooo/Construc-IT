@@ -7,7 +7,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h3 class="text-center">Create Project TRASH</h3><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h3 class="text-center">Create Project TRASH</h3><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="max-width: 16.97px">×</span></button>
                     </div>
                     <div class="modal-body">
                         <form method="post">
@@ -58,7 +58,7 @@
                                         </tr>
                                         <tr id="additional_button">
                                             <td class="text-center" id="additional_cell_button">
-                                                <div class="text-center"><button class="btn btn-primary" type="button" style="margin-top: 20px;" onclick="createForm()">Add more activities</button></div>
+                                                <div class="text-center"><button class="btn btn-primary" type="button" style="margin-top: 20px; max-width: 161.83px; max-height: 38px;" onclick="createForm()">Add more activities</button></div>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -66,7 +66,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" type="button">Close</button><button class="btn btn-primary" type="button">Create</button></div>
+                    <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" type="button" style="max-width: 64.31px; max-height: 38px;">Close</button><button class="btn btn-primary" type="button">Create</button></div>
                 </div>
             </div>
         </div>

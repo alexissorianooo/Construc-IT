@@ -46,17 +46,11 @@
                     </div>';
                 }
                  
-                // echo 
-                //     "<script>
-                //     $(document).ready(function(){
-                //         $('.openModal').on('click',function(){
-                //             var dataURL = $(this).attr('data-href');
-                //             $('.modal-body').load(dataURL,function(){
-                //                 $('#createProjectModal').modal({show:true});
-                //             });
-                //         }); 
-                //     });
-                //     </script>";
+                echo 
+                    "<script>
+                        src='../../assets/js/header-estimator.js';
+                    
+                    </script>";
                 
             ?>
         </div>

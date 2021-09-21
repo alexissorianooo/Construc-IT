@@ -63,7 +63,7 @@ function createForm(){
     //getButtonID for getting ID
     
     button1.setAttribute("type", "button");
-    button1.setAttribute("style","height: 53px;background: var(--white);color: var(--dark);border-width: 0px;margin: 1px;");
+    button1.setAttribute("style","height: 53px;background: var(--white);color: var(--dark);border-width: 0px;margin: 1px;max-width: 67px;");
     
     button1.id ="delbutton"+delbuttonnum; //ID
     delbuttonID = button1.id; //ID
@@ -73,7 +73,7 @@ function createForm(){
     
     var icon1 = button1.appendChild(document.createElement("i"));
     icon1.setAttribute("class", "fa fa-trash-o float-right align-items-center align-content-center");
-    icon1.setAttribute("style", "font-size: 38px;color: #000000;");
+    icon1.setAttribute("style", "font-size: 38px;color: #000000; max-width: 67px;");
     
     
     //EDIT BUTTON
