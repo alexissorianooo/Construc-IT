@@ -10,9 +10,11 @@ var loc;
 var APIKEY = "3VLMJaxNxqrL9irFAm0RJuJ8ELNry3v9";  
 
 // GETTING USER COORDINATES 
+
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
+    //navigator.geolocation.getCurrentPosition(showPosition);
+    navigator.geolocation.watchPosition(showPosition);
   }
 }
 
@@ -22,10 +24,10 @@ function showPosition(position) {
   lati= position.coords.latitude; 
   long= position.coords.longitude;
   loc = { lat: lati, lng: long };
-  console.log(loc)
-  // ALEXIS COORDINATE 
-  // loc = { lat: '14.544857919758229', lng: '121.07995448358471' };  
-  tomtom();  
+  console.log(position.coords);
+  console.log(loc);
+  tomtom();
+  // search();
 }
 
 

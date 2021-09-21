@@ -313,6 +313,8 @@
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/calculator.js"></script>
 
+    
+
     <!-- FOOTER -->
 <?php include '../../layout/footer.php' ?>
 
