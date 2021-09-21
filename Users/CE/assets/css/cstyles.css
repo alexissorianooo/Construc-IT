@@ -46,6 +46,16 @@ body {
 
 /*End of Construction Estimator Title*/
 
+/* Button Text */
+.btn-txt {
+    font-family:'Segoe UI', Tahoma, sans-serif;
+    font-size: 50px;
+    color: gray;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: black;
+    text-transform: uppercase;
+}
+
 /* Border */
 
 #box {
