@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/Map-Clean.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/cstyles.css">
 
     <script src="assets/js/maps-api.js"></script>
 
@@ -23,17 +23,23 @@
     <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/services/services-web.min.js'></script>
 </head>
 
-<body id="page-top">
+<body id="page-top" style="background: url(&quot;../../assets/img/2.jpg&quot;); background-size: cover; background-repeat: no-repeat; height:175%">
     
     
 
 <!-- FOR THE CALCULATORS -->
-
-    <section class="text-center"> 
-        <h1 id="constitle">Construction Estimator</h1>
+<!--
+    <section class="text-center" > 
+        <h1 class="constyle" id="constitle">Construction Estimator</h1>
     </section>
-    <section style="margin-bottom: 20px;">
-        <div class="container" style="border-style: solid;" id="calculatorcontainer">
+-->
+<!--
+<body id="page top">
+    <script src="assets/js/google-maps.js"></script>
+-->
+
+    <section class="container gradient-border" id="calculatorcontainer box">
+        <div style="margin-bottom: 20px; margin-top: 90px; padding-bottom:-20px;">
             <div class="row">
 
                 <!-- FOR THE CALCULATOR BUTTONS -->
@@ -284,24 +290,23 @@
     </section>
 
     <!-- FOR THE LOCATOR -->
-    <section class="text-center">
-        <h1 class="text-center">Hardware Locator</h1>        
-        <form class="d-inline-flex">
-            <input type="text" class="form-control" placeholder="Enter Location" id="location" />
-            <button id="search-store" onclick="getLocation()" class="btn btn-primary" type="button" style="color: var(--white);background: var(--yellow);width: 66px;height: 52px;"><i class="fa fa-search" style="background: var(--warning);"></i></button>
-        </form>
-        <section class="map-clean">
-            <div class="container">
+    <section class="text-center bg-dark">
+        <h1 class="btn-txt" style="padding-top: 40px;">Hardware Locator</h1>        
+            <form class="d-inline-flex">
+            <!-- <input type="text" class="form-control" placeholder="Enter Location" id="locator" /> -->
+                <button id="search-store" onclick="getLocation()" class="btn btn-primary" type="button" style="color: var(--white);background: var(--yellow);width: 66px;height: 52px;"><i class="fa fa-search" style="background: var(--warning);"></i></button>
+            </form>
+        <section class="map-clean bg-dark">
+<!--    Additional text information (currently not used)
+            <div class="container">         
                 <div class="intro">
                     <h2 class="text-center">Location </h2>
                     <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
                 </div>
             </div>
-            
-
+-->
             <!-- DIV FOR THE MAP -->
             <div id="map" style="min-height:40vw;"> </div>
-
             <script> document.getElementById("search-store").click(); </script>
             
 

@@ -13,9 +13,10 @@
             <!-- NAVIGATION LINKS -->
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto text-uppercase">
-                    <li class="nav-item"><a class="nav-link" href="../../users/CE/estimator try.php">ESTIMATOR</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" data-toggle="modal" href="../includes/logoutdb.php">LOGOUT</a></li> -->
-                    <li class="nav-item"><a class="nav-link" href="../includes/logoutdb.php">LOGOUT</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../users/Project Manager/pm main.php">Projects</a></li>
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../users/CE/estimator try.php">ESTIMATOR</a></li>
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Message</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../../includes/logoutdb.php">LOGOUT</a></li>
                 </ul>
             </div>
         </div>

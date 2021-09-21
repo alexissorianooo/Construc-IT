@@ -37,10 +37,6 @@
   color: #888;
 }
 
-.navigation-clean-button .navbar-collapse, .navigation-clean-button .form-inline {
-  border-top-color: #ddd;
-}
-
 .navigation-clean-button .navbar-nav a.active, .navigation-clean-button .navbar-nav > .show > a {
   background: none;
   box-shadow: none;
@@ -108,30 +104,3 @@
   background: #66d7d7;
 }
 
-
-#locator {
-  width: 500px;
-  align-self: center;
-  margin: auto;
-}
-
-input[type=button] {
-  margin: 20px 20px;
-}
-
-input[type=button] {
-  margin: 20px 20px;
-}
-
-
-button {
-  margin: 20px 20px;
-  width: 200px;
-  height: 60px;
-  max-height: 60px;
-  max-width: 200px;
-}
-
-.form-control{
-  margin: 0px;
-}

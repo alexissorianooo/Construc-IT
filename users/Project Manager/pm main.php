@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,17 +18,10 @@
     <!-- NAVIGATION TAB -->
     <?php include '../../layout/header-pm.php' ?>
 
-    
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
     <p>HI YOU'RE AT PROJECT MANAGER PAGE</p>
+    <?php include '../../Users/Project Manager/pm-act.php' ?>
+
+
 
     <!-- FOOTER -->
     <?php include '../../layout/footer.php' ?>
@@ -39,7 +33,7 @@
     <script src="../../assets/js/agency.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
     <script src="../../assets/js/Simple-Slider.js"></script>
-    
-</body>
-</html>
 
+</body>
+
+</html>
