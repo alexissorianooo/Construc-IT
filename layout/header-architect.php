@@ -22,6 +22,8 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto text-uppercase">
                 <!-- DI PA NAREREAD YUNG SA PROJECTS -->
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" data-toggle="modal"
+                        href="#createProjectModal">Create Project</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger"
                         href="../../users/Projects/project_arch.php">Projects</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger"

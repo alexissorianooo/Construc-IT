@@ -23,7 +23,6 @@
                     '<!-- NAVIGATION LINKS -->
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ml-auto text-uppercase">
-                            
                             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../users/Projects/project_arch.php">Projects</a></li>
                             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../users/CE/estimator try.php">ESTIMATOR</a></li>
                             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Message</a></li>
@@ -38,7 +37,7 @@
                     '<!-- NAVIGATION LINKS -->
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ml-auto text-uppercase">
-                            
+                            <li class="nav-item openModal"><a class="nav-link js-scroll-trigger" data-toggle="modal" href="#createProjectModal">Create Project</a></li>
                             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../users/Projects/project_arch.php">Projects</a></li>
                             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../users/CE/estimator try.php">ESTIMATOR</a></li>
                             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Message</a></li>
@@ -46,7 +45,23 @@
                         </ul>
                     </div>';
                 }
-                        
+                 
+                // echo 
+                //     "<script>
+                //     $(document).ready(function(){
+                //         $('.openModal').on('click',function(){
+                //             var dataURL = $(this).attr('data-href');
+                //             $('.modal-body').load(dataURL,function(){
+                //                 $('#createProjectModal').modal({show:true});
+                //             });
+                //         }); 
+                //     });
+                //     </script>";
+                
             ?>
         </div>
+        
     </nav>
+    <?php include '../../users/Create Project/createprojectTrash.php'; ?>
+
+    
