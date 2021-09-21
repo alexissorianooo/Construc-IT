@@ -132,3 +132,6 @@ button {
   max-width: 200px;
 }
 
+.form-control{
+  margin: 0px;
+}
