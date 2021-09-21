@@ -292,23 +292,22 @@
 
     <!-- FOR THE LOCATOR -->
     <section class="text-center bg-dark">
-        <h1 class="text-center" style="padding-top: 40px;">Hardware Locator</h1>        
-        <form class="d-inline-flex">
+        <h1 class="btn-txt" style="padding-top: 40px;">Hardware Locator</h1>        
+            <form class="d-inline-flex">
             <!-- <input type="text" class="form-control" placeholder="Enter Location" id="locator" /> -->
-            <button id="search-store" onclick="getLocation()" class="btn btn-primary" type="button" style="color: var(--white);background: var(--yellow);width: 66px;height: 52px;"><i class="fa fa-search" style="background: var(--warning);"></i></button>
-        </form>
+                <button id="search-store" onclick="getLocation()" class="btn btn-primary" type="button" style="color: var(--white);background: var(--yellow);width: 66px;height: 52px;"><i class="fa fa-search" style="background: var(--warning);"></i></button>
+            </form>
         <section class="map-clean bg-dark">
-            <div class="container">
+<!--    Additional text information (currently not used)
+            <div class="container">         
                 <div class="intro">
                     <h2 class="text-center">Location </h2>
                     <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
                 </div>
             </div>
-            
-
+-->
             <!-- DIV FOR THE MAP -->
             <div id="map" style="min-height:40vw;"> </div>
-
             <script> document.getElementById("search-store").click(); </script>
         </section>
     </section>
