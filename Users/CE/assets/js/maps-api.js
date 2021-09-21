@@ -24,6 +24,8 @@ function showPosition(position) {
   lati= position.coords.latitude; 
   long= position.coords.longitude;
   loc = { lat: lati, lng: long };
+  console.log(position.coords);
+  console.log(loc);
   tomtom();
   // search();
 }
