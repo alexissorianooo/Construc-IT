@@ -1,0 +1,21 @@
+@media (min-width: 1200px) {
+  html {
+  }
+}
+
+::placeholder {
+  color: black;
+  opacity: 1;
+}
+
+.activityButton {
+  margin: 1.5px;
+}
+
+.activityButton.focus, .activityButton:focus {
+  color: #fff;
+  background-color: orange;
+  border-color: orange;
+  box-shadow: 0 0 0 .2rem rgba(247,140,16,0.5);
+}
+

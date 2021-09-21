@@ -118,7 +118,7 @@ function loginUser($conn, $email, $password){
     $_SESSION["usertype_fk"] = $emailExist["usertype_fk"];
 
     if($_SESSION["usertype_fk"] == "architect"){
-      header("location: ../users/Architect/architect main.php");
+      header("location: ../users/Projects/project_arch.php");
       exit();
     }
     if($_SESSION["usertype_fk"] == "projectmanager"){
