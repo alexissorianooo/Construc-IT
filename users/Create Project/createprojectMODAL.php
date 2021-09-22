@@ -29,9 +29,9 @@
                                             <td>Project Manager 
 
                                                 <select style="width: 320px;height: 38px;" id="usertype" name="usertypeSELECT">
-                                                    <option value="client" selected>Client</option>
-                                                    <option value="architect">Architect</option>
-                                                    <option value="projectmanager">Project Manager</option>
+                                                    <option value="client" selected>Project Manager 1</option>
+                                                    <option value="architect">Project Manager 2</option>
+                                                    <option value="projectmanager">Project Manager 3</option>
                                                 </select>
                                             </td>
                                         </tr>
