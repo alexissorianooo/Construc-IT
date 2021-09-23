@@ -23,7 +23,7 @@
     <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/services/services-web.min.js'></script>
 </head>
 
-<body id="page-top" style="background: url(&quot;../../assets/img/2.jpg&quot;); background-size: cover; background-repeat: no-repeat; height:175%">
+<body class="masthead" id="page-top" style="background: url(&quot;../../assets/img/1.jpg&quot;); background-size: cover; background-repeat: no-repeat; height:50%">
     
     
 
