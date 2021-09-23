@@ -19,3 +19,20 @@
   box-shadow: 0 0 0 .2rem rgba(247,140,16,0.5);
 }
 
+.sec {
+  background-color: #343a40 !important;
+}
+
+.center {
+  padding-left: 85px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  -webkit-text-stroke: 0.2px;
+  -webkit-text-stroke-color: darkslategray;
+}
+
+.lefttext {
+  text-align: left;
+  font-size: 18px;
+}
