@@ -1,8 +1,3 @@
-<?php
-// require_once '../../includes/db.php';
-// require_once '../../includes/functions.php';
-// echo "<script type='text/javascript'>alert('ERROR STATEMENT');</script>";
-?>
 
 
 <link rel="stylesheet" href="../Create Project/assetsCP/bootstrap/css/bootstrapCP.min.css">

@@ -20,18 +20,20 @@ if(isset($_POST['createButton'])){
     $project_input5 = $_POST['project_input5'];
     $project_input6 = $_POST['project_input6'];
     $project_input7 = $_POST['project_input7'];
-    $project_input8 = $_POST['project_input8'];
+    echo $project_input8 = $_POST['project_input8'];
 
-    require_once 'db.php';
-    require_once 'functions.php';
+    echo $project_input9 = $_POST['additional_input_name1'];
 
-    if(emptyInputcreate($project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8) !==false){
-        header("location: ../users/Projects/project_arch.php?error=emptyinput");
-        exit();
-    } 
+    // require_once 'db.php';
+    // require_once 'functions.php';
+
+    // if(emptyInputcreate($project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8) !==false){
+    //     header("location: ../users/Projects/project_arch.php?error=emptyinput");
+    //     exit();
+    // } 
    
 
-    createProject($conn, $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8);
+    // createProject($conn, $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8);
     
 
 

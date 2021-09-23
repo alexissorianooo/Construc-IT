@@ -49,10 +49,12 @@ function createForm(){
     input.setAttribute("type", "text");
     input.setAttribute("style", "border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px;");
     input.setAttribute("placeholder", "New Activity " +idnum);
+    // input.setAttribute("name", "input_name"+idnum);
     // input.setAttribute("id", "additional_input"+idnum);
     // inputID = "additional_input"+idnum;
+    input.name="additional_name"+idnum;
     input.id= "additional_input"+idnum;
-    inputID = input.id;
+    inputID = input.name;
     console.log(inputID);
     // input.disabled=true;
     
