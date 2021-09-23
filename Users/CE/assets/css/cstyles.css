@@ -39,7 +39,6 @@ body {
     padding-bottom: 20px;
     -webkit-text-stroke: 1px;
     -webkit-text-stroke-color: darkslategray;
-    -webkit-background-clip: text;
     background-image: linear-gradient(to left, gray, darkgray, darkslategray);
 }
 
@@ -61,6 +60,8 @@ body {
 #box {
     display: flex;
     color: white;
+    align-items: center;
+    justify-content: center;
   }
   .gradient-border {
     --borderWidth: 5px;
@@ -71,9 +72,10 @@ body {
   .gradient-border:after {
     content: '';
     position: absolute;
-    top: calc(-1 * var(--borderWidth));
-    left: 5px;
-    padding-right: 20px;
+    top: -9px;
+    left: 6px;
+  /*  top: calc(-1 * var(--borderWidth)); */
+  /*  left: calc(-1 * var(--borderWidth)); */
     height: calc(100% + var(--borderWidth) * 2);
     width: calc(100% + var(--borderWidth) * 2);
     background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
