@@ -6,9 +6,11 @@
 <div class="modal fade" role="dialog" tabindex="-1" data-toggle="tooltip" data-bss-tooltip="" id="createProjectModal" style="height: 100%;">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="text-center">Create Project</h3><button type="button" class="close" data-dismiss="modal" aria-label="Close" style="max-width: 64.31px; max-height: 38px;"><span aria-hidden="true" style="max-width: 16.97px">×</span></button>
-                    </div>
+                    <section class="sec">
+                        <div class="modal-header">
+                            <h3 class="center">Create Project</h3><button type="button" class="close" data-dismiss="modal" aria-label="Close" style="max-width: 64.31px; max-height: 38px;"><span aria-hidden="true" style="max-width: 16.97px">×</span></button>
+                        </div>
+                    </section>
                     <div class="modal-body">
                         <form method="post">
                             <div class="table-responsive">
@@ -47,7 +49,7 @@
                                     </thead>
                                     <tbody>
                                         <tr class="text-center">
-                                            <td class="text-center">Proposal<div class="text-center"><label class="text-left" style="width: 100%;"><input class="form-control form-control-lg d-inline" type="text" id="input_design" style="border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px" disabled="" placeholder="Design"><button class="btn btn-primary float-right activityButton" data-toggle="tooltip" data-bss-tooltip="" id="input_design" type="button" style="height: 53px;width: 67px;color: var(--white);background: transparent;border-width: 0px;margin: 1px;" onclick="toggleEnable(&#39;input_design&#39;)" title="Rename"><i class="fa fa-edit float-right align-items-center align-content-center" style="font-size: 38px;color: #000000;background: #ffffff;"></i></button></label></div>
+                                            <td class="lefttext">Proposal<div class="text-center" style="padding-top: 3px"><label class="text-left" style="width: 100%;"><input class="form-control form-control-lg d-inline" type="text" id="input_design" style="border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px" disabled="" placeholder="Design"><button class="btn btn-primary float-right activityButton" data-toggle="tooltip" data-bss-tooltip="" id="input_design" type="button" style="height: 53px;width: 67px;color: var(--white);background: transparent;border-width: 0px;margin: 1px;" onclick="toggleEnable(&#39;input_design&#39;)" title="Rename"><i class="fa fa-edit float-right align-items-center align-content-center" style="font-size: 38px;color: #000000;background: #ffffff;"></i></button></label></div>
                                             </td>
                                         </tr>
                                         <tr>
