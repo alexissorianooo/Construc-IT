@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="assets/css/cstyles.css">
 
-
     <script src="assets/js/maps-api.js"></script>
 
     <!-- TOMTOM MAPS API  -->
@@ -309,6 +308,8 @@
             <!-- DIV FOR THE MAP -->
             <div id="map" style="min-height:40vw;"> </div>
             <script> document.getElementById("search-store").click(); </script>
+            
+
         </section>
     </section>
 
@@ -335,3 +336,8 @@
 
 </body>
 </html>
+
+
+// <script async
+//     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBezl5WPT_086R8XoLYRnPElv6G_pBQz7U&libraries=places&callback=initMap" async defer>
+// </script>
