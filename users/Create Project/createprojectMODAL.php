@@ -32,12 +32,15 @@
                                         <td>Project Name<input class="form-control" type="text" style="margin: 0px;" name="project_name"></td>
                                     </tr>
                                     <tr>
-                                        <td>Deadline<input class="form-control" type="date" style="margin: 0px;" name="project_deadline"></td>
+                                        <td>Start Date<input class="form-control" type="date" style="margin: 0px;" name="project_startdeadline"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Deadline<input class="form-control" type="date" style="margin: 0px;" name="project_enddeadline"></td>
                                     </tr>
                                     <tr>
                                         <td>Project Manager 
 
-                                            <select style="width: 320px;height: 38px;" id="usertype" name="usertypeSELECT">
+                                            <select style="width: 320px;height: 38px;" id="usertype" name="project_pmSELECT">
                                                 <option disabled selected>--Available Project Managers--</option>
                                                 <?php
                                                     
@@ -84,20 +87,69 @@
                                 </thead>
                                 <tbody>
                                     <tr class="text-center">
-                                        <td class="text-center">Proposal<div class="text-center"><label class="text-left" style="width: 100%;"><input class="form-control form-control-lg d-inline" type="text" id="input_design" style="border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px" disabled="" placeholder="Design"><button class="btn btn-primary float-right activityButton" data-toggle="tooltip" data-bss-tooltip="" id="input_design" type="button" style="height: 53px;width: 67px;color: var(--white);background: transparent;border-width: 0px;margin: 1px;" onclick="toggleEnable(&#39;input_design&#39;)" title="Rename"><i class="fa fa-edit float-right align-items-center align-content-center" style="font-size: 38px;color: #000000;background: #ffffff;"></i></button></label></div>
+                                        <td class="text-center">Proposal<div class="text-center"><label class="text-left" style="width: 100%;">
+                                            <input class="form-control form-control-lg d-inline" type="text" id="input_design" style="border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px" value="Design" name="project_input1">
+                                            <!-- <button class="btn btn-primary float-right activityButton" data-toggle="tooltip" data-bss-tooltip="" id="input_design" type="button" style="height: 53px;width: 67px;color: var(--white);background: transparent;border-width: 0px;margin: 1px;" onclick="toggleEnable(&#39;input_design&#39;)" title="Rename">
+                                            <i class="fa fa-edit float-right align-items-center align-content-center" style="font-size: 38px;color: #000000;background: #ffffff;">
+                                            </i></button> -->
+                                            </label></div>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">Contract Document Phase<div class="text-center"><label class="text-left" style="width: 100%;"><input class="form-control d-inline" type="text" id="input_CPD1" style="border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px" placeholder="Architectural Plans" disabled=""><button class="btn btn-primary float-right activityButton" data-toggle="tooltip" data-bss-tooltip="" type="button" style="height: 53px;width: 67px;color: var(--white);background: var(--white);border-width: 0px;margin: 1px;" onclick="toggleEnable(&#39;input_CPD1&#39;)" title="Rename"><i class="fa fa-edit float-right align-items-center align-content-center" style="font-size: 38px;color: #000000;"></i></button></label></div>
-                                            <div class="text-center"><label class="text-left" style="width: 100%;"><input class="form-control d-inline" type="text" id="input_CPD2" style="border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px" placeholder="Structural Plans" disabled=""><button class="btn btn-primary float-right activityButton" data-toggle="tooltip" data-bss-tooltip="" type="button" style="height: 53px;width: 67px;color: var(--white);background: var(--white);border-width: 0px;margin: 1px;" onclick="toggleEnable(&#39;input_CPD2&#39;)" title="Rename"><i class="fa fa-edit float-right align-items-center align-content-center" style="font-size: 38px;color: #000000;"></i></button></label></div>
-                                            <div class="text-center"><label class="text-left" style="width: 100%;max-height: 53px;"><input class="form-control d-inline" type="text" id="input_CPD3" style="border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px" placeholder="Mechanical, Electrical, Plumbing, and Fire" disabled=""><button class="btn btn-primary float-right activityButton" data-toggle="tooltip" data-bss-tooltip="" type="button" style="height: 53px;width: 67px;color: var(--white);background: var(--white);border-width: 0px;margin: 1px;" onclick="toggleEnable(&#39;input_CPD3&#39;)" title="Rename"><i class="fa fa-edit float-right align-items-center align-content-center" style="font-size: 38px;color: #000000;"></i></button></label></div>
+                                        <td class="text-center">Contract Document Phase
+                                            <div class="text-center">
+                                                <label class="text-left" style="width: 100%;">
+                                                <input class="form-control d-inline" type="text" id="input_CPD1" style="border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px" value="Architectural Plans"  name="project_input2">
+                                                <!-- <button class="btn btn-primary float-right activityButton" data-toggle="tooltip" data-bss-tooltip="" type="button" style="height: 53px;width: 67px;color: var(--white);background: var(--white);border-width: 0px;margin: 1px;" onclick="toggleEnable(&#39;input_CPD1&#39;)" title="Rename">
+                                                <i class="fa fa-edit float-right align-items-center align-content-center" style="font-size: 38px;color: #000000;">
+                                                </i></button> -->
+                                                </label></div>
+                                            <div class="text-center">
+                                                <label class="text-left" style="width: 100%;">
+                                                <input class="form-control d-inline" type="text" id="input_CPD2" style="border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px" value="Structural Plans"  name="project_input3">
+                                                <!-- <button class="btn btn-primary float-right activityButton" data-toggle="tooltip" data-bss-tooltip="" type="button" style="height: 53px;width: 67px;color: var(--white);background: var(--white);border-width: 0px;margin: 1px;" onclick="toggleEnable(&#39;input_CPD2&#39;)" title="Rename">
+                                                <i class="fa fa-edit float-right align-items-center align-content-center" style="font-size: 38px;color: #000000;">
+                                                </i></button> -->
+                                                </label></div>
+                                            <div class="text-center">
+                                                <label class="text-left" style="width: 100%;max-height: 53px;">
+                                                <input class="form-control d-inline" type="text" id="input_CPD3" style="border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px" value="Mechanical, Electrical, Plumbing, and Fire" name="project_input4">
+                                                <!-- <button class="btn btn-primary float-right activityButton" data-toggle="tooltip" data-bss-tooltip="" type="button" style="height: 53px;width: 67px;color: var(--white);background: var(--white);border-width: 0px;margin: 1px;" onclick="toggleEnable(&#39;input_CPD3&#39;)" title="Rename">
+                                                <i class="fa fa-edit float-right align-items-center align-content-center" style="font-size: 38px;color: #000000;">
+                                                </i></button> -->
+                                                </label></div>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">Permit Processing<div class="text-center"><label class="text-left" style="width: 100%;"><input class="form-control d-inline" type="text" id="input_PP1" style="border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px;" placeholder="Barangay Permit" disabled=""><button class="btn btn-primary float-right activityButton" data-toggle="tooltip" data-bss-tooltip="" type="button" style="height: 53px;width: 67px;color: var(--white);background: var(--white);border-width: 0px;margin: 1px;" onclick="toggleEnable(&#39;input_PP1&#39;)" title="Rename"><i class="fa fa-edit float-right align-items-center align-content-center" style="font-size: 38px;color: #000000;"></i></button></label></div>
-                                            <div class="text-center"><label class="text-left" style="width: 100%;"><input class="form-control d-inline" type="text" id="input_PP2" style="border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px" placeholder="Zoning Permit" disabled=""><button class="btn btn-primary float-right activityButton" data-toggle="tooltip" data-bss-tooltip="" type="button" style="height: 53px;width: 67px;color: var(--white);background: var(--white);border-width: 0px;margin: 1px;" onclick="toggleEnable(&#39;input_PP2&#39;)" title="Rename"><i class="fa fa-edit float-right align-items-center align-content-center" style="font-size: 38px;color: #000000;"></i></button></label></div>
-                                            <div class="text-center"><label class="text-left" style="width: 100%;"><input class="form-control d-inline" type="text" id="input_PP3" style="border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px" placeholder="Bureau of Fire Protection Permit" disabled=""><button class="btn btn-primary float-right activityButton" data-toggle="tooltip" data-bss-tooltip="" type="button" style="height: 53px;width: 67px;color: var(--white);background: var(--white);border-width: 0px;margin: 1px;" onclick="toggleEnable(&#39;input_PP3&#39;)" title="Rename"><i class="fa fa-edit float-right align-items-center align-content-center" style="font-size: 38px;color: #000000;"></i></button></label></div>
-                                            <div class="text-center"><label class="text-left" style="width: 100%;"><input class="form-control d-inline" type="text" id="input_PP4" style="border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px" placeholder="Local Government Permit" disabled=""><button class="btn btn-primary float-right activityButton" data-toggle="tooltip" data-bss-tooltip="" type="button" style="height: 53px;width: 67px;color: var(--white);background: var(--white);border-width: 0px;margin: 1px;" onclick="toggleEnable(&#39;input_PP4&#39;)" title="Rename"><i class="fa fa-edit float-right align-items-center align-content-center" style="font-size: 38px;color: #000000;"></i></button></label></div>
+                                        <td class="text-center">Permit Processing
+                                            <div class="text-center">
+                                                <label class="text-left" style="width: 100%;">
+                                                <input class="form-control d-inline" type="text" id="input_PP1" style="border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px;" value="Barangay Permit"  name="project_input5">
+                                                <!-- <button class="btn btn-primary float-right activityButton" data-toggle="tooltip" data-bss-tooltip="" type="button" style="height: 53px;width: 67px;color: var(--white);background: var(--white);border-width: 0px;margin: 1px;" onclick="toggleEnable(&#39;input_PP1&#39;)" title="Rename">
+                                                <i class="fa fa-edit float-right align-items-center align-content-center" style="font-size: 38px;color: #000000;">
+                                                </i></button> -->
+                                                </label></div>
+                                            <div class="text-center">
+                                                <label class="text-left" style="width: 100%;">
+                                                <input class="form-control d-inline" type="text" id="input_PP2" style="border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px" value="Zoning Permit" name="project_input6">
+                                                <!-- <button class="btn btn-primary float-right activityButton" data-toggle="tooltip" data-bss-tooltip="" type="button" style="height: 53px;width: 67px;color: var(--white);background: var(--white);border-width: 0px;margin: 1px;" onclick="toggleEnable(&#39;input_PP2&#39;)" title="Rename">
+                                                <i class="fa fa-edit float-right align-items-center align-content-center" style="font-size: 38px;color: #000000;">
+                                                </i></button> -->
+                                                </label></div>
+                                            <div class="text-center">
+                                                <label class="text-left" style="width: 100%;">
+                                                <input class="form-control d-inline" type="text" id="input_PP3" style="border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px" value="Bureau of Fire Protection Permit"  name="project_input7">
+                                                <!-- <button class="btn btn-primary float-right activityButton" data-toggle="tooltip" data-bss-tooltip="" type="button" style="height: 53px;width: 67px;color: var(--white);background: var(--white);border-width: 0px;margin: 1px;" onclick="toggleEnable(&#39;input_PP3&#39;)" title="Rename">
+                                                <i class="fa fa-edit float-right align-items-center align-content-center" style="font-size: 38px;color: #000000;">
+                                                </i></button> -->
+                                                </label></div>
+                                            <div class="text-center">
+                                                <label class="text-left" style="width: 100%;">
+                                                <input class="form-control d-inline" type="text" id="input_PP4" style="border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px" value="Local Government Permit"  name="project_input8">
+                                                <!-- <button class="btn btn-primary float-right activityButton" data-toggle="tooltip" data-bss-tooltip="" type="button" style="height: 53px;width: 67px;color: var(--white);background: var(--white);border-width: 0px;margin: 1px;" onclick="toggleEnable(&#39;input_PP4&#39;)" title="Rename">
+                                                <i class="fa fa-edit float-right align-items-center align-content-center" style="font-size: 38px;color: #000000;">
+                                                </i></button> -->
+                                                </label></div>
                                         </td>
                                     </tr>
                                     <tr id="additional_row">
@@ -105,7 +157,8 @@
                                     </tr>
                                     <tr id="additional_button">
                                         <td class="text-center" id="additional_cell_button">
-                                            <div class="text-center"><button class="btn btn-primary" type="button" style="margin-top: 20px; max-width: 161.83px; max-height: 38px;" onclick="createForm()">Add more activities</button></div>
+                                            <div class="text-center">
+                                                <button class="btn btn-primary" type="button" style="margin-top: 20px; max-width: 161.83px; max-height: 38px;" onclick="createForm()">Add more activities</button></div>
                                         </td>
                                     </tr>
                                 </tbody>

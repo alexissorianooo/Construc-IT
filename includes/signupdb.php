@@ -1,7 +1,5 @@
 <?php
 
-// registerButton1 - Architect & Project Manager
-// registerButton2 - Client
 
 // Cannot jump to certain pages without signing up
 if(isset($_POST["registerButton"])){
