@@ -23,7 +23,7 @@
     <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/services/services-web.min.js'></script>
 </head>
 
-<body class="masthead" id="page-top" style="background: url(&quot;../../assets/img/1.jpg&quot;); background-size: cover; background-repeat: no-repeat; height:50%">
+<body class="masthead" id="page-top" style="background: url(&quot;../../assets/img/1.jpg&quot;); background-size: cover; background-repeat: no-repeat; height:170%">
     
     
 
@@ -45,7 +45,7 @@
                 <!-- FOR THE CALCULATOR BUTTONS -->
 
                 <div class="col-md-6">
-                    <h1 class="text-center" style="padding-bottom: 20px;">Hardware Calculator</h1>
+                    <h1 class="text-center" style="padding-bottom: 10px;padding-top:30px">Hardware Calculator</h1>
                     <div class="text-center">
                         <a href="#changetitle"><button class="btn btn-primary" type="button" onclick="change('brick')" id="brick">Brick Calculator</button></a>
                         <a href="#changetitle"><button class="btn btn-primary" type="button" onclick="change('metal')" id="metal">Metal Weight Calculator</button></a>
