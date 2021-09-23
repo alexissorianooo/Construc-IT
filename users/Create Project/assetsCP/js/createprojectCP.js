@@ -30,8 +30,6 @@ function toggleEnable(id){
 
 //for creating additional forms
 
-
-
 function createForm(){
     
     idnum++;
@@ -59,7 +57,7 @@ function createForm(){
     // input.setAttribute("name", "input_name"+idnum);
     // input.setAttribute("id", "additional_input"+idnum);
     // inputID = "additional_input"+idnum;
-    input.name="additional_name"+idnum;
+    input.name="additional_name"+delbuttonnum2;
     input.id= "additional_input"+idnum;
     inputID = input.name;
     console.log(input.name);
