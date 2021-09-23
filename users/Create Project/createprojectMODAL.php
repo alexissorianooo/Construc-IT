@@ -29,10 +29,10 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Project Name<input class="form-control" type="text" style="margin: 0px;"></td>
+                                        <td>Project Name<input class="form-control" type="text" style="margin: 0px;" name="project_name"></td>
                                     </tr>
                                     <tr>
-                                        <td>Deadline<input class="form-control" type="date" style="margin: 0px;"></td>
+                                        <td>Deadline<input class="form-control" type="date" style="margin: 0px;" name="project_deadline"></td>
                                     </tr>
                                     <tr>
                                         <td>Project Manager 
