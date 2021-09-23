@@ -10,9 +10,6 @@ if(isset($_POST['createButton'])){
     $project_startdate = $_POST['project_startdeadline'];
     $project_deadline = $_POST['project_enddeadline'];
 
-    // echo $project_startdate = filter_input(INPUT_POST, 'project_startdeadline');
-    // echo $project_deadline = filter_input(INPUT_POST, 'project_enddeadline');
-
     $project_architect = $_SESSION['user_fullname'];
     $project_pmSELECT = $_POST['project_pmSELECT'];
 
@@ -28,11 +25,11 @@ if(isset($_POST['createButton'])){
     require_once 'db.php';
     require_once 'functions.php';
 
-    // if(emptyInputcreate()!==false){
-    //     header("location: ../users/Projects/project_arch.php");
-    //     exit();
-    // } 
-    // NOT IMPLEMENTED YET AT FUNCTIONS.PHP
+    if(emptyInputcreate($project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8) !==false){
+        header("location: ../users/Projects/project_arch.php?error=emptyinput");
+        exit();
+    } 
+   
 
     createProject($conn, $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8);
     
@@ -43,5 +40,3 @@ else{
     header("location: ../users/Projects/project_arch.php");
     exit();
 }
-
-//  echo $project_pmSELECT;

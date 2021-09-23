@@ -155,3 +155,14 @@ function createProject($conn, $project_name, $project_startdate, $project_deadli
     exit();
 
 }
+
+function emptyInputcreate($project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8){
+  $result;
+  if(empty($project_name) || empty($project_startdate) || empty($project_deadline) || empty($project_architect) || empty($project_pmSELECT) || empty($project_input1) || empty($project_input2) || empty($project_input3) || empty($project_input4) || empty($project_input5) || empty($project_input6) || empty($project_input7) || empty($project_input8)){
+    $result = true;
+  }
+  else{
+    $result = false;
+  }
+  return $result;
+}
