@@ -153,7 +153,9 @@
                                     <tr id="additional_button">
                                         <td class="text-center" id="additional_cell_button">
                                             <div class="text-center">
-                                                <button class="btn btn-primary" type="button" style="margin-top: 20px; max-width: 161.83px; max-height: 38px;" onclick="createForm()">Add more activities</button></div>
+                                                <button class="btn btn-primary" type="button" style="margin-top: 20px; max-width: 161.83px; max-height: 38px;" onclick="createForm();">Add more activities</button>
+                                                <input style="display: none;" name="counterNAME" id="counterID">
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>

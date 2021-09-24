@@ -7,6 +7,8 @@ var divnum=0;
 var delbuttonnum=0;
 var delbuttonnum2=0;
 
+var counterpls;
+
 // FOR CHECKING
 function getID(){
     var x = document.getElementsByClassName("forID")[0].id;
@@ -76,16 +78,23 @@ function createForm(){
     delbuttonID = button1.id; //ID
     
     // button1.setAttribute("onclick", "deleteInput(divID, delbuttonID)"); //ACTION
-    button1.setAttribute("onclick", "deleteInput(this.id)");
+    button1.setAttribute("onclick", "deleteInput(this.id);");
 
     
     var icon1 = button1.appendChild(document.createElement("i"));
     icon1.setAttribute("class", "fa fa-trash-o float-right align-items-center align-content-center");
     icon1.setAttribute("style", "font-size: 38px;color: #000000; max-width: 67px;");
 
+
+    
     down.appendChild(div);
     console.log(delbuttonnum2);
+    buttoncounter();
+    
+
 }
+
+
 
 
 function deleteInput(id){
@@ -116,9 +125,22 @@ function deleteInput(id){
             delbuttonremaining=delbuttonnum2-delbuttoncounter;
             delbuttonnum2=delbuttonremaining;
             console.log(delbuttonnum2);
+            counterpls.setAttribute("value", delbuttonnum2);
+            console.log(counterpls.value);
+            buttoncounter();
         }
     }
     
 
     
+}
+
+function buttoncounter(){
+    counterpls = document.getElementById("counterID");
+    counterpls.setAttribute("value", delbuttonnum2);
+    // counter.innerHTML=delbuttonnum2;
+    // counterpls.setAttribute("display", "none");
+    counterpls.name = "counter";
+    console.log(counterpls.value);
+    console.log(counterpls);
 }
