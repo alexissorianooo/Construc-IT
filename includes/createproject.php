@@ -38,7 +38,7 @@ if(isset($_POST['createButton'])){
     // IF THEY CLICK ADD ACTIVITIES
 
 
-    if($counter!==0){
+    if($counter!==0){ //checks if there is an additional activities
         $project = 8;
         for ($i=0; $i<$counter;$i++){
             $project++;
@@ -46,9 +46,12 @@ if(isset($_POST['createButton'])){
             echo $project_input["project_input".$project] = $_POST['additional_name'. $i+1];
          
             echo '<br>';
+            extract($project_input);
         }
-        extract($project_input);
-        echo $project_input11;
+        
+        // echo $project_input9;
+    } else{
+        echo 'there is no additional activities';
     }
     
     

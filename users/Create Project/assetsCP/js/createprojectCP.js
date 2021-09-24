@@ -9,6 +9,8 @@ var delbuttonnum2=0;
 
 var counterpls;
 
+var input;
+
 // FOR CHECKING
 function getID(){
     var x = document.getElementsByClassName("forID")[0].id;
@@ -51,7 +53,7 @@ function createForm(){
     label.setAttribute("class", "text-left");
     label.setAttribute("style", "width: 100%");
     
-    var input = label.appendChild(document.createElement("input"));
+    input = label.appendChild(document.createElement("input"));
     input.setAttribute("class", "form-control d-inline forID");
     input.setAttribute("type", "text");
     input.setAttribute("style", "border-style: none;color: rgb(0,0,0);max-width: 71%;height: 52px; margin: 0px;");
@@ -88,7 +90,7 @@ function createForm(){
 
     
     down.appendChild(div);
-    console.log(delbuttonnum2);
+    // console.log(delbuttonnum2);
     buttoncounter();
     
 
@@ -124,9 +126,10 @@ function deleteInput(id){
             delbuttoncounter++;
             delbuttonremaining=delbuttonnum2-delbuttoncounter;
             delbuttonnum2=delbuttonremaining;
-            console.log(delbuttonnum2);
+            // console.log(delbuttonnum2);
             counterpls.setAttribute("value", delbuttonnum2);
-            console.log(counterpls.value);
+            // console.log(counterpls.value);
+            
             buttoncounter();
         }
     }
@@ -135,12 +138,27 @@ function deleteInput(id){
     
 }
 
+function inputRename(){ //for loop fr renaming input boxes
+    var num=0;
+    for (var x=0; x<delbuttonnum2;x++){
+        var test = document.getElementsByClassName("forID")[x].id;
+        // console.log(x);
+        num=x+1;
+        // console.log(num);
+        input.name="additional_name"+num;
+    }
+}
+
 function buttoncounter(){
     counterpls = document.getElementById("counterID");
     counterpls.setAttribute("value", delbuttonnum2);
     // counter.innerHTML=delbuttonnum2;
     // counterpls.setAttribute("display", "none");
     counterpls.name = "counter";
-    console.log(counterpls.value);
-    console.log(counterpls);
+    // console.log(counterpls.value);
+    // console.log(counterpls);
+
+
+    
+    inputRename();
 }
