@@ -39,12 +39,16 @@ if(isset($_POST['createButton'])){
 
 
     if($counter!==0){
-        $project = 9;
+        $project = 8;
         for ($i=0; $i<$counter;$i++){
-            
+            $project++;
 
-            echo $i;
+            echo $project_input["project_input".$project] = $_POST['additional_name'. $i+1];
+         
+            echo '<br>';
         }
+        extract($project_input);
+        echo $project_input11;
     }
     
     
