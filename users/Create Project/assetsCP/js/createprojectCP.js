@@ -138,14 +138,16 @@ function deleteInput(id){
     
 }
 
-function inputRename(){ //for loop fr renaming input boxes
+function inputRename(){ //for loop for renaming input boxes
     var num=0;
     for (var x=0; x<delbuttonnum2;x++){
-        var test = document.getElementsByClassName("forID")[x].id;
-        // console.log(x);
         num=x+1;
+        var test = document.getElementsByClassName("forID")[x].name="additional_name"+num;
+        // console.log(x);
+        
         // console.log(num);
-        input.name="additional_name"+num;
+        // input.name="additional_name"+num;
+        console.log(test);
     }
 }
 
@@ -155,10 +157,20 @@ function buttoncounter(){
     // counter.innerHTML=delbuttonnum2;
     // counterpls.setAttribute("display", "none");
     counterpls.name = "counter";
-    // console.log(counterpls.value);
+    console.log(counterpls.value);
     // console.log(counterpls);
 
+    if (counterpls.value == 5){
+        document.getElementById("addButton").disabled = true;
+        inputRename();
+    }
+    else{
+        document.getElementById("addButton").disabled = false;
+        inputRename();
+    }
 
     
     inputRename();
+    
+    
 }

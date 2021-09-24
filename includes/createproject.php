@@ -34,25 +34,34 @@ if(isset($_POST['createButton'])){
     $project_input7 = $_POST['project_input7'];
     $project_input8 = $_POST['project_input8'];
 
-    // $project_input9 = $_POST['additional_name1']; 
-    // IF THEY CLICK ADD ACTIVITIES
 
-
-    if($counter!==0){ //checks if there is an additional activities
+    if($counter!=0){ //checks if there is an additional activities
         $project = 8;
-        for ($i=0; $i<$counter;$i++){
+        for ($i=0; $i<5;$i++){
             $project++;
 
-            echo $project_input["project_input".$project] = $_POST['additional_name'. $i+1];
-         
-            echo '<br>';
+            // echo $project_input["project_input".$project] = $_POST['additional_name'. $i+1]; WORKING!!
+
+            if(!empty($_POST['additional_name'. $i+1])){
+                $project_input["project_input".$project] = $_POST['additional_name'. $i+1];
+            } else{
+                $project_input["project_input".$project] = "empty";
+            }
             extract($project_input);
+
+
         }
-        
-        // echo $project_input9;
-    } else{
+        echo $project_input9 .'<br>';
+        echo $project_input10 .'<br>';
+        echo $project_input11 .'<br>';
+        echo $project_input12 .'<br>';
+        echo $project_input13 .'<br>';
+        //PUT NORMAL ACTIVITIES HERE WITH ADDITIONAL?
+    }else{
         echo 'there is no additional activities';
+        //PUT NORMAL ACTIVITIES HERE?
     }
+    
     
     
 
