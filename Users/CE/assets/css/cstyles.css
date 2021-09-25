@@ -46,6 +46,7 @@ body {
 /*End of Construction Estimator Title*/
 
 /* Button Text */
+/*
 .btn-txt {
     font-family:'Segoe UI', Tahoma, sans-serif;
     font-size: 50px;
@@ -53,6 +54,20 @@ body {
     -webkit-text-stroke: 1px;
     -webkit-text-stroke-color: black;
     text-transform: uppercase;
+}
+*/
+.CP {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.center {
+    font-size: 60px;
+    text-align: center;
+    padding-right: 85px;
+    color: #fff;
+    -webkit-text-stroke: 0.2px;
+    -webkit-text-stroke-color: darkslategray;
 }
 
 /* Border */
@@ -134,3 +149,4 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 iframe{
     min-height: 40vw;
 }
+
