@@ -23,11 +23,12 @@ var hw_url;
 
 // GETTING USER COORDINATES 
 function getLocation() {  
+  document.getElementById('locator').value = '';
+
   if (navigator.geolocation) {  
     navigator.geolocation.getCurrentPosition(showPosition, errorCallback);     
   }
 }
-
 const errorCallback = (error)  => {
   alert ("Application needs access to location for the hardware locator to work");
 }
@@ -47,6 +48,9 @@ function showPosition(position) {
 //ASSIGNING LOCATION BASED ON USER INPUT
 function searchLocation() {
     i = 0;
+    if (i==0){
+      document.getElementById('prev-store').style.visibility = 'hidden';
+    }
   
     tt.services.geocode( {
       key: APIKEY,
@@ -54,10 +58,24 @@ function searchLocation() {
       countrySet: 'PH',
     }).then(function(result) { 
       console.log(result);
+      
+
+    max = result.results.length;   
+    console.log(max)
+    if (max==1 || max==0) {
+      lati = '12.8797';
+      long = '121.7740';
+      document.getElementById('hw-desc').innerHTML = "<b class='text-warning'>NO AVAILABLE HARDWARE STORE NEARBY.</b>";       
+    } 
+    else{
       lati = result.results[0].position.lat;
       long = result.results[0].position.lng;
-      loc = { lat: lati, lng: long };
-      tomtom();
+      
+    }
+
+    loc = { lat: lati, lng: long };
+    tomtom();
+      
     })
 }
 
@@ -131,9 +149,14 @@ function search() {
     document.getElementById('mapApi').style.marginTop = "85px";
     console.log(result);
     max = result.results.length;
+
+    console.log(max)
     if (max==1 || max==0) {
+      loc = {lat: '12.8797', lng: '121.7740'};
       document.getElementById('next-store').style.visibility = 'hidden';    
       document.getElementById('hw-desc').innerHTML = "<b class='text-warning'>NO AVAILABLE HARDWARE STORE NEARBY.</b>";  
+    } else {
+      document.getElementById('next-store').style.visibility = 'visible';   
     }
 
     hw_name = result.results[i].poi.name;
