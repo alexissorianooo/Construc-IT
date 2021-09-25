@@ -5,6 +5,11 @@ var idnum=0;
 var divnum=0;
 
 var delbuttonnum=0;
+var delbuttonnum2=0;
+
+var counterpls;
+
+var input;
 
 // FOR CHECKING
 function getID(){
@@ -24,6 +29,9 @@ function toggleEnable(id){
     }
 }
 
+
+
+
 //for creating additional forms
 
 function createForm(){
@@ -32,6 +40,7 @@ function createForm(){
     divnum++;
     
     delbuttonnum++;
+    delbuttonnum2++;
     
     var down = document.getElementById("additional_cell");
     
@@ -44,16 +53,18 @@ function createForm(){
     label.setAttribute("class", "text-left");
     label.setAttribute("style", "width: 100%");
     
-    var input = label.appendChild(document.createElement("input"));
+    input = label.appendChild(document.createElement("input"));
     input.setAttribute("class", "form-control d-inline forID");
     input.setAttribute("type", "text");
     input.setAttribute("style", "border-width: 2px; border-color: darkslategray; color: rgb(0,0,0);max-width: 85%;height: 52px; margin: 0px;");
     input.setAttribute("placeholder", "New Activity " +idnum);
+    // input.setAttribute("name", "input_name"+idnum);
     // input.setAttribute("id", "additional_input"+idnum);
     // inputID = "additional_input"+idnum;
+    input.name="additional_name"+delbuttonnum2;
     input.id= "additional_input"+idnum;
-    inputID = input.id;
-    console.log(inputID);
+    inputID = input.name;
+    console.log(input.name);
     // input.disabled=true;
     
     
@@ -69,70 +80,97 @@ function createForm(){
     delbuttonID = button1.id; //ID
     
     // button1.setAttribute("onclick", "deleteInput(divID, delbuttonID)"); //ACTION
-    button1.setAttribute("onclick", "deleteInput(this.id)");
+    button1.setAttribute("onclick", "deleteInput(this.id);");
+
     
     var icon1 = button1.appendChild(document.createElement("i"));
     icon1.setAttribute("class", "fa fa-trash-o float-right align-items-center align-content-center");
     icon1.setAttribute("style", "font-size: 38px;color: #000000; max-width: 67px;");
-    
-    
-    //EDIT BUTTON
-    // var button2 = label.appendChild(document.createElement("button"));
-    // button2.setAttribute("class", "btn btn-primary float-right activityButton");
-    // button2.setAttribute("type", "button");
-    // button2.setAttribute("style", "height: 53px;width: 67px;color: var(--white);background: var(--white);border-width: 0px;margin: 1px;");
-    
-    // button2.setAttribute("onclick", "toggleEnable(inputID)");
-    // // button2.setAttribute("onclick", "getID()");
-    
-    // var icon2 = button2.appendChild(document.createElement("i"));
-    // icon2.setAttribute("class", "fa fa-edit float-right align-items-center align-content-center");
-    // icon2.setAttribute("style", "font-size: 38px;color: #000000;");
-    
+
+
     
     down.appendChild(div);
+    // console.log(delbuttonnum2);
+    buttoncounter();
+    
+
 }
 
+
+
+
 function deleteInput(id){
-    var counter = 1;
-    counter++;
+    var delbuttoncounter=0;
+
     // .match(/(\d+)/); for extracting nmbers from string
 //     var delbuttonID = document.getElementById(id).id;
 //     console.log(delbuttonID);
 //     // var delbuttonID2 = document.getElementById().id;
     
-//     // console.log(delbuttonID2);
+
     
     var matches = id.match(/(\d+)/);
-    console.log(id);
+    // console.log(id);
     // console.log(matches);
     
     var getdelbuttonnumber = matches[0];
-    console.log(getdelbuttonnumber); // get thebutton number
-    
-    
-//     var divIdentify = document.getElementsByClassName("fordivID")[getdelbuttonnumber-1].id;
-        
-//     console.log(divIdentify);
 
-
-    // var deleteDiv = document.getElementById(divIdentify); 
-    // console.log(deleteDiv);
-    
-    for (var i = 0; i<delbuttonnum; i++){
+    for (var i = 0; i<delbuttonnum2; i++){
         var divIdentify = document.getElementsByClassName("fordivID")[i].id;
-        console.log(divIdentify);
-        // console.log(divIdentify.indexOf(getdelbuttonnumber));
+        
         if (divIdentify.indexOf(getdelbuttonnumber)==14){
             var deleteDiv = document.getElementById(divIdentify); 
+            // console.log(deleteDiv);
+            // console.log(divIdentify);
             deleteDiv.remove();
+            delbuttoncounter++;
+            delbuttonremaining=delbuttonnum2-delbuttoncounter;
+            delbuttonnum2=delbuttonremaining;
+            // console.log(delbuttonnum2);
+            counterpls.setAttribute("value", delbuttonnum2);
+            // console.log(counterpls.value);
+            
+            buttoncounter();
         }
     }
     
+
     
-    // deleteDiv.remove();
+}
+
+function inputRename(){ //for loop for renaming input boxes
+    var num=0;
+    for (var x=0; x<delbuttonnum2;x++){
+        num=x+1;
+        var test = document.getElementsByClassName("forID")[x].name="additional_name"+num;
+        // console.log(x);
+        
+        // console.log(num);
+        // input.name="additional_name"+num;
+        console.log(test);
+    }
+}
+
+function buttoncounter(){
+    counterpls = document.getElementById("counterID");
+    counterpls.setAttribute("value", delbuttonnum2);
+    // counter.innerHTML=delbuttonnum2;
+    // counterpls.setAttribute("display", "none");
+    counterpls.name = "counter";
+    console.log(counterpls.value);
+    // console.log(counterpls);
+
+    if (counterpls.value == 5){
+        document.getElementById("addButton").disabled = true;
+        inputRename();
+    }
+    else{
+        document.getElementById("addButton").disabled = false;
+        inputRename();
+    }
+
     
-    // var divIdentify = document.getElemenById(divnum);
+    inputRename();
     
     
 }

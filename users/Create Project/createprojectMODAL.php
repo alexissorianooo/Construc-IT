@@ -1,8 +1,3 @@
-<?php
-// require_once '../../includes/db.php';
-// require_once '../../includes/functions.php';
-// echo "<script type='text/javascript'>alert('ERROR STATEMENT');</script>";
-?>
 
 
 <link rel="stylesheet" href="../Create Project/assetsCP/bootstrap/css/bootstrapCP.min.css">
@@ -160,7 +155,9 @@
                                     <tr id="additional_button">
                                         <td class="text-center" id="additional_cell_button">
                                             <div class="text-center">
-                                                <button class="btn btn-primary" type="button" style="margin-top: 20px; max-width: 161.83px; max-height: 38px;" onclick="createForm()">Add more activities</button></div>
+                                                <button class="btn btn-primary" type="button" style="margin-top: 20px; max-width: 161.83px; max-height: 38px;" onclick="createForm();" id="addButton">Add more activities</button>
+                                                <input style="display: none;" name="counter" id="counterID" value="0">
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>
