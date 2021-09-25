@@ -56,7 +56,7 @@ function createForm(){
     input = label.appendChild(document.createElement("input"));
     input.setAttribute("class", "form-control d-inline forID");
     input.setAttribute("type", "text");
-    input.setAttribute("style", "border-width: 2px; border-color: darkslategray; color: rgb(0,0,0);max-width: 85%;height: 52px; margin: 0px;");
+    input.setAttribute("style", "border-width: 2px; border-color: darkslategray; color: rgb(0,0,0);max-width: 75%;height: 52px; margin: 0px;");
     input.setAttribute("placeholder", "New Activity " +idnum);
     // input.setAttribute("name", "input_name"+idnum);
     // input.setAttribute("id", "additional_input"+idnum);
