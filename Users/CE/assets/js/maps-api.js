@@ -2,8 +2,6 @@
 // VARIABLES FOR THEIR LOCATION 
 var lati;    //NORTH
 var long;  //EAST
-var sch_lat;
-var sch_long;
 var map;
 var loc;
 var daan;
