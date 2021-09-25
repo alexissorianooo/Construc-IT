@@ -19,6 +19,8 @@ var hw_lng;
 var hw_num;
 var hw_url;
 
+
+
 // GETTING USER COORDINATES 
 function getLocation() {  
   if (navigator.geolocation) {  
@@ -63,8 +65,7 @@ function searchLocation() {
 
 
 
-// TOMTOM DEVS API 
-// INITIALIZING MAP
+//INITIALIZING MAP
 function tomtom() {
   map = tt.map({
       key: APIKEY,
@@ -74,6 +75,10 @@ function tomtom() {
   });  
   search();
 }
+
+
+
+
 
 //FUNCTION FOR SHOWING NEXT & PREVIOUS BUTTONS ON DISPLAYING 
 //HARDWARE STORES
@@ -102,6 +107,10 @@ function prevStore(){
 }
 
 
+
+
+
+
 //FINDING NEAREST HARDWARE STORE NEAR THE USERS CURRENT LOCATION
 // GETS THE LOCATION OF THE HARDWARE STORE 
 // CAN SWITCH THROUGH DIFFERENT HARDWARE STORES
@@ -116,11 +125,10 @@ function search() {
     center: loc,
     radius: 800,
   }).then(function(result) {
-    // handleResults(result);
+    // handleResults(result); 
+    //DISPLAYS RESULT OF SEARCH AND STORES NUMBER OF FOUND STORES
     document.getElementById('hardware-info').style.visibility = "visible";
     document.getElementById('mapApi').style.marginTop = "85px";
-    
-    //DISPLAYS RESULT OF SEARCH AND STORES NUMBER OF FOUND STORES
     console.log(result);
     max = result.results.length;
     if (max==1 || max==0) {
@@ -169,6 +177,9 @@ function search() {
 }
 
 
+
+
+
 //CHECKS WHETHER THE POI URL AND CONTACT NUMBER ARE AVAILABLE FOR OUTPUT 
 function checker(){
   if (hw_num === undefined && hw_url === undefined) {
@@ -179,9 +190,7 @@ function checker(){
   }
   else if (hw_num === undefined) {
     document.getElementById('hw-desc').innerHTML = "<b class='text-warning'>HARDWARE STORE NAME: </b class='text-warning'>" + hw_name + "<br><b class='text-warning'>ADDRESS: </b class='text-warning'>" + hw_address + "<br><b class='text-warning'>COORDINATES: </b>" +hw_lat+" N, "+hw_lng+" E<br><b class='text-warning'>WEBSITE: </b>"+hw_url;
-  } else {
-    console.log('mali')
-    console.log (hw_num)
+  } else {   
     document.getElementById('hw-desc').innerHTML = "<b class='text-warning'>HARDWARE STORE NAME: </b class='text-warning'>" + hw_name + "<br><b class='text-warning'>ADDRESS: </b class='text-warning'>" + hw_address + "<br><b class='text-warning'>COORDINATES: </b>" +hw_lat+" N, "+hw_lng+" E<br><b class='text-warning'>CONTACT NUMBER: </b>"+hw_num+"<br><b class='text-warning'>WEBSITE: </b>"+hw_url;
   }
 }
@@ -200,7 +209,8 @@ function checker(){
 
 
 
-//SETS THE MAP AND DRAWS THE LOCATION OF THE USER AND THE HARDWARE STORE
+
+//SETS THE MAP TO BE AND DRAWS THE LOCATION OF THE USER AND THE HARDWARE STORE
 function moveMap(lnglat) {
   daan = [loc, lnglat]
   map.flyTo({
