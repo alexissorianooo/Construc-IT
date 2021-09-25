@@ -292,14 +292,14 @@
 
     <!-- LOCATOR SECTION -->
     <section class="text-center bg-dark">
-        <h1 class="btn-txt" style="padding-top: 40px;">Hardware Locator</h1>        
+        <h1 class="center CP" style="padding-top: 30px;">Hardware Locator</h1>        
             <form class="d-inline-flex tt-search">
                 <input id="locator" type="text" class="form-control" placeholder="Enter Municipality or City"/>
                 <button id="search-location" onclick="searchLocation()" class="btn btn-primary text-light" type="button" style="background: var(--yellow);width: 66px;height: 52px;"><i class="fa fa-search"></i></button>
                 <button id="search-area" onclick="getLocation()" class="btn btn-primary" type="button" style="color: var(--white);background: var(--yellow);width: 66px;height: 52px;"><i class="fa fa-map-marker fa-2x"></i></button>
             </form>
         <section class="map-clean bg-dark" id='mapApi'>
-            <div class="container" id="hardware-info" style="visibility:hidden; margin-top: -150px;">         
+            <div class="container" id="hardware-info" style="visibility:hidden; margin-top: -220px;">         
                 <h2 class="text-center text-light">Location </h2>
                     <div class="d-inline-flex">
                         <button id="prev-store" onclick="prevStore()" class="btn text-light" type="button" style="visibility: hidden; width: 66px;height: 52px;"><i class="fa fa-arrow-left fa-2x"></i></button>
@@ -309,7 +309,8 @@
                 </div>                 
             </div>
             <!-- DIV FOR THE MAP -->
-            <div id="map" class='mx-auto' style="min-height:30vw; width:70%;"> </div>            
+            <div id="map" class='mx-auto' style="min-height:35vw; width:80%;"> </div>      
+            <div><p style="color: #343a40;">filler</p></div>      
         </section>
     </section>
 
