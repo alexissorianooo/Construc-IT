@@ -15,12 +15,13 @@
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="assets/css/cstyles.css">
 
-    <script src="assets/js/maps-api.js"></script>
+    <script src="assets/js/maps-api.js"></script>   
 
     <!-- TOMTOM MAPS API  -->
     <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/maps/maps.css'>
     <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/maps/maps-web.min.js'></script>
     <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/services/services-web.min.js'></script>
+    <!-- <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/<version>/SearchBox.css'> -->
 </head>
 
 <body id="page-top" style="background: url(&quot;../../assets/img/2.jpg&quot;); background-size: cover; background-repeat: no-repeat; height:175%">
@@ -289,31 +290,43 @@
         </div>
     </section>
 
-    <!-- FOR THE LOCATOR -->
+    <!-- LOCATOR SECTION -->
     <section class="text-center bg-dark">
         <h1 class="btn-txt" style="padding-top: 40px;">Hardware Locator</h1>        
-            <form class="d-inline-flex">
-            <!-- <input type="text" class="form-control" placeholder="Enter Location" id="locator" /> -->
-                <button id="search-store" onclick="getLocation()" class="btn btn-primary" type="button" style="color: var(--white);background: var(--yellow);width: 66px;height: 52px;"><i class="fa fa-search" style="background: var(--warning);"></i></button>
+            <form class="d-inline-flex tt-search">
+                <input id="locator" type="text" class="form-control" placeholder="Enter Municipality or City"/>
+                <button id="search-location" onclick="searchLocation()" class="btn btn-primary text-light" type="button" style="background: var(--yellow);width: 66px;height: 52px;"><i class="fa fa-search"></i></button>
+                <button id="search-area" onclick="getLocation()" class="btn btn-primary" type="button" style="color: var(--white);background: var(--yellow);width: 66px;height: 52px;"><i class="fa fa-map-marker fa-2x"></i></button>
             </form>
-        <section class="map-clean bg-dark">
-<!--    Additional text information (currently not used)
-            <div class="container">         
-                <div class="intro">
-                    <h2 class="text-center">Location </h2>
-                    <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
-                </div>
+        <section class="map-clean bg-dark" id='mapApi'>
+            <div class="container" id="hardware-info" style="visibility:hidden; margin-top: -150px;">         
+                <h2 class="text-center text-light">Location </h2>
+                    <div class="d-inline-flex">
+                        <button id="prev-store" onclick="prevStore()" class="btn text-light" type="button" style="visibility: hidden; width: 66px;height: 52px;"><i class="fa fa-arrow-left fa-2x"></i></button>
+                        <p class="text-left text-light" id="hw-desc"> </p>
+                        <button id="next-store" onclick="nextStore()" class="btn text-light" type="button" style="width: 66px;height: 52px;"><i class="fa fa-arrow-right fa-2x"></i></button>
+                    </div>   
+                </div>                 
             </div>
--->
             <!-- DIV FOR THE MAP -->
-            <div id="map" style="min-height:40vw;"> </div>
-            <script> document.getElementById("search-store").click(); </script>
-            
-
+            <div id="map" class='mx-auto' style="min-height:30vw; width:70%;"> </div>            
         </section>
     </section>
 
     
+            <!-- JAVASCRIPT INITIAL MAP DISPLAY -->
+            <script>
+                // document.getElementById("search-area").click();
+                map = tt.map({
+                    key: '3VLMJaxNxqrL9irFAm0RJuJ8ELNry3v9',
+                    container: "map",
+                    center: {lat: '12.8797', lng: '121.7740'},
+                    zoom: 4.5,                    
+                }); 
+                map.addControl(new tt.FullscreenControl());                                                            
+                </script>
+                
+        
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
@@ -322,7 +335,10 @@
     
 
     <!-- FOOTER -->
-<?php include '../../layout/footer.php' ?>
+    <?php 
+        echo '<br>';
+        include '../../layout/footer.php' 
+    ?>
 
 
     <script src="../assets/js/jquery.min.js"></script>
@@ -338,6 +354,4 @@
 </html>
 
 
-// <script async
-//     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBezl5WPT_086R8XoLYRnPElv6G_pBQz7U&libraries=places&callback=initMap" async defer>
-// </script>
+            
