@@ -49,50 +49,34 @@
     <div class="errornotif">
         <?php
             if (isset($_GET["error"])) {
-            if ($_GET["error"] == "emptyinput") {
-                echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Invalid input. Fill all fields</p></div>";
-            }
-            elseif ($_GET["error"] == "passwordnotmatch") {
-                echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Passwords do not match</p></div>";
-            }
-            elseif ($_GET["error"] == "emailtaken") {
-                echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Email taken. Try different email.</p></div>";
-            }
-            elseif ($_GET["error"] == "stmtfailed") {
-                echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Something went wrong! Please try again.</p></div>";
-            }
-            elseif ($_GET["error"] == "invalidusercode") {
-                echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Invalid Usercode.</p></div>";
-            }
-            elseif ($_GET["error"] == "wronglogin") {
-                echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Wrong Email/Password</p></div>";
-            }
-            elseif ($_GET["error"] == "emailnotexist") {
-                echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Email does not exist.</p></div>";
-            }
-            elseif ($_GET["error"] == "none") {
-                echo "<div style='text-align: center; background-color:#2ad5a4; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p>Congratulations! You are signed up!</p></div>";
-            }
-            //NEWLY ADDED
-            elseif ($_GET["error"] == "pattern") {                
-                echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Password must contain atleast one number, special character, small and capital letters.</p></div>";
-            }
-            // }
-            // elseif (!preg_match("/\d/", $pass)) {
-            //     $errors[] = "Password should contain at least one digit";
-            // }
-            // elseif (!preg_match("/[A-Z]/", $pass)) {
-            //     $errors[] = "Password should contain at least one Capital Letter";
-            // }
-            // elseif (!preg_match("/[a-z]/", $pass)) {
-            //     $errors[] = "Password should contain at least one small Letter";
-            // }
-            // elseif (!preg_match("/\W/", $pass)) {
-            //     $errors[] = "Password should contain at least one special character";
-            // }
-            // elseif (preg_match("/\s/", $pass)) {
-            //     $errors[] = "Password should not contain any white space";
-            // }
+                if ($_GET["error"] == "emptyinput") {
+                    echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Invalid input. Fill all fields</p></div>";
+                }
+                elseif ($_GET["error"] == "passwordnotmatch") {
+                    echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Passwords do not match</p></div>";
+                }
+                elseif ($_GET["error"] == "emailtaken") {
+                    echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Email taken. Try different email.</p></div>";
+                }
+                elseif ($_GET["error"] == "stmtfailed") {
+                    echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Something went wrong! Please try again.</p></div>";
+                }
+                elseif ($_GET["error"] == "invalidusercode") {
+                    echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Invalid Usercode.</p></div>";
+                }
+                elseif ($_GET["error"] == "wronglogin") {
+                    echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Wrong Email/Password</p></div>";
+                }
+                elseif ($_GET["error"] == "emailnotexist") {
+                    echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Email does not exist.</p></div>";
+                }
+                elseif ($_GET["error"] == "none") {
+                    echo "<div style='text-align: center; background-color:#2ad5a4; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p>Congratulations! You are signed up!</p></div>";
+                }
+                //NEWLY ADDED
+                elseif ($_GET["error"] == "pattern") {                
+                    echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Password must contain atleast 8 characters with one number, special character, small and capital letters.</p></div>";
+                }
             }            
         ?>
     </div>
