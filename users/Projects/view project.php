@@ -47,16 +47,15 @@
                                         </div>
                                     </div>
                                     <?php 
-                                        if(isset($_POST["openProject"])){
-                                            $string=0;
-                                            $string = $_POST['openProject'];
-                                            echo "hello: ".$string;
-                                        }else{
-                                            echo "nothing";
-                                        }
-                                       
+                                        // if(isset($_POST["openProject"])){
+                                        //     $string=0;
+                                        //     $string = $_POST['openProject'];
+                                        //     echo "hello: ".$string;
+                                        // }else{
+                                        //     echo "nothing";
+                                        // }
 
-
+                                        echo $_SESSION['button'];
                                     ?>
                                 </div>
                                 <div class="progress" style="width: 100%;height: 30px;">
