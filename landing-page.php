@@ -270,13 +270,13 @@
     </section>
     -->
     <!-- Construc-IT Pages Auto Slideshow -->
-    <section class="bg-dark" style="padding-top: 30px; padding-bottom: 10px">
+    <section class="bg-dark" id="c-it" style="padding-top: 30px; padding-bottom: 10px">
         <div>
             <h2 class="text-uppercase" style="color: white; padding-bottom:20px; -webkit-text-stroke:1px; text-align:center">Join Us! Use Construc-IT Now!</h2>
         </div>
         <div id="slideshow">
             <div>
-                <img src="assets/img/xb2.jpg">
+                <img src="assets/img/sk1.jpg">
             </div>
             <div>
                 <img src="assets/img/xb.jpg">
@@ -285,7 +285,7 @@
                 <img src="assets/img/sk4.jpg">
             </div>
             <div>
-                <img src="assets/img/xb.jpg">
+                <img src="assets/img/sk2.jpg">
             </div>
         </div>
     </section>
