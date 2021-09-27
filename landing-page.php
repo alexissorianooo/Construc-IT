@@ -241,7 +241,7 @@
         </div>
     </section>
 
-    <!--The Construc-IT Pages -->
+    <!--The Construc-IT Pages 
     <section class="py-5" id="c-it" style="background-color: #343a40;">
         <div class="container">
             <div class="row">
@@ -268,12 +268,21 @@
             </div>
         </div>
     </section>
-
+    -->
     <!-- Construc-IT Pages Auto Slideshow -->
-    <section style="padding-top: 30px; padding-bottom: 10px">
+    <section class="bg-dark" style="padding-top: 30px; padding-bottom: 10px">
+        <div>
+            <h2 class="text-uppercase" style="color: white; padding-bottom:20px; -webkit-text-stroke:1px; text-align:center">Join Us! Use Construc-IT Now!</h2>
+        </div>
         <div id="slideshow">
             <div>
-                <img src="assets/img/1.jpg">
+                <img src="assets/img/xb2.jpg">
+            </div>
+            <div>
+                <img src="assets/img/xb.jpg">
+            </div>
+            <div>
+                <img src="assets/img/sk4.jpg">
             </div>
             <div>
                 <img src="assets/img/xb.jpg">
