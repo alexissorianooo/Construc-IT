@@ -64,12 +64,12 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                 <!-- DISPLAY PROJECTS HERE -->
 
                 <?php 
-                    $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_pm, project_progress FROM project_db";
+                    $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_progress FROM project_db";
                     $result = mysqli_query($conn, $sql);
 
                     if(mysqli_num_rows($result)>0){
                         while($row=mysqli_fetch_assoc($result)){
-                            if($row["project_status_fk"]=="Not Complete"){
+                            if($row["project_status_fk"]=="Not Complete" && $_SESSION["user_fullname"] == $row["project_architect"]){
                                 echo '
                                     <div class="col-sm-6 item" style="border-style: none;border-color: var(--bs-gray-dark);">
                                         <div class="row">
@@ -127,12 +127,12 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
             <div class="row">
 
                 <?php 
-                    $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_pm, project_progress FROM project_db";
+                    $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_progress FROM project_db";
                     $result = mysqli_query($conn, $sql);
 
                     if(mysqli_num_rows($result)>0){
                         while($row=mysqli_fetch_assoc($result)){
-                            if($row["project_status_fk"]=="Complete"){
+                            if($row["project_status_fk"]=="Complete" && $_SESSION["user_fullname"] == $row["project_architect"]){
                                 echo '
                                 <div class="col-sm-6 item" style="padding-bottom: 40px;">
                                     <div class="row">
