@@ -78,7 +78,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                 data-bs-placement="bottom" data-bss-hover-animate="pulse" type="button"
                                 title="Open Project"
                                 style="font-size: 28px;background: rgb(248,197,44);margin: 13px;border-color: rgb(0, 0, 0);"><i
-                                    class="fa fa-folder-open-o" title="Open Project"></i></button>
+                                    class="fa fa-folder-open-o" title="Open Project"></i></button> 
                             <p class="description"></p>
                         </div>
                     </div>
