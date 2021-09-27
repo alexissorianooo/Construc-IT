@@ -6,7 +6,26 @@
 
 <!-- <div><a class="btn btn-primary btn-lg" role="button" data-toggle="modal" href="#myModal">Launch Demo Modal</a> -->
 
+<?php 
 
+    // $string = $_POST['openProject'];
+    // $forIDnum = (int) filter_var($string, FILTER_SANITIZE_NUMBER_INT);
+    // echo $forIDnum;
+
+
+    // $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_progress FROM project_db";
+    // $result = mysqli_query($conn, $sql);
+
+    // if(mysqli_num_rows($result)>0){
+    //     while($row=mysqli_fetch_assoc($result)){
+    //         if($row["project_status_fk"]=="Complete" && $_SESSION["user_fullname"] == $row["project_architect"]){
+                
+    //         }
+    //     }
+    // }
+
+
+?>
 
     <form>
         <div class="modal fade" role="dialog" tabindex="-1" id="myModal">
@@ -27,6 +46,18 @@
                                             <p>Deadline: asda</p>
                                         </div>
                                     </div>
+                                    <?php 
+                                        if(isset($_POST["openProject"])){
+                                            $string=0;
+                                            $string = $_POST['openProject'];
+                                            echo "hello: ".$string;
+                                        }else{
+                                            echo "nothing";
+                                        }
+                                       
+
+
+                                    ?>
                                 </div>
                                 <div class="progress" style="width: 100%;height: 30px;">
                                     <div class="progress-bar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%</div>
