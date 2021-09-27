@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
     <link rel="stylesheet" href="assets/css/Simple-Slider.css">
     <link rel="icon" href="assets/img/logo3-white.png">
+    <link rel="stylesheet" href="assets/css/restyle.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -268,6 +269,18 @@
         </div>
     </section>
 
+    <!-- Construc-IT Pages Auto Slideshow -->
+    <section style="padding-top: 30px; padding-bottom: 10px">
+        <div id="slideshow">
+            <div>
+                <img src="assets/img/1.jpg">
+            </div>
+            <div>
+                <img src="assets/img/xb.jpg">
+            </div>
+        </div>
+    </section>
+
 
 
     <?php require_once 'layout/footer.php' ?>
@@ -384,6 +397,7 @@
     <script src="assets/js/agency.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
     <script src="assets/js/Simple-Slider.js"></script>
+    <script src="assets/js/Auto-Slider.js"></script>
 
     <!-- FOR REGISTER SCRIPT -->
     
