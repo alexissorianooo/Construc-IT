@@ -57,7 +57,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                 </div>
             </div>
             <div class="row projects" style="background: #ffffff;">
-                <div class="col-sm-6 item" style="border-style: none;border-color: var(--bs-gray-dark);">
+                <!-- <div class="col-sm-6 item" style="border-style: none;border-color: var(--bs-gray-dark);">
                     <div class="row">
                         <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid"
                                     src="assets/img/desk.jpg"></a></div>
@@ -160,7 +160,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                             <p class="description"></p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="container">
