@@ -1,10 +1,15 @@
+/* Slideshow */
 #slideshow {
-    margin: 10px auto;
+    margin: 20px auto;
     position: relative;
-    width: 1140px;
-    height: 640px;
+    width: 1130px;
+    height: 630px;
     padding: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px rgba(3, 0, 0, 0.4);
+    background: whitesmoke;
+    /*background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 200% 200%;*/
 }
   
 #slideshow > div {
@@ -16,6 +21,26 @@
 }
 
 img {
-    height: 620px;
-    width: 1120px;
+    height: 610px;
+    width: 1110px;
 }
+/*
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}*/
+/* End of Slideshow */
+
+/* backgrounds */
+.bg-dark {
+    background-color: #343a40 !important; 
+}
+
+/* End of backgrounds */
