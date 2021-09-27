@@ -30,6 +30,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="assets/css/Projects-Horizontal.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    
 </head>
 
 <body>
@@ -94,12 +95,13 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                         aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:'.$row["project_progress"] .' %;">'.$row["project_progress"] .'
                                                     </div>
                                                 </div>
-                                                <form method="post" action="">
+                                                <form method="post" action=view project.php">
+                                                    <input name="projectView" value="'.$row["project_id"].'" hidden>
                                                     <button class="btn btn-warning" data-bs-toggle="tooltip" data-bss-tooltip=""
-                                                        data-bs-placement="bottom" data-bss-hover-animate="pulse" type="button"
-                                                        data-toggle="modal" href="#myModal" role="button"
-                                                        style="font-size: 28px;background: rgb(248,197,44);margin: 13px;border-color: rgb(0, 0, 0);" name="openProject" value="'.$row["project_id"].'">
-                                                        '.$_SESSION[$row["project_id"]]=$row["project_id"].'
+                                                        data-bs-placement="bottom" data-bss-hover-animate="pulse" type="submit"
+                                                        data-toggle="modal" href="#myModal" 
+                                                        style="font-size: 28px;background: rgb(248,197,44);margin: 13px;border-color: rgb(0, 0, 0);" name="openProject">
+                                                        
                                                         <i class="fa fa-folder-open-o" style="font-size: 20px;">  Open Project</i>
                                                     </button> 
                                                 </form>
@@ -178,7 +180,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
             </div>
         </div>
         <?php include '../../users/Create Project/createprojectMODAL.php'; ?>
-        <?php include 'view project.php'; ?>
+        
         
     </section>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
