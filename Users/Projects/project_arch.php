@@ -173,9 +173,6 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                             }
                         }
                     }
-
-
-
                 ?>
             </div>
         </div>
