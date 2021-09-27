@@ -148,6 +148,9 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                 style="color: rgb(0,0,0);font-family: Montserrat, sans-serif;font-style: normal;text-align: left;padding: 0px;height: 36px;">
                                                 <strong>START DATE: <br>'.$row["project_startdate"] .'</strong></p>
                                             <p class="text-start"
+                                                style="color: rgb(0,0,0);font-family: Montserrat, sans-serif;font-style: normal;text-align: left;padding: 0px;height: 36px;">
+                                                <strong>DEADLINE: <br>'.$row["project_deadline"] .'</strong></p>
+                                            <p class="text-start"
                                                 style="color: rgb(0,0,0);font-family: Montserrat, sans-serif;font-style: normal;text-align: left;height: 47px;">
                                                 <strong>DATE&nbsp;COMPLETED:</strong></p>
                                             
