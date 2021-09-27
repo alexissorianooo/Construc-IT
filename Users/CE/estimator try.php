@@ -300,7 +300,7 @@
             </form>
         <section class="map-clean bg-dark" id='mapApi'>
             <div class="container" id="hardware-info" style="visibility:hidden; margin-top: -220px;">         
-                <h2 class="text-center text-light">Location </h2>
+                <h2 class="text-center text-light">-</h2>
                     <div class="d-inline-flex">
                         <button id="prev-store" onclick="prevStore()" class="btn text-light" type="button" style="visibility: hidden; width: 66px;height: 52px;"><i class="fa fa-arrow-left fa-2x"></i></button>
                         <p class="text-left text-light" id="hw-desc"> </p>
