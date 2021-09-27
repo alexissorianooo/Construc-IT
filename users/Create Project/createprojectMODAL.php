@@ -9,7 +9,7 @@
     <div class="modal-content" style="background-color: ivory;">
         <section class="sec">
             <div class="modal-header">
-                <h3 class="center CP">Create Project</h3>
+                <h3 class="center CP" style="font-size: 40px;">Create Project</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="max-width: 64.31px; max-height: 38px;">
                     <span aria-hidden="true" style="max-width: 16.97px">×</span>
                 </button>
