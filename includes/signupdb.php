@@ -1,6 +1,5 @@
 <?php
 
-
 // Cannot jump to certain pages without signing up
 if(isset($_POST["registerButton"])){
         
@@ -8,7 +7,13 @@ if(isset($_POST["registerButton"])){
     $fullname = $_POST["fullname"];
     $password = $_POST["password"];
     $password2 = $_POST["confirm-password"];
-    
+
+    $uppercase = preg_match('@[A-Z]@', $password);
+    $lowercase = preg_match('@[a-z]@', $password);
+    $number    = preg_match('@[0-9]@', $password);
+    $specialChars = preg_match('@[^\w]@', $password);
+
+
     $usertype = $_POST["usertypeSELECT"];
 
     require_once 'db.php';
@@ -27,6 +32,10 @@ if(isset($_POST["registerButton"])){
     if (emailExist($conn, $email) !== false) {
         header("location: ../landing-page.php?error=emailtaken");
         exit();
+    }
+    if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
+        header("location: ../landing-page.php?error=pattern");
+        exit(); 
     }
 
     // FOR ARCHTIECT AND PROJECT MANAGER
