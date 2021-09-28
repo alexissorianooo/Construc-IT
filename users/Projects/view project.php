@@ -52,6 +52,7 @@
                             <div class="text-center" style="width: 100%;">
                                 <h2>'.$row["project_name"].'</h2>
                             </div>
+                            <input hidden name="project_id" value="'.$row["project_id"] .'">
                             <div style="margin-top: 20px;">
                                 <div class="container" style="margin-bottom: 20px;">
                                     <div class="row">
@@ -91,7 +92,7 @@
                                             
                                             
                                             echo '
-                                            " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className">
+                                            " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT1">
                                                 
                                                 <option value="Pending" class="pending-class" ';
 
@@ -136,7 +137,7 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className">
+                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT2">
                                             
                                             <option value="Pending" class="pending-class" ';
 
@@ -179,7 +180,7 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className">
+                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT3">
                                             
                                             <option value="Pending" class="pending-class" ';
 
@@ -222,7 +223,7 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className">
+                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT4">
                                             
                                             <option value="Pending" class="pending-class" ';
 
@@ -265,7 +266,7 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className">
+                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT5">
                                             
                                             <option value="Pending" class="pending-class" ';
 
@@ -308,7 +309,7 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className">
+                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT6">
                                             
                                             <option value="Pending" class="pending-class" ';
 
@@ -351,7 +352,7 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className">
+                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT7">
                                             
                                             <option value="Pending" class="pending-class" ';
 
@@ -394,7 +395,7 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className">
+                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT8">
                                             
                                             <option value="Pending" class="pending-class" ';
 
@@ -423,12 +424,17 @@
                                     ';
 
                                     if($row["project_activity_additional_Architect_1"] == "empty"){
-                                        echo '';
+                                        echo '
+                                        <input hidden name="additional_name_1" value="'.$row["project_activity_additional_Architect_1"].'">
+                                        <select hidden name="SELECT_additional_1"></select>
+                                        ';
                                     }
                                     elseif($row["project_activity_additional_Architect_1"] != "empty"){
                                         echo'
                                             <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
                                                 <div style="width: 100%;">
+                                                    <input hidden name="additional_name_1" value="'.$row["project_activity_additional_Architect_1"].'">
+                                                    <input hidden name="counter" value="1">
                                                     <p class="text-center text-muted">'.$row["project_activity_additional_Architect_1"] .'</p>
                                                     <select class="selectColor';
 
@@ -444,7 +450,7 @@
                                                 
                                                 
                                                 echo '
-                                                " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className">
+                                                " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_1">
                                                     
                                                     <option value="Pending" class="pending-class" ';
 
@@ -472,12 +478,17 @@
                                             </div>';
                                         }
                                         if($row["project_activity_additional_Architect_2"] == "empty"){
-                                            echo '';
+                                            echo '
+                                            <input hidden name="additional_name_2" value="'.$row["project_activity_additional_Architect_2"].'">
+                                            <select hidden name="SELECT_additional_2"></select>
+                                            ';
                                         }
                                         elseif($row["project_activity_additional_Architect_2"] != "empty"){
                                             echo'
                                                 <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
                                                     <div style="width: 100%;">
+                                                        <input hidden name="additional_name_2" value="'.$row["project_activity_additional_Architect_2"].'">
+                                                        <input hidden name="counter" value="2">
                                                         <p class="text-center text-muted">'.$row["project_activity_additional_Architect_2"] .'</p>
                                                         <select class="selectColor';
     
@@ -493,7 +504,7 @@
                                                     
                                                     
                                                     echo '
-                                                    " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className">
+                                                    " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_2">
                                                         
                                                         <option value="Pending" class="pending-class" ';
     
@@ -521,12 +532,17 @@
                                                 </div>';
                                             }
                                             if($row["project_activity_additional_Architect_3"] == "empty"){
-                                                echo '';
+                                                echo '
+                                                <input hidden name="additional_name_3" value="'.$row["project_activity_additional_Architect_3"].'">
+                                                <select hidden name="SELECT_additional_3"></select>
+                                                ';
                                             }
                                             elseif($row["project_activity_additional_Architect_3"] != "empty"){
                                                 echo'
                                                     <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
                                                         <div style="width: 100%;">
+                                                            <input hidden name="additional_name_3" value="'.$row["project_activity_additional_Architect_3"].'">
+                                                            <input hidden name="counter" value="3">
                                                             <p class="text-center text-muted">'.$row["project_activity_additional_Architect_3"] .'</p>
                                                             <select class="selectColor';
         
@@ -542,7 +558,7 @@
                                                         
                                                         
                                                         echo '
-                                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className">
+                                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_3">
                                                             
                                                             <option value="Pending" class="pending-class" ';
         
@@ -570,12 +586,17 @@
                                                     </div>';
                                                 }
                                                 if($row["project_activity_additional_Architect_4"] == "empty"){
-                                                    echo '';
+                                                    echo '
+                                                    <input hidden name="additional_name_4" value="'.$row["project_activity_additional_Architect_4"].'">
+                                                    <select hidden name="SELECT_additional_4"></select>
+                                                    ';
                                                 }
                                                 elseif($row["project_activity_additional_Architect_4"] != "empty"){
                                                     echo'
                                                         <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
                                                             <div style="width: 100%;">
+                                                                <input hidden name="additional_name_4" value="'.$row["project_activity_additional_Architect_4"].'">
+                                                                <input hidden name="counter" value="4">
                                                                 <p class="text-center text-muted">'.$row["project_activity_additional_Architect_4"] .'</p>
                                                                 <select class="selectColor';
             
@@ -591,7 +612,7 @@
                                                             
                                                             
                                                             echo '
-                                                            " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className">
+                                                            " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_4">
                                                                 
                                                                 <option value="Pending" class="pending-class" ';
             
@@ -619,12 +640,17 @@
                                                         </div>';
                                                     }
                                                     if($row["project_activity_additional_Architect_5"] == "empty"){
-                                                        echo '';
+                                                        echo '
+                                                        <input hidden name="additional_name_5" value="'.$row["project_activity_additional_Architect_5"].'">
+                                                        <select hidden name="SELECT_additional_5"></select>
+                                                        ';
                                                     }
                                                     elseif($row["project_activity_additional_Architect_5"] != "empty"){
                                                         echo'
                                                             <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
                                                                 <div style="width: 100%;">
+                                                                    <input hidden name="additional_name_5" value="'.$row["project_activity_additional_Architect_5"].'">
+                                                                    <input hidden name="counter" value="5">
                                                                     <p class="text-center text-muted">'.$row["project_activity_additional_Architect_5"] .'</p>
                                                                     <select class="selectColor';
                 
@@ -640,7 +666,7 @@
                                                                 
                                                                 
                                                                 echo '
-                                                                " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className">
+                                                                " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_5">
                                                                     
                                                                     <option value="Pending" class="pending-class" ';
                 
@@ -683,7 +709,7 @@
                     <section class="text-center" id="footer-section">
                         <button class="btn btn-primary" style="background: rgb(229,234,239);color: rgb(0,0,0);margin: 10px;border-color: rgb(229,234,239);" type="button" onclick="history.back()">
                             <i class="fa fa-arrow-circle-left"></i>&nbsp; Back</button>
-                        <button class="btn btn-primary" type="submit" style="margin: 10px;">
+                        <button class="btn btn-primary" type="submit" style="margin: 10px;" name="saveButton">
                             <i class="fa fa-save"></i>&nbsp; Save</button>
                     </section>
                         
