@@ -166,3 +166,10 @@ function emptyInputcreate($project_name, $project_startdate, $project_deadline, 
   }
   return $result;
 }
+
+// FOR PROJECT VIEW
+
+function backButton(){
+  header('location: ../project_arch.php?justbacked');
+  exit();
+}
