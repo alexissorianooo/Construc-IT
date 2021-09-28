@@ -69,6 +69,12 @@
                                         <div class="col-md-6">
                                             <p>Deadline:    '.$row["project_deadline"] .'</p>
                                         </div>
+                                        <div class="col-md-6">
+                                            <p>Aechitect:    '.$row["project_architect"] .'</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>Project Manager:    '.$row["project_pm"] .'</p>
+                                        </div>
                                     </div>
                                 </div>
                                 
