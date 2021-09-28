@@ -1,9 +1,11 @@
 .viewfix {
     margin-bottom: 2.3rem;
+    padding-bottom: 5px;
 }
 
 .viewfixds {
     margin-bottom: 0.85rem;
+    padding-bottom: 5px;
 }
 
 .progressdesign {
@@ -24,4 +26,19 @@ body {
     text-align: center;
     align-items: center;
     margin: auto;
+}
+
+.info-h{
+    padding-left: 9rem;
+}
+
+.infotext {
+    color:black;
+    font-weight:bold; 
+    padding-right:5px; 
+    display: inline-block;
+}
+
+.info {
+    display: inline-block;
 }
