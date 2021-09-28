@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="assetsForViewProject/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assetsForViewProject/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assetsForViewProject/css/styles.css">
+    <link rel="stylesheet" href="assetsForViewProject/css/view.css">
 </head>
 
 <body style="width: 1000px;margin: auto;">
@@ -76,7 +77,7 @@
                                 <div class="row">
                                     <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
                                         <div class="text-center" style="width: 100%;">
-                                            <p class="text-center text-muted">'.$row["project_activity_Architect_1"] .'</p>
+                                            <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_1"] .'</p>
                                             <select class="selectColor  ';
 
                                                 if($status1 == $row['project_status_Architect_1']){
@@ -121,7 +122,7 @@
                                     </div>
                                     <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
                                         <div style="width: 100%;">
-                                            <p class="text-center text-muted">'.$row["project_activity_Architect_2"] .'</p>
+                                            <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_2"] .'</p>
                                             <select class="selectColor';
 
                                             if($status1 == $row['project_status_Architect_2']){
@@ -164,7 +165,7 @@
                                     </div>
                                     <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
                                         <div style="width: 100%;">
-                                            <p class="text-center text-muted">'.$row["project_activity_Architect_3"] .'</p>
+                                            <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_3"] .'</p>
                                             <select class="selectColor';
 
                                             if($status1 == $row['project_status_Architect_3']){
@@ -207,7 +208,7 @@
                                     </div>
                                     <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
                                         <div class="text-center" style="width: 100%;">
-                                            <p class="text-center text-muted">'.$row["project_activity_Architect_4"] .'</p>
+                                            <p class="text-center text-muted viewfixds">'.$row["project_activity_Architect_4"] .'</p>
                                             <select class="selectColor';
 
                                             if($status1 == $row['project_status_Architect_4']){
@@ -250,7 +251,7 @@
                                     </div>
                                     <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
                                         <div class="text-center" style="width: 100%;">
-                                            <p class="text-center text-muted">'.$row["project_activity_Architect_5"] .'</p>
+                                            <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_5"] .'</p>
                                             <select class="selectColor';
 
                                             if($status1 == $row['project_status_Architect_5']){
@@ -293,7 +294,7 @@
                                     </div>
                                     <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
                                         <div class="text-center" style="width: 100%;">
-                                            <p class="text-center text-muted">'.$row["project_activity_Architect_6"] .'</p>
+                                            <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_6"] .'</p>
                                             <select class="selectColor';
 
                                             if($status1 == $row['project_status_Architect_6']){
@@ -336,7 +337,7 @@
                                     </div>
                                     <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
                                         <div class="text-center" style="width: 100%;">
-                                            <p class="text-center text-muted">'.$row["project_activity_Architect_7"] .'</p>
+                                            <p class="text-center text-muted viewfixds">'.$row["project_activity_Architect_7"] .'</p>
                                             <select class="selectColor';
 
                                             if($status1 == $row['project_status_Architect_7']){
@@ -379,7 +380,7 @@
                                     </div>
                                     <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
                                         <div style="width: 100%;">
-                                            <p class="text-center text-muted">'.$row["project_activity_Architect_8"] .'</p>
+                                            <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_8"] .'</p>
                                             <select class="selectColor';
 
                                             if($status1 == $row['project_status_Architect_8']){
