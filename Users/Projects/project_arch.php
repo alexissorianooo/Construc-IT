@@ -57,12 +57,14 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                 <!-- DISPLAY PROJECTS HERE -->
 
                 <?php 
+                    $count=0;
                     $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_progress FROM project_db";
                     $result = mysqli_query($conn, $sql);
 
                     if(mysqli_num_rows($result)>0){
                         while($row=mysqli_fetch_assoc($result)){
                             if($row["project_status_fk"]=="Not Complete" && $_SESSION["user_fullname"] == $row["project_architect"]){
+                               
                                 echo '
                                     <div class="col-sm-6 item" style="border-style: none;border-color: var(--bs-gray-dark);">
                                         <div class="row">
@@ -70,6 +72,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                         src="assets/img/desk.jpg"></a></div>
                                             <div class="col text-end" style="background: #f9eeca;">
                                                 <h3 class="text-start name" style="color: var(--bs-dark);"> '. $row["project_name"] . '&nbsp;</h3>
+                                                
                                                 <p class="text-start"
                                                 style="color: rgb(0,0,0);font-family: Montserrat, sans-serif;font-style: normal;text-align: left;padding: 0px;height: 36px;">
                                                 <strong>Foreman incharged: <br>'.$row["project_pm"] .'</strong></p>
@@ -84,7 +87,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                     <strong>PROGRESS:</strong></p>
                                                 <div class="progress" style="height: 28px;border: 2px solid var(--bs-dark) ;">
                                                     <div class="progress-bar bg-success progress-bar-striped progress-bar-animated"
-                                                        aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:'.$row["project_progress"] .' %;">'.$row["project_progress"] .'
+                                                        aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:'.$row["project_progress"].'%;">'.$row["project_progress"] .'
                                                     </div>
                                                 </div>
                                                 <form method="post" action="view project.php">
