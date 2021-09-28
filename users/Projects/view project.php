@@ -63,17 +63,17 @@
                             <div style="margin-top: 20px;">
                                 <div class="container" style="margin-bottom: 20px;">
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <p>Start Date:    '.$row["project_startdate"] .'</p>
+                                        <div class="col-md-6 info-h">
+                                            <p class="infotext">Start Date:</p><p class="info">    '.$row["project_startdate"] .'</p>
                                         </div>
-                                        <div class="col-md-6">
-                                            <p>Deadline:    '.$row["project_deadline"] .'</p>
+                                        <div class="col-md-6 info-h">
+                                            <p class="infotext">Deadline:</p><p class="info">    '.$row["project_deadline"] .'</p>
                                         </div>
-                                        <div class="col-md-6">
-                                            <p>Aechitect:    '.$row["project_architect"] .'</p>
+                                        <div class="col-md-6 info-h">
+                                            <p class="infotext">Architect:</p><p class="info">   '.$row["project_architect"] .'</p>
                                         </div>
-                                        <div class="col-md-6">
-                                            <p>Project Manager:    '.$row["project_pm"] .'</p>
+                                        <div class="col-md-6 info-h">
+                                            <p class="infotext">Project Manager:</p><p class="info">    '.$row["project_pm"] .'</p>
                                         </div>
                                     </div>
                                 </div>
@@ -358,7 +358,7 @@
                                     </div>
                                     <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
                                         <div class="text-center" style="width: 100%;">
-                                            <p class="text-center text-muted viewfixds">'.$row["project_activity_Architect_7"] .'</p>
+                                            <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_7"] .'</p>
                                             <select class="selectColor';
 
                                             if($status1 == $row['project_status_Architect_7']){
