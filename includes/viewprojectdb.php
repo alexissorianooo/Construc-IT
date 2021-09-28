@@ -3,15 +3,18 @@
 
 if(isset($_POST["saveButton"])){
 
-    echo $project_id = $_POST['project_id'];
-    echo $select1 = $_POST['SELECT1'];
-    echo $select2 = $_POST['SELECT2'];
-    echo $select3 = $_POST['SELECT3'];
-    echo $select4 = $_POST['SELECT4'];
-    echo $select5 = $_POST['SELECT5'];
-    echo $select6 = $_POST['SELECT6'];
-    echo $select7 = $_POST['SELECT7'];
-    echo $select8 = $_POST['SELECT8'];
+    $project_id = $_POST['project_id'];
+    $select1 = $_POST['SELECT1'];
+    $select2 = $_POST['SELECT2'];
+    $select3 = $_POST['SELECT3'];
+    $select4 = $_POST['SELECT4'];
+    $select5 = $_POST['SELECT5'];
+    $select6 = $_POST['SELECT6'];
+    $select7 = $_POST['SELECT7'];
+    $select8 = $_POST['SELECT8'];
+    $progressbar =  $_POST['progressbarUPDATE'];
+    // $numerator = $_POST['numeratorUPDATE'];
+    // $denominator = $_POST['denominatorUPDATE'];
 
     // echo "<br><br><br>";
     // // echo $select9 = $_POST['SELECT_additional_1'];
@@ -19,8 +22,8 @@ if(isset($_POST["saveButton"])){
     // // echo $select11 = $_POST['SELECT_additional_3'];
     // // echo $select12 = $_POST['SELECT_additional_4'];
     // // echo $select13 = $_POST['SELECT_additional_5'];
-    // echo "<br>".$counter = $_POST['counter'];
-    // echo "hello";
+    
+    
 
     
     $selectnum = 8;
@@ -41,12 +44,69 @@ if(isset($_POST["saveButton"])){
     // echo "<br>".$select11;
     // echo "<br>".$select12;
     // echo "<br>".$select13;
+    
+    $counter = $_POST['counter'];
+    $denominator = $counter+8;
+    $numerator=0;
+
+    
+        
+    if($select1=="Completed"){
+        $numerator++;
+    }
+    if($select2=="Completed"){
+        $numerator++;
+    }
+    if($select3=="Completed"){
+        $numerator++;
+    }
+    if($select4=="Completed"){
+        $numerator++;
+    }
+    if($select5=="Completed"){
+        $numerator++;
+    }
+    if($select6=="Completed"){
+        $numerator++;
+    }
+    if($select7=="Completed"){
+        $numerator++;
+    }
+    if($select8=="Completed"){
+        $numerator++;
+    }
+    if($select9=="Completed"){
+        $numerator++;
+    }
+    if($select10=="Completed"){
+        $numerator++;
+    }
+    if($select11=="Completed"){
+        $numerator++;
+    }
+    if($select12=="Completed"){
+        $numerator++;
+    }
+    if($select13=="Completed"){
+        $numerator++;
+    }
+
+
 
     require_once 'db.php';
     require_once 'functions.php';
 
+    // if($select1=="Completed" && $select2=="Completed" && $select3=="Completed" && $select4=="Completed" && $select5=="Completed" && $select6=="Completed" && $select7=="Completed" && $select8=="Completed" && $select9=="Completed" && $select10=="Completed" && $select11=="Completed" && $select12=="Completed" && $select13=="Completed"){
+    //     completeProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
+    // } 
 
-    updateProject($conn, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
+    if($numerator/$denominator==1){
+        completeProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
+    } 
+
+
+
+    updateProjectINC($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
 
 }else{
     echo 'what is wrong brother?';

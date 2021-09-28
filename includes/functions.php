@@ -169,14 +169,40 @@ function emptyInputcreate($project_name, $project_startdate, $project_deadline, 
 
 // FOR PROJECT VIEW
 
-function updateProject($conn, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13){
-  $sql = "UPDATE project_db SET project_status_Architect_1 = '$select1', project_status_Architect_2 = '$select2', project_status_Architect_3 = '$select3', project_status_Architect_4 = '$select4', project_status_Architect_5 = '$select5', project_status_Architect_6 = '$select6', project_status_Architect_7 = '$select7', project_status_Architect_8 = '$select8', project_status_additional_Architect_1 = '$select9', project_status_additional_Architect_2 = '$select10', project_status_additional_Architect_3 = '$select11', project_status_additional_Architect_4 = '$select12', project_status_additional_Architect_5 = '$select13' WHERE project_id = $project_id";
+function updateProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13){
+  
+  $progressbar = ($numerator / $denominator)*100;
+  $roundvalue = round($progressbar);
+  // $roundvalue = 10;
+  
+  $sql = "UPDATE project_db SET project_status_Architect_1 = '$select1', project_status_Architect_2 = '$select2', project_status_Architect_3 = '$select3', project_status_Architect_4 = '$select4', project_status_Architect_5 = '$select5', project_status_Architect_6 = '$select6', project_status_Architect_7 = '$select7', project_status_Architect_8 = '$select8', project_status_additional_Architect_1 = '$select9', project_status_additional_Architect_2 = '$select10', project_status_additional_Architect_3 = '$select11', project_status_additional_Architect_4 = '$select12', project_status_additional_Architect_5 = '$select13', project_progress = '$roundvalue' WHERE project_id = $project_id";
   $stmt = mysqli_stmt_init($conn);
 
+  
   mysqli_query($conn, $sql);
+  
 
   mysqli_close($conn);
-  header("location: ../users/Projects/project_arch.php?error=none");
-  exit();
+  header("Location: ../users/Projects/project_arch.php?error=none");
+  exit;
 
+
+}
+
+function updateProjectINC($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13){
+  $sql = "UPDATE project_db SET project_status_fk = 'Not Complete' WHERE project_id = $project_id";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+  
+  updateProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
+}
+
+
+function completeProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13){
+  $datecomplete = date('Y-m-d');
+  $sql = "UPDATE project_db SET project_status_fk = 'Complete', project_completed = '$datecomplete' WHERE project_id = $project_id";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+  
+  updateProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
 }

@@ -57,12 +57,14 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                 <!-- DISPLAY PROJECTS HERE -->
 
                 <?php 
+                    $count=0;
                     $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_progress FROM project_db";
                     $result = mysqli_query($conn, $sql);
 
                     if(mysqli_num_rows($result)>0){
                         while($row=mysqli_fetch_assoc($result)){
                             if($row["project_status_fk"]=="Not Complete" && $_SESSION["user_fullname"] == $row["project_architect"]){
+                               
                                 echo '
                                     <div class="col-sm-6 item" style="border-style: none;border-color: var(--bs-gray-dark);">
                                         <div class="row">
@@ -70,6 +72,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                         src="assets/img/desk.jpg"></a></div>
                                             <div class="col text-end" style="background: #f9eeca;">
                                                 <h3 class="text-start name" style="color: var(--bs-dark);"> '. $row["project_name"] . '&nbsp;</h3>
+                                                
                                                 <p class="text-start"
                                                 style="color: rgb(0,0,0);font-family: Montserrat, sans-serif;font-style: normal;text-align: left;padding: 0px;height: 36px;">
                                                 <strong>Foreman incharged: <br>'.$row["project_pm"] .'</strong></p>
@@ -84,7 +87,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                     <strong>PROGRESS:</strong></p>
                                                 <div class="progress" style="height: 28px;border: 2px solid var(--bs-dark) ;">
                                                     <div class="progress-bar bg-success progress-bar-striped progress-bar-animated"
-                                                        aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:'.$row["project_progress"] .' %;">'.$row["project_progress"] .'
+                                                        aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:'.$row["project_progress"].'%;">'.$row["project_progress"] .'
                                                     </div>
                                                 </div>
                                                 <form method="post" action="view project.php">
@@ -125,7 +128,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
             <div class="row">
 
                 <?php 
-                    $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_progress FROM project_db";
+                    $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_progress, project_completed FROM project_db";
                     $result = mysqli_query($conn, $sql);
 
                     if(mysqli_num_rows($result)>0){
@@ -150,13 +153,19 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                 <strong>DEADLINE: <br>'.$row["project_deadline"] .'</strong></p>
                                             <p class="text-start"
                                                 style="color: rgb(0,0,0);font-family: Montserrat, sans-serif;font-style: normal;text-align: left;height: 47px;">
-                                                <strong>DATE&nbsp;COMPLETED:</strong></p>
+                                                <strong>DATE&nbsp;COMPLETED: <br>'.$row["project_completed"].'</strong></p>
                                             
-                                            <h1></h1><button class="btn btn-warning" data-bs-toggle="tooltip" data-bss-tooltip=""
-                                                data-bs-placement="bottom" data-bss-hover-animate="pulse" type="button"
-                                                title="Open Project"
-                                                style="font-size: 28px;background: rgb(248,197,44);margin: 13px;border-color: rgb(0, 0, 0);" name="openProject'.$row["project_id"].'"><i
-                                                    class="fa fa-folder-open-o" title="Open Project" style="font-size: 20px;" data-toggle="modal" href="#myModal" role="button">  Open Project</i></button>
+                                            <h1></h1>
+                                            <form method="post" action="view project.php">
+                                                    <input name="projectView" value="'.$row["project_id"].'" hidden>
+                                                    <button class="btn btn-warning" data-bs-toggle="tooltip" data-bss-tooltip=""
+                                                        data-bs-placement="bottom" data-bss-hover-animate="pulse" type="submit"
+                                                        data-toggle="modal" href="#myModal" 
+                                                        style="font-size: 28px;background: rgb(248,197,44);margin: 13px;border-color: rgb(0, 0, 0);" name="openProject">
+                                                        
+                                                        <i class="fa fa-folder-open-o" style="font-size: 20px;">  Open Project</i>
+                                                    </button> 
+                                                </form>
                                             <p class="description"></p>
                                         </div>
                                     </div>

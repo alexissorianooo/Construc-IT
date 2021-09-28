@@ -60,6 +60,7 @@
                                 <h2>'.$row["project_name"].'</h2>
                             </div>
                             <input hidden name="project_id" value="'.$row["project_id"] .'">
+                            <input hidden name="counter" value="0">
                             <div style="margin-top: 20px;">
                                 <div class="container" style="margin-bottom: 20px;">
                                     <div class="row">
@@ -113,6 +114,7 @@
 
                                                     if($status1 == $row['project_status_Architect_1']){
                                                         echo ' selected="" ';
+                                                         
                                                     }
                                                     
                                                 echo '>Pending</option>
@@ -121,6 +123,7 @@
                                                     if($status2 == $row['project_status_Architect_1']){
                                                         echo ' selected="" ';
                                                         $numerator++;
+                                                        
                                                     }
 
                                                 echo '>Completed</option>
@@ -128,6 +131,7 @@
 
                                                     if($status3 == $row['project_status_Architect_1']){
                                                         echo ' selected="" ';
+                                                         
                                                     }
                                                 
                                                 echo '>Delayed</option>
@@ -159,6 +163,7 @@
 
                                                 if($status1 == $row['project_status_Architect_2']){
                                                     echo ' selected="" ';
+                                                     
                                                 }
                                                 
                                             echo '>Pending</option>
@@ -174,6 +179,7 @@
 
                                                 if($status3 == $row['project_status_Architect_2']){
                                                     echo ' selected="" ';
+                                                     
                                                 }
                                             
                                             echo '>Delayed</option>
@@ -203,6 +209,7 @@
 
                                                 if($status1 == $row['project_status_Architect_3']){
                                                     echo ' selected="" ';
+                                                     
                                                 }
                                                 
                                             echo '>Pending</option>
@@ -218,6 +225,7 @@
 
                                                 if($status3 == $row['project_status_Architect_3']){
                                                     echo ' selected="" ';
+                                                     
                                                 }
                                             
                                             echo '>Delayed</option>
@@ -247,6 +255,7 @@
 
                                                 if($status1 == $row['project_status_Architect_4']){
                                                     echo ' selected="" ';
+                                                     
                                                 }
                                                 
                                             echo '>Pending</option>
@@ -262,6 +271,7 @@
 
                                                 if($status3 == $row['project_status_Architect_4']){
                                                     echo ' selected="" ';
+                                                     
                                                 }
                                             
                                             echo '>Delayed</option>
@@ -291,6 +301,7 @@
 
                                                 if($status1 == $row['project_status_Architect_5']){
                                                     echo ' selected="" ';
+                                                     
                                                 }
                                                 
                                             echo '>Pending</option>
@@ -306,6 +317,7 @@
 
                                                 if($status3 == $row['project_status_Architect_5']){
                                                     echo ' selected="" ';
+                                                     
                                                 }
                                             
                                             echo '>Delayed</option>
@@ -335,6 +347,7 @@
 
                                                 if($status1 == $row['project_status_Architect_6']){
                                                     echo ' selected="" ';
+                                                     
                                                 }
                                                 
                                             echo '>Pending</option>
@@ -350,6 +363,7 @@
 
                                                 if($status3 == $row['project_status_Architect_6']){
                                                     echo ' selected="" ';
+                                                     
                                                 }
                                             
                                             echo '>Delayed</option>
@@ -379,6 +393,7 @@
 
                                                 if($status1 == $row['project_status_Architect_7']){
                                                     echo ' selected="" ';
+                                                     
                                                 }
                                                 
                                             echo '>Pending</option>
@@ -394,6 +409,7 @@
 
                                                 if($status3 == $row['project_status_Architect_7']){
                                                     echo ' selected="" ';
+                                                     
                                                 }
                                             
                                             echo '>Delayed</option>
@@ -423,6 +439,7 @@
 
                                                 if($status1 == $row['project_status_Architect_8']){
                                                     echo ' selected="" ';
+                                                     
                                                 }
                                                 
                                             echo '>Pending</option>
@@ -438,6 +455,7 @@
 
                                                 if($status3 == $row['project_status_Architect_8']){
                                                     echo ' selected="" ';
+                                                     
                                                 }
                                             
                                             echo '>Delayed</option>
@@ -467,7 +485,7 @@
                                                     }
                                                     elseif($status2 == $row['project_status_additional_Architect_1']){
                                                         echo ' completed-class ';
-                                                        $numerator++;
+                                                        
                                                     }
                                                     elseif($status3 == $row['project_status_additional_Architect_1']){
                                                         echo ' delayed-class ';
@@ -481,6 +499,7 @@
 
                                                         if($status1 == $row['project_status_additional_Architect_1']){
                                                             echo ' selected="" ';
+                                                             
                                                         }
                                                         
                                                     echo '>Pending</option>
@@ -488,6 +507,7 @@
                                                     
                                                         if($status2 == $row['project_status_additional_Architect_1']){
                                                             echo ' selected="" ';
+                                                            $numerator++;
                                                         }
 
                                                     echo '>Completed</option>
@@ -495,6 +515,7 @@
 
                                                         if($status3 == $row['project_status_additional_Architect_1']){
                                                             echo ' selected="" ';
+                                                             
                                                         }
                                                     
                                                     echo '>Delayed</option>
@@ -523,7 +544,7 @@
                                                         }
                                                         elseif($status2 == $row['project_status_additional_Architect_2']){
                                                             echo ' completed-class ';
-                                                            $numerator++;
+                                                            
                                                         }
                                                         elseif($status3 == $row['project_status_additional_Architect_2']){
                                                             echo ' delayed-class ';
@@ -537,6 +558,7 @@
 
                                                             if($status1 == $row['project_status_additional_Architect_2']){
                                                                 echo ' selected="" ';
+                                                                 
                                                             }
                                                             
                                                         echo '>Pending</option>
@@ -544,6 +566,7 @@
                                                         
                                                             if($status2 == $row['project_status_additional_Architect_2']){
                                                                 echo ' selected="" ';
+                                                                $numerator++;
                                                             }
 
                                                         echo '>Completed</option>
@@ -551,6 +574,7 @@
 
                                                             if($status3 == $row['project_status_additional_Architect_2']){
                                                                 echo ' selected="" ';
+                                                                 
                                                             }
                                                         
                                                         echo '>Delayed</option>
@@ -579,7 +603,7 @@
                                                         }
                                                         elseif($status2 == $row['project_status_additional_Architect_3']){
                                                             echo ' completed-class ';
-                                                            $numerator++;
+                                                            
                                                         }
                                                         elseif($status3 == $row['project_status_additional_Architect_3']){
                                                             echo ' delayed-class ';
@@ -593,6 +617,7 @@
 
                                                             if($status1 == $row['project_status_additional_Architect_3']){
                                                                 echo ' selected="" ';
+                                                                 
                                                             }
                                                             
                                                         echo '>Pending</option>
@@ -600,6 +625,7 @@
                                                         
                                                             if($status2 == $row['project_status_additional_Architect_3']){
                                                                 echo ' selected="" ';
+                                                                $numerator++;
                                                             }
 
                                                         echo '>Completed</option>
@@ -607,6 +633,7 @@
 
                                                             if($status3 == $row['project_status_additional_Architect_3']){
                                                                 echo ' selected="" ';
+                                                                 
                                                             }
                                                         
                                                         echo '>Delayed</option>
@@ -635,7 +662,7 @@
                                                             }
                                                             elseif($status2 == $row['project_status_additional_Architect_4']){
                                                                 echo ' completed-class ';
-                                                                $numerator++;
+                                                                
                                                             }
                                                             elseif($status3 == $row['project_status_additional_Architect_4']){
                                                                 echo ' delayed-class ';
@@ -649,6 +676,7 @@
 
                                                             if($status1 == $row['project_status_additional_Architect_4']){
                                                                 echo ' selected="" ';
+                                                                 
                                                             }
                                                             
                                                             echo '>Pending</option>
@@ -656,6 +684,7 @@
                                                             
                                                                 if($status2 == $row['project_status_additional_Architect_4']){
                                                                     echo ' selected="" ';
+                                                                    $numerator++;
                                                                 }
 
                                                             echo '>Completed</option>
@@ -663,6 +692,7 @@
 
                                                                 if($status3 == $row['project_status_additional_Architect_4']){
                                                                     echo ' selected="" ';
+                                                                     
                                                                 }
                                                             
                                                             echo '>Delayed</option>
@@ -691,7 +721,7 @@
                                                                 }
                                                                 elseif($status2 == $row['project_status_additional_Architect_5']){
                                                                     echo ' completed-class ';
-                                                                    $numerator++;
+                                                                    
                                                                 }
                                                                 elseif($status3 == $row['project_status_additional_Architect_5']){
                                                                     echo ' delayed-class ';
@@ -703,6 +733,7 @@
     
                                                             if($status1 == $row['project_status_additional_Architect_5']){
                                                                 echo ' selected="" ';
+                                                                 
                                                             }
                                                             
                                                         echo '>Pending</option>
@@ -710,6 +741,7 @@
                                                         
                                                             if($status2 == $row['project_status_additional_Architect_5']){
                                                                 echo ' selected="" ';
+                                                                $numerator++;
                                                             }
     
                                                         echo '>Completed</option>
@@ -717,6 +749,7 @@
     
                                                             if($status3 == $row['project_status_additional_Architect_5']){
                                                                 echo ' selected="" ';
+                                                                 
                                                             }
                                                                 
                                                         echo '>Delayed</option>
@@ -729,13 +762,14 @@
                             </div>
                         </div>
                     </section>';
-                    
+                   
                     $progressbar = ($numerator / $denominator)*100;
                     $roundvalue = round($progressbar);
                     
-                    
                     echo'
-
+                    <input hidden name="progressbarUPDATE" value="'.$roundvalue.'">
+                    <input hidden name="numeratorUPDATE" value="'.$numerator.'">
+                    <input hidden name="denominatorUPDATE" value="'.$denominator.'">
                     <div class="progress progressdesign">
                                     <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$roundvalue.'%;">'.$roundvalue .'</div>
                     </div>
