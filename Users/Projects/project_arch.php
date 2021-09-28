@@ -155,11 +155,17 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                 style="color: rgb(0,0,0);font-family: Montserrat, sans-serif;font-style: normal;text-align: left;height: 47px;">
                                                 <strong>DATE&nbsp;COMPLETED:</strong></p>
                                             
-                                            <h1></h1><button class="btn btn-warning" data-bs-toggle="tooltip" data-bss-tooltip=""
-                                                data-bs-placement="bottom" data-bss-hover-animate="pulse" type="button"
-                                                title="Open Project"
-                                                style="font-size: 28px;background: rgb(248,197,44);margin: 13px;border-color: rgb(0, 0, 0);" name="openProject'.$row["project_id"].'"><i
-                                                    class="fa fa-folder-open-o" title="Open Project" style="font-size: 20px;" data-toggle="modal" href="#myModal" role="button">  Open Project</i></button>
+                                            <h1></h1>
+                                            <form method="post" action="view project.php">
+                                                    <input name="projectView" value="'.$row["project_id"].'" hidden>
+                                                    <button class="btn btn-warning" data-bs-toggle="tooltip" data-bss-tooltip=""
+                                                        data-bs-placement="bottom" data-bss-hover-animate="pulse" type="submit"
+                                                        data-toggle="modal" href="#myModal" 
+                                                        style="font-size: 28px;background: rgb(248,197,44);margin: 13px;border-color: rgb(0, 0, 0);" name="openProject">
+                                                        
+                                                        <i class="fa fa-folder-open-o" style="font-size: 20px;">  Open Project</i>
+                                                    </button> 
+                                                </form>
                                             <p class="description"></p>
                                         </div>
                                     </div>

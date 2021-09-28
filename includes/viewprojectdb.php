@@ -96,12 +96,17 @@ if(isset($_POST["saveButton"])){
     require_once 'db.php';
     require_once 'functions.php';
 
-    if($select1=="Completed" && $select2=="Completed" && $select3=="Completed" && $select4=="Completed" && $select5=="Completed" && $select6=="Completed" && $select7=="Completed" && $select8=="Completed" && $select9=="Completed" && $select10=="Completed" && $select11=="Completed" && $select12=="Completed" && $select13=="Completed"){
+    // if($select1=="Completed" && $select2=="Completed" && $select3=="Completed" && $select4=="Completed" && $select5=="Completed" && $select6=="Completed" && $select7=="Completed" && $select8=="Completed" && $select9=="Completed" && $select10=="Completed" && $select11=="Completed" && $select12=="Completed" && $select13=="Completed"){
+    //     completeProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
+    // } 
+
+    if($numerator/$denominator==1){
         completeProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
     } 
 
 
-    updateProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
+
+    updateProjectINC($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
 
 }else{
     echo 'what is wrong brother?';
