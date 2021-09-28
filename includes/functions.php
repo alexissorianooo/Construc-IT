@@ -199,7 +199,8 @@ function updateProjectINC($conn, $numerator, $denominator, $project_id, $select1
 
 
 function completeProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13){
-  $sql = "UPDATE project_db SET project_status_fk = 'Complete' WHERE project_id = $project_id";
+  $datecomplete = date('Y-m-d');
+  $sql = "UPDATE project_db SET project_status_fk = 'Complete', project_completed = '$datecomplete' WHERE project_id = $project_id";
   $stmt = mysqli_stmt_init($conn);
   mysqli_query($conn, $sql);
   

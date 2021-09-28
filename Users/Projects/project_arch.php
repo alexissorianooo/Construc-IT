@@ -128,7 +128,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
             <div class="row">
 
                 <?php 
-                    $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_progress FROM project_db";
+                    $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_progress, project_completed FROM project_db";
                     $result = mysqli_query($conn, $sql);
 
                     if(mysqli_num_rows($result)>0){
@@ -153,7 +153,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                 <strong>DEADLINE: <br>'.$row["project_deadline"] .'</strong></p>
                                             <p class="text-start"
                                                 style="color: rgb(0,0,0);font-family: Montserrat, sans-serif;font-style: normal;text-align: left;height: 47px;">
-                                                <strong>DATE&nbsp;COMPLETED:</strong></p>
+                                                <strong>DATE&nbsp;COMPLETED: <br>'.$row["project_completed"].'</strong></p>
                                             
                                             <h1></h1>
                                             <form method="post" action="view project.php">
