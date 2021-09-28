@@ -5,3 +5,23 @@
 .viewfixds {
     margin-bottom: 0.85rem;
 }
+
+.progressdesign {
+    width: 80%;
+    height: 30px;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+body {
+    min-width: 100%;
+    margin: auto;
+    align-content: center;
+    align-items: center;
+}
+
+.centeralign {
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
