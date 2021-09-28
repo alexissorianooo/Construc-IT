@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="assetsForViewProject/css/view.css">
 </head>
 
-<body style="width: 1000px;margin: auto;">
+<body>
     <br>
     <br>
     <br>
@@ -56,7 +56,7 @@
 
                     <section id="header-section">
                         <div style="width: 100%;">
-                            <div class="text-center" style="width: 100%;">
+                            <div class="centeralign" style="width: 100%;">
                                 <h2>'.$row["project_name"].'</h2>
                             </div>
                             <input hidden name="project_id" value="'.$row["project_id"] .'">
@@ -459,7 +459,7 @@
                                                 <div style="width: 100%;">
                                                     <input hidden name="additional_name_1" value="'.$row["project_activity_additional_Architect_1"].'">
                                                     <input hidden name="counter" value="1">
-                                                    <p class="text-center text-muted">'.$row["project_activity_additional_Architect_1"] .'</p>
+                                                    <p class="text-center text-muted viewfix">'.$row["project_activity_additional_Architect_1"] .'</p>
                                                     <select class="selectColor';
 
                                                     if($status1 == $row['project_status_additional_Architect_1']){
@@ -515,7 +515,7 @@
                                                     <div style="width: 100%;">
                                                         <input hidden name="additional_name_2" value="'.$row["project_activity_additional_Architect_2"].'">
                                                         <input hidden name="counter" value="2">
-                                                        <p class="text-center text-muted">'.$row["project_activity_additional_Architect_2"] .'</p>
+                                                        <p class="text-center text-muted viewfix">'.$row["project_activity_additional_Architect_2"] .'</p>
                                                         <select class="selectColor';
 
                                                         if($status1 == $row['project_status_additional_Architect_2']){
@@ -571,7 +571,7 @@
                                                     <div style="width: 100%;">
                                                         <input hidden name="additional_name_3" value="'.$row["project_activity_additional_Architect_3"].'">
                                                         <input hidden name="counter" value="3">
-                                                        <p class="text-center text-muted">'.$row["project_activity_additional_Architect_3"] .'</p>
+                                                        <p class="text-center text-muted viewfix">'.$row["project_activity_additional_Architect_3"] .'</p>
                                                         <select class="selectColor';
 
                                                         if($status1 == $row['project_status_additional_Architect_3']){
@@ -627,7 +627,7 @@
                                                         <div style="width: 100%;">
                                                             <input hidden name="additional_name_4" value="'.$row["project_activity_additional_Architect_4"].'">
                                                             <input hidden name="counter" value="4">
-                                                            <p class="text-center text-muted">'.$row["project_activity_additional_Architect_4"] .'</p>
+                                                            <p class="text-center text-muted viewfix">'.$row["project_activity_additional_Architect_4"] .'</p>
                                                             <select class="selectColor';
 
                                                             if($status1 == $row['project_status_additional_Architect_4']){
@@ -683,7 +683,7 @@
                                                             <div style="width: 100%;">
                                                                 <input hidden name="additional_name_5" value="'.$row["project_activity_additional_Architect_5"].'">
                                                                 <input hidden name="counter" value="5">
-                                                                <p class="text-center text-muted">'.$row["project_activity_additional_Architect_5"] .'</p>
+                                                                <p class="text-center text-muted viewfix">'.$row["project_activity_additional_Architect_5"] .'</p>
                                                                 <select class="selectColor';
             
                                                                 if($status1 == $row['project_status_additional_Architect_5']){
@@ -736,7 +736,7 @@
                     
                     echo'
 
-                    <div class="progress" style="width: 80%;height: 30px;margin: auto;">
+                    <div class="progress progressdesign">
                                     <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$roundvalue.'%;">'.$roundvalue .'</div>
                     </div>
 
