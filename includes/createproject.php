@@ -46,21 +46,52 @@ if(isset($_POST['createButton'])){
 
 
     // if($counter!=0){ //checks if there is an additional activities
-    $project = 8;
-    for ($i=0; $i<5;$i++){
-        $project++;
+    // SHORTCUT
+    // $project = 8;
+    // for ($i=0; $i<5;$i++){
+    //     $project++;
 
-        // echo $project_input["project_input".$project] = $_POST['additional_name'. $i+1]; WORKING!!
+    //     // echo $project_input["project_input".$project] = $_POST['additional_name'. $i+1]; WORKING!!
 
-        if(!empty($_POST['additional_name'. $i+1])){
-            $project_input["project_input".$project] = $_POST['additional_name'. $i+1];
-        } else{
-            $project_input["project_input".$project] = "empty";
-        }
-        extract($project_input);
+    //     if(!empty($_POST['additional_name'. $i+1])){
+    //         $project_input["project_input".$project] = $_POST['additional_name'. $i+1];
+    //     } else{
+    //         $project_input["project_input".$project] = "empty";
+    //     }
+    //     extract($project_input);
 
 
+    // }
+
+    //LONG VERSION
+    if(!empty($_POST['additional_name1'])){
+        $project_input9 = $_POST['additional_name1'];
+    }else{
+        $project_input9 = "empty";
     }
+    if(!empty($_POST['additional_name2'])){
+        $project_input10 = $_POST['additional_name2'];
+    }else{
+        $project_input10 = "empty";
+    }
+    if(!empty($_POST['additional_name3'])){
+        $project_input11 = $_POST['additional_name3'];
+    }else{
+        $project_input11 = "empty";
+    }
+    if(!empty($_POST['additional_name4'])){
+        $project_input12 = $_POST['additional_name44'];
+    }else{
+        $project_input12 = "empty";
+    }
+    if(!empty($_POST['additional_name5'])){
+        $project_input13 = $_POST['additional_name5'];
+    }else{
+        $project_input13 = "empty";
+    }
+
+
+
     // echo $project_input9 .'<br>';
     // echo $project_input10 .'<br>';
     // echo $project_input11 .'<br>';
