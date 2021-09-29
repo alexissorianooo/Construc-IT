@@ -46,7 +46,7 @@ if(isset($_POST['createButton'])){
 
 
     // if($counter!=0){ //checks if there is an additional activities
-    // SHORTCUT
+    // SHORTCUT FOR PC
     // $project = 8;
     // for ($i=0; $i<5;$i++){
     //     $project++;
