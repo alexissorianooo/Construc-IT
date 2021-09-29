@@ -151,9 +151,17 @@ function createProject($conn, $project_name, $project_startdate, $project_deadli
     mysqli_stmt_bind_param($stmt, "ssssssssssssssssss", $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("location: ../users/Projects/project_arch.php?error=none");
-    exit();
+    
 
+}
+
+function pmStatus($conn, $project_pmSELECTid){
+  $sql = "UPDATE user_db SET user_status = 'Busy' WHERE userid = $project_pmSELECTid";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+
+  header("location: ../users/Projects/project_arch.php?error=noneFROMpmStatus");
+  exit();
 }
 
 function emptyInputcreate($project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8){

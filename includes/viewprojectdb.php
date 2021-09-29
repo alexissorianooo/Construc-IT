@@ -45,6 +45,8 @@ if(isset($_POST["saveButton"])){
     // echo "<br>".$select12;
     // echo "<br>".$select13;
     
+
+    //THIS IS FOR PROGRESS BAR
     $counter = $_POST['counter'];
     $denominator = $counter+8;
     $numerator=0;

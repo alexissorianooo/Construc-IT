@@ -53,7 +53,7 @@
 
                                                     }
 
-                                                    $sql = "SELECT user_fullname FROM user_db WHERE usertype_fk = 'projectmanager';";
+                                                    $sql = "SELECT user_fullname, userid, user_status FROM user_db WHERE usertype_fk = 'projectmanager';";
                                                     $stmt = mysqli_stmt_init($conn);
 
                                                     if (!mysqli_stmt_prepare($stmt, $sql)){
@@ -63,7 +63,9 @@
                                                     $records = mysqli_query($conn, $sql);
 
                                                     while($data = mysqli_fetch_array($records)){
-                                                            echo "<option value'". $data['user_fullname']."'>" .$data['user_fullname']."</option>";
+                                                        if($data['user_status']!="Busy"){
+                                                            echo "<option value='". $data['user_fullname']."|". $data['userid']."'>" .$data['user_fullname']."</option>";
+                                                        }
                                                     }
                                                     mysqli_close($conn);
 

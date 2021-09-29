@@ -23,7 +23,17 @@ if(isset($_POST['createButton'])){
     $project_deadline = $_POST['project_enddeadline'];
 
     $project_architect = $_SESSION['user_fullname'];
-    $project_pmSELECT = $_POST['project_pmSELECT'];
+
+    //FOR PM SELECT DOUBLE VALUE
+    $result = $_POST['project_pmSELECT'];
+    $result_explode = explode('|', $result);
+    $project_pmSELECT = $result_explode[0]; //NAME
+    $project_pmSELECTid = $result_explode[1]; //user ID
+
+
+
+
+    // echo $project_pmSELECT = $_POST['project_pmSELECT'];
 
     $project_input1 = $_POST['project_input1'];
     $project_input2 = $_POST['project_input2'];
@@ -75,7 +85,7 @@ if(isset($_POST['createButton'])){
    
 
     createProject($conn, $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13);
-    
+    pmStatus($conn, $project_pmSELECTid);
 
 
 }
