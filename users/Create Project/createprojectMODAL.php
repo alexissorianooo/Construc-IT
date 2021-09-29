@@ -35,7 +35,7 @@
                                         <td class="lefttext">Deadline<input class="form-control" type="date" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_enddeadline"></td>
                                     </tr>
                                     <tr>
-                                        <td>Project Manager 
+                                        <td> Foreman  
 
                                             <select style="width: 320px;height: 38px; border-width: 2px; border-color: darkslategray;" id="usertype" name="project_pmSELECT">
                                                 <option disabled selected>--Available Project Managers--</option>
