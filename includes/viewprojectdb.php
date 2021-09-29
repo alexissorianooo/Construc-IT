@@ -25,26 +25,58 @@ if(isset($_POST["saveButton"])){
     
     
 
+    //SHORT VERSION FOR PC VERSION
+    // $selectnum = 8;
+    // for ($i=0; $i<5;$i++){
+    //     $selectnum++;
+
+
+    //     if(($_POST['additional_name_'. $i+1])!="empty"){
+    //         $select["select".$selectnum] = $_POST['SELECT_additional_'. $i+1];
+    //     } else{
+    //         $select["select".$selectnum] = "Pending";
+    //     }
+    //     extract($select);
+    // }
     
-    $selectnum = 8;
-    for ($i=0; $i<5;$i++){
-        $selectnum++;
 
-
-        if(($_POST['additional_name_'. $i+1])!="empty"){
-            $select["select".$selectnum] = $_POST['SELECT_additional_'. $i+1];
-        } else{
-            $select["select".$selectnum] = "Pending";
-        }
-        extract($select);
+    //LONG VERSION
+    if(($_POST['additional_name_1']!="empty")){
+        $select9 = $_POST['SELECT_additional_1'];
+    }else{
+        $select9 = "empty";
     }
-        
+    if(($_POST['additional_name_2']!="empty")){
+        $select10 = $_POST['SELECT_additional_2'];
+    }else{
+        $select10 = "empty";
+    }
+    if(($_POST['additional_name_3']!="empty")){
+        $select11 = $_POST['SELECT_additional_3'];
+    }else{
+        $select11 = "empty";
+    }
+    if(($_POST['additional_name_4']!="empty")){
+        $select12 = $_POST['SELECT_additional_4'];
+    }else{
+        $select12 = "empty";
+    }
+    if(($_POST['additional_name_5']!="empty")){
+        $select13 = $_POST['SELECT_additional_5'];
+    }else{
+        $select13 = "empty";
+    }
+
+
+
     // echo "<br>".$select9;
     // echo "<br>".$select10;
     // echo "<br>".$select11;
     // echo "<br>".$select12;
     // echo "<br>".$select13;
     
+
+    //THIS IS FOR PROGRESS BAR
     $counter = $_POST['counter'];
     $denominator = $counter+8;
     $numerator=0;

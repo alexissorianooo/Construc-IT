@@ -35,7 +35,7 @@
                                         <td class="lefttext">Deadline<input class="form-control" type="date" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_enddeadline"></td>
                                     </tr>
                                     <tr>
-                                        <td>Project Manager 
+                                        <td> Foreman  
 
                                             <select style="width: 320px;height: 38px; border-width: 2px; border-color: darkslategray;" id="usertype" name="project_pmSELECT">
                                                 <option disabled selected>--Available Project Managers--</option>
@@ -53,7 +53,7 @@
 
                                                     }
 
-                                                    $sql = "SELECT user_fullname FROM user_db WHERE usertype_fk = 'projectmanager';";
+                                                    $sql = "SELECT user_fullname, userid, user_status FROM user_db WHERE usertype_fk = 'projectmanager';";
                                                     $stmt = mysqli_stmt_init($conn);
 
                                                     if (!mysqli_stmt_prepare($stmt, $sql)){
@@ -63,7 +63,9 @@
                                                     $records = mysqli_query($conn, $sql);
 
                                                     while($data = mysqli_fetch_array($records)){
-                                                            echo "<option value'". $data['user_fullname']."'>" .$data['user_fullname']."</option>";
+                                                        if($data['user_status']!="Busy"){
+                                                            echo "<option value='". $data['user_fullname']."|". $data['userid']."'>" .$data['user_fullname']."</option>";
+                                                        }
                                                     }
                                                     mysqli_close($conn);
 

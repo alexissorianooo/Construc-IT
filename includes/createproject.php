@@ -23,7 +23,17 @@ if(isset($_POST['createButton'])){
     $project_deadline = $_POST['project_enddeadline'];
 
     $project_architect = $_SESSION['user_fullname'];
-    $project_pmSELECT = $_POST['project_pmSELECT'];
+
+    //FOR PM SELECT DOUBLE VALUE
+    $result = $_POST['project_pmSELECT'];
+    $result_explode = explode('|', $result);
+    $project_pmSELECT = $result_explode[0]; //NAME
+    $project_pmSELECTid = $result_explode[1]; //user ID
+
+
+
+
+    // echo $project_pmSELECT = $_POST['project_pmSELECT'];
 
     $project_input1 = $_POST['project_input1'];
     $project_input2 = $_POST['project_input2'];
@@ -36,21 +46,52 @@ if(isset($_POST['createButton'])){
 
 
     // if($counter!=0){ //checks if there is an additional activities
-    $project = 8;
-    for ($i=0; $i<5;$i++){
-        $project++;
+    // SHORTCUT FOR PC
+    // $project = 8;
+    // for ($i=0; $i<5;$i++){
+    //     $project++;
 
-        // echo $project_input["project_input".$project] = $_POST['additional_name'. $i+1]; WORKING!!
+    //     // echo $project_input["project_input".$project] = $_POST['additional_name'. $i+1]; WORKING!!
 
-        if(!empty($_POST['additional_name'. $i+1])){
-            $project_input["project_input".$project] = $_POST['additional_name'. $i+1];
-        } else{
-            $project_input["project_input".$project] = "empty";
-        }
-        extract($project_input);
+    //     if(!empty($_POST['additional_name'. $i+1])){
+    //         $project_input["project_input".$project] = $_POST['additional_name'. $i+1];
+    //     } else{
+    //         $project_input["project_input".$project] = "empty";
+    //     }
+    //     extract($project_input);
 
 
+    // }
+
+    //LONG VERSION
+    if(!empty($_POST['additional_name1'])){
+        $project_input9 = $_POST['additional_name1'];
+    }else{
+        $project_input9 = "empty";
     }
+    if(!empty($_POST['additional_name2'])){
+        $project_input10 = $_POST['additional_name2'];
+    }else{
+        $project_input10 = "empty";
+    }
+    if(!empty($_POST['additional_name3'])){
+        $project_input11 = $_POST['additional_name3'];
+    }else{
+        $project_input11 = "empty";
+    }
+    if(!empty($_POST['additional_name4'])){
+        $project_input12 = $_POST['additional_name44'];
+    }else{
+        $project_input12 = "empty";
+    }
+    if(!empty($_POST['additional_name5'])){
+        $project_input13 = $_POST['additional_name5'];
+    }else{
+        $project_input13 = "empty";
+    }
+
+
+
     // echo $project_input9 .'<br>';
     // echo $project_input10 .'<br>';
     // echo $project_input11 .'<br>';
@@ -75,7 +116,7 @@ if(isset($_POST['createButton'])){
    
 
     createProject($conn, $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13);
-    
+    pmStatus($conn, $project_pmSELECTid);
 
 
 }
