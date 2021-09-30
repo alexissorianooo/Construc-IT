@@ -77,6 +77,9 @@
                                             <p><b>Project Manager:</b>    '.$row["project_pm"] .'</p>
                                         </div>                                    
                                     </div>
+
+                                    
+
                                 </div>
                                 
                             </div>
@@ -86,6 +89,11 @@
 
                     <section id="body-section">
                     <h4 class="text-center" style="height: 35px;font-size: 34px;">Architect Activitites</h4>
+
+                        <div class="progress mx-auto" style="width: 80%;height: 30px; margin-top:3%;">
+                            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$row['project_progress_architect'].'%;">'.$row['project_progress_architect'].'</div>                                                     
+                        </div>
+
                         <div class="d-inline-flex" style="width: 100%;">
                             <div class="container">
                                 <div class="row">
@@ -773,14 +781,6 @@
                 </div>
                 ';
 
-
-
-
-
-
-
-
-
                    
                     $progressbar = ($numerator / $denominator)*100;
                     $roundvalue = round($progressbar);
@@ -789,9 +789,7 @@
                     <input hidden name="progressbarUPDATE" value="'.$roundvalue.'">
                     <input hidden name="numeratorUPDATE" value="'.$numerator.'">
                     <input hidden name="denominatorUPDATE" value="'.$denominator.'">
-                    <div class="progress mx-auto" style="width: 80%;height: 30px; margin-top:3%;">
-                        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$roundvalue.'%;">'.$roundvalue .'</div>                                                     
-                    </div>
+                    
                     
 
                     <section class="text-center" id="footer-section">
