@@ -62,7 +62,7 @@
                             </div>
                             <input hidden name="project_id" value="'.$row["project_id"] .'">
                             <input hidden name="counter" value="0">
-                            <div style="margin-top: 20px;">
+                            <div style="margin-top: 20px; margin-bottom: -10px">
                                 <div class="container" style="margin-bottom: 20px;">
                                     <div class="row">
                                         <div class="col-md-6 info-h">
