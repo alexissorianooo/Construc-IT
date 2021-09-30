@@ -30,6 +30,11 @@ if(isset($_POST['createButton'])){
     $project_pmSELECT = $result_explode[0]; //NAME
     $project_pmSELECTid = $result_explode[1]; //user ID
 
+    $result2 = $_POST['project_clientSELECT'];
+    $result2_explode = explode('|', $result2);
+    echo "<br>".$project_clientSELECT = $result2_explode[0]; //NAME
+    echo "<br>".$project_clientSELECTid = $result2_explode[1]; //user ID
+
 
 
 
@@ -80,7 +85,7 @@ if(isset($_POST['createButton'])){
         $project_input11 = "empty";
     }
     if(!empty($_POST['additional_name4'])){
-        $project_input12 = $_POST['additional_name44'];
+        $project_input12 = $_POST['additional_name4'];
     }else{
         $project_input12 = "empty";
     }
@@ -109,14 +114,15 @@ if(isset($_POST['createButton'])){
     require_once 'db.php';
     require_once 'functions.php';
 
-    if(emptyInputcreate($project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8) !==false){
+    if(emptyInputcreate($project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_clientSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8) !==false){
         header("location: ../users/Projects/project_arch.php?error=emptyinput");
         exit();
     } 
    
 
-    createProject($conn, $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13);
+    createProject($conn, $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_clientSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13);
     pmStatus($conn, $project_pmSELECTid);
+    clientStatus($conn, $project_clientSELECTid);
 
 
 }

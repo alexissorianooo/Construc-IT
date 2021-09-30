@@ -37,7 +37,7 @@
                                     <tr>
                                         <td> Foreman  
 
-                                            <select style="width: 320px;height: 38px; border-width: 2px; border-color: darkslategray;" id="usertype" name="project_pmSELECT">
+                                        <select style="width: 320px;height: 38px; border-width: 2px; border-color: darkslategray;" id="usertype" name="project_pmSELECT">
                                                 <option disabled selected>--Available Project Managers--</option>
                                                 <?php
                                                     
@@ -72,7 +72,49 @@
 
                                                 ?>
                                             </select>
+
                                         </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td> Client
+
+                                            <select style="width: 320px;height: 38px; border-width: 2px; border-color: darkslategray;" id="usertype" name="project_clientSELECT">
+                                                    <option disabled selected>--Client for the project--</option>
+                                                    <?php
+                                                        
+                                                        $servername = "localhost";
+                                                        $dbusername = "root";
+                                                        $dbpassword = "";
+                                                        $dbname = "capstone";
+
+                                                        $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
+
+                                                        if (!$conn){
+                                                            die("connection failed: " . mysqli_connect_error());
+
+                                                        }
+
+                                                        $sql = "SELECT user_fullname, userid, user_status FROM user_db WHERE usertype_fk = 'client';";
+                                                        $stmt = mysqli_stmt_init($conn);
+
+                                                        if (!mysqli_stmt_prepare($stmt, $sql)){
+                                                        echo "<script type='text/javascript'>alert('ERROR STATEMENT');</script>";
+                                                        }
+
+                                                        $records = mysqli_query($conn, $sql);
+
+                                                        while($data = mysqli_fetch_array($records)){
+                                                            if($data['user_status']!="Occupied"){
+                                                                echo "<option value='". $data['user_fullname']."|". $data['userid']."'>" .$data['user_fullname']."</option>";
+                                                            }
+                                                        }
+                                                        mysqli_close($conn);
+
+
+                                                    ?>
+                                                </select>
+                                            </td>
                                     </tr>
                                 </tbody>
                             </table>
