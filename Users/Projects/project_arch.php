@@ -58,7 +58,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
 
                 <?php 
                     $count=0;
-                    $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_progress FROM project_db";
+                    $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_client, project_progress FROM project_db";
                     $result = mysqli_query($conn, $sql);
 
                     if(mysqli_num_rows($result)>0){
@@ -76,6 +76,9 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                 <p class="text-start"
                                                 style="color: rgb(0,0,0);font-family: Montserrat, sans-serif;font-style: normal;text-align: left;padding: 0px;height: 36px;">
                                                 <strong>Foreman incharged: <br>'.$row["project_pm"] .'</strong></p>
+                                                <p class="text-start"
+                                                style="color: rgb(0,0,0);font-family: Montserrat, sans-serif;font-style: normal;text-align: left;padding: 0px;height: 36px;">
+                                                <strong>Client: <br>'.$row["project_client"] .'</strong></p>
                                                 <p class="text-start"
                                                     style="color: rgb(0,0,0);font-family: Montserrat, sans-serif;font-style: normal;text-align: left;padding: 0px;height: 36px;">
                                                     <strong>START DATE: <br>'.$row["project_startdate"] .'</strong></p>

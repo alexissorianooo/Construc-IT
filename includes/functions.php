@@ -52,9 +52,10 @@ function emailExist($conn, $email){
 function empAccount($usercode, $usertype){
   $usercodeforArchitect = "architect";
   $usercodeforProjectmanager = "projectmanager";
+  $usercodeforAdmin = "admin";
   $result;
 
-  if (($usertype === "architect" && $usercode === $usercodeforArchitect) || ($usertype === "projectmanager" && $usercode === $usercodeforProjectmanager)){
+  if (($usertype === "architect" && $usercode === $usercodeforArchitect) || ($usertype === "projectmanager" && $usercode === $usercodeforProjectmanager) || ($usertype === "admin" && $usercode === $usercodeforAdmin)){
     $result = true;
   }
   else{
@@ -129,18 +130,22 @@ function loginUser($conn, $email, $password){
       header("location: ../users/Client/client main.php");
       exit();
     }
+    if($_SESSION["usertype_fk"] == "admin"){
+      header("location: ../users/Admin/admin main.php");
+      exit();
+    }
     
   }
 }
 
 // CREATE PROJECT
 
-function createProject($conn, $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13){
+function createProject($conn, $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_clientSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13){
   // project name exist
   // project deadline exist
   // deadline should not overlap
 
-  $sql = "INSERT INTO project_db (project_name, project_startdate, project_deadline, project_architect, project_pm, project_activity_Architect_1, project_activity_Architect_2, project_activity_Architect_3, project_activity_Architect_4, project_activity_Architect_5, project_activity_Architect_6, project_activity_Architect_7, project_activity_Architect_8, project_activity_additional_Architect_1, project_activity_additional_Architect_2, project_activity_additional_Architect_3, project_activity_additional_Architect_4, project_activity_additional_Architect_5) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+  $sql = "INSERT INTO project_db (project_name, project_startdate, project_deadline, project_architect, project_pm, project_client, project_activity_Architect_1, project_activity_Architect_2, project_activity_Architect_3, project_activity_Architect_4, project_activity_Architect_5, project_activity_Architect_6, project_activity_Architect_7, project_activity_Architect_8, project_activity_additional_Architect_1, project_activity_additional_Architect_2, project_activity_additional_Architect_3, project_activity_additional_Architect_4, project_activity_additional_Architect_5) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
   $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -148,7 +153,7 @@ function createProject($conn, $project_name, $project_startdate, $project_deadli
       exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "ssssssssssssssssss", $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13);
+    mysqli_stmt_bind_param($stmt, "sssssssssssssssssss", $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_clientSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     
@@ -160,13 +165,21 @@ function pmStatus($conn, $project_pmSELECTid){
   $stmt = mysqli_stmt_init($conn);
   mysqli_query($conn, $sql);
 
-  header("location: ../users/Projects/project_arch.php?error=noneFROMpmStatus");
+  
+}
+
+function clientStatus($conn, $project_clientSELECTid){
+  $sql = "UPDATE user_db SET user_status = 'Occupied' WHERE userid = $project_clientSELECTid";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+
+  header("location: ../users/Projects/project_arch.php?error=noneFROMclientStatus");
   exit();
 }
 
-function emptyInputcreate($project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8){
+function emptyInputcreate($project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_clientSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8){
   $result;
-  if(empty($project_name) || empty($project_startdate) || empty($project_deadline) || empty($project_architect) || empty($project_pmSELECT) || empty($project_input1) || empty($project_input2) || empty($project_input3) || empty($project_input4) || empty($project_input5) || empty($project_input6) || empty($project_input7) || empty($project_input8)){
+  if(empty($project_name) || empty($project_startdate) || empty($project_deadline) || empty($project_architect) || empty($project_pmSELECT) || empty($project_clientSELECT) || empty($project_input1) || empty($project_input2) || empty($project_input3) || empty($project_input4) || empty($project_input5) || empty($project_input6) || empty($project_input7) || empty($project_input8)){
     $result = true;
   }
   else{

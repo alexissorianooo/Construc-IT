@@ -17,6 +17,15 @@ document.getElementById('usertype').addEventListener('change', function () {
         console.log(this.value);
 
     }
+    if (this.value== "admin"){
+        var style = this.value == "admin" ? 'block' : 'none';
+
+        document.getElementById('usertype1').style.display = style;
+        // document.getElementById('usertype2').style.display = 'none';
+    
+        console.log(this.value);
+
+    }
     if (this.value== "client"){
         var style = this.value == "client" ? 'block' : 'none';
         document.getElementById('usertype1').style.display = 'none';

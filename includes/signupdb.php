@@ -40,7 +40,7 @@ if(isset($_POST["registerButton"])){
 
     // FOR ARCHTIECT AND PROJECT MANAGER
 
-    if ($usertype === "architect" || $usertype === "projectmanager"){
+    if ($usertype === "architect" || $usertype === "projectmanager" || $usertype === "admin"){
         
 
         $usercode = $_POST["usercode"];
