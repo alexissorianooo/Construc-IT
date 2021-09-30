@@ -142,7 +142,7 @@
                                     </div>
                                     <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
                                         <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
-                                            <p class="text-center text-muted">'.$row["project_activity_Architect_2"] .'</p>
+                                            <p class="text-center text-muted" style="height:38%;">'.$row["project_activity_Architect_2"] .'</p>
                                             <select disabled class="selectColor';
 
                                             if($status1 == $row['project_status_Architect_2']){
@@ -654,7 +654,7 @@
                                                         <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
                                                             <input hidden name="additional_name_4" value="'.$row["project_activity_additional_Architect_4"].'">
                                                             <input hidden name="counter" value="4">
-                                                            <p class="text-center text-muted">'.$row["project_activity_additional_Architect_4"] .'</p>
+                                                            <p class="text-center text-muted" style="height:38%;>'.$row["project_activity_additional_Architect_4"] .'</p>
                                                             <select disabled class="selectColor';
 
                                                             if($status1 == $row['project_status_additional_Architect_4']){
