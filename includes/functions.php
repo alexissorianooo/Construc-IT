@@ -114,6 +114,7 @@ function loginUser($conn, $email, $password){
   }
   elseif ($checkPwd === true) {
     session_start();
+    $_SESSION["userid"] = $emailExist["userid"];
     $_SESSION["user_fullname"] = $emailExist["user_fullname"];
     $_SESSION["user_email"] = $emailExist["user_email"];
     $_SESSION["usertype_fk"] = $emailExist["usertype_fk"];
@@ -270,8 +271,24 @@ function updateProjectPM($conn, $numerator, $denominator, $project_id, $select1,
   
   mysqli_query($conn, $sql);
   
+  
+  
+}
 
-  mysqli_close($conn);
-  header("Location: ../users/Project Manager/pm main.php?error=none");
+function pmStatusComplete($conn, $project_pmSELECTid){
+  $sql = "UPDATE user_db SET user_status = 'Vacant' WHERE userid = $project_pmSELECTid";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+
+  header("Location: ../users/Project Manager/pm main.php?status=vacant");
+  exit;
+}
+
+function pmStatusINC($conn, $project_pmSELECTid){
+  $sql = "UPDATE user_db SET user_status = 'Busy' WHERE userid = $project_pmSELECTid";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+
+  header("Location: ../users/Project Manager/pm main.php?status=busy");
   exit;
 }
