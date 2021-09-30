@@ -26,16 +26,17 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link active" href="index.html"><i class="fas fa-tachometer-alt"
-                                style="color: rgb(0,0,0);"></i><span
+                    <li class="nav-item"><a class="nav-link active" data-bss-hover-animate="pulse" href="index.html"><i
+                                class="fas fa-tachometer-alt" style="color: rgb(0,0,0);"></i><span
                                 style="border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;color: rgb(0,0,0);">User
                                 Profiles</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fas fa-user"
-                                style="color: rgba(0,0,0,0.3);"></i><span style="color: rgba(0,0,0,0.8);">Audit
-                                Trail</span></a></li>
+                    <li class="nav-item"><a class="nav-link" data-bss-hover-animate="pulse" href="profile.html"><i
+                                class="fas fa-user" style="color: rgba(0,0,0,0.3);"></i><span
+                                style="color: rgba(0,0,0,0.8);">Audit Trail</span></a></li>
                     <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html" style="color: rgba(0,0,0,0.8);"><i
-                                class="far fa-user-circle" style="color: rgba(0,0,0,0.3);"></i><span
+                    <li class="nav-item"><a class="nav-link" data-bss-hover-animate="pulse" href="login.html"
+                            style="color: rgba(0,0,0,0.8);"><i class="far fa-user-circle"
+                                style="color: rgba(0,0,0,0.3);"></i><span
                                 style="color: rgba(0,0,0,0.8);">Logout</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="register.html"></a></li>
                 </ul>
