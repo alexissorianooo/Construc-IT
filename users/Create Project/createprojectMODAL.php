@@ -9,7 +9,7 @@
     <div class="modal-content" style="background-color: ivory;">
         <section class="sec">
             <div class="modal-header">
-                <h3 class="center CP" style="font-size: 40px;">Create Project</h3>
+                <h3 class="center CP" style="font-size: 33px; text-align:center; padding-left:4rem">Create Project</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="max-width: 64.31px; max-height: 38px;">
                     <span aria-hidden="true" style="max-width: 16.97px">×</span>
                 </button>
@@ -77,7 +77,7 @@
                                         
                                     </tr>
                                     <tr>
-                                        <td> Client
+                                        <td style="padding-left: 2.1rem;"> Client
 
                                             <select style="width: 320px;height: 38px; border-width: 2px; border-color: darkslategray;" id="usertype" name="project_clientSELECT">
                                                     <option disabled selected>--Client for the project--</option>
