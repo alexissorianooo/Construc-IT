@@ -76,8 +76,8 @@
                                         <div class="col-md-6 info-h">
                                             <p class="infotext">Project Manager:</p><p class="info">    '.$row["project_pm"] .'</p>
                                         </div>
-                                        <div class="col-md-6">
-                                            <p>Client:    '.$row["project_client"] .'</p>
+                                        <div class="col-md-6 info-h">
+                                            <p class="infotext">Client:</p><p class="info">    '.$row["project_client"] .'</p>
                                         </div>
                                     </div>
                                 </div>
