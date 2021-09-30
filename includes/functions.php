@@ -145,7 +145,36 @@ function createProject($conn, $project_name, $project_startdate, $project_deadli
   // project deadline exist
   // deadline should not overlap
 
-  $sql = "INSERT INTO project_db (project_name, project_startdate, project_deadline, project_architect, project_pm, project_client, project_activity_Architect_1, project_activity_Architect_2, project_activity_Architect_3, project_activity_Architect_4, project_activity_Architect_5, project_activity_Architect_6, project_activity_Architect_7, project_activity_Architect_8, project_activity_additional_Architect_1, project_activity_additional_Architect_2, project_activity_additional_Architect_3, project_activity_additional_Architect_4, project_activity_additional_Architect_5) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+  //Mobilization
+  $project_input_pm_1 = "Defining the points of the site";
+  $project_input_pm_2 = "Setting up signages and borders for safety";
+  $project_input_pm_3 = "Setting up of temporary electrical, plumbing services";
+  // FOUNDATION WORKS
+  $project_input_pm_4 = "Excavation";
+  $project_input_pm_5 = "Footing and Column works";
+  $project_input_pm_6 = "Rebars";
+  $project_input_pm_7 = "Frameworks";
+  $project_input_pm_8 = "Concrete pouring";
+  $project_input_pm_9 = "Concrete curing";
+  $project_input_pm_10 = "Backfill";
+  //Architectural/Structural works
+  $project_input_pm_11 = "Columns on floors above ground";
+  $project_input_pm_12 = "Beams";
+  $project_input_pm_13 = "Slabs (Flooring)";
+  $project_input_pm_14 = "Concrete Hollow Blocks Walls";
+  $project_input_pm_15 = "Doors and Windows";
+  $project_input_pm_16 = "MEPF Roughing ins";
+  $project_input_pm_17 = "Waterproofing";
+  $project_input_pm_18 = "Roofing Works";
+  //Finishing Works
+  $project_input_pm_19 = "Tiles";
+  $project_input_pm_20 = "Painting Works";
+  $project_input_pm_21 = "Fixtures";
+  
+
+
+  $sql = "INSERT INTO project_db (project_name, project_startdate, project_deadline, project_architect, project_pm, project_client, project_activity_Architect_1, project_activity_Architect_2, project_activity_Architect_3, project_activity_Architect_4, project_activity_Architect_5, project_activity_Architect_6, project_activity_Architect_7, project_activity_Architect_8, project_activity_additional_Architect_1, project_activity_additional_Architect_2, project_activity_additional_Architect_3, project_activity_additional_Architect_4, project_activity_additional_Architect_5, project_activity_PM_1, project_activity_PM_2, project_activity_PM_3, project_activity_PM_4, project_activity_PM_5, project_activity_PM_6, project_activity_PM_7, project_activity_PM_8, project_activity_PM_9, project_activity_PM_10, project_activity_PM_11, project_activity_PM_12, project_activity_PM_13, project_activity_PM_14, project_activity_PM_15, project_activity_PM_16, project_activity_PM_17, project_activity_PM_18, project_activity_PM_19, project_activity_PM_20, project_activity_PM_21) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+  //should be 40 columns
   $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -153,12 +182,13 @@ function createProject($conn, $project_name, $project_startdate, $project_deadli
       exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "sssssssssssssssssss", $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_clientSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13);
+    mysqli_stmt_bind_param($stmt, "ssssssssssssssssssssssssssssssssssssssss", $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_clientSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13, $project_input_pm_1, $project_input_pm_2, $project_input_pm_3, $project_input_pm_4, $project_input_pm_5, $project_input_pm_6, $project_input_pm_7, $project_input_pm_8, $project_input_pm_9, $project_input_pm_10, $project_input_pm_11, $project_input_pm_12, $project_input_pm_13, $project_input_pm_14, $project_input_pm_15, $project_input_pm_16, $project_input_pm_17, $project_input_pm_18, $project_input_pm_19, $project_input_pm_20, $project_input_pm_21);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     
 
 }
+
 
 function pmStatus($conn, $project_pmSELECTid){
   $sql = "UPDATE user_db SET user_status = 'Busy' WHERE userid = $project_pmSELECTid";

@@ -121,6 +121,7 @@ if(isset($_POST['createButton'])){
    
 
     createProject($conn, $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_clientSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13);
+    // createProjectPM($conn);
     pmStatus($conn, $project_pmSELECTid);
     clientStatus($conn, $project_clientSELECTid);
 
