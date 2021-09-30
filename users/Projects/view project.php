@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>project view</title>
     <link rel="stylesheet" href="assetsForViewProject/bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="assetsForViewProject/bootstrap/css/bootstrap.css"> -->
     <link rel="stylesheet" href="assetsForViewProject/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assetsForViewProject/css/styles.css">
     <link rel="stylesheet" href="assetsForViewProject/css/view.css">
@@ -54,7 +55,7 @@
                 <form method="post" action="../../includes/viewprojectdb.php">
 
 
-                    <section id="header-section">
+                    <section class="headerbox container" id="header-section" style="padding-top: 20px;">
                         <div style="width: 100%;">
                             <div class="centeralign" style="width: 100%;">
                                 <h2>'.$row["project_name"].'</h2>
@@ -65,37 +66,35 @@
                                 <div class="container" style="margin-bottom: 20px;">
                                     <div class="row">
                                         <div class="col-md-6 info-h">
-                                            <p class="infotext">Start Date:</p><p class="info">    '.$row["project_startdate"] .'</p>
+                                            <p class="infotext">Start Date:</p><p class="info-text">    '.$row["project_startdate"] .'</p>
                                         </div>
                                         <div class="col-md-6 info-h">
-                                            <p class="infotext">Deadline:</p><p class="info">    '.$row["project_deadline"] .'</p>
+                                            <p class="infotext">Deadline:</p><p class="info-text">    '.$row["project_deadline"] .'</p>
                                         </div>
                                         <div class="col-md-6 info-h">
-                                            <p class="infotext">Architect:</p><p class="info">   '.$row["project_architect"] .'</p>
+                                            <p class="infotext">Architect:</p><p class="info-text">   '.$row["project_architect"] .'</p>
                                         </div>
                                         <div class="col-md-6 info-h">
-                                            <p class="infotext">Project Manager:</p><p class="info">    '.$row["project_pm"] .'</p>
+                                            <p class="infotext">Project Manager:</p><p class="info-text">    '.$row["project_pm"] .'</p>
                                         </div>
                                         <div class="col-md-6 info-h">
-                                            <p class="infotext">Client:</p><p class="info">    '.$row["project_client"] .'</p>
+                                            <p class="infotext">Client:</p><p class="info-text">    '.$row["project_client"] .'</p>
                                         </div>
                                     </div>
                                 </div>
-                                
                             </div>
                         </div>
                     </section>
 
 
 
-                    <section id="body-section">
+                    <section id="body-section" style="padding-bottom: 30px">
                         <h4 class="text-center">Activities</h4>
                         <div class="d-inline-flex" style="width: 100%;">
                             <div class="container">
-                                <div class="row">
-                                    <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
+                                <div class="row rowdesign">
+                                    <div class="col-md-3 borderbox psm1">
                                         <div class="text-center" style="width: 100%;">
-                                            
                                             <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_1"] .'</p>
                                             <select class="selectColor  ';
 
@@ -138,12 +137,10 @@
                                                     }
                                                 
                                                 echo '>Delayed</option>
-                                                
-
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
+                                    <div class="col-md-3 borderbox psm2">
                                         <div style="width: 100%;">
                                             <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_2"] .'</p>
                                             <select class="selectColor';
@@ -189,7 +186,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
+                                    <div class="col-md-3 borderbox psm3">
                                         <div style="width: 100%;">
                                             <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_3"] .'</p>
                                             <select class="selectColor';
@@ -235,7 +232,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
+                                    <div class="col-md-3 borderbox psm4">
                                         <div class="text-center" style="width: 100%;">
                                             <p class="text-center text-muted viewfixds">'.$row["project_activity_Architect_4"] .'</p>
                                             <select class="selectColor';
@@ -281,7 +278,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
+                                    <div class="col-md-3 borderbox psm5">
                                         <div class="text-center" style="width: 100%;">
                                             <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_5"] .'</p>
                                             <select class="selectColor';
@@ -327,7 +324,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
+                                    <div class="col-md-3 borderbox psm6">
                                         <div class="text-center" style="width: 100%;">
                                             <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_6"] .'</p>
                                             <select class="selectColor';
@@ -373,7 +370,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
+                                    <div class="col-md-3 borderbox psm7">
                                         <div class="text-center" style="width: 100%;">
                                             <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_7"] .'</p>
                                             <select class="selectColor';
@@ -419,7 +416,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
+                                    <div class="col-md-3 borderbox psm8">
                                         <div style="width: 100%;">
                                             <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_8"] .'</p>
                                             <select class="selectColor';
@@ -476,7 +473,7 @@
                                     elseif($row["project_activity_additional_Architect_1"] != "empty"){
                                         $denominator++;
                                         echo'
-                                            <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
+                                            <div class="col-md-3 borderbox psm9">
                                                 <div style="width: 100%;">
                                                     <input hidden name="additional_name_1" value="'.$row["project_activity_additional_Architect_1"].'">
                                                     <input hidden name="counter" value="1">
@@ -535,7 +532,7 @@
                                         elseif($row["project_activity_additional_Architect_2"] != "empty"){
                                             $denominator++;
                                             echo'
-                                                <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
+                                                <div class="col-md-3 borderbox psm10">
                                                     <div style="width: 100%;">
                                                         <input hidden name="additional_name_2" value="'.$row["project_activity_additional_Architect_2"].'">
                                                         <input hidden name="counter" value="2">
@@ -594,7 +591,7 @@
                                         elseif($row["project_activity_additional_Architect_3"] != "empty"){
                                             $denominator++;
                                             echo'
-                                                <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
+                                                <div class="col-md-3 borderbox psm11">
                                                     <div style="width: 100%;">
                                                         <input hidden name="additional_name_3" value="'.$row["project_activity_additional_Architect_3"].'">
                                                         <input hidden name="counter" value="3">
@@ -653,7 +650,7 @@
                                             elseif($row["project_activity_additional_Architect_4"] != "empty"){
                                                 $denominator++;
                                                 echo'
-                                                    <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
+                                                    <div class="col-md-3 borderbox psm12">
                                                         <div style="width: 100%;">
                                                             <input hidden name="additional_name_4" value="'.$row["project_activity_additional_Architect_4"].'">
                                                             <input hidden name="counter" value="4">
@@ -712,7 +709,7 @@
                                                 elseif($row["project_activity_additional_Architect_5"] != "empty"){
                                                     $denominator++;
                                                     echo'
-                                                        <div class="col-md-3" style="margin-bottom: 15px;margin-right: 0px;margin-top: 15px;margin-left: 0px;">
+                                                        <div class="col-md-3 borderbox psm13">
                                                             <div style="width: 100%;">
                                                                 <input hidden name="additional_name_5" value="'.$row["project_activity_additional_Architect_5"].'">
                                                                 <input hidden name="counter" value="5">
@@ -773,17 +770,18 @@
                     <input hidden name="progressbarUPDATE" value="'.$roundvalue.'">
                     <input hidden name="numeratorUPDATE" value="'.$numerator.'">
                     <input hidden name="denominatorUPDATE" value="'.$denominator.'">
-                    <div class="progress progressdesign">
+                    
+                    <div class="bg-dark container borderbox">
+                        <div class="progress progressdesign">
                                     <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$roundvalue.'%;">'.$roundvalue .'</div>
+                        </div>
+                        <section class="text-center" id="footer-section">
+                            <button class="btn btn-primary" style="background: rgb(229,234,239);color: rgb(0,0,0);margin: 10px;border-color: rgb(229,234,239);" type="button" onclick="history.back()">
+                                <i class="fa fa-arrow-circle-left"></i>&nbsp; Back</button>
+                            <button class="btn btn-primary" type="submit" style="margin: 10px;" name="saveButton">
+                                <i class="fa fa-save"></i>&nbsp; Save</button>
+                        </section>
                     </div>
-
-
-                    <section class="text-center" id="footer-section">
-                        <button class="btn btn-primary" style="background: rgb(229,234,239);color: rgb(0,0,0);margin: 10px;border-color: rgb(229,234,239);" type="button" onclick="history.back()">
-                            <i class="fa fa-arrow-circle-left"></i>&nbsp; Back</button>
-                        <button class="btn btn-primary" type="submit" style="margin: 10px;" name="saveButton">
-                            <i class="fa fa-save"></i>&nbsp; Save</button>
-                    </section>
                 
                 </form>';
 
