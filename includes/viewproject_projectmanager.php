@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if(isset($_POST["saveBUTTON"])){
 
@@ -27,6 +28,8 @@ if(isset($_POST["saveBUTTON"])){
     echo "<br>". $select19 = $_POST['SELECTPM19'];
     echo "<br>". $select20 = $_POST['SELECTPM20'];
     echo "<br>". $select21 = $_POST['SELECTPM21'];
+
+    echo $project_pmSELECTid = $_SESSION["userid"];
 
 
     // for progress bar
@@ -99,9 +102,16 @@ if(isset($_POST["saveBUTTON"])){
     }
 
     echo "<br>".$numerator;
+    echo "<br>".$denominator;
+
+    if($numerator/$denominator==1){
+        updateProjectPM($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13, $select14, $select15, $select16, $select17, $select18, $select19, $select20, $select21);
+        pmStatusComplete($conn, $project_pmSELECTid);
+    } 
 
     updateProjectPM($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13, $select14, $select15, $select16, $select17, $select18, $select19, $select20, $select21);
-
+    pmStatusINC($conn, $project_pmSELECTid);
+    
 }else{
     echo "what's wrong brother?";
 }

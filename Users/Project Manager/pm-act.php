@@ -58,6 +58,7 @@
                                 <div style="width: 100%;">
                                     <div class="text-center" style="width: 100%;">
                                         <h1 style="height: 50px;font-size: 50px;">'.$row["project_name"].'</h1>
+                                        
                                     </div>
                                     <input hidden name="project_id" value="'.$row["project_id"].'">
                                     <input hidden name="counter" value="0"> 
