@@ -58,7 +58,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
 
                 <?php 
                     $count=0;
-                    $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_client, project_progress FROM project_db";
+                    $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_client, project_progress_architect FROM project_db";
                     $result = mysqli_query($conn, $sql);
 
                     if(mysqli_num_rows($result)>0){
@@ -90,7 +90,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                     <strong>PROGRESS:</strong></p>
                                                 <div class="progress" style="height: 28px;border: 2px solid var(--bs-dark) ;">
                                                     <div class="progress-bar bg-success progress-bar-striped progress-bar-animated"
-                                                        aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:'.$row["project_progress"].'%;">'.$row["project_progress"] .'
+                                                        aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:'.$row["project_progress_architect"].'%;">'.$row["project_progress_architect"] .'
                                                     </div>
                                                 </div>
                                                 <form method="post" action="view project.php">
@@ -131,7 +131,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
             <div class="row">
 
                 <?php 
-                    $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_progress, project_completed FROM project_db";
+                    $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_progress_architect, project_completed FROM project_db";
                     $result = mysqli_query($conn, $sql);
 
                     if(mysqli_num_rows($result)>0){
