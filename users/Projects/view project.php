@@ -92,7 +92,7 @@
                         <h4 class="text-center">Activities</h4>
                         <div class="d-inline-flex" style="width: 100%;">
                             <div class="container">
-                                <div class="row rowdesign">
+                                <div class="row">
                                     <div class="col-md-3 borderbox psm1">
                                         <div class="text-center" style="width: 100%;">
                                             <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_1"] .'</p>
