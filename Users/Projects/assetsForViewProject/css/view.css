@@ -1,0 +1,132 @@
+.viewfix {
+    margin-bottom: 2.3rem;
+    padding-bottom: 5px;
+}
+
+.viewfixds {
+    margin-bottom: 0.85rem;
+    padding-bottom: 5px;
+}
+
+.progressdesign {
+    width: 80%;
+    height: 30px;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: -1rem;
+}
+
+body {
+    min-width: 100%;
+    margin: auto;
+    align-content: center;
+    align-items: center;
+    background: url(../../../../assets/img/2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.centeralign {
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+
+.info-h{
+    padding-left: 9rem;
+}
+
+.infotext {
+    color:black;
+    font-weight:bold; 
+    padding-right:5px; 
+    display: inline-block;
+}
+
+.info-text {
+    display: inline-block;
+}
+
+.headerbox {
+    background: url(../../../../assets/img/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.borderbox, .headerbox {
+    background-color:#fff;
+    background-clip:border-box;
+    border:1px solid rgba(0,0,0,.125);
+    border:1px solid #eaeaea;
+    box-shadow:0 2px 10px rgba(0,0,0,.075);
+    padding-bottom: 20px;
+    padding-left: -20px;
+    padding-right: -20px;
+}
+
+/* .rowdesign {
+    background-color: red;
+}  */
+
+.psm1, .psm2, .psm3, .psm4, .psm5, .psm6, .psm7, .psm8, .psm9, .psm10, .psm11, .psm12, .psm13 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+.psm1, .psm5, .psm9, .psm13 {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.psm2, .psm6, .psm10 {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.psm3, .psm7, .psm11 {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.psm4, .psm8, .psm12 {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.bg-dark {
+    background-color: #343a40 !important; 
+}
+
+.rgb {
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* .containeredit {
+    width:100%;
+    padding-right:15px;
+    padding-left:15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (min-width:576px){
+    .containeredit{max-width:540px}
+}
+@media (min-width:768px){
+    .containeredit{max-width:720px}
+} */
