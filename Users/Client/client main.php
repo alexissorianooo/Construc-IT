@@ -17,35 +17,53 @@
     <!-- NAVIGATION TAB -->
     <?php include '../../layout/header-client.php' ?>
 
-    <section style="height: 650px;margin: 0px;margin-top: 62px;background: white;">
+    <!-- margin-top: 62px; -->
+    <section style="height: 650px;margin: 0px;background: white;">
+     
+   
+
+        <!-- MODAL WHEN INSERTING PROJECT ID -->
+        <!-- REMOVED INLINE CODE FOR MODAL SETTINGS -->
+        <!-- class="modal fade" role="dialog" --> 
+
+        <div class="bye" tabindex="-1" id="client-id-modal" style="border-radius: 24px;margin-top:10%;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+
+                        
+                            <div class="modal-header bg-dark" style="color: rgb(255,255,255); ">
+                                <!-- class="modal-title" -->
+                                <h4 class="mx-auto" style="background: url(&quot;../../assets/img/logo3-white.png&quot;) center center/ contain no-repeat, transparent;width: 123px;height: 65px;"></h4>
+                                <!-- <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" style="background:white;width:30px;margin-top:17px;"> x </button>                         -->
+                            </div>
+
+                            <form method="post" action="view client project.php">
+                            <div class="modal-body text-center bg-dark">                        
+                                    <label class="form-label" style="color: white;">Enter Project ID:</label>
+                                    <input id="projectID" type="text" name=projectView style="background: rgb(128,145,160);border-radius: 125px;width:200px;">                                                                                    
+                            </div>
+                            <div class="modal-footer justify-content-center bg-dark">                                
+                                <button id="client-search-button" class="btn btn-primary" type="submit">Search</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+        </div>
+
+
+
+    <!-- ------------------------------------------------------------------------------------------------------->
+
 
     </section>
-
-    <!-- MODAL WHEN INSERTING PROJECT ID -->
-    <div class="modal fade" role="dialog" tabindex="-1" id="client-id-modal" style="border-radius: 24px;margin-top:10%;">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-
-                    <div class="modal-header bg-dark" style="color: rgb(255,255,255);">
-                        <h4 class="modal-title" style="background: url(&quot;../../assets/img/logo3-white.png&quot;) center / contain no-repeat, transparent;width: 123px;height: 65px;"></h4>
-                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" style="background:white;width:30px;margin-top:17px;"> x </button>                        
-                    </div>
-                <div class="modal-body text-center bg-dark">
-                    <label class="form-label" style="color: white;">Enter Project ID:</label>
-                    <input id="projectID" type="text" name=viewProject style="background: rgb(128,145,160);border-radius: 125px;width:200px;">
-                </div>
-                <div class="modal-footer justify-content-center bg-dark"><button class="btn btn-primary" type="button">Search</button></div>
-            </div>
-        </div>
-    </div>
-
-    
 
 
     <!-- FOOTER -->
     <?php include '../../layout/footer.php' ?>
 
-
+    <!-- <script src="./assets/js/client.js"></script> -->
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>

@@ -1,0 +1,4 @@
+.bye {
+    -webkit-transition: opacity 1000ms linear;
+    transition: opacity 1000ms linear;
+}
