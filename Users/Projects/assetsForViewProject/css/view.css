@@ -96,8 +96,6 @@ body {
 }
 
 .bg-dark {
-    padding-top: 0.5px;
-    padding-bottom: 50px;
     background-color: #343a40 !important; 
 }
 
