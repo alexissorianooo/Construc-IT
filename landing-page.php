@@ -365,6 +365,7 @@
                                                     <option value="client" selected>Client</option>
                                                     <option value="architect">Architect</option>
                                                     <option value="projectmanager">Project Manager</option>
+                                                    <option value="admin">Admin</option>
                                                 </select>
 
                                                 <br><br>
@@ -378,7 +379,7 @@
                                                 <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password">                                                                 
                                                 <br> <br>
                                                 
-                                                <!-- FOR ARCHITECT AND PM -->
+                                                <!-- FOR ARCHITECT AND PM (code at js)-->
 
                                                 <div style="display: none;" id="usertype1" ><input type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="usercode">                                                                 
                                                 </div>

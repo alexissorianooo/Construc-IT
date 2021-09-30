@@ -52,9 +52,10 @@ function emailExist($conn, $email){
 function empAccount($usercode, $usertype){
   $usercodeforArchitect = "architect";
   $usercodeforProjectmanager = "projectmanager";
+  $usercodeforAdmin = "admin";
   $result;
 
-  if (($usertype === "architect" && $usercode === $usercodeforArchitect) || ($usertype === "projectmanager" && $usercode === $usercodeforProjectmanager)){
+  if (($usertype === "architect" && $usercode === $usercodeforArchitect) || ($usertype === "projectmanager" && $usercode === $usercodeforProjectmanager) || ($usertype === "admin" && $usercode === $usercodeforAdmin)){
     $result = true;
   }
   else{
@@ -127,6 +128,10 @@ function loginUser($conn, $email, $password){
     }
     if($_SESSION["usertype_fk"] == "client"){
       header("location: ../users/Client/client main.php");
+      exit();
+    }
+    if($_SESSION["usertype_fk"] == "admin"){
+      header("location: ../users/Admin/admin main.php");
       exit();
     }
     
