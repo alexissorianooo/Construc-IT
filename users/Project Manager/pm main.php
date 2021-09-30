@@ -16,7 +16,10 @@
 <body id="page-top">
 
     <!-- NAVIGATION TAB -->
-    <?php include '../../layout/header-pm.php' ?>
+    <?php include '../../layout/header-pm.php';
+        session_start();
+    
+    ?>
 
     <p>HI YOU'RE AT PROJECT MANAGER PAGE</p>
     <?php include '../../Users/Project Manager/pm-act.php' ?>
