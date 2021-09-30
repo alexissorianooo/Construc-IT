@@ -280,7 +280,7 @@ function pmStatusComplete($conn, $project_pmSELECTid){
   $stmt = mysqli_stmt_init($conn);
   mysqli_query($conn, $sql);
 
-  header("Location: ../users/Project Manager/pm main.php?error=noneAtpmStatus");
+  header("Location: ../users/Project Manager/pm main.php?status=vacant");
   exit;
 }
 
@@ -289,6 +289,6 @@ function pmStatusINC($conn, $project_pmSELECTid){
   $stmt = mysqli_stmt_init($conn);
   mysqli_query($conn, $sql);
 
-  header("Location: ../users/Project Manager/pm main.php?error=noneAtpmStatus");
+  header("Location: ../users/Project Manager/pm main.php?status=busy");
   exit;
 }
