@@ -226,7 +226,7 @@ function updateProject($conn, $numerator, $denominator, $project_id, $select1, $
   $roundvalue = round($progressbar);
   // $roundvalue = 10;
   
-  $sql = "UPDATE project_db SET project_status_Architect_1 = '$select1', project_status_Architect_2 = '$select2', project_status_Architect_3 = '$select3', project_status_Architect_4 = '$select4', project_status_Architect_5 = '$select5', project_status_Architect_6 = '$select6', project_status_Architect_7 = '$select7', project_status_Architect_8 = '$select8', project_status_additional_Architect_1 = '$select9', project_status_additional_Architect_2 = '$select10', project_status_additional_Architect_3 = '$select11', project_status_additional_Architect_4 = '$select12', project_status_additional_Architect_5 = '$select13', project_progress = '$roundvalue' WHERE project_id = $project_id";
+  $sql = "UPDATE project_db SET project_status_Architect_1 = '$select1', project_status_Architect_2 = '$select2', project_status_Architect_3 = '$select3', project_status_Architect_4 = '$select4', project_status_Architect_5 = '$select5', project_status_Architect_6 = '$select6', project_status_Architect_7 = '$select7', project_status_Architect_8 = '$select8', project_status_additional_Architect_1 = '$select9', project_status_additional_Architect_2 = '$select10', project_status_additional_Architect_3 = '$select11', project_status_additional_Architect_4 = '$select12', project_status_additional_Architect_5 = '$select13', project_progress_architect = '$roundvalue' WHERE project_id = $project_id";
   $stmt = mysqli_stmt_init($conn);
 
   
@@ -256,4 +256,22 @@ function completeProject($conn, $numerator, $denominator, $project_id, $select1,
   mysqli_query($conn, $sql);
   
   updateProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
+}
+
+// FOR PROJECT MANAGER (FOREMAN) PROJECT UPDATE AND VIEW
+
+function updateProjectPM($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13, $select14, $select15, $select16, $select17, $select18, $select19, $select20, $select21){
+  $progressbar = ($numerator / $denominator)*100;
+  $roundvalue = round($progressbar);
+
+  $sql = "UPDATE project_db SET project_status_PM_1 = '$select1', project_status_PM_2 = '$select2', project_status_PM_3 = '$select3', project_status_PM_4 = '$select4', project_status_PM_5 = '$select5', project_status_PM_6 = '$select6', project_status_PM_7 = '$select7', project_status_PM_8 = '$select8', project_status_PM_9 = '$select9', project_status_PM_10 = '$select10', project_status_PM_11 = '$select11', project_status_PM_12 = '$select12', project_status_PM_13 = '$select13', project_status_PM_14 = '$select14', project_status_PM_15 = '$select15', project_status_PM_16 = '$select16', project_status_PM_17 = '$select17', project_status_PM_18 = '$select18', project_status_PM_19 = '$select19', project_status_PM_20 = '$select20', project_status_PM_21 = '$select21', project_progress_PM = '$roundvalue' WHERE project_id = $project_id";
+  $stmt = mysqli_stmt_init($conn);
+
+  
+  mysqli_query($conn, $sql);
+  
+
+  mysqli_close($conn);
+  header("Location: ../users/Project Manager/pm main.php?error=none");
+  exit;
 }

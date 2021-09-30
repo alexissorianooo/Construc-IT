@@ -37,7 +37,8 @@
                 $sql = "SELECT * FROM project_db WHERE project_pm = '$forpmID';";
                 $resultforprojectID = mysqli_query($conn, $sql);
 
-                
+                $numerator = 0;
+                $denominator = 21;
 
                 if(mysqli_num_rows($resultforprojectID)>0){
                     while($row=mysqli_fetch_assoc($resultforprojectID)){
@@ -46,8 +47,10 @@
                         $status2 = "Completed";
                         $status3 = "Delayed";
 
-                        echo
+                        echo //project_id and counter inside this echo
                         '
+                        <form method="post" action="../../includes/viewproject_projectmanager.php">
+
                             <br><br>
                             <br><br>
                             
@@ -56,8 +59,8 @@
                                     <div class="text-center" style="width: 100%;">
                                         <h1 style="height: 50px;font-size: 50px;">'.$row["project_name"].'</h1>
                                     </div>
-                                    <input hidden name="project_id" value="'.$row["project_id"] .'">
-                                    <input hidden name="counter" value="0">
+                                    <input hidden name="project_id" value="'.$row["project_id"].'">
+                                    <input hidden name="counter" value="0"> 
                                     <div style="margin-top: 20px;">
                                         <div class="container" style="margin-bottom: 20px;">
                                             <div class="row">
@@ -78,15 +81,24 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
                                     </div>
                                 </div>
                             </div>
+
+                            
                         ';
 
                         echo 
                         '
-                        <form>
+                        
+                        
+                        <div class="progress" style="width: 50%;height: 30px;margin: auto;">
+                            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$row["project_progress_PM"].'%;">'.$row["project_progress_PM"].'</div>
+                        </div>
+
+                        <br><br>
+                        <br><br>
+
                         <div id="body-section" class="sectionPADDING">
                             <div style="margin-bottom: 50px;">
                                 <h4 class="text-center" style="height: 35px;font-size: 34px;">Mobilization</h4>
@@ -112,7 +124,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM1">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -162,7 +174,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM2">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -212,7 +224,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM3">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -270,7 +282,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM4">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -320,7 +332,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM5">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -370,7 +382,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM6">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -420,7 +432,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM7">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -470,7 +482,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM8">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -520,7 +532,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM9">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -570,7 +582,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM10">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -629,7 +641,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM11">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -679,7 +691,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM12">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -729,7 +741,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM13">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -779,7 +791,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM14">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -829,7 +841,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM15">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -879,7 +891,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM16">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -929,7 +941,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM17">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -979,7 +991,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM18">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -1038,7 +1050,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM19">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -1088,7 +1100,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM20">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -1138,7 +1150,7 @@
                                                         }
                                                     
                                                     
-                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className">
+                                                        echo' " onchange="this.className=this.options[this.selectedIndex].className" name="SELECTPM21">
 
                                                         <option value="Pending" class="pending-class" ';
 
@@ -1175,6 +1187,13 @@
                                 </div>
                             </div>
                         </div>
+
+                            <div class="text-center">
+                                <button class="btn btn-primary" type="submit" style="margin: 10px;" name="saveBUTTON">
+                                    <i class="fa fa-save"></i>&nbsp; Save
+                                </button>
+                            </div>
+
                         </form>
                         
                         ';
