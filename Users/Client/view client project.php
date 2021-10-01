@@ -1930,8 +1930,8 @@
                                                             }
                                                         
                                                         echo '">
-                                                            <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
-                                                                <input class="text-center" style="height: 38px;font-size: 20px;" name="inputPM22" value="'.$row['project_activity_PM_22'].'"></input>
+                                                            <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">                                                                
+                                                                <p class="text-center text-muted" style="height: 38px;font-size: 20px;">'.$row['project_activity_PM_22'].'</p>
                                                                 <input hidden name="counter" value="1"></input>
                                                                 <br><br>
                                                                 <select disabled class="selectColor';
@@ -1990,8 +1990,8 @@
                                                         
                                                         echo '">
                                                             <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
-                                                                <input class="text-center text-muted" style="height: 38px;font-size: 20px;" name="inputPM23" value="'.$row['project_activity_PM_23'].'"></input>
-                                                                <input hidden name="counter" value="2"></input>
+                                                            <p class="text-center text-muted" style="height: 38px;font-size: 20px;">'.$row['project_activity_PM_23'].'</p>
+                                                            <input hidden name="counter" value="2"></input>
                                                                 <br><br>
                                                                 <select disabled class="selectColor';
             
@@ -2047,8 +2047,8 @@
                                                             }
                                                             
                                                         echo '">
-                                                            <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
-                                                                <input class="text-center text-muted" style="height: 38px;font-size: 20px;" name="inputPM24" value="'.$row['project_activity_PM_24'].'"></input>
+                                                            <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">                                                        
+                                                                <p class="text-center text-muted" style="height: 38px;font-size: 20px;">'.$row['project_activity_PM_24'].'</p>
                                                                 <input hidden name="counter" value="3"></input>
                                                                 <br><br>
                                                                 <select disabled class="selectColor';
@@ -2108,7 +2108,7 @@
                                                         
                                                         echo'">
                                                             <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
-                                                                <input class="text-center text-muted" style="height: 38px;font-size: 20px;" name="inputPM25" value="'.$row['project_activity_PM_25'].'"></input>
+                                                            <p class="text-center text-muted" style="height: 38px;font-size: 20px;">'.$row['project_activity_PM_25'].'</p>
                                                                 <input hidden name="counter" value="4"></input>
                                                                 <br><br>
                                                                 <select disabled class="selectColor';
@@ -2168,7 +2168,7 @@
                                                         
                                                         '">
                                                             <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
-                                                                <input class="text-center text-muted" style="height: 38px;font-size: 20px;" name="inputPM26" value="'.$row['project_activity_PM_26'].'"></input>
+                                                            <p class="text-center text-muted" style="height: 38px;font-size: 20px;">'.$row['project_activity_PM_26'].'</p>
                                                                 <input hidden name="counter" value="5"></input>
                                                                 <br><br>
                                                                 <select disabled class="selectColor';
