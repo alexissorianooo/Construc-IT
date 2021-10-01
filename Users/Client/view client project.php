@@ -1922,7 +1922,14 @@
                                                     <div class="row" id="divforAddActivity">
             
                                                         <!--22nd DIV-->
-                                                        <div class="col-md-4" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
+                                                        <div class="col-md-4" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px; ';
+                                                            if($row['project_activity_PM_22'] == "empty" || $row['project_activity_PM_22'] == null){
+                                                                echo ' display: none;';
+                                                            }else{
+                                                                echo ' display: block;';
+                                                            }
+                                                        
+                                                        echo '">
                                                             <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
                                                                 <input class="text-center" style="height: 38px;font-size: 20px;" name="inputPM22" value="'.$row['project_activity_PM_22'].'"></input>
                                                                 <input hidden name="counter" value="1"></input>
@@ -1973,7 +1980,15 @@
                                                         </div> <!-- END OF SPECIFIC DIV-->
             
                                                         <!--23rd DIV-->
-                                                        <div class="col-md-4" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
+                                                        <div class="col-md-4" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;';
+                                                           
+                                                        if($row['project_activity_PM_23'] == "empty" || $row['project_activity_PM_23'] == null){
+                                                                echo ' display: none;';
+                                                            }else{
+                                                                echo ' display: block;';
+                                                            }
+                                                        
+                                                        echo '">
                                                             <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
                                                                 <input class="text-center text-muted" style="height: 38px;font-size: 20px;" name="inputPM23" value="'.$row['project_activity_PM_23'].'"></input>
                                                                 <input hidden name="counter" value="2"></input>
@@ -2024,7 +2039,14 @@
                                                         </div> <!-- END OF SPECIFIC DIV-->
             
                                                         <!--24th DIV-->
-                                                        <div class="col-md-4" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
+                                                        <div class="col-md-4" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;';
+                                                            if($row['project_activity_PM_24'] == "empty" || $row['project_activity_PM_24'] == null){
+                                                                echo ' display: none;';
+                                                            }else{
+                                                                echo ' display: block;';
+                                                            }
+                                                            
+                                                        echo '">
                                                             <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
                                                                 <input class="text-center text-muted" style="height: 38px;font-size: 20px;" name="inputPM24" value="'.$row['project_activity_PM_24'].'"></input>
                                                                 <input hidden name="counter" value="3"></input>
@@ -2075,7 +2097,16 @@
                                                         </div> <!-- END OF SPECIFIC DIV-->
             
                                                         <!--25th DIV-->
-                                                        <div class="col-md-6" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
+                                                        <div class="col-md-6" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;';
+                                                        
+                                                        if($row['project_activity_PM_25'] == "empty" || $row['project_activity_PM_25'] == null){
+                                                            echo ' display: none;';
+                                                        }else{
+                                                            echo ' display: block;';
+                                                        }
+                                                        
+                                                        
+                                                        echo'">
                                                             <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
                                                                 <input class="text-center text-muted" style="height: 38px;font-size: 20px;" name="inputPM25" value="'.$row['project_activity_PM_25'].'"></input>
                                                                 <input hidden name="counter" value="4"></input>
@@ -2126,7 +2157,16 @@
                                                         </div> <!-- END OF SPECIFIC DIV-->
             
                                                         <!--26th DIV-->
-                                                        <div class="col-md-6" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
+                                                        <div class="col-md-6" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;';
+                                                        
+                                                        if($row['project_activity_PM_26'] == "empty" || $row['project_activity_PM_26'] == null){
+                                                            echo ' display: none;';
+                                                        }else{
+                                                            echo ' display: block;';
+                                                        }
+                                                        
+                                                        
+                                                        '">
                                                             <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
                                                                 <input class="text-center text-muted" style="height: 38px;font-size: 20px;" name="inputPM26" value="'.$row['project_activity_PM_26'].'"></input>
                                                                 <input hidden name="counter" value="5"></input>
