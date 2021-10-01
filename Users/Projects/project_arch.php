@@ -136,7 +136,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
 
                     if(mysqli_num_rows($result)>0){
                         while($row=mysqli_fetch_assoc($result)){
-                            if($row["project_status_fk"]=="Complete" && $_SESSION["user_fullname"] == $row["project_architect"]){
+                            if($row["project_status_fk"]=="Complete" && $_SESSION["user_fullname"] == $row["project_architect"] ){
                                 echo '
                                 <div class="col-sm-6 item" style="padding-bottom: 40px;">
                                     <div class="row">

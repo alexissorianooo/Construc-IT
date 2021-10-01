@@ -17,7 +17,7 @@
 
     <!-- NAVIGATION TAB -->
     <?php include '../../layout/header-pm.php';
-        session_start();
+        // session_start();
     
     ?>
 

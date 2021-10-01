@@ -1,3 +1,11 @@
+<?php
+    include '../../layout/header-client.php';
+    require_once '../../includes/db.php';
+    require_once '../../includes/functions.php';
+    session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +20,7 @@
 
 <body style="width: 1000px;margin: auto;">
 
-<?php include '../../layout/header-client.php' ?>
+
 
 <br>
 <br>
