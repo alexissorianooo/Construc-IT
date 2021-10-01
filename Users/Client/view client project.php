@@ -2181,17 +2181,7 @@
                                             </div> <!-- END OF ADDITIONAL ACTIVITIES DIV -->
                                             </div>
                                         </div>
-                                    </div>
-            
-                                        <div class="text-center">
-                                            <button class="btn btn-primary" type="button" style="margin: 10px;" name="addBUTTON" onclick="addActivityDIV()">
-                                                <i class="fa fa-plus-circle"></i>&nbsp; Add Activities
-                                            </button>
-                                            <button class="btn btn-primary" type="submit" style="margin: 10px;" name="saveBUTTON">
-                                                <i class="fa fa-save"></i>&nbsp; Save
-                                            </button>
-                                        </div>
-            
+                                    </div>                                                                
                                     </form>
                                     
                                     ';
