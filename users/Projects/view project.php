@@ -89,7 +89,7 @@
 
 
                     <section id="body-section" style="padding-bottom: 30px">
-                        <h4 class="text-center">Activities</h4>
+                        <h4 class="text-center viewact">Activities</h4>
                         <div class="d-inline-flex" style="width: 100%;">
                             <div class="container">
                                 <div class="row">
