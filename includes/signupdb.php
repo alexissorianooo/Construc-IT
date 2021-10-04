@@ -7,6 +7,7 @@ if(isset($_POST["registerButton"])){
     $fullname = $_POST["fullname"];
     $password = $_POST["password"];
     $password2 = $_POST["confirm-password"];
+    
 
     $uppercase = preg_match('@[A-Z]@', $password);
     $lowercase = preg_match('@[a-z]@', $password);

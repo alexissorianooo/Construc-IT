@@ -115,16 +115,7 @@
                                         <div id="usertype2">
                                             <form action="../../includes/signupdb.php" method="post" >
 
-                                                <!-- FOR USER TYPE OPTIONS -->
-                                                <!-- <select style="width: 280px;height: 38px;" id="usertype" name="usertypeSELECT">
-                                                    <option value="client" selected>Client</option>
-                                                    <option value="architect">Architect</option>
-                                                    <option value="projectmanager">Project Manager</option>
-                                                    <option value="admin">Admin</option>
-                                                </select> -->
-
                                                 <input hidden name="usertypeSELECT" value="client"></input>
-
                                                 <br><br>                    
                                                 <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
                                                 <br> <br>  
