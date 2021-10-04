@@ -83,6 +83,25 @@ function createUser($conn, $usertype, $email, $fullname, $password){
   
 }
 
+function createUserforClient($conn, $usertype, $email, $fullname, $password, $project_archiSELECT){
+  $sql = "INSERT INTO user_db (usertype_fk, user_email, user_fullname, user_password, architect_assigned) VALUES (? ,? ,?, ?, ?);";
+  $stmt = mysqli_stmt_init($conn);
+
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: ../landing-page.php?error=stmtfailed");
+    exit();
+  }
+
+  $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+
+  mysqli_stmt_bind_param($stmt, "sssss", $usertype, $email, $fullname, $hashedPwd, $project_archiSELECT);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
+  header("location: ../landing-page.php?error=none");
+  exit();
+
+}
+
 
 // FOR LOGIN MODULE
 

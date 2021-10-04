@@ -19,7 +19,12 @@ if(isset($_POST["registerButton"])){
     require_once 'db.php';
     require_once 'functions.php'; //FOR ERROR FUNCTIONS
 
-    
+    echo $_POST['archi-select'];
+
+    $result2 = $_POST['archi-select'];
+    $result2_explode = explode('|', $result2);
+    echo "<br>".$project_archiSELECT = $result2_explode[0]; //NAME
+    echo "<br>".$project_archiSELECTid = $result2_explode[1]; //user ID
     
     if(emptyInputSignup($email, $fullname, $password, $password2) !== false){
         header("location: ../landing-page.php?error=emptyinput");
@@ -53,6 +58,10 @@ if(isset($_POST["registerButton"])){
             exit();
         }
 
+    }
+
+    if($usertype === "client"){
+        createUserforClient($conn, $usertype, $email, $fullname, $password, $project_archiSELECT);
     }
 
     // THIS IS WHERE REGISTERING HAPPENS
