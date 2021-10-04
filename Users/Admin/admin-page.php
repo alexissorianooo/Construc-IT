@@ -17,33 +17,9 @@
 
 <body id="page-top">
     <div id="wrapper">
-        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0"
-            style="background: var(--warning);">
-            <div class="container-fluid d-flex flex-column p-0"><a
-                    class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
-                    href="admin-page.php">
-                    <div class="sidebar-brand-icon rotate-n-15"></div>
-                    <div class="sidebar-brand-text mx-3"><span style="color: rgb(0,0,0);">ADMIN&nbsp;</span></div>
-                </a>
-                <hr class="sidebar-divider my-0">
-                <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link active" data-bss-hover-animate="pulse"
-                            href="admin-page.php"><i class="fas fa-tachometer-alt" style="color: rgb(0,0,0);"></i><span
-                                style="border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;color: rgb(0,0,0);">User
-                                Profiles</span></a></li>
-                    <li class="nav-item"><a class="nav-link" data-bss-hover-animate="pulse" href="admin-audit.php"><i
-                                class="fas fa-user" style="color: rgba(0,0,0,0.3);"></i><span
-                                style="color: rgba(0,0,0,0.8);">Audit Trail</span></a></li>
-                    <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link" data-bss-hover-animate="pulse" href="#"
-                            style="color: rgba(0,0,0,0.8);"><i class="far fa-user-circle"
-                                style="color: rgba(0,0,0,0.3);"></i><span
-                                style="color: rgba(0,0,0,0.8);">Logout</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="register.html"></a></li>
-                </ul>
-                <div class="text-center d-none d-md-inline"></div>
-            </div>
-        </nav>
+    <?php 
+        include_once '../../layout/header-admin-userdata.php';
+    ?>
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
@@ -51,8 +27,46 @@
                 </nav>
                 <div class="container-fluid">
                     <div class="d-sm-flex justify-content-between align-items-center mb-4"></div>
-                    <h1><strong>USER PROFILES</strong></h1>
-                    <div class="row">
+                    <div style="display: inline-block; width:100%;">
+                        <h1 style="max-width:50%;" class="mx-0"><strong>USER PROFILES</strong></h1>
+                        <button style="float:right;">Add user</button>
+                    </div>
+                    
+                    <?php 
+                    require_once '../../includes/db.php';
+                    require_once '../../includes/functions.php';
+                
+                    $sql = "SELECT * FROM user_db";
+                    $result = mysqli_query($conn, $sql);
+
+                    if(mysqli_num_rows($result)>0){
+                        while($row=mysqli_fetch_assoc($result)){
+                            echo '
+                            <div class="row">
+                                <div class="col">
+                                    <a href="admin-page.php" style="text-decoration: none">
+                                        <div class="card shadow border-left-warning py-2" data-bss-hover-animate="pulse">
+                                            <div class="card-body">
+                                                <div class="row align-items-center no-gutters">
+                                                    <div class="col mr-2">
+                                                        <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
+                                                            <span>'.$row['usertype_fk'].'</span></div>
+                                                        <div class="text-dark font-weight-bold h5 mb-0"><span>'.$row['user_fullname'].'</span></div>
+                                                    </div>
+                                                </div><span>'.$row['user_email'].'</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <br>
+                            
+                            ';
+                        }
+                    }
+                    
+                    ?>
+                    <!-- <div class="row">
                         <div class="col">
                             <a href="admin-page.php" style="text-decoration: none">
                                 <div class="card shadow border-left-warning py-2" data-bss-hover-animate="pulse">
@@ -69,7 +83,7 @@
                                 </div>
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>

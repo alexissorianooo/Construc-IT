@@ -132,7 +132,7 @@ function loginUser($conn, $email, $password){
       exit();
     }
     if($_SESSION["usertype_fk"] == "admin"){
-      header("location: ../users/Admin/admin main.php");
+      header("location: ../users/Admin/admin-page.php");
       exit();
     }
     
