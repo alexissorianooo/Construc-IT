@@ -13,8 +13,10 @@
 </head>
 
 <body>
+<?php include '../../layout/header-pm.php';?>
     <div class="col-md-12 search-table-col">
         <div class="form-group pull-right col-lg-4"><input type="text" class="search form-control" placeholder="Search by typing here.."></div><span class="counter pull-right"></span>
+        
         <div class="table-responsive table-bordered table table-hover table-bordered results">
             <table class="table table-bordered table-hover">
                 <thead class="bill-header cs">
@@ -30,7 +32,48 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <?php 
+                    session_start();
+                    require_once '../../includes/db.php';
+                    require_once '../../includes/functions.php';
+                    
+
+                    $sql = "SELECT * FROM project_db";
+                    $result = mysqli_query($conn, $sql);
+                    
+                    if(mysqli_num_rows($result)>0){
+                        while($row=mysqli_fetch_assoc($result)){
+                            if($row["project_status_fk_PM"]=="Complete" && $_SESSION["user_fullname"] == $row["project_pm"] ){
+                            echo'
+                                <tr>
+                                    <td>'.$row['project_id'].'</td>
+                                    <td>'.$row['project_name'].'</td>
+                                    <td>'.$row['project_architect'].'</td>
+                                    <td>'.$row['project_pm'].'</td>
+                                    <td>'.$row['project_startdate'].'</td>
+                                    <td>'.$row['project_deadline'].'</td>
+                                    <td>'.$row['project_completed_PM'].'</td>
+                                    <form method="post" action="PM_viewproject_completed.php">
+                                    <td>
+                                        <button class="btn btn-success" style="margin-left: 5px;background: var(--warning);" type="submit">
+                                        <input name="projectView" value="'.$row["project_id"].'" hidden>
+                                            <i class="fa fa-folder-open-o" style="font-size: 15px;"> Open Project
+                                            </i>
+                                        </button>
+                                    </td>
+                                    </form>
+                                </tr>
+                                ';
+                            }
+                        }
+                    }
+
+                    
+                    
+                    ?>
+                
+                
+                    <!-- <tr>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -44,10 +87,11 @@
                                 </i>
                             </button>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
+        
     </div>
     <script src="assetsFORPM_viewproject/js/jquery.min.js"></script>
     <script src="assetsFORPM_viewproject/bootstrap/js/bootstrap.min.js"></script>
