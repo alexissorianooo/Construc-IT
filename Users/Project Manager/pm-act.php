@@ -1478,8 +1478,10 @@
                         else{
                             echo'
                             <br><br><br>
-                            NO AVAILABLE PROJECTS
-                            ';
+                            NO AVAILABLE PROJECTS';
+                            // problem: since nasa loob siya ng while loop, nag didisplay siya ng "no available projects" depende sa dami ng completed projects niya
+                        
+                            
                         }
                        
                     }
