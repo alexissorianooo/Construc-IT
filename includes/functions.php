@@ -280,12 +280,30 @@ function pmStatusComplete($conn, $project_pmSELECTid){
   $stmt = mysqli_stmt_init($conn);
   mysqli_query($conn, $sql);
 
+  
+}
+
+function projectCompletePM($conn, $project_id){
+  $datecomplete = date('Y-m-d');
+  $sql = "UPDATE project_db SET project_status_fk_PM = 'Complete', project_completed_PM = '$datecomplete' WHERE project_id = $project_id";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+
   header("Location: ../users/Project Manager/pm main.php?status=vacant");
   exit;
 }
 
 function pmStatusINC($conn, $project_pmSELECTid){
   $sql = "UPDATE user_db SET user_status = 'Busy' WHERE userid = $project_pmSELECTid";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+
+  
+}
+
+function projectNOTCompletePM($conn, $project_id){
+  $datecomplete = "";
+  $sql = "UPDATE project_db SET project_status_fk_PM = 'Not Complete', project_completed_PM = '$datecomplete' WHERE project_id = $project_id";
   $stmt = mysqli_stmt_init($conn);
   mysqli_query($conn, $sql);
 

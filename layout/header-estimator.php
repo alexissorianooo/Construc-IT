@@ -32,7 +32,7 @@
                                 <button class="dropbtn-est">Projects ▾ </button>
                                 <div class="dropdown-content-est">
                                     <a href="../../users/Project Manager/pm main.php">Ongoing Project</a>
-                                    <a href="#">Completed Project</a>
+                                    <a href="../../users/Projects/PM_viewproject.php">Completed Project</a>
                                 </div>
                             </div>
                             <!--<li class="nav-item PM-navitem"><a class="nav-link js-scroll-trigger" href="../../users/Project Manager/pm main.php">Projects</a></li>-->
