@@ -44,19 +44,23 @@
                             echo '
                             <div class="row">
                                 <div class="col">
-                                    <a href="admin-page.php" style="text-decoration: none">
-                                        <div class="card shadow border-left-warning py-2" data-bss-hover-animate="pulse">
-                                            <div class="card-body">
-                                                <div class="row align-items-center no-gutters">
-                                                    <div class="col mr-2">
-                                                        <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
-                                                            <span>'.$row['usertype_fk'].'</span></div>
-                                                        <div class="text-dark font-weight-bold h5 mb-0"><span>'.$row['user_fullname'].'</span></div>
+                                    <form>
+                                        <button style="text-decoration: none; border: 0; width:100%; text-align:left;" type="submit">
+                                            <a href="admin-page.php" style="text-decoration: none">
+                                                <div class="card shadow border-left-warning py-2" data-bss-hover-animate="pulse">
+                                                    <div class="card-body">
+                                                        <div class="row align-items-center no-gutters">
+                                                            <div class="col mr-2">
+                                                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
+                                                                    <span>'.$row['usertype_fk'].'</span></div>
+                                                                <div class="text-dark font-weight-bold h5 mb-0"><span>'.$row['user_fullname'].'</span></div>
+                                                            </div>
+                                                        </div><span>'.$row['user_email'].'</span>
                                                     </div>
-                                                </div><span>'.$row['user_email'].'</span>
-                                            </div>
-                                        </div>
-                                    </a>
+                                                </div>
+                                            </a>
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                             <br>
