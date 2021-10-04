@@ -1,4 +1,5 @@
 <link rel="icon" href="../../assets/img/logo3-white.png">
+<link rel="stylesheet" href="../../assets/css/stylesForPM.css">
 
 <!-- NAVIGATION BAR -->
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav" style="position: fixed;">
@@ -26,13 +27,21 @@
                     
                     <!-- NAVIGATION LINKS -->
                     <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul class="navbar-nav ml-auto text-uppercase">
-                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../users/Project Manager/pm main.php">Projects</a></li>
-                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../users/CE/estimator try.php">ESTIMATOR</a></li>
-                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Message</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../../includes/logoutdb.php">LOGOUT</a></li>
+                        <ul class="navbar-nav ml-auto text-uppercase PM-navbar">
+                            <div class="dropdown-est">
+                                <button class="dropbtn-est">Projects ▾ </button>
+                                <div class="dropdown-content-est">
+                                    <a href="../../users/Project Manager/pm main.php">Ongoing Project</a>
+                                    <a href="#">Completed Project</a>
+                                </div>
+                            </div>
+                            <!--<li class="nav-item PM-navitem"><a class="nav-link js-scroll-trigger" href="../../users/Project Manager/pm main.php">Projects</a></li>-->
+                            <li class="nav-item PM-navitem"><a class="nav-link js-scroll-trigger" href="../../users/CE/estimator try.php">ESTIMATOR</a></li>
+                            <li class="nav-item PM-navitem"><a class="nav-link js-scroll-trigger" href="#">Message</a></li>
+                            <li class="nav-item PM-navitem"><a class="nav-link" href="../../includes/logoutdb.php">LOGOUT</a></li>
                         </ul>
                     </div>';
+                    // include_once 'header-pm.php';
                     
                 }
 
