@@ -17,9 +17,9 @@
 
 <body id="page-top">
     <div id="wrapper">
-    <?php 
-        include_once '../../layout/header-admin-userdata.php';
-    ?>
+        <?php 
+            include_once '../../layout/header-admin-userdata.php';
+        ?>
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
@@ -193,6 +193,8 @@
         </div>
     </div>
 
+    
+
 
 
 
@@ -205,7 +207,7 @@
 
 
 
-    <?php include '../../layout/footer.php' ?>
+    
     <script src="assets-admin/js/jquery.min.js"></script>
     <script src="assets-admin/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets-admin/js/bs-init.js"></script>
