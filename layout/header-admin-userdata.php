@@ -1,3 +1,12 @@
+<link rel="stylesheet" href="../../users/Admin/assets-admin/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+<link rel="stylesheet" href="../../users/Admin/assets-admin/fonts/fontawesome-all.min.css">
+<link rel="stylesheet" href="../../users/Admin/assets-admin/fonts/font-awesome.min.css">
+<link rel="stylesheet" href="../../users/Admin/assets-admin/fonts/fontawesome5-overrides.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<link rel="stylesheet" href="../../users/Admin/assets-admin/css/untitled.css">
+<!-- <link rel="stylesheet" href="../users/Admin/assets-admin/css/untitled.css"> -->
+
 <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0"
     style="background: var(--warning);">
     <div class="container-fluid d-flex flex-column p-0"><a
@@ -29,3 +38,9 @@
         <div class="text-center d-none d-md-inline"></div>
     </div>
 </nav>
+
+<script src="../../users/Admin/assets-admin/js/jquery.min.js"></script>
+<script src="../../users/Admin/assets-admin/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../users/Admin/assets-admin/js/bs-init.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+<script src="../../users/Admin/assets-admin/js/theme.js"></script>

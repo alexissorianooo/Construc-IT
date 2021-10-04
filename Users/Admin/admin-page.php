@@ -29,12 +29,18 @@
                     <div class="d-sm-flex justify-content-between align-items-center mb-4"></div>
                     <div style="display: inline-block; width:100%;">
                         <span class="text-lg"><strong>USER PROFILES</strong></span>
-                        <button style="float:right;" data-toggle="modal" data-target="#reg-modal">Add user</button> 
+                        <!-- <button style="float:right;" data-toggle="modal" data-target="#reg-modal">Add user</button>  -->
+                        <button style="float:right;" data-toggle="modal" data-target="#edituserModal">Add user</button> 
+                        
                     </div>
                     
                     <?php 
+                    // include 'edituserMODAL.php';
+
+
                     require_once '../../includes/db.php';
                     require_once '../../includes/functions.php';
+                    
                 
                     $sql = "SELECT * FROM user_db";
                     $result = mysqli_query($conn, $sql);
@@ -44,9 +50,11 @@
                             echo '
                             <div class="row">
                                 <div class="col">
-                                    <form>
-                                        <button style="text-decoration: none; border: 0; width:100%; text-align:left;" type="submit">
-                                            <a href="admin-page.php" style="text-decoration: none">
+                                    <form method="post" action="edituserMODAL.php">
+                                        <!--<button style="text-decoration: none; border: 0; width:100%; text-align:left;" type="button" role="button" data-toggle="modal" data-target="#edituserModal">-->
+                                        <button style="text-decoration: none; border: 0; width:100%; text-align:left;" type="submit" >
+                                            <input hidden name="userid" value="'.$row['userid'].'">
+                                            <a style="text-decoration: none">
                                                 <div class="card shadow border-left-warning py-2" data-bss-hover-animate="pulse">
                                                     <div class="card-body">
                                                         <div class="row align-items-center no-gutters">
@@ -55,7 +63,7 @@
                                                                     <span>'.$row['usertype_fk'].'</span></div>
                                                                 <div class="text-dark font-weight-bold h5 mb-0"><span>'.$row['user_fullname'].'</span></div>
                                                             </div>
-                                                        </div><span>'.$row['user_email'].'</span>
+                                                        </div><span style="color: blue;">'.$row['user_email'].'</span>
                                                     </div>
                                                 </div>
                                             </a>
