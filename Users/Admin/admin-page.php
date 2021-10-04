@@ -28,8 +28,8 @@
                 <div class="container-fluid">
                     <div class="d-sm-flex justify-content-between align-items-center mb-4"></div>
                     <div style="display: inline-block; width:100%;">
-                        <h1 style="max-width:50%;" class="mx-0"><strong>USER PROFILES</strong></h1>
-                        <button style="float:right;">Add user</button>
+                        <span class="text-lg"><strong>USER PROFILES</strong></span>
+                        <button style="float:right;">Add user</button> 
                     </div>
                     
                     <?php 
