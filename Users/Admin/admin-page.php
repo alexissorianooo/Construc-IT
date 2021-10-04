@@ -29,8 +29,8 @@
                     <div class="d-sm-flex justify-content-between align-items-center mb-4"></div>
                     <div style="display: inline-block; width:100%;">
                         <span class="text-lg"><strong>USER PROFILES</strong></span>
-                        <!-- <button style="float:right;" data-toggle="modal" data-target="#reg-modal">Add user</button>  -->
-                        <button style="float:right;" data-toggle="modal" data-target="#edituserModal">Add user</button> 
+                        <button style="float:right;" data-toggle="modal" data-target="#reg-modal">Add user</button> 
+                        <!-- <button style="float:right;" data-toggle="modal" data-target="#edituserModal">Add user</button>  -->
                         
                     </div>
                     
