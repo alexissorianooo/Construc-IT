@@ -39,9 +39,15 @@
                 $numerator = 0;
                 $denominator = 21;
 
+                $checker = "not displayed";
+                
+
                 if(mysqli_num_rows($resultforprojectID)>0){
                     while($row=mysqli_fetch_assoc($resultforprojectID)){
+                        
                         if($row["project_status_fk_PM"]=="Not Complete" || $row["project_status_fk_PM"]==""){
+                            $checker = "display"; //FOR "NO AVAILABLE PROJECT" DISPLAY
+
                             $status1 = "Pending";
                             $status2 = "Completed";
                             $status3 = "Delayed";
@@ -1475,16 +1481,23 @@
                             
                             ';
                         }
-                        else{
-                            echo'
-                            <br><br><br>
-                            NO AVAILABLE PROJECTS';
-                            // problem: since nasa loob siya ng while loop, nag didisplay siya ng "no available projects" depende sa dami ng completed projects niya
                         
-                            
-                        }
                        
                     }
+                    // while($row=mysqli_fetch_assoc($resultforprojectID)){
+                        
+                    //     if($row["project_status_fk_PM"]=="Complete"){
+                    //         echo'
+                            
+                    //         ';
+                    //     }
+                    // }
+                    if($checker=="not displayed"){
+                        echo '<br><br><br><br><span>NO AVAILABLE PROJECTS</span>';
+                    }elseif($checker=="display"){
+                        echo '';
+                    }
+                    
                 }
 
 
