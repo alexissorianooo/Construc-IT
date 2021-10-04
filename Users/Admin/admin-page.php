@@ -29,7 +29,7 @@
                     <div class="d-sm-flex justify-content-between align-items-center mb-4"></div>
                     <div style="display: inline-block; width:100%;">
                         <span class="text-lg"><strong>USER PROFILES</strong></span>
-                        <button style="float:right;">Add user</button> 
+                        <button style="float:right;" data-toggle="modal" data-target="#reg-modal">Add user</button> 
                     </div>
                     
                     <?php 
@@ -92,6 +92,81 @@
             </div>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
+
+
+  <!-- SIGN UP MODAL -->
+  <div class="modal fade text-center portfolio-modal" role="dialog" tabindex="-1" id="reg-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">   
+                <div class="container" >
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <button data-dismiss="modal" class="close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+
+                                <h4 style="background: url(&quot;assets/img/logo3.png&quot;) center / contain no-repeat, transparent;width: 123px;height: 65px;"></h4>
+                                <h2 class="text-uppercase">REGISTER</h2>
+                                <div class="d-inline-block">
+
+                                    
+                                        
+                                        <div id="usertype2">
+                                            <form action="includes/signupdb.php" method="post" >
+
+                                                <!-- FOR USER TYPE OPTIONS -->
+                                                <select style="width: 280px;height: 38px;" id="usertype" name="usertypeSELECT">
+                                                    <option value="client" selected>Client</option>
+                                                    <option value="architect">Architect</option>
+                                                    <option value="projectmanager">Project Manager</option>
+                                                    <option value="admin">Admin</option>
+                                                </select>
+
+                                                <br><br>
+                                
+                                                <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
+                                                <br> <br>  
+                                                <input type="text" id="fullname" placeholder="Full Name" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="fullname">
+                                                <br> <br>                                 
+                                                <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">                                                                 
+                                                <br> <br>                                
+                                                <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password">                                                                 
+                                                <br> <br>
+                                                
+                                                <!-- FOR ARCHITECT AND PM (code at js)-->
+
+                                                <div style="display: none;" id="usertype1" ><input type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="usercode">                                                                 
+                                                </div>
+                                                <br> <br>   
+
+                                                <button class="btn bg-info" type="submit" name="registerButton">Register</button>
+                                            </form>
+                                        </div>
+                                    
+                                    
+                                    
+
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!-- FOR REGISTER SCRIPT -->
+    
+<script src="../../assets/js/register.js"></script>
+
+
+
+
+
+
     <?php include '../../layout/footer.php' ?>
     <script src="assets-admin/js/jquery.min.js"></script>
     <script src="assets-admin/bootstrap/js/bootstrap.min.js"></script>
@@ -99,5 +174,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets-admin/js/theme.js"></script>
 </body>
+
 
 </html>
