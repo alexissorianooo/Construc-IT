@@ -107,24 +107,25 @@
                                 </button>
 
                                 <h4 style="background: url(&quot;assets/img/logo3.png&quot;) center / contain no-repeat, transparent;width: 123px;height: 65px;"></h4>
-                                <h2 class="text-uppercase">REGISTER</h2>
+                                <h2 class="text-uppercase">REGISTER CLIENT</h2>
                                 <div class="d-inline-block">
 
                                     
                                         
                                         <div id="usertype2">
-                                            <form action="includes/signupdb.php" method="post" >
+                                            <form action="../../includes/signupdb.php" method="post" >
 
                                                 <!-- FOR USER TYPE OPTIONS -->
-                                                <select style="width: 280px;height: 38px;" id="usertype" name="usertypeSELECT">
+                                                <!-- <select style="width: 280px;height: 38px;" id="usertype" name="usertypeSELECT">
                                                     <option value="client" selected>Client</option>
                                                     <option value="architect">Architect</option>
                                                     <option value="projectmanager">Project Manager</option>
                                                     <option value="admin">Admin</option>
-                                                </select>
+                                                </select> -->
 
-                                                <br><br>
-                                
+                                                <input hidden name="usertypeSELECT" value="client"></input>
+
+                                                <br><br>                    
                                                 <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
                                                 <br> <br>  
                                                 <input type="text" id="fullname" placeholder="Full Name" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="fullname">
@@ -132,6 +133,52 @@
                                                 <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">                                                                 
                                                 <br> <br>                                
                                                 <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password">                                                                 
+                                                <br> <br>
+                                                
+                                                <!-- FOR ASSIGNING ARCHITECT  -->
+                                                <select style="width: 90%;height: 38px; border-width: 2px; border-color: darkslategray;" id="archi-select" name="archi-select">
+                                                <option disabled selected>--Available Architects--</option>
+                                                <?php
+                                                    
+                                                    $servername = "localhost";
+                                                    $dbusername = "root";
+                                                    $dbpassword = "";
+                                                    $dbname = "capstone";
+
+                                                    $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
+
+                                                    if (!$conn){
+                                                        die("connection failed: " . mysqli_connect_error());
+
+                                                    }
+
+                                                    $sql = "SELECT user_fullname, userid, user_status FROM user_db WHERE usertype_fk = 'architect';";
+                                                    $stmt = mysqli_stmt_init($conn);
+
+                                                    if (!mysqli_stmt_prepare($stmt, $sql)){
+                                                    echo "<script type='text/javascript'>alert('ERROR STATEMENT');</script>";
+                                                    }
+
+                                                    $records = mysqli_query($conn, $sql);
+
+                                                    while($data = mysqli_fetch_array($records)){
+                                                        if($data['user_status']!="Busy"){
+                                                            echo "<option value='". $data['user_fullname']."|". $data['userid']."'>" .$data['user_fullname']."</option>";
+                                                        }
+                                                    }
+                                                    mysqli_close($conn);
+                                                ?>
+                                            </select>
+
+
+
+
+
+
+
+
+
+
                                                 <br> <br>
                                                 
                                                 <!-- FOR ARCHITECT AND PM (code at js)-->
