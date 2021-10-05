@@ -14,7 +14,7 @@ if(isset($_POST["registerButton"])){
     $specialChars = preg_match('@[^\w]@', $password);
 
 
-    // $usertype = $_POST["usertypeSELECT"];
+    $usertype = $_POST["usertypeSELECT"];
 
     require_once 'db.php';
     require_once 'functions.php'; //FOR ERROR FUNCTIONS
@@ -34,6 +34,7 @@ if(isset($_POST["registerButton"])){
                 window.location.reload(page)
             </script>
             ';
+        exit();
     }
     if (pwdMatch($password, $password2) !== false) {
         echo '
@@ -43,6 +44,8 @@ if(isset($_POST["registerButton"])){
                 window.location.reload(page)
             </script>
             ';
+        exit();
+        
     }
     if (emailExist($conn, $email) !== false) {
         echo '
@@ -52,6 +55,7 @@ if(isset($_POST["registerButton"])){
                 window.location.reload(page)
             </script>
             ';
+        exit();
     }
     if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
         echo '
@@ -61,6 +65,7 @@ if(isset($_POST["registerButton"])){
                 window.location.reload(page)
             </script>
             ';
+        exit();
     }
 
     // FOR ARCHTIECT AND PROJECT MANAGER
