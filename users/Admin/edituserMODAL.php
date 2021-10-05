@@ -16,7 +16,7 @@
 
 <body id="page-top">
     <div id="wrapper">
-        
+        <?php if(isset($error_msg)){ echo $error_msg; } ?>
         <?php 
             include_once '../../layout/header-admin-userdata.php';
 
@@ -94,6 +94,33 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- MODAL FOR ERROR -->
+
+                    <div class="modal fade" role="dialog" tabindex="-1" id="errorModal">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Password Error 1</h2><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                </div>
+                                
+                                    <div class="modal-body">
+                                        <div class="container">
+
+                                            <input name="userid" value="'.$row['userid'].'" hidden>
+
+
+                            
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-light" data-dismiss="modal" type="button">Close</button>
+                                        
+                                    </div>
+                               
+                            </div>
+                        </div>
+                    </div>
                     
                     ';
 
@@ -102,6 +129,7 @@
         
         
         ?>
+        <?php if(isset($script)){ echo $script; } ?>
        
             <footer class="bg-white sticky-footer">
                 <div class="container my-auto">

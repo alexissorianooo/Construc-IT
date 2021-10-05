@@ -331,7 +331,9 @@ function createUserforClient($conn, $usertype, $email, $fullname, $password, $pr
   mysqli_stmt_close($stmt);
 
   echo '<script type="text/javascript">
-  window.history.go(-2);
+  alert("CLIENT SUCCESSFULLY CREATED");
+  // var page = window.history.go(-1);
+  location.replace(document.referrer);
   </script>';
 
 }
@@ -348,7 +350,9 @@ function edituser_admin($conn,  $user_fullname, $user_email, $userid){
   </script>';
 }
 
-function passVerify($oldpass, $userid){
+function passVerify($conn, $oldpass, $userid){
+
+
 $sql = "SELECT user_password FROM user_db WHERE userid = $userid";
 $stmt = mysqli_stmt_init($conn);
 
@@ -356,9 +360,46 @@ $result = mysqli_query($conn, $sql);
     
   if(mysqli_num_rows($result)>0){
     while($row=mysqli_fetch_assoc($result)){
-
+      $originalpass = $row['user_password'];
+      $checkPwd = password_verify($oldpass, $originalpass);
+      // if($oldpass===$originalpass){
+      //   $checkPwd = true;
+      // }else{
+      //   $checkPwd = false;
+      // }
+      if ($checkPwd === false) {
+        return false;
+      }else{
+        return true;
+      }
     }
   }
 
   
+}
+
+function passMatch($conn, $newpass, $newpass_confirm){
+  $result;
+    if ($newpass === $newpass_confirm) {
+      $result = true;
+    }
+    else {
+      $result = false;
+    }
+    return $result;
+}
+
+function edituser_admin_password($conn, $newpass, $userid){
+
+  $hashedPwd = password_hash($newpass, PASSWORD_DEFAULT);
+
+  $sql = "UPDATE user_db SET user_password = '$hashedPwd' WHERE userid = $userid";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+
+  echo '<script type="text/javascript">
+  alert("PASSWORD SUCCESSFULLY UPDATED");
+  var page = window.history.go(-1);
+  window.location.reload(page);
+  </script>';
 }
