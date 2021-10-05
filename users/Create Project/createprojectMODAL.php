@@ -42,28 +42,25 @@
 
                                         }
 
-                                        // $sql = "SELECT max(project_deadline) AS maxdate FROM project_db";
-                                        // $stmt = mysqli_stmt_init($conn);
+                                        $currentUser = $_SESSION["user_fullname"];
 
-                                        // $records = mysqli_query($conn, $sql);
 
-                                        // while($maxdate = mysqli_fetch_array($records)){
-                                        //     // if($data['user_status']!="Busy"){
-                                        //     //     echo "<option value='". $data['user_fullname']."|". $data['userid']."'>" .$data['user_fullname']."</option>";
-                                        //     // }
-                                        //     echo $maxdate['project_deadline'];
-                                        // }
-                                        
-                                        // $result = mysql_query("SELECT MAX(project_deadline) AS maxdate FROM project_db");
-                                        // $row = mysql_fetch_array($result);
-                                        // echo $row["maxdate"];
+                                        $maxdate = date("Y-m-d");
 
-                                        $sql = "SELECT MAX(project_deadline) AS maxdate FROM project_db";
+                                        $sql = "SELECT project_architect, MAX(project_deadline) AS maxdate FROM project_db WHERE project_architect = '$currentUser'";
                                         $result = mysqli_query($conn, $sql);
                                         
                                         if(mysqli_num_rows($result)>0){
                                             while($row=mysqli_fetch_assoc($result)){
-                                                echo $maxdate = $row['maxdate'];
+                                                if(!empty($row['maxdate'])){
+                                                    $maxdate = $row['maxdate'];
+                                                    $row["project_architect"];
+                                                }else{
+                                                    $maxdate = date("Y-m-d");
+                                                    $row["project_architect"];
+                                                }
+                                                
+                                                
                                             }
                                         }
                                         
@@ -74,9 +71,9 @@
                                         <tr>
                                             <td class="lefttext">Deadline<input class="form-control" type="date" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_enddeadline" min='.$maxdate.'></td>
                                         </tr>
-                                        
-                                        
                                         ';
+
+                                        
                                     ?>
                                     
                                     <tr>

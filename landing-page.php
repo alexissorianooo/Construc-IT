@@ -381,7 +381,7 @@
                                                 
                                                 <!-- FOR ARCHITECT AND PM (code at js)-->
 
-                                                <div style="display: none;" id="usertype1" ><input type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="usercode">                                                                 
+                                                <div style="" id="usertype1" ><input type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="usercode">                                                                 
                                                 </div>
                                                 <br> <br>   
 

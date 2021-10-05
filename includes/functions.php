@@ -330,12 +330,12 @@ function createUserforClient($conn, $usertype, $email, $fullname, $password, $pr
   mysqli_stmt_execute($stmt);
   mysqli_stmt_close($stmt);
 
-  // echo '<script type="text/javascript">
-  // alert("CLIENT SUCCESSFULLY CREATED");
-  // // var page = window.history.go(-1);
-  // location.replace(document.referrer);
-  // </script>';
-  echo 'allgood';
+  echo '<script type="text/javascript">
+  alert("CLIENT SUCCESSFULLY CREATED");
+  // var page = window.history.go(-1);
+  location.replace(document.referrer);
+  </script>';
+  // echo 'allgood';
 
 }
 
