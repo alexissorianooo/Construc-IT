@@ -26,19 +26,19 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="lefttext">Project Name<input class="form-control" type="text" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_name"></td>
+                                        <td class="lefttext">Project Name<input class="form-control" type="text" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_name" required="required"></td>
                                     </tr>
                                     <tr>
-                                        <td class="lefttext">Start Date<input class="form-control" type="date" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_startdeadline"></td>
+                                        <td class="lefttext">Start Date<input class="form-control" type="date" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_startdeadline" required></td>
                                     </tr>
                                     <tr>
-                                        <td class="lefttext">Deadline<input class="form-control" type="date" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_enddeadline"></td>
+                                        <td class="lefttext">Deadline<input class="form-control" type="date" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_enddeadline" required></td>
                                     </tr>
                                     <tr>
                                         <td> Foreman  
 
-                                        <select style="width: 320px;height: 38px; border-width: 2px; border-color: darkslategray;" id="usertype" name="project_pmSELECT">
-                                                <option disabled selected>--Available Project Managers--</option>
+                                        <select style="width: 320px;height: 38px; border-width: 2px; border-color: darkslategray;" id="usertype" name="project_pmSELECT" required>
+                                        <option disabled selected value="">--Available Project Managers--</option>
                                                 <?php
                                                     
                                                     $servername = "localhost";
@@ -79,8 +79,8 @@
                                     <tr>
                                         <td style="padding-left: 2.1rem;"> Client
 
-                                            <select style="width: 320px;height: 38px; border-width: 2px; border-color: darkslategray;" id="usertype" name="project_clientSELECT">
-                                                    <option disabled selected>--Client for the project--</option>
+                                            <select style="width: 320px;height: 38px; border-width: 2px; border-color: darkslategray;" required id="usertype" name="project_clientSELECT">
+                                            <option disabled selected value="">--Client for the project--</option>
                                                     <?php
                                                         $architect = $_SESSION['user_fullname'];
 
