@@ -14,7 +14,7 @@ if(isset($_POST["registerButton"])){
     $specialChars = preg_match('@[^\w]@', $password);
 
 
-    // $usertype = $_POST["usertypeSELECT"];
+    $usertype = $_POST["usertypeSELECT"];
 
     require_once 'db.php';
     require_once 'functions.php'; //FOR ERROR FUNCTIONS
