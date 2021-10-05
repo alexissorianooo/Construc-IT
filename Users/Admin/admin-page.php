@@ -29,15 +29,22 @@
                 <div class="container-fluid">
                     <div class="d-sm-flex justify-content-between align-items-center mb-4"></div>
                     <div style="display: inline-block; width:100%;">
-                        <span class="text-lg"><strong>USER PROFILES</strong></span>
+                        <span class="text-lg" style="font-size: 40px;"><strong>USER PROFILES</strong></span>
                         <button style="float:right;" data-toggle="modal" data-target="#reg-modal">Add user</button> 
                         <!-- <button style="float:right;" data-toggle="modal" data-target="#edituserModal">Add user</button>  -->
                         
                     </div>
-                    
+                    <div style="display: inline-block; width:100%; text-align:center;">
+                    <span class="text-lg" style="font-size: 20px;"><strong>Display Options</strong></span>
+                        <form action="admin-page.php" method="post">
+                            <button  type="submit" name="display_all">Display All</button> 
+                            <button  type="submit" name="display_architect">Architect</button> 
+                            <button  type="submit" name="display_PM">Foreman</button> 
+                            <button  type="submit" name="display_client">Client</button> 
+                        </form>
+                        
+                    </div>
                     <?php 
-                    // include 'edituserMODAL.php';
-
 
                     require_once '../../includes/db.php';
                     require_once '../../includes/functions.php';
@@ -46,30 +53,52 @@
                     $sql = "SELECT * FROM user_db";
                     $result = mysqli_query($conn, $sql);
 
+                    if(isset($_POST['display_architect'])){
+                        $sql = "SELECT * FROM user_db WHERE usertype_fk = 'architect'";
+                        $result = mysqli_query($conn, $sql);
+                    }
+                    if(isset($_POST['display_PM'])){
+                        $sql = "SELECT * FROM user_db WHERE usertype_fk = 'projectmanager'";
+                        $result = mysqli_query($conn, $sql);
+                    }
+                    if(isset($_POST['display_client'])){
+                        $sql = "SELECT * FROM user_db WHERE usertype_fk = 'client'";
+                        $result = mysqli_query($conn, $sql);
+                    }
+                    if(isset($_POST['display_all'])){
+                        $sql = "SELECT * FROM user_db";
+                        $result = mysqli_query($conn, $sql);
+                    }
+
                     if(mysqli_num_rows($result)>0){
                         while($row=mysqli_fetch_assoc($result)){
                             echo '
-                            <div class="row">
-                                <div class="col">
-                                    <form method="post" action="edituserMODAL.php">
-                                        <!--<button style="text-decoration: none; border: 0; width:100%; text-align:left;" type="button" role="button" data-toggle="modal" data-target="#edituserModal">-->
-                                        <button style="text-decoration: none; border: 0; width:100%; text-align:left;" type="submit" >
-                                            <input hidden name="userid" value="'.$row['userid'].'">
-                                            <a style="text-decoration: none">
-                                                <div class="card shadow border-left-warning py-2" data-bss-hover-animate="pulse">
-                                                    <div class="card-body">
-                                                        <div class="row align-items-center no-gutters">
-                                                            <div class="col mr-2">
-                                                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
+                            
+                            <div>
+                                <div class="row">
+                                    <div class="col">
+                                        <form method="post" action="edituserMODAL.php">
+                                            <!--<button style="text-decoration: none; border: 0; width:100%; text-align:left;" type="button" role="button" data-toggle="modal" data-target="#edituserModal">-->
+                                            <button style="text-decoration: none; border: 0; width:100%; text-align:left;" type="submit" >
+                                                <input hidden name="userid" value="'.$row['userid'].'">
+                                                <a style="text-decoration: none">
+                                                    <div class="card shadow border-left-warning py-2" data-bss-hover-animate="pulse">
+                                                        <div class="card-body">
+                                                            <div class="row align-items-center no-gutters">
+                                                                <div class="col mr-2">
+                                                                    <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
                                                                     <span>'.$row['usertype_fk'].'</span></div>
-                                                                <div class="text-dark font-weight-bold h5 mb-0"><span>'.$row['user_fullname'].'</span></div>
-                                                            </div>
-                                                        </div><span style="color: blue;">'.$row['user_email'].'</span>
+                                                                    
+                                                                    <div class="text-dark font-weight-bold h5 mb-0"><span>'.$row['user_fullname'].'</span></div>
+                                                                    
+                                                                </div>
+                                                            </div><span style="color: blue;">'.$row['user_email'].'</span>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </a>
-                                        </button>
-                                    </form>
+                                                </a>
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                             <br>
@@ -79,6 +108,7 @@
                     }
                     
                     ?>
+                     
                     <!-- <div class="row">
                         <div class="col">
                             <a href="admin-page.php" style="text-decoration: none">
@@ -222,6 +252,8 @@
     <script src="assets-admin/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets-admin/js/theme.js"></script>
+
+    <script src="assets-admin/js/searchbar.js"></script>
 </body>
 
 
