@@ -1,5 +1,4 @@
 
-
 <link rel="stylesheet" href="../Create Project/assetsCP/bootstrap/css/bootstrapCP.min.css">
 <link rel="stylesheet" href="../Create Project/assetsCP/fonts/font-awesome.min.css">
 <link rel="stylesheet" href="../Create Project/assetsCP/css/stylesCP.css">
@@ -28,12 +27,58 @@
                                     <tr>
                                         <td class="lefttext">Project Name<input class="form-control" type="text" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_name" required="required"></td>
                                     </tr>
-                                    <tr>
-                                        <td class="lefttext">Start Date<input class="form-control" type="date" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_startdeadline" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="lefttext">Deadline<input class="form-control" type="date" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_enddeadline" required></td>
-                                    </tr>
+                                    <?php 
+                                        $servername = "localhost";
+                                        $dbusername = "root";
+                                        $dbpassword = "";
+                                        $dbname = "capstone";
+
+                                        $mindate = date("Y-m-d");
+
+                                        $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
+
+                                        if (!$conn){
+                                            die("connection failed: " . mysqli_connect_error());
+
+                                        }
+
+                                        // $sql = "SELECT max(project_deadline) AS maxdate FROM project_db";
+                                        // $stmt = mysqli_stmt_init($conn);
+
+                                        // $records = mysqli_query($conn, $sql);
+
+                                        // while($maxdate = mysqli_fetch_array($records)){
+                                        //     // if($data['user_status']!="Busy"){
+                                        //     //     echo "<option value='". $data['user_fullname']."|". $data['userid']."'>" .$data['user_fullname']."</option>";
+                                        //     // }
+                                        //     echo $maxdate['project_deadline'];
+                                        // }
+                                        
+                                        // $result = mysql_query("SELECT MAX(project_deadline) AS maxdate FROM project_db");
+                                        // $row = mysql_fetch_array($result);
+                                        // echo $row["maxdate"];
+
+                                        $sql = "SELECT MAX(project_deadline) AS maxdate FROM project_db";
+                                        $result = mysqli_query($conn, $sql);
+                                        
+                                        if(mysqli_num_rows($result)>0){
+                                            while($row=mysqli_fetch_assoc($result)){
+                                                echo $maxdate = $row['maxdate'];
+                                            }
+                                        }
+                                        
+                                        echo '
+                                        <tr>
+                                            <td class="lefttext">Start Date<input class="form-control" type="date" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_startdeadline" min="'.$maxdate.'"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lefttext">Deadline<input class="form-control" type="date" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_enddeadline" min='.$maxdate.'></td>
+                                        </tr>
+                                        
+                                        
+                                        ';
+                                    ?>
+                                    
                                     <tr>
                                         <td> Foreman  
 
