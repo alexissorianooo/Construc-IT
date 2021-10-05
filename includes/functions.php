@@ -1,6 +1,9 @@
-<!-- FOR ERROR FUNCTIONS -->
+
 
 <?php
+
+
+// --------------------------------------------------------- FOR SIGNUP ------------------------------------------------------------
 
 function emptyInputSignup($email, $fullname, $password, $password2){
   $result;
@@ -83,34 +86,7 @@ function createUser($conn, $usertype, $email, $fullname, $password){
   
 }
 
-function createUserforClient($conn, $usertype, $email, $fullname, $password, $project_archiSELECT){
-  $sql = "INSERT INTO user_db (usertype_fk, user_email, user_fullname, user_password, architect_assigned) VALUES (? ,? ,?, ?, ?);";
-  $stmt = mysqli_stmt_init($conn);
-
-  if (!mysqli_stmt_prepare($stmt, $sql)) {
-    header("location: ../landing-page.php?error=stmtfailed");
-    exit();
-  }
-
-  $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
-
-  mysqli_stmt_bind_param($stmt, "sssss", $usertype, $email, $fullname, $hashedPwd, $project_archiSELECT);
-  mysqli_stmt_execute($stmt);
-  mysqli_stmt_close($stmt);
-
-  echo '<script type="text/javascript">
-  window.history.go(-2);
-  </script>';
-
-  
-  // header("location: ../users/Admin/admin-page.php");
-  // exit();
-
-}
-
-
-
-// FOR LOGIN MODULE
+// -------------------------------------------------------- FOR LOGIN -----------------------------------------------------
 
 function emptyInputlogin($email,$password){
   $result;
@@ -165,7 +141,7 @@ function loginUser($conn, $email, $password){
   }
 }
 
-// CREATE PROJECT
+// ------------------------------------- CREATE PROJECT -----------------------------------------------------
 
 function createProject($conn, $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_clientSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13){
   // project name exist
@@ -245,7 +221,7 @@ function emptyInputcreate($project_name, $project_startdate, $project_deadline, 
   return $result;
 }
 
-// FOR PROJECT VIEW
+//  -------------------------------------------------------------  FOR PROJECT VIEW ---------------------------------------------------------------------
 
 function updateProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13){
   
@@ -285,7 +261,7 @@ function completeProject($conn, $numerator, $denominator, $project_id, $select1,
   updateProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
 }
 
-// FOR PROJECT MANAGER (FOREMAN) PROJECT UPDATE AND VIEW
+// --------------------------------- FOR PROJECT MANAGER (FOREMAN) PROJECT UPDATE AND VIEW -------------------------------------
 
 function updateProjectPM($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13, $select14, $select15, $select16, $select17, $select18, $select19, $select20, $select21, $select22, $select23, $select24, $select25, $select26, $input22, $input23, $input24, $input25, $input26){
   $progressbar = ($numerator / $denominator)*100;
@@ -335,4 +311,54 @@ function projectNOTCompletePM($conn, $project_id){
 
   header("Location: ../users/Project Manager/pm main.php?status=busy");
   exit;
+}
+
+// -------------------------------------------  FOR ADMIN -----------------------------------------------------
+
+function createUserforClient($conn, $usertype, $email, $fullname, $password, $project_archiSELECT){
+  $sql = "INSERT INTO user_db (usertype_fk, user_email, user_fullname, user_password, architect_assigned) VALUES (? ,? ,?, ?, ?);";
+  $stmt = mysqli_stmt_init($conn);
+
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: ../landing-page.php?error=stmtfailed");
+    exit();
+  }
+
+  $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+
+  mysqli_stmt_bind_param($stmt, "sssss", $usertype, $email, $fullname, $hashedPwd, $project_archiSELECT);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
+
+  echo '<script type="text/javascript">
+  window.history.go(-2);
+  </script>';
+
+}
+
+
+function edituser_admin($conn,  $user_fullname, $user_email, $userid){
+  $sql = "UPDATE user_db SET user_fullname = '$user_fullname', user_email = '$user_email' WHERE userid = $userid";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+
+  echo '<script type="text/javascript">
+  var page = window.history.go(-1);
+  window.location.reload(page);
+  </script>';
+}
+
+function passVerify($oldpass, $userid){
+$sql = "SELECT user_password FROM user_db WHERE userid = $userid";
+$stmt = mysqli_stmt_init($conn);
+
+$result = mysqli_query($conn, $sql);
+    
+  if(mysqli_num_rows($result)>0){
+    while($row=mysqli_fetch_assoc($result)){
+
+    }
+  }
+
+  
 }
