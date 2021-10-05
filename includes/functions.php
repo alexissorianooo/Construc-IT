@@ -97,10 +97,17 @@ function createUserforClient($conn, $usertype, $email, $fullname, $password, $pr
   mysqli_stmt_bind_param($stmt, "sssss", $usertype, $email, $fullname, $hashedPwd, $project_archiSELECT);
   mysqli_stmt_execute($stmt);
   mysqli_stmt_close($stmt);
-  header("location: ../landing-page.php?error=none");
-  exit();
+
+  echo '<script type="text/javascript">
+  window.history.go(-2);
+  </script>';
+
+  
+  // header("location: ../users/Admin/admin-page.php");
+  // exit();
 
 }
+
 
 
 // FOR LOGIN MODULE

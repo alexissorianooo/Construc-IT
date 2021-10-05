@@ -63,10 +63,12 @@ if(isset($_POST["registerButton"])){
 
     if($usertype === "client"){
         createUserforClient($conn, $usertype, $email, $fullname, $password, $project_archiSELECT);
+        back();
     }
 
     // THIS IS WHERE REGISTERING HAPPENS
     createUser($conn, $usertype, $email, $fullname, $password);
+    
 }
 else{
     header("location: ../landing-page.php?error=batkaya");

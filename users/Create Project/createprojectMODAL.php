@@ -82,7 +82,8 @@
                                             <select style="width: 320px;height: 38px; border-width: 2px; border-color: darkslategray;" id="usertype" name="project_clientSELECT">
                                                     <option disabled selected>--Client for the project--</option>
                                                     <?php
-                                                        
+                                                        $architect = $_SESSION['user_fullname'];
+
                                                         $servername = "localhost";
                                                         $dbusername = "root";
                                                         $dbpassword = "";
@@ -95,7 +96,7 @@
 
                                                         }
 
-                                                        $sql = "SELECT user_fullname, userid, user_status FROM user_db WHERE usertype_fk = 'client';";
+                                                        $sql = "SELECT user_fullname, userid, user_status FROM user_db WHERE usertype_fk = 'client' AND architect_assigned = '$architect';";
                                                         $stmt = mysqli_stmt_init($conn);
 
                                                         if (!mysqli_stmt_prepare($stmt, $sql)){
