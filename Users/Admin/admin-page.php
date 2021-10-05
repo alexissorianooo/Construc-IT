@@ -121,7 +121,7 @@
                                     
                                         
                                         <div id="usertype2">
-                                            <form action="../../includes/signupdb.php" method="post" >
+                                            <form action="../../includes/admin_adduser.php" method="post" >
 
                                                 <!-- FOR USER TYPE OPTIONS -->
                                                 <!-- <select style="width: 280px;height: 38px;" id="usertype" name="usertypeSELECT">
@@ -134,18 +134,18 @@
                                                 <input hidden name="usertypeSELECT" value="client"></input>
 
                                                 <br><br>                    
-                                                <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
+                                                <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email" required="required">
                                                 <br> <br>  
-                                                <input type="text" id="fullname" placeholder="Full Name" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="fullname">
+                                                <input type="text" id="fullname" placeholder="Full Name" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="fullname" required="required">
                                                 <br> <br>                                 
-                                                <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">                                                                 
+                                                <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password" required="required">                                                                 
                                                 <br> <br>                                
-                                                <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password">                                                                 
+                                                <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password" required="required">                                                                 
                                                 <br> <br>
                                                 
                                                 <!-- FOR ASSIGNING ARCHITECT  -->
-                                                <select style="width: 90%;height: 38px; border-width: 2px; border-color: darkslategray;" id="archi-select" name="archi-select">
-                                                <option disabled selected>--Available Architects--</option>
+                                                <select style="width: 90%;height: 38px; border-width: 2px; border-color: darkslategray;" id="archi-select" name="archi-select" required>
+                                                <option disabled selected value="">--Available Architects--</option>
                                                 <?php
                                                     
                                                     $servername = "localhost";
