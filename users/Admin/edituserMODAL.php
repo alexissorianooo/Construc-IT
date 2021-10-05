@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 
@@ -34,22 +36,63 @@
                         <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
                             <div class="container-fluid"></div>
                         </nav>
-                        <form method="post">
+                        <form method="post" action="../../includes/admin_edituser.php">
                             <div class="container-fluid">
                                 <div style="height: 100%;width: 80%;margin: auto;">
                                     <div style="height: 100%;">
                                         <h1 class="text-lg" style="text-align: center;"><strong>EDIT USER</strong></h1>
                                     </div>
-                                    <div><label>Full Name</label><input class="float-right" type="text" style="width: 70%;" value="'.$row['user_fullname'].'"></div>
-                                    <div><label>Email</label><input class="float-right" type="text" style="width: 70%;" value="'.$row['user_email'].'"></div>
+                                    <input name="userid" value="'.$row['userid'].'" hidden>
+                                    <div><label>Full Name</label><input class="float-right" type="text" style="width: 70%;" value="'.$row['user_fullname'].'" name="user_fullname" required="required"></div>
+                                    <div><label>Email</label><input class="float-right" type="email" style="width: 70%;" value="'.$row['user_email'].'" name="user_email" required="required"></div>
                                     <div class="text-center" style="margin-top: 10px;"><button class="btn btn-primary" type="button" data-toggle="modal" role="button" data-target="#changepassModal" data-dismiss="modal">Change Password</button></div>
                                     <div class="text-right">
-                                        <button class="btn btn-light" type="button" style="margin-right: 5px;margin-left: 5px;margin-top: 10px;" onclick="history.back()">Back</button>
-                                        <button class="btn btn-primary" type="button" style="margin-right: 5px;margin-left: 5px;margin-top: 10px;">Save</button>
+                                        <button class="btn btn-light" type="button" style="margin-right: 5px;margin-left: 5px;margin-top: 10px;" onclick="location.replace(document.referrer)">Back</button>
+                                        <button class="btn btn-primary" type="submit" style="margin-right: 5px;margin-left: 5px;margin-top: 10px;" name="saveButton_admin">Save</button>
                                     </div>
                                 </div>
                             </div>
                         </form>
+                    </div>
+
+
+
+                    <!-- MODAL FOR PASSWORD -->
+
+                    <div class="modal fade" role="dialog" tabindex="-1" id="changepassModal">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Edit Password</h2><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                </div>
+                                <form method="post" action="../../includes/admin_edituserPASSWORD.php">
+                                    <div class="modal-body">
+                                        <div class="container">
+
+                                            <input name="userid" value="'.$row['userid'].'" hidden>
+
+
+                                            <div class="row" style="margin-bottom: 10px;">
+                                                <div class="col-md-6" style="width: 100%;"><label class="col-form-label text-left float-left" style="width: 100%;">Enter Current Password</label></div>
+                                                <div class="col-md-6"><input type="password" style="width: 100%;height: 100%;" name="oldpass" required="required"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6" style="width: 100%;"><label class="col-form-label text-left float-left" style="width: 100%;">Password</label></div>
+                                                <div class="col-md-6"><input type="password" style="width: 100%;height: 100%;" name="newpass" required="required"></div>
+                                            </div>
+                                            <div class="row" style="margin-top: 10px;">
+                                                <div class="col-md-6" style="width: 100%;"><label class="col-form-label text-left float-left" style="width: 100%;">Confirm Password</label></div>
+                                                <div class="col-md-6"><input type="password" style="width: 100%;height: 100%;" name="newpass_confirm" required="required"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-light" data-dismiss="modal" type="button">Close</button>
+                                        <button class="btn btn-primary" type="submit" name="saveButton_admin_password">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                     
                     ';
@@ -69,7 +112,8 @@
     </div>
 
 
-    <div class="modal fade" role="dialog" tabindex="-1" id="changepassModal">
+
+    <!-- <div class="modal fade" role="dialog" tabindex="-1" id="changepassModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -94,7 +138,9 @@
                 <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" type="button">Close</button><button class="btn btn-primary" type="button">Save</button></div>
             </div>
         </div>
-    </div>
+    </div> -->
+
+
     <!-- <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
