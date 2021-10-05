@@ -41,7 +41,15 @@
                             <button  type="submit" name="display_PM">Foreman</button> 
                             <button  type="submit" name="display_client">Client</button> 
                         </form>
-                        
+                        <div>
+                            <input 
+                                type="text"
+                                name="searchBar_name"
+                                id="searchBar_ID"
+                                placeholder="Search for any user.."
+                                onkeyup="myFunction()"
+                            />
+                        </div>
                     </div>
                     <?php 
 
@@ -68,13 +76,14 @@
                         $sql = "SELECT * FROM user_db";
                         $result = mysqli_query($conn, $sql);
                     }
-
+                    echo '<ul id="myUL">';
                     if(mysqli_num_rows($result)>0){
                         while($row=mysqli_fetch_assoc($result)){
                             echo '
                             
-                            <div>
-                                <div class="row">
+                            
+                                <li>
+                                <div class="row" style="margin-bottom:5px;">
                                     <div class="col">
                                         <form method="post" action="edituserMODAL.php">
                                             <!--<button style="text-decoration: none; border: 0; width:100%; text-align:left;" type="button" role="button" data-toggle="modal" data-target="#edituserModal">-->
@@ -99,13 +108,14 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div>
-                            <br>
+                                </li>
+                            
+                            
                             
                             ';
                         }
                     }
-                    
+                    echo '</ul>';
                     ?>
                      
                     <!-- <div class="row">
