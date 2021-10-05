@@ -362,7 +362,7 @@
 
                                                 <!-- FOR USER TYPE OPTIONS -->
                                                 <select style="width: 280px;height: 38px;" id="usertype" name="usertypeSELECT">
-                                                    <option value="client" selected>Client</option>
+                                                    <!-- <option value="client" selected>Client</option> -->
                                                     <option value="architect">Architect</option>
                                                     <option value="projectmanager">Project Manager</option>
                                                     <option value="admin">Admin</option>
