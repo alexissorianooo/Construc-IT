@@ -300,6 +300,11 @@
 
     
 
+
+
+
+
+
     <!-- LOGIN MODAL -->
     <div class="modal fade portfolio-modal" role="dialog" tabindex="-1" id="las-modal" >
         <div class="modal-dialog" role="document">
@@ -338,7 +343,7 @@
         </div>
     </div>
 
-
+    
    <!-- SIGN UP MODAL -->
    <div class="modal fade text-center portfolio-modal" role="dialog" tabindex="-1" id="reg-modal">
         <div class="modal-dialog" role="document">
@@ -358,40 +363,36 @@
                                     
                                         
                                         <div id="usertype2">
-                                            <form action="includes/signupdb.php" method="post" >
+                                            <form action="includes/signupdb.php" method="post">
 
                                                 <!-- FOR USER TYPE OPTIONS -->
                                                 <select style="width: 280px;height: 38px;" id="usertype" name="usertypeSELECT">
-                                                    <!-- <option value="client" selected>Client</option> -->
-                                                    <option value="architect">Architect</option>
+                                                    <option class="text-center" disabled selected>--Select Usertype--</option>
+                                                    <option value="architect" >Architect</option>
                                                     <option value="projectmanager">Project Manager</option>
                                                     <option value="admin">Admin</option>
                                                 </select>
 
                                                 <br><br>
-                                
-                                                <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
+                                                
+                                                <input required type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
                                                 <br> <br>  
-                                                <input type="text" id="fullname" placeholder="Full Name" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="fullname">
-                                                <br> <br>                                 
-                                                <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">                                                                 
+                                                <input required type="text" id="fullname" placeholder="Full Name" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="fullname">                                            
+                                                <br> <br>  
+                                                <input required type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">                                                                 
                                                 <br> <br>                                
-                                                <input type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password">                                                                 
+                                                <input required type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password">                                                                                                             
                                                 <br> <br>
                                                 
                                                 <!-- FOR ARCHITECT AND PM (code at js)-->
 
-                                                <div style="display: none;" id="usertype1" ><input type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="usercode">                                                                 
-                                                </div>
+                                                <div style="display: none;" id="usertype1" ><input type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="usercode"></div>                
                                                 <br> <br>   
 
                                                 <button class="btn bg-info" type="submit" name="registerButton">Register</button>
                                             </form>
                                         </div>
-                                    
-                                    
-                                    
-
+                                                                                                    
                                 </div>
                         </div>
                     </div>
@@ -399,6 +400,11 @@
             </div>
         </div>
     </div>
+
+
+
+
+
 
 
 
