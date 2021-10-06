@@ -349,7 +349,7 @@ function edituser_admin($conn,  $user_fullname, $user_email, $userid){
 }
 
 
-function edituser_admin_projectdb($conn, $user_fullname_old, $user_fullname){
+function edituser_admin_userdb($conn, $user_fullname_old, $user_fullname){
 
 $sql = "SELECT * FROM user_db WHERE architect_assigned='$user_fullname_old'";
 $result = mysqli_query($conn, $sql);
@@ -365,11 +365,30 @@ if(mysqli_num_rows($result)>0){
     }
 }
 
+
+  
+}
+
+function edituser_admin_projectdb($conn, $user_fullname_old, $user_fullname){
+//project_architect
+$sql = "SELECT * FROM project_db WHERE project_architect='$user_fullname_old'";
+$result = mysqli_query($conn, $sql);
+
+// echo mysqli_num_rows($result);
+if(mysqli_num_rows($result)>0){
+    while($row=mysqli_fetch_assoc($result)){
+      
+      $sql2 = "UPDATE project_db SET project_architect = '$user_fullname' WHERE project_architect = '$user_fullname_old'";
+      $stmt = mysqli_stmt_init($conn);
+      mysqli_query($conn, $sql2);
+      
+    }
+}
+
 echo '<script type="text/javascript">
   var page = window.history.go(-2);
   window.location.reload(page);
   </script>';
-
 }
 
 function passVerify($conn, $oldpass, $userid){

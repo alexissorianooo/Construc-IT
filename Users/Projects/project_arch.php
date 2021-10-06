@@ -95,13 +95,19 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                 </div>
                                                 <form method="post" action="view project.php">
                                                     <input name="projectView" value="'.$row["project_id"].'" hidden>
-                                                    <button class="btn btn-warning" data-bs-toggle="tooltip" data-bss-tooltip=""
-                                                        data-bs-placement="bottom" data-bss-hover-animate="pulse" type="submit"
-                                                        data-toggle="modal" href="#myModal" 
-                                                        style="font-size: 28px;background: rgb(248,197,44);margin: 13px;border-color: rgb(0, 0, 0);" name="openProject">
-                                                        
-                                                        <i class="fa fa-folder-open-o" style="font-size: 20px;">  Open Project</i>
-                                                    </button> 
+                                                    <div style="diplay: inline;">
+                                                        <button class="btn btn-danger" name="deleteProject" style="float:left;font-size: 28px;margin: 10px;border-color: rgb(0, 0, 0);">
+                                                            <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                        </button> 
+
+                                                        <button class="btn btn-warning" data-bs-toggle="tooltip" data-bss-tooltip=""
+                                                            data-bs-placement="bottom" data-bss-hover-animate="pulse" type="submit"
+                                                            data-toggle="modal" href="#myModal" 
+                                                            style="font-size: 28px;background: rgb(248,197,44);margin: 10px;border-color: rgb(0, 0, 0);" name="openProject">
+                                                            
+                                                            <i class="fa fa-folder-open-o" style="font-size: 20px;">  Open Project</i>
+                                                        </button> 
+                                                    </div>
                                                 </form>
                                                 <p class="description"></p>
                                             </div>
@@ -111,6 +117,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                         }
                     }
 
+                    echo'';
 
                     
 
