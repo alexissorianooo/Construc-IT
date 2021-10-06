@@ -53,7 +53,7 @@
                     echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Invalid input. Fill all fields</p></div>";
                 }
                 elseif ($_GET["error"] == "passwordnotmatch") {
-                    echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Passwords do not match</p></div>";
+                     echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Passwords do not match</p></div>";              
                 }
                 elseif ($_GET["error"] == "emailtaken") {
                     echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Email taken. Try different email.</p></div>";
@@ -326,9 +326,9 @@
 
                                 <form action="includes/logindb.php" method="post">
                                     <div class="d-inline-block">                                    
-                                        <input type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
+                                        <input required type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
                                         <br><br>
-                                        <input type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">
+                                        <input requried type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">
                                         <br> <br>
                                         <!-- <input type="text" id="proj-id" placeholder="Project ID" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;"> -->
                                         <a class="text-center d-block" id="forgot-password" href="#" style="color:blue;border-color: var(--blue);">&nbsp;Forgot Your Password?</a>                                
@@ -381,12 +381,12 @@
                                                 <br> <br>  
                                                 <input required type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">                                                                 
                                                 <br> <br>                                
-                                                <input required type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password">                                                                                                             
+                                                <input required type="password" id="confirm-password" placeholder="Confirm Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="confirm-password">                                                                                                                                                        
                                                 <br> <br>
                                                 
                                                 <!-- FOR ARCHITECT AND PM (code at js)-->
 
-                                                <div style="" id="usertype1" ><input type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="usercode">                                                                 
+                                                <div style="" id="usertype1" ><input required type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="usercode">                                                                 
                                                 </div>
                                                 <br> <br>   
 
@@ -405,10 +405,12 @@
 
 
 
+<script>
+    // document.getElementById("las-modal").click()
+    
 
 
-
-
+</script>
     
     
 

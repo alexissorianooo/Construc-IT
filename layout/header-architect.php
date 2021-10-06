@@ -27,8 +27,7 @@
                 <li class="nav-item"><a class="nav-link js-scroll-trigger"
                         href="../../users/Projects/project_arch.php">Projects</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger"
-                        href="../../users/CE/estimator try.php">ESTIMATOR</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#item1">Message</a></li>
+                        href="../../users/CE/estimator try.php">ESTIMATOR</a></li>         
                 <li class="nav-item"><a class="nav-link" href="../../includes/logoutdb.php">LOGOUT</a></li>
             </ul>
         </div>
