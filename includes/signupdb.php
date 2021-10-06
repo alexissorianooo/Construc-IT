@@ -43,6 +43,10 @@ if(isset($_POST["registerButton"])){
         header("location: ../landing-page.php?error=emptyinput");
         exit();
     }
+    if(!$usertype) {
+        header("location: ../landing-page.php?error=utype");
+        exit();
+    }
 
 
 
