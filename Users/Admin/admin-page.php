@@ -53,10 +53,9 @@
                         </div>
                     </div>
                     <?php 
-
+                    
                     require_once '../../includes/db.php';
                     require_once '../../includes/functions.php';
-                    
                 
                     $sql = "SELECT * FROM user_db";
                     $result = mysqli_query($conn, $sql);

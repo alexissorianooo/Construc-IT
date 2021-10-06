@@ -1,3 +1,5 @@
+<?php session_start()?>
+
 <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0"
     style="background: var(--warning);">
     <div class="container-fluid d-flex flex-column p-0"><a

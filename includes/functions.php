@@ -332,7 +332,7 @@ function createUserforClient($conn, $usertype, $email, $fullname, $password, $pr
 
   echo '<script type="text/javascript">
   alert("CLIENT SUCCESSFULLY CREATED");
-  // var page = window.history.go(-1);
+  
   location.replace(document.referrer);
   </script>';
   // echo 'allgood';
@@ -345,10 +345,28 @@ function edituser_admin($conn,  $user_fullname, $user_email, $userid){
   $stmt = mysqli_stmt_init($conn);
   mysqli_query($conn, $sql);
 
-  echo '<script type="text/javascript">
+  
+}
+
+
+function edituser_admin_projectdb($conn, $user_fullname_old, $user_fullname){
+
+$sql = "SELECT * FROM user_db WHERE architect_assigned=$user_fullname_old";
+$result = mysqli_query($conn, $sql);
+
+if(mysqli_num_rows($result)>0){
+    while($row=mysqli_fetch_assoc($result)){
+      $sql2 = "UPDATE user_db SET architect_assigned = '$user_fullname', user_email = '$user_email' WHERE architect_assigned = $user_fullname_old";
+      $stmt = mysqli_stmt_init($conn);
+      mysqli_query($conn, $sql2);
+    }
+}
+
+echo '<script type="text/javascript">
   var page = window.history.go(-1);
   window.location.reload(page);
   </script>';
+
 }
 
 function passVerify($conn, $oldpass, $userid){
@@ -403,4 +421,24 @@ function edituser_admin_password($conn, $newpass, $userid){
   var page = window.history.go(-1);
   window.location.reload(page);
   </script>';
+}
+
+// ----- DELETE FOR ADMIN --------
+
+function deleteuser_admin($conn,  $user_fullname, $user_email, $userid){
+  // sql to delete a record
+  $sql = "DELETE FROM user_db WHERE userid=$userid";
+
+  if (mysqli_query($conn, $sql)) {
+    
+    header("location: ../users/Admin/admin-page.php");
+    exit();
+
+  } else {
+    echo "Error deleting record: " . mysqli_error($conn);
+  }
+
+  mysqli_close($conn);
+
+  
 }
