@@ -143,7 +143,7 @@ function loginUser($conn, $email, $password){
 
 // ------------------------------------- CREATE PROJECT -----------------------------------------------------
 
-function createProject($conn, $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_clientSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13){
+function createProject($conn, $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_pmSELECTid, $project_clientSELECT, $project_clientSELECTid, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13){
   // project name exist
   // project deadline exist
   // deadline should not overlap
@@ -176,7 +176,7 @@ function createProject($conn, $project_name, $project_startdate, $project_deadli
   
 
 
-  $sql = "INSERT INTO project_db (project_name, project_startdate, project_deadline, project_architect, project_pm, project_client, project_activity_Architect_1, project_activity_Architect_2, project_activity_Architect_3, project_activity_Architect_4, project_activity_Architect_5, project_activity_Architect_6, project_activity_Architect_7, project_activity_Architect_8, project_activity_additional_Architect_1, project_activity_additional_Architect_2, project_activity_additional_Architect_3, project_activity_additional_Architect_4, project_activity_additional_Architect_5, project_activity_PM_1, project_activity_PM_2, project_activity_PM_3, project_activity_PM_4, project_activity_PM_5, project_activity_PM_6, project_activity_PM_7, project_activity_PM_8, project_activity_PM_9, project_activity_PM_10, project_activity_PM_11, project_activity_PM_12, project_activity_PM_13, project_activity_PM_14, project_activity_PM_15, project_activity_PM_16, project_activity_PM_17, project_activity_PM_18, project_activity_PM_19, project_activity_PM_20, project_activity_PM_21) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+  $sql = "INSERT INTO project_db (project_name, project_startdate, project_deadline, project_architect, project_pm, project_pm_id, project_client, project_client_id, project_activity_Architect_1, project_activity_Architect_2, project_activity_Architect_3, project_activity_Architect_4, project_activity_Architect_5, project_activity_Architect_6, project_activity_Architect_7, project_activity_Architect_8, project_activity_additional_Architect_1, project_activity_additional_Architect_2, project_activity_additional_Architect_3, project_activity_additional_Architect_4, project_activity_additional_Architect_5, project_activity_PM_1, project_activity_PM_2, project_activity_PM_3, project_activity_PM_4, project_activity_PM_5, project_activity_PM_6, project_activity_PM_7, project_activity_PM_8, project_activity_PM_9, project_activity_PM_10, project_activity_PM_11, project_activity_PM_12, project_activity_PM_13, project_activity_PM_14, project_activity_PM_15, project_activity_PM_16, project_activity_PM_17, project_activity_PM_18, project_activity_PM_19, project_activity_PM_20, project_activity_PM_21) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
   //should be 40 columns
   $stmt = mysqli_stmt_init($conn);
 
@@ -185,7 +185,7 @@ function createProject($conn, $project_name, $project_startdate, $project_deadli
       exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "ssssssssssssssssssssssssssssssssssssssss", $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_clientSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13, $project_input_pm_1, $project_input_pm_2, $project_input_pm_3, $project_input_pm_4, $project_input_pm_5, $project_input_pm_6, $project_input_pm_7, $project_input_pm_8, $project_input_pm_9, $project_input_pm_10, $project_input_pm_11, $project_input_pm_12, $project_input_pm_13, $project_input_pm_14, $project_input_pm_15, $project_input_pm_16, $project_input_pm_17, $project_input_pm_18, $project_input_pm_19, $project_input_pm_20, $project_input_pm_21);
+    mysqli_stmt_bind_param($stmt, "ssssssssssssssssssssssssssssssssssssssssss", $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_pmSELECTid, $project_clientSELECT, $project_clientSELECTid, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13, $project_input_pm_1, $project_input_pm_2, $project_input_pm_3, $project_input_pm_4, $project_input_pm_5, $project_input_pm_6, $project_input_pm_7, $project_input_pm_8, $project_input_pm_9, $project_input_pm_10, $project_input_pm_11, $project_input_pm_12, $project_input_pm_13, $project_input_pm_14, $project_input_pm_15, $project_input_pm_16, $project_input_pm_17, $project_input_pm_18, $project_input_pm_19, $project_input_pm_20, $project_input_pm_21);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     
@@ -220,7 +220,46 @@ function emptyInputcreate($project_name, $project_startdate, $project_deadline, 
   }
   return $result;
 }
+//  -------------------------------------------------------------  FOR DELETE PROJECT ---------------------------------------------------------------------
 
+function deleteproject($conn, $project_ID){
+   // sql to delete a record
+   $sql = "DELETE FROM project_db WHERE project_id=$project_ID";
+
+   if (mysqli_query($conn, $sql)) {
+     
+    // echo '<script type="text/javascript">
+    // alert("PROJECT SUCCESSFULLY DELETED");
+    
+    // location.replace(document.referrer);
+    // </script>';
+
+    
+ 
+   } else {
+     echo "Error deleting record: " . mysqli_error($conn);
+   }
+ 
+   
+}
+
+function changePMstatus($conn, $project_pm_id){
+  $sql = "UPDATE user_db SET user_status = 'Vacant' WHERE userid = '$project_pm_id'";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+
+}
+
+function changeCLIENTstatus($conn, $project_client_id){
+  $sql = "UPDATE user_db SET user_status = 'Vacant' WHERE userid = '$project_client_id'";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+
+  header("location: ../users/Projects/project_arch.php?error=PLSWORK");
+  exit();
+
+  mysqli_close($conn);
+}
 //  -------------------------------------------------------------  FOR PROJECT VIEW ---------------------------------------------------------------------
 
 function updateProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13){

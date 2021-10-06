@@ -58,7 +58,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
 
                 <?php 
                     $count=0;
-                    $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_client, project_progress_architect FROM project_db";
+                    $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_pm_id, project_client, project_client_id, project_progress_architect FROM project_db";
                     $result = mysqli_query($conn, $sql);
 
                     if(mysqli_num_rows($result)>0){
@@ -93,22 +93,42 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                         aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:'.$row["project_progress_architect"].'%;">'.$row["project_progress_architect"] .'
                                                     </div>
                                                 </div>
-                                                <form method="post" action="view project.php">
-                                                    <input name="projectView" value="'.$row["project_id"].'" hidden>
-                                                    <div style="diplay: inline;">
-                                                        <button class="btn btn-danger" name="deleteProject" style="float:left;font-size: 28px;margin: 10px;border-color: rgb(0, 0, 0);">
-                                                            <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
-                                                        </button> 
+                                                <div style="diplay: inline;">
+                                                    <form method="post" action="view project.php">
+                                                        <input name="projectView" value="'.$row["project_id"].'" hidden>
+                                                        
+                                                            <button class="btn btn-warning" data-bs-toggle="tooltip" data-bss-tooltip=""
+                                                                data-bs-placement="bottom" data-bss-hover-animate="pulse" type="submit"
+                                                                data-toggle="modal" href="#myModal" 
+                                                                style="float:right;font-size: 28px;background: rgb(248,197,44);margin: 10px;border-color: rgb(0, 0, 0);" name="deleteProject">
+                                                                
+                                                                <i class="fa fa-folder-open-o" style="font-size: 20px;">  Open Project</i>
+                                                            </button> 
+                                                        
+                                                    </form>
 
-                                                        <button class="btn btn-warning" data-bs-toggle="tooltip" data-bss-tooltip=""
-                                                            data-bs-placement="bottom" data-bss-hover-animate="pulse" type="submit"
-                                                            data-toggle="modal" href="#myModal" 
-                                                            style="font-size: 28px;background: rgb(248,197,44);margin: 10px;border-color: rgb(0, 0, 0);" name="openProject">
-                                                            
-                                                            <i class="fa fa-folder-open-o" style="font-size: 20px;">  Open Project</i>
-                                                        </button> 
-                                                    </div>
-                                                </form>
+                                                    
+                                                    <form method="post" action="../../includes/deleteproject.php">
+                                                        <input name="projectView" value="'.$row["project_id"].'" hidden>
+                                                        <input name="pmincharge" value="'.$row["project_pm_id"] .'" hidden>
+                                                        <input name="clientincharge" value="'.$row["project_client_id"] .'" hidden>
+                                                            <button class="btn btn-danger confirm" style="float:left;font-size: 28px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                            type="submit" name="deleteProject">
+                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                            </button> 
+                                                    </form>
+                                                </div>
+
+                                                <script>
+                                                    $(".confirm").on("click", function(event){
+                                                        if(confirm("Are you sure to delete?")){
+                                                        return true;
+                                                        } else {
+                                                            event.preventDefault();
+                                                            return false;
+                                                        }
+                                                    });
+                                                </script>
                                                 <p class="description"></p>
                                             </div>
                                         </div>
@@ -117,12 +137,6 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                         }
                     }
 
-                    echo'';
-
-                    
-
-
-                
                 
                 ?>
             </div>
@@ -188,6 +202,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
             </div>
         </div>
         <?php include '../../users/Create Project/createprojectMODAL.php'; ?>
+        
         
         
     </section>
