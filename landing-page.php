@@ -77,6 +77,9 @@
                 elseif ($_GET["error"] == "pattern") {                
                     echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Password must contain atleast 8 characters with one number, special character, small and capital letters.</p></div>";
                 }
+                elseif ($_GET["error"] == "utype") {                
+                    echo "<div style='text-align: center; background-color:#D82753; margin-bottom: 0px; padding-bottom: 16px; color: white; font-size: 30px;'><p><br>Invalid. Please select user type</p></div>";
+                }
             }            
         ?>
     </div>
@@ -328,10 +331,10 @@
                                     <div class="d-inline-block">                                    
                                         <input required type="email" id="email" placeholder="Email" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="email">
                                         <br><br>
-                                        <input requried type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">
+                                        <input required type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">
                                         <br> <br>
                                         <!-- <input type="text" id="proj-id" placeholder="Project ID" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;"> -->
-                                        <a class="text-center d-block" id="forgot-password" href="#" style="color:blue;border-color: var(--blue);">&nbsp;Forgot Your Password?</a>                                
+                                        <!-- <a class="text-center d-block" id="forgot-password" href="#" style="color:blue;border-color: var(--blue);">&nbsp;Forgot Your Password?</a>                                 -->
                                         <br>                            
                                         <button class="btn bg-info" type="submit" name="loginButton">Login</button>                                    
                                     </div>  
@@ -366,7 +369,7 @@
                                             <form action="includes/signupdb.php" method="post">
 
                                                 <!-- FOR USER TYPE OPTIONS -->
-                                                <select style="width: 280px;height: 38px;" id="usertype" name="usertypeSELECT">
+                                                <select style="width: 280px;height: 38px;" id="usertype" name="usertypeSELECT" required>
                                                     <option class="text-center" disabled selected>--Select Usertype--</option>
                                                     <option value="architect" >Architect</option>
                                                     <option value="projectmanager">Project Manager</option>
