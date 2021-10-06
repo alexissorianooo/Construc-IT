@@ -14,7 +14,6 @@ if(isset($_POST["registerButton"])){
     $number    = preg_match('@[0-9]@', $password);
     $specialChars = preg_match('@[^\w]@', $password);
 
-
     $usertype = $_POST["usertypeSELECT"];
 
     require_once 'db.php';
@@ -26,13 +25,10 @@ if(isset($_POST["registerButton"])){
     $result2_explode = explode('|', $result2);
     echo "<br>".$project_archiSELECT = $result2_explode[0]; //NAME
     echo "<br>".$project_archiSELECTid = $result2_explode[1]; //user ID
-    
-    if(emptyInputSignup($email, $fullname, $password, $password2) !== false){
-        header("location: ../landing-page.php?error=emptyinput");
-        exit();
-    }
-    if (pwdMatch($password, $password2) !== false) {
-        header("location: ../landing-page.php?error=passwordnotmatch");
+
+
+    if (pwdMatch($password, $password2) !== false) {  
+        header("location: ../landing-page.php?error=passwordnotmatch");        
         exit();
     }
     if (emailExist($conn, $email) !== false) {
@@ -43,6 +39,16 @@ if(isset($_POST["registerButton"])){
         header("location: ../landing-page.php?error=pattern");
         exit(); 
     }
+    if(emptyInputSignup($email, $fullname, $password, $password2) !== false){
+        header("location: ../landing-page.php?error=emptyinput");
+        exit();
+    }
+
+
+
+
+
+
 
     // FOR ARCHTIECT AND PROJECT MANAGER
 
