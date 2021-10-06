@@ -11,7 +11,7 @@ if(isset($_POST['saveButton_admin'])){
     require_once 'functions.php';
 
     edituser_admin($conn,  $user_fullname, $user_email, $userid);
-    // edituser_admin_projectdb($conn, $user_fullname_old, $user_fullname);
+    edituser_admin_projectdb($conn, $user_fullname_old, $user_fullname);
 }else{
     echo "<br>".'what is wrong brother?1';
 }

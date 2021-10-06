@@ -351,19 +351,22 @@ function edituser_admin($conn,  $user_fullname, $user_email, $userid){
 
 function edituser_admin_projectdb($conn, $user_fullname_old, $user_fullname){
 
-$sql = "SELECT * FROM user_db WHERE architect_assigned=$user_fullname_old";
+$sql = "SELECT * FROM user_db WHERE architect_assigned='$user_fullname_old'";
 $result = mysqli_query($conn, $sql);
 
+// echo mysqli_num_rows($result);
 if(mysqli_num_rows($result)>0){
     while($row=mysqli_fetch_assoc($result)){
-      $sql2 = "UPDATE user_db SET architect_assigned = '$user_fullname', user_email = '$user_email' WHERE architect_assigned = $user_fullname_old";
+      
+      $sql2 = "UPDATE user_db SET architect_assigned = '$user_fullname' WHERE architect_assigned = '$user_fullname_old'";
       $stmt = mysqli_stmt_init($conn);
       mysqli_query($conn, $sql2);
+      
     }
 }
 
 echo '<script type="text/javascript">
-  var page = window.history.go(-1);
+  var page = window.history.go(-2);
   window.location.reload(page);
   </script>';
 
