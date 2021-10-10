@@ -72,6 +72,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                         src="assets/img/desk.jpg"></a></div>
                                             <div class="col text-end" style="background: #f9eeca;">
                                                 <h3 class="text-start name" style="color: var(--bs-dark);"> '. $row["project_name"] . '&nbsp;</h3>
+                                                <h3 class="text-start name" style="color: var(--bs-dark);"> Project Code: '. $row["project_id"] . '&nbsp;</h3>
                                                 
                                                 <p class="text-start"
                                                 style="color: rgb(0,0,0);font-family: Montserrat, sans-serif;font-style: normal;text-align: left;padding: 0px;height: 36px;">
@@ -165,6 +166,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                     src="assets/img/minibus.jpeg"></a></div>
                                         <div class="col text-end" style="background: #f9eeca;">
                                             <h3 class="text-start name" style="color: var(--bs-dark);">'. $row["project_name"] . '&nbsp;</h3>
+                                            <h3 class="text-start name" style="color: var(--bs-dark);"> Project Code: '. $row["project_id"] . '&nbsp;</h3>
                                             <p class="text-start"
                                             style="color: rgb(0,0,0);font-family: Montserrat, sans-serif;font-style: normal;text-align: left;padding: 0px;height: 36px;">
                                             <strong>Foreman incharged: <br>'.$row["project_pm"] .'<br></strong></p>
