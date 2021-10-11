@@ -19,7 +19,24 @@
 
     <!-- margin-top: 62px; -->
     <section style="height: 650px;margin: 0px;background: white;">
-     
+    <?php 
+    session_start();
+    require_once '../../includes/db.php';
+    require_once '../../includes/functions.php';
+
+     // TRAIL PHP SEGMENT
+
+     $trail_user = $_SESSION["user_fullname"];
+     $trail_user_type = $_SESSION["usertype_fk"];
+     $trail_path = "Project Code";
+     $trail_action = "Entering project code.";
+     $trail_date = date('Y-m-d H:i:s');
+ 
+     recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
+ 
+     // END OF TRAIL PHP SEGMENT
+    
+    ?>
    
 
         <!-- MODAL WHEN INSERTING PROJECT ID -->

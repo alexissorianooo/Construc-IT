@@ -1,5 +1,23 @@
 <?php require_once '../../layout/header-estimator.php' ?>
 
+<?php 
+
+require_once '../../includes/db.php';
+require_once '../../includes/functions.php';
+// TRAIL PHP SEGMENT
+
+$trail_user = $_SESSION["user_fullname"];
+$trail_user_type = $_SESSION["usertype_fk"];
+$trail_path = "Estimator";
+$trail_action = "none";
+$trail_date = date('Y-m-d H:i:s');
+
+recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
+
+// END OF TRAIL PHP SEGMENT
+
+?>
+
 <!DOCTYPE html>
 <html class="text-center" lang="en">
 

@@ -1,11 +1,27 @@
 <?php
-
+session_start();
 $project_id = $_POST['projectView'];
 
 ?>
 <?php 
     require_once '../../includes/db.php';
     require_once '../../includes/functions.php';
+
+
+    $project_id=$_POST['projectView'];
+    $project_name=$_POST['projectViewName'];
+
+    // TRAIL PHP SEGMENT
+
+    $trail_user = $_SESSION["user_fullname"];
+    $trail_user_type = $_SESSION["usertype_fk"];
+    $trail_path = "View Completed Project";
+    $trail_action = "viewing project ".$project_id.": ".$project_name;
+    $trail_date = date('Y-m-d H:i:s');
+
+    recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
+
+    // END OF TRAIL PHP SEGMENT
 
 ?>
 
@@ -36,7 +52,7 @@ $project_id = $_POST['projectView'];
             <div class="container" style="margin-top: -100px; margin-bottom: 30px;"> -->
                 
                 <?php 
-                session_start();
+                // session_start();
 
                 
                 $sql = "SELECT * FROM project_db WHERE project_id = '$project_id';";
@@ -66,6 +82,7 @@ $project_id = $_POST['projectView'];
                                         
                                     </div>
                                     <input hidden name="project_id" value="'.$row["project_id"].'">
+                                    <input hidden name="project_name" value="'.$row["project_name"].'">
                                     <input hidden name="counter" value="0"> 
                                     <div style="margin-top: 20px;">
                                         <div class="container" style="margin-bottom: 20px;">

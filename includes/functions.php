@@ -330,8 +330,8 @@ function projectCompletePM($conn, $project_id){
   $stmt = mysqli_stmt_init($conn);
   mysqli_query($conn, $sql);
 
-  header("Location: ../users/Project Manager/pm main.php?status=vacant");
-  exit;
+  // header("Location: ../users/Project Manager/pm main.php?status=vacant");
+  // exit;
 }
 
 function pmStatusINC($conn, $project_pmSELECTid){
@@ -348,8 +348,8 @@ function projectNOTCompletePM($conn, $project_id){
   $stmt = mysqli_stmt_init($conn);
   mysqli_query($conn, $sql);
 
-  header("Location: ../users/Project Manager/pm main.php?status=busy");
-  exit;
+  // header("Location: ../users/Project Manager/pm main.php?status=busy");
+  // exit;
 }
 
 // -------------------------------------------  FOR ADMIN -----------------------------------------------------

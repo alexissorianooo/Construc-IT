@@ -14,6 +14,24 @@
 
 <body>
 <?php include '../../layout/header-pm.php';?>
+<?php 
+    session_start();
+    require_once '../../includes/db.php';
+    require_once '../../includes/functions.php';
+    // TRAIL PHP SEGMENT
+
+    $trail_user = $_SESSION["user_fullname"];
+    $trail_user_type = $_SESSION["usertype_fk"];
+    $trail_path = "View Completed Project";
+    $trail_action = "viewing all completed projects";
+    $trail_date = date('Y-m-d H:i:s');
+
+    recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
+
+    // END OF TRAIL PHP SEGMENT
+
+
+?>
     <div class="col-md-12 search-table-col">
         <div class="form-group pull-right col-lg-4"><input type="text" class="search form-control" placeholder="Search by typing here.."></div><span class="counter pull-right"></span>
         
@@ -33,7 +51,7 @@
                 </thead>
                 <tbody>
                     <?php 
-                    session_start();
+                    
                     require_once '../../includes/db.php';
                     require_once '../../includes/functions.php';
                     
@@ -57,6 +75,7 @@
                                     <td>
                                         <button class="btn btn-success" style="margin-left: 5px;background: var(--warning);" type="submit">
                                         <input name="projectView" value="'.$row["project_id"].'" hidden>
+                                        <input name="projectViewName" value="'.$row["project_name"].'" hidden>
                                             <i class="fa fa-folder-open-o" style="font-size: 15px;"> Open Project
                                             </i>
                                         </button>
