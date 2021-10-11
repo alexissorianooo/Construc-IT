@@ -369,11 +369,11 @@ function createUserforClient($conn, $usertype, $email, $fullname, $password, $pr
   mysqli_stmt_execute($stmt);
   mysqli_stmt_close($stmt);
 
-  echo '<script type="text/javascript">
-  alert("CLIENT SUCCESSFULLY CREATED");
+  // echo '<script type="text/javascript">
+  // alert("CLIENT SUCCESSFULLY CREATED");
   
-  location.replace(document.referrer);
-  </script>';
+  // location.replace(document.referrer);
+  // </script>';
   // echo 'allgood';
 
 }
@@ -477,11 +477,11 @@ function edituser_admin_password($conn, $newpass, $userid){
   $stmt = mysqli_stmt_init($conn);
   mysqli_query($conn, $sql);
 
-  echo '<script type="text/javascript">
-  alert("PASSWORD SUCCESSFULLY UPDATED");
-  var page = window.history.go(-1);
-  window.location.reload(page);
-  </script>';
+  // echo '<script type="text/javascript">
+  // alert("PASSWORD SUCCESSFULLY UPDATED");
+  // var page = window.history.go(-1);
+  // window.location.reload(page);
+  // </script>';
 }
 
 // ----- DELETE FOR ADMIN --------
@@ -492,14 +492,14 @@ function deleteuser_admin($conn,  $user_fullname, $user_email, $userid){
 
   if (mysqli_query($conn, $sql)) {
     
-    header("location: ../users/Admin/admin-page.php");
-    exit();
+    // header("location: ../users/Admin/admin-page.php");
+    // exit();
 
   } else {
     echo "Error deleting record: " . mysqli_error($conn);
   }
 
-  mysqli_close($conn);
+  // mysqli_close($conn);
 
   
 }

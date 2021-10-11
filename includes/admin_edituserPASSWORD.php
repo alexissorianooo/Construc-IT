@@ -28,12 +28,32 @@ if(isset($_POST['saveButton_admin_password'])){
                 echo '
                 <script>
                     alert("Password must contain atleast 8 characters with one number, special character, small and capital letters.");
-                    var page = window.history.go(-1);
+                    var page = window.history.go(-2);
                     window.location.reload(page)
                 </script>
                 ';
             }else{
                 edituser_admin_password($conn, $newpass, $userid);
+
+                // TRAIL PHP SEGMENT
+
+                echo $trail_user = $_SESSION["user_fullname"];
+                echo $trail_user_type = $_SESSION["usertype_fk"];
+                echo $trail_path = "Edit User page";
+                echo $trail_action = "Updated password information of user: ".$userid;
+                echo $trail_date = date('Y-m-d H:i:s');
+
+                recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
+
+                // END OF TRAIL PHP SEGMENT
+
+                echo '<script type="text/javascript">
+                alert("PASSWORD SUCCESSFULLY UPDATED");
+                var page = window.history.go(-2);
+                // window.location.reload(page);
+                // location.replace(document.referrer);
+                </script>';
+            
             }
         }
         else{
@@ -41,8 +61,8 @@ if(isset($_POST['saveButton_admin_password'])){
             echo '
             <script>
                 alert("NEW PASSWORDS DOES NOT MATCH");
-                var page = window.history.go(-1);
-                window.location.reload(page)
+                var page = window.history.go(-2);
+                
             </script>
             ';
         }
@@ -52,8 +72,8 @@ if(isset($_POST['saveButton_admin_password'])){
         echo '
         <script>
             alert("OLD PASSWORD DOES NOT MATCH");
-            var page = window.history.go(-1);
-            window.location.reload(page)
+            var page = window.history.go(-2);
+            
         </script>
         ';
         
