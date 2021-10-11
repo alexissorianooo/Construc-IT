@@ -27,6 +27,7 @@
 
 
     <!-- FOOTER -->
+    <br><br><br>
     <?php include '../../layout/footer.php' ?>
 
 

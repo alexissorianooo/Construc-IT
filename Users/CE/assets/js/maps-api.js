@@ -154,7 +154,7 @@ function search() {
     if (max==1 || max==0) {
       loc = {lat: '12.8797', lng: '121.7740'};
       document.getElementById('next-store').style.visibility = 'hidden';    
-      document.getElementById('hw-desc').innerHTML = "<b class='text-warning'>NO AVAILABLE HARDWARE STORE NEARBY.</b>";  
+      document.getElementById('hw-desc').innerHTML = "<b class='text-warning'>NO MUNICIPALITY FOUND, PLEASE CHECK FOR MISPELLED WORDS.</b>";  
     } else {
       document.getElementById('next-store').style.visibility = 'visible';   
     }

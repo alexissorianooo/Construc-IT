@@ -1,5 +1,4 @@
 
-
 <link rel="stylesheet" href="../Create Project/assetsCP/bootstrap/css/bootstrapCP.min.css">
 <link rel="stylesheet" href="../Create Project/assetsCP/fonts/font-awesome.min.css">
 <link rel="stylesheet" href="../Create Project/assetsCP/css/stylesCP.css">
@@ -26,19 +25,62 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="lefttext">Project Name<input class="form-control" type="text" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_name"></td>
+                                        <td class="lefttext">Project Name<input class="form-control" type="text" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_name" required="required"></td>
                                     </tr>
-                                    <tr>
-                                        <td class="lefttext">Start Date<input class="form-control" type="date" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_startdeadline"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="lefttext">Deadline<input class="form-control" type="date" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_enddeadline"></td>
-                                    </tr>
+                                    <?php 
+                                        $servername = "localhost";
+                                        $dbusername = "root";
+                                        $dbpassword = "";
+                                        $dbname = "capstone";
+
+                                        $mindate = date("Y-m-d");
+
+                                        $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
+
+                                        if (!$conn){
+                                            die("connection failed: " . mysqli_connect_error());
+
+                                        }
+
+                                        $currentUser = $_SESSION["user_fullname"];
+
+
+                                        $maxdate = date("Y-m-d");
+
+                                        $sql = "SELECT project_architect, MAX(project_deadline) AS maxdate FROM project_db WHERE project_architect = '$currentUser'";
+                                        $result = mysqli_query($conn, $sql);
+                                        
+                                        if(mysqli_num_rows($result)>0){
+                                            while($row=mysqli_fetch_assoc($result)){
+                                                if(!empty($row['maxdate'])){
+                                                    $maxdate = $row['maxdate'];
+                                                    $row["project_architect"];
+                                                }else{
+                                                    $maxdate = date("Y-m-d");
+                                                    $row["project_architect"];
+                                                }
+                                                
+                                                
+                                            }
+                                        }
+                                        
+                                        echo '
+                                        <tr>
+                                            <td class="lefttext">Start Date<input class="form-control" type="date" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_startdeadline" min="'.$maxdate.'"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lefttext">Deadline<input class="form-control" type="date" style="margin: 0px; padding-top: 2px; border-width: 2px; border-color: darkslategray;" name="project_enddeadline" min='.$maxdate.'></td>
+                                        </tr>
+                                        ';
+
+                                        
+                                    ?>
+                                    
                                     <tr>
                                         <td> Foreman  
 
-                                        <select style="width: 320px;height: 38px; border-width: 2px; border-color: darkslategray;" id="usertype" name="project_pmSELECT">
-                                                <option disabled selected>--Available Project Managers--</option>
+                                        <select style="width: 320px;height: 38px; border-width: 2px; border-color: darkslategray;" id="usertype" name="project_pmSELECT" required>
+                                        <option disabled selected value="">--Available Project Managers--</option>
                                                 <?php
                                                     
                                                     $servername = "localhost";
@@ -79,10 +121,11 @@
                                     <tr>
                                         <td style="padding-left: 2.1rem;"> Client
 
-                                            <select style="width: 320px;height: 38px; border-width: 2px; border-color: darkslategray;" id="usertype" name="project_clientSELECT">
-                                                    <option disabled selected>--Client for the project--</option>
+                                            <select style="width: 320px;height: 38px; border-width: 2px; border-color: darkslategray;" required id="usertype" name="project_clientSELECT">
+                                            <option disabled selected value="">--Client for the project--</option>
                                                     <?php
-                                                        
+                                                        $architect = $_SESSION['user_fullname'];
+
                                                         $servername = "localhost";
                                                         $dbusername = "root";
                                                         $dbpassword = "";
@@ -95,7 +138,7 @@
 
                                                         }
 
-                                                        $sql = "SELECT user_fullname, userid, user_status FROM user_db WHERE usertype_fk = 'client';";
+                                                        $sql = "SELECT user_fullname, userid, user_status FROM user_db WHERE usertype_fk = 'client' AND architect_assigned = '$architect';";
                                                         $stmt = mysqli_stmt_init($conn);
 
                                                         if (!mysqli_stmt_prepare($stmt, $sql)){

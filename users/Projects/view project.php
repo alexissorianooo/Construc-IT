@@ -18,7 +18,7 @@
     <!-- <link rel="stylesheet" href="assetsForViewProject/bootstrap/css/bootstrap.css"> -->
     <link rel="stylesheet" href="assetsForViewProject/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assetsForViewProject/css/styles.css">
-    <link rel="stylesheet" href="assetsForViewProject/css/view.css">
+    <link rel="stylesheet" href="assetsForViewProject/css/view.css">    
 </head>
 
 <body>

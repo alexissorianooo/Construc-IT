@@ -1,6 +1,9 @@
-<!-- FOR ERROR FUNCTIONS -->
+
 
 <?php
+
+
+// --------------------------------------------------------- FOR SIGNUP ------------------------------------------------------------
 
 function emptyInputSignup($email, $fullname, $password, $password2){
   $result;
@@ -83,8 +86,7 @@ function createUser($conn, $usertype, $email, $fullname, $password){
   
 }
 
-
-// FOR LOGIN MODULE
+// -------------------------------------------------------- FOR LOGIN -----------------------------------------------------
 
 function emptyInputlogin($email,$password){
   $result;
@@ -132,16 +134,16 @@ function loginUser($conn, $email, $password){
       exit();
     }
     if($_SESSION["usertype_fk"] == "admin"){
-      header("location: ../users/Admin/admin main.php");
+      header("location: ../users/Admin/admin-page.php");
       exit();
     }
     
   }
 }
 
-// CREATE PROJECT
+// ------------------------------------- CREATE PROJECT -----------------------------------------------------
 
-function createProject($conn, $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_clientSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13){
+function createProject($conn, $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_pmSELECTid, $project_clientSELECT, $project_clientSELECTid, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13){
   // project name exist
   // project deadline exist
   // deadline should not overlap
@@ -174,7 +176,7 @@ function createProject($conn, $project_name, $project_startdate, $project_deadli
   
 
 
-  $sql = "INSERT INTO project_db (project_name, project_startdate, project_deadline, project_architect, project_pm, project_client, project_activity_Architect_1, project_activity_Architect_2, project_activity_Architect_3, project_activity_Architect_4, project_activity_Architect_5, project_activity_Architect_6, project_activity_Architect_7, project_activity_Architect_8, project_activity_additional_Architect_1, project_activity_additional_Architect_2, project_activity_additional_Architect_3, project_activity_additional_Architect_4, project_activity_additional_Architect_5, project_activity_PM_1, project_activity_PM_2, project_activity_PM_3, project_activity_PM_4, project_activity_PM_5, project_activity_PM_6, project_activity_PM_7, project_activity_PM_8, project_activity_PM_9, project_activity_PM_10, project_activity_PM_11, project_activity_PM_12, project_activity_PM_13, project_activity_PM_14, project_activity_PM_15, project_activity_PM_16, project_activity_PM_17, project_activity_PM_18, project_activity_PM_19, project_activity_PM_20, project_activity_PM_21) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+  $sql = "INSERT INTO project_db (project_name, project_startdate, project_deadline, project_architect, project_pm, project_pm_id, project_client, project_client_id, project_activity_Architect_1, project_activity_Architect_2, project_activity_Architect_3, project_activity_Architect_4, project_activity_Architect_5, project_activity_Architect_6, project_activity_Architect_7, project_activity_Architect_8, project_activity_additional_Architect_1, project_activity_additional_Architect_2, project_activity_additional_Architect_3, project_activity_additional_Architect_4, project_activity_additional_Architect_5, project_activity_PM_1, project_activity_PM_2, project_activity_PM_3, project_activity_PM_4, project_activity_PM_5, project_activity_PM_6, project_activity_PM_7, project_activity_PM_8, project_activity_PM_9, project_activity_PM_10, project_activity_PM_11, project_activity_PM_12, project_activity_PM_13, project_activity_PM_14, project_activity_PM_15, project_activity_PM_16, project_activity_PM_17, project_activity_PM_18, project_activity_PM_19, project_activity_PM_20, project_activity_PM_21) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
   //should be 40 columns
   $stmt = mysqli_stmt_init($conn);
 
@@ -183,7 +185,7 @@ function createProject($conn, $project_name, $project_startdate, $project_deadli
       exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "ssssssssssssssssssssssssssssssssssssssss", $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_clientSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13, $project_input_pm_1, $project_input_pm_2, $project_input_pm_3, $project_input_pm_4, $project_input_pm_5, $project_input_pm_6, $project_input_pm_7, $project_input_pm_8, $project_input_pm_9, $project_input_pm_10, $project_input_pm_11, $project_input_pm_12, $project_input_pm_13, $project_input_pm_14, $project_input_pm_15, $project_input_pm_16, $project_input_pm_17, $project_input_pm_18, $project_input_pm_19, $project_input_pm_20, $project_input_pm_21);
+    mysqli_stmt_bind_param($stmt, "ssssssssssssssssssssssssssssssssssssssssss", $project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_pmSELECTid, $project_clientSELECT, $project_clientSELECTid, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8, $project_input9, $project_input10, $project_input11, $project_input12, $project_input13, $project_input_pm_1, $project_input_pm_2, $project_input_pm_3, $project_input_pm_4, $project_input_pm_5, $project_input_pm_6, $project_input_pm_7, $project_input_pm_8, $project_input_pm_9, $project_input_pm_10, $project_input_pm_11, $project_input_pm_12, $project_input_pm_13, $project_input_pm_14, $project_input_pm_15, $project_input_pm_16, $project_input_pm_17, $project_input_pm_18, $project_input_pm_19, $project_input_pm_20, $project_input_pm_21);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     
@@ -218,8 +220,47 @@ function emptyInputcreate($project_name, $project_startdate, $project_deadline, 
   }
   return $result;
 }
+//  -------------------------------------------------------------  FOR DELETE PROJECT ---------------------------------------------------------------------
 
-// FOR PROJECT VIEW
+function deleteproject($conn, $project_ID){
+   // sql to delete a record
+   $sql = "DELETE FROM project_db WHERE project_id=$project_ID";
+
+   if (mysqli_query($conn, $sql)) {
+     
+    // echo '<script type="text/javascript">
+    // alert("PROJECT SUCCESSFULLY DELETED");
+    
+    // location.replace(document.referrer);
+    // </script>';
+
+    
+ 
+   } else {
+     echo "Error deleting record: " . mysqli_error($conn);
+   }
+ 
+   
+}
+
+function changePMstatus($conn, $project_pm_id){
+  $sql = "UPDATE user_db SET user_status = 'Vacant' WHERE userid = '$project_pm_id'";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+
+}
+
+function changeCLIENTstatus($conn, $project_client_id){
+  $sql = "UPDATE user_db SET user_status = 'Vacant' WHERE userid = '$project_client_id'";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+
+  header("location: ../users/Projects/project_arch.php?error=PLSWORK");
+  exit();
+
+  mysqli_close($conn);
+}
+//  -------------------------------------------------------------  FOR PROJECT VIEW ---------------------------------------------------------------------
 
 function updateProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13){
   
@@ -259,7 +300,7 @@ function completeProject($conn, $numerator, $denominator, $project_id, $select1,
   updateProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
 }
 
-// FOR PROJECT MANAGER (FOREMAN) PROJECT UPDATE AND VIEW
+// --------------------------------- FOR PROJECT MANAGER (FOREMAN) PROJECT UPDATE AND VIEW -------------------------------------
 
 function updateProjectPM($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13, $select14, $select15, $select16, $select17, $select18, $select19, $select20, $select21, $select22, $select23, $select24, $select25, $select26, $input22, $input23, $input24, $input25, $input26){
   $progressbar = ($numerator / $denominator)*100;
@@ -280,6 +321,15 @@ function pmStatusComplete($conn, $project_pmSELECTid){
   $stmt = mysqli_stmt_init($conn);
   mysqli_query($conn, $sql);
 
+  
+}
+
+function projectCompletePM($conn, $project_id){
+  $datecomplete = date('Y-m-d');
+  $sql = "UPDATE project_db SET project_status_fk_PM = 'Complete', project_completed_PM = '$datecomplete' WHERE project_id = $project_id";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+
   header("Location: ../users/Project Manager/pm main.php?status=vacant");
   exit;
 }
@@ -289,6 +339,167 @@ function pmStatusINC($conn, $project_pmSELECTid){
   $stmt = mysqli_stmt_init($conn);
   mysqli_query($conn, $sql);
 
+  
+}
+
+function projectNOTCompletePM($conn, $project_id){
+  $datecomplete = "";
+  $sql = "UPDATE project_db SET project_status_fk_PM = 'Not Complete', project_completed_PM = '$datecomplete' WHERE project_id = $project_id";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+
   header("Location: ../users/Project Manager/pm main.php?status=busy");
   exit;
+}
+
+// -------------------------------------------  FOR ADMIN -----------------------------------------------------
+
+function createUserforClient($conn, $usertype, $email, $fullname, $password, $project_archiSELECT){
+  $sql = "INSERT INTO user_db (usertype_fk, user_email, user_fullname, user_password, architect_assigned) VALUES (? ,? ,?, ?, ?);";
+  $stmt = mysqli_stmt_init($conn);
+
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: ../landing-page.php?error=stmtfailed");
+    exit();
+  }
+
+  $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+
+  mysqli_stmt_bind_param($stmt, "sssss", $usertype, $email, $fullname, $hashedPwd, $project_archiSELECT);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
+
+  echo '<script type="text/javascript">
+  alert("CLIENT SUCCESSFULLY CREATED");
+  
+  location.replace(document.referrer);
+  </script>';
+  // echo 'allgood';
+
+}
+
+
+function edituser_admin($conn,  $user_fullname, $user_email, $userid){
+  $sql = "UPDATE user_db SET user_fullname = '$user_fullname', user_email = '$user_email' WHERE userid = $userid";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+
+  
+}
+
+
+function edituser_admin_userdb($conn, $user_fullname_old, $user_fullname){
+
+$sql = "SELECT * FROM user_db WHERE architect_assigned='$user_fullname_old'";
+$result = mysqli_query($conn, $sql);
+
+// echo mysqli_num_rows($result);
+if(mysqli_num_rows($result)>0){
+    while($row=mysqli_fetch_assoc($result)){
+      
+      $sql2 = "UPDATE user_db SET architect_assigned = '$user_fullname' WHERE architect_assigned = '$user_fullname_old'";
+      $stmt = mysqli_stmt_init($conn);
+      mysqli_query($conn, $sql2);
+      
+    }
+}
+
+
+  
+}
+
+function edituser_admin_projectdb($conn, $user_fullname_old, $user_fullname){
+//project_architect
+$sql = "SELECT * FROM project_db WHERE project_architect='$user_fullname_old'";
+$result = mysqli_query($conn, $sql);
+
+// echo mysqli_num_rows($result);
+if(mysqli_num_rows($result)>0){
+    while($row=mysqli_fetch_assoc($result)){
+      
+      $sql2 = "UPDATE project_db SET project_architect = '$user_fullname' WHERE project_architect = '$user_fullname_old'";
+      $stmt = mysqli_stmt_init($conn);
+      mysqli_query($conn, $sql2);
+      
+    }
+}
+
+echo '<script type="text/javascript">
+  var page = window.history.go(-2);
+  window.location.reload(page);
+  </script>';
+}
+
+function passVerify($conn, $oldpass, $userid){
+
+
+$sql = "SELECT user_password FROM user_db WHERE userid = $userid";
+$stmt = mysqli_stmt_init($conn);
+
+$result = mysqli_query($conn, $sql);
+    
+  if(mysqli_num_rows($result)>0){
+    while($row=mysqli_fetch_assoc($result)){
+      $originalpass = $row['user_password'];
+      $checkPwd = password_verify($oldpass, $originalpass);
+      // if($oldpass===$originalpass){
+      //   $checkPwd = true;
+      // }else{
+      //   $checkPwd = false;
+      // }
+      if ($checkPwd === false) {
+        return false;
+      }else{
+        return true;
+      }
+    }
+  }
+
+  
+}
+
+function passMatch($conn, $newpass, $newpass_confirm){
+  $result;
+    if ($newpass === $newpass_confirm) {
+      $result = true;
+    }
+    else {
+      $result = false;
+    }
+    return $result;
+}
+
+function edituser_admin_password($conn, $newpass, $userid){
+
+  $hashedPwd = password_hash($newpass, PASSWORD_DEFAULT);
+
+  $sql = "UPDATE user_db SET user_password = '$hashedPwd' WHERE userid = $userid";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+
+  echo '<script type="text/javascript">
+  alert("PASSWORD SUCCESSFULLY UPDATED");
+  var page = window.history.go(-1);
+  window.location.reload(page);
+  </script>';
+}
+
+// ----- DELETE FOR ADMIN --------
+
+function deleteuser_admin($conn,  $user_fullname, $user_email, $userid){
+  // sql to delete a record
+  $sql = "DELETE FROM user_db WHERE userid=$userid";
+
+  if (mysqli_query($conn, $sql)) {
+    
+    header("location: ../users/Admin/admin-page.php");
+    exit();
+
+  } else {
+    echo "Error deleting record: " . mysqli_error($conn);
+  }
+
+  mysqli_close($conn);
+
+  
 }

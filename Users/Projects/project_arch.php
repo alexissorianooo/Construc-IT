@@ -58,7 +58,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
 
                 <?php 
                     $count=0;
-                    $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_client, project_progress_architect FROM project_db";
+                    $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_pm_id, project_client, project_client_id, project_progress_architect FROM project_db";
                     $result = mysqli_query($conn, $sql);
 
                     if(mysqli_num_rows($result)>0){
@@ -72,6 +72,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                         src="assets/img/desk.jpg"></a></div>
                                             <div class="col text-end" style="background: #f9eeca;">
                                                 <h3 class="text-start name" style="color: var(--bs-dark);"> '. $row["project_name"] . '&nbsp;</h3>
+                                                <h3 class="text-start name" style="color: var(--bs-dark);"> Project Code: '. $row["project_id"] . '&nbsp;</h3>
                                                 
                                                 <p class="text-start"
                                                 style="color: rgb(0,0,0);font-family: Montserrat, sans-serif;font-style: normal;text-align: left;padding: 0px;height: 36px;">
@@ -93,16 +94,42 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                         aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:'.$row["project_progress_architect"].'%;">'.$row["project_progress_architect"] .'
                                                     </div>
                                                 </div>
-                                                <form method="post" action="view project.php">
-                                                    <input name="projectView" value="'.$row["project_id"].'" hidden>
-                                                    <button class="btn btn-warning" data-bs-toggle="tooltip" data-bss-tooltip=""
-                                                        data-bs-placement="bottom" data-bss-hover-animate="pulse" type="submit"
-                                                        data-toggle="modal" href="#myModal" 
-                                                        style="font-size: 28px;background: rgb(248,197,44);margin: 13px;border-color: rgb(0, 0, 0);" name="openProject">
+                                                <div style="diplay: inline;">
+                                                    <form method="post" action="view project.php">
+                                                        <input name="projectView" value="'.$row["project_id"].'" hidden>
                                                         
-                                                        <i class="fa fa-folder-open-o" style="font-size: 20px;">  Open Project</i>
-                                                    </button> 
-                                                </form>
+                                                            <button class="btn btn-warning" data-bs-toggle="tooltip" data-bss-tooltip=""
+                                                                data-bs-placement="bottom" data-bss-hover-animate="pulse" type="submit"
+                                                                data-toggle="modal" href="#myModal" 
+                                                                style="float:right;font-size: 28px;background: rgb(248,197,44);margin: 10px;border-color: rgb(0, 0, 0);" name="deleteProject">
+                                                                
+                                                                <i class="fa fa-folder-open-o" style="font-size: 20px;">  Open Project</i>
+                                                            </button> 
+                                                        
+                                                    </form>
+
+                                                    
+                                                    <form method="post" action="../../includes/deleteproject.php">
+                                                        <input name="projectView" value="'.$row["project_id"].'" hidden>
+                                                        <input name="pmincharge" value="'.$row["project_pm_id"] .'" hidden>
+                                                        <input name="clientincharge" value="'.$row["project_client_id"] .'" hidden>
+                                                            <button class="btn btn-danger confirm" style="float:left;font-size: 28px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                            type="submit" name="deleteProject">
+                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                            </button> 
+                                                    </form>
+                                                </div>
+
+                                                <script>
+                                                    $(".confirm").on("click", function(event){
+                                                        if(confirm("Are you sure to delete?")){
+                                                        return true;
+                                                        } else {
+                                                            event.preventDefault();
+                                                            return false;
+                                                        }
+                                                    });
+                                                </script>
                                                 <p class="description"></p>
                                             </div>
                                         </div>
@@ -111,11 +138,6 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                         }
                     }
 
-
-                    
-
-
-                
                 
                 ?>
             </div>
@@ -144,6 +166,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                     src="assets/img/minibus.jpeg"></a></div>
                                         <div class="col text-end" style="background: #f9eeca;">
                                             <h3 class="text-start name" style="color: var(--bs-dark);">'. $row["project_name"] . '&nbsp;</h3>
+                                            <h3 class="text-start name" style="color: var(--bs-dark);"> Project Code: '. $row["project_id"] . '&nbsp;</h3>
                                             <p class="text-start"
                                             style="color: rgb(0,0,0);font-family: Montserrat, sans-serif;font-style: normal;text-align: left;padding: 0px;height: 36px;">
                                             <strong>Foreman incharged: <br>'.$row["project_pm"] .'<br></strong></p>
@@ -181,6 +204,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
             </div>
         </div>
         <?php include '../../users/Create Project/createprojectMODAL.php'; ?>
+        
         
         
     </section>
