@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // Cannot jump to certain pages without signing up
 if(isset($_POST["registerButton"])){
         
@@ -88,6 +88,23 @@ if(isset($_POST["registerButton"])){
  
     createUserforClient($conn, $usertype, $email, $fullname, $password, $project_archiSELECT);
     
+    // TRAIL PHP SEGMENT
+
+    echo $trail_user = $_SESSION["user_fullname"];
+    echo $trail_user_type = $_SESSION["usertype_fk"];
+    echo $trail_path = "User Management";
+    echo $trail_action = "Created an account";
+    echo $trail_date = date('Y-m-d H:i:s');
+
+    recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
+
+    // END OF TRAIL PHP SEGMENT
+
+    echo '<script type="text/javascript">
+    alert("CLIENT SUCCESSFULLY CREATED");
+    
+    location.replace(document.referrer);
+    </script>';
     
 }
 else{

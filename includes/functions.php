@@ -206,8 +206,8 @@ function clientStatus($conn, $project_clientSELECTid){
   $stmt = mysqli_stmt_init($conn);
   mysqli_query($conn, $sql);
 
-  header("location: ../users/Projects/project_arch.php?error=noneFROMclientStatus");
-  exit();
+  // header("location: ../users/Projects/project_arch.php?error=noneFROMclientStatus");
+  // exit();
 }
 
 function emptyInputcreate($project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_clientSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8){
@@ -255,10 +255,10 @@ function changeCLIENTstatus($conn, $project_client_id){
   $stmt = mysqli_stmt_init($conn);
   mysqli_query($conn, $sql);
 
-  header("location: ../users/Projects/project_arch.php?error=PLSWORK");
-  exit();
+  // header("location: ../users/Projects/project_arch.php?error=PLSWORK");
+  // exit();
 
-  mysqli_close($conn);
+  // mysqli_close($conn);
 }
 //  -------------------------------------------------------------  FOR PROJECT VIEW ---------------------------------------------------------------------
 
@@ -275,9 +275,9 @@ function updateProject($conn, $numerator, $denominator, $project_id, $select1, $
   mysqli_query($conn, $sql);
   
 
-  mysqli_close($conn);
-  header("Location: ../users/Projects/project_arch.php?error=none");
-  exit;
+  // mysqli_close($conn);
+  // header("Location: ../users/Projects/project_arch.php?error=none");
+  // exit;
 
 
 }
@@ -330,8 +330,8 @@ function projectCompletePM($conn, $project_id){
   $stmt = mysqli_stmt_init($conn);
   mysqli_query($conn, $sql);
 
-  header("Location: ../users/Project Manager/pm main.php?status=vacant");
-  exit;
+  // header("Location: ../users/Project Manager/pm main.php?status=vacant");
+  // exit;
 }
 
 function pmStatusINC($conn, $project_pmSELECTid){
@@ -348,8 +348,8 @@ function projectNOTCompletePM($conn, $project_id){
   $stmt = mysqli_stmt_init($conn);
   mysqli_query($conn, $sql);
 
-  header("Location: ../users/Project Manager/pm main.php?status=busy");
-  exit;
+  // header("Location: ../users/Project Manager/pm main.php?status=busy");
+  // exit;
 }
 
 // -------------------------------------------  FOR ADMIN -----------------------------------------------------
@@ -369,11 +369,11 @@ function createUserforClient($conn, $usertype, $email, $fullname, $password, $pr
   mysqli_stmt_execute($stmt);
   mysqli_stmt_close($stmt);
 
-  echo '<script type="text/javascript">
-  alert("CLIENT SUCCESSFULLY CREATED");
+  // echo '<script type="text/javascript">
+  // alert("CLIENT SUCCESSFULLY CREATED");
   
-  location.replace(document.referrer);
-  </script>';
+  // location.replace(document.referrer);
+  // </script>';
   // echo 'allgood';
 
 }
@@ -477,11 +477,11 @@ function edituser_admin_password($conn, $newpass, $userid){
   $stmt = mysqli_stmt_init($conn);
   mysqli_query($conn, $sql);
 
-  echo '<script type="text/javascript">
-  alert("PASSWORD SUCCESSFULLY UPDATED");
-  var page = window.history.go(-1);
-  window.location.reload(page);
-  </script>';
+  // echo '<script type="text/javascript">
+  // alert("PASSWORD SUCCESSFULLY UPDATED");
+  // var page = window.history.go(-1);
+  // window.location.reload(page);
+  // </script>';
 }
 
 // ----- DELETE FOR ADMIN --------
@@ -492,14 +492,32 @@ function deleteuser_admin($conn,  $user_fullname, $user_email, $userid){
 
   if (mysqli_query($conn, $sql)) {
     
-    header("location: ../users/Admin/admin-page.php");
-    exit();
+    // header("location: ../users/Admin/admin-page.php");
+    // exit();
 
   } else {
     echo "Error deleting record: " . mysqli_error($conn);
   }
 
-  mysqli_close($conn);
+  // mysqli_close($conn);
 
   
+}
+
+
+// -------------------------------------- FOR RECORD TRAIL --------------------------------------
+function recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date){
+  $sql = "INSERT INTO trail_db (trail_user, trail_user_type, trail_path, trail_action, trail_date) VALUES (?, ?, ?, ?, ?);";
+  $stmt = mysqli_stmt_init($conn);
+
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: ../loggedInPages/homePage.php?error=stmtfailed");
+    exit();
+  }
+
+  mysqli_stmt_bind_param($stmt, "sssss", $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
+
+
 }

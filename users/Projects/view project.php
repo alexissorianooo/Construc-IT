@@ -3,6 +3,7 @@
     require_once '../../includes/db.php';
     require_once '../../includes/functions.php';
 
+    
 ?>
 
 
@@ -31,6 +32,19 @@
 
 <?php 
     $forprojectID = $_POST["projectView"]; // for getting specific project, from project_arch
+    $forprojectName = $_POST["projectViewName"];
+
+    // TRAIL PHP SEGMENT
+
+    $trail_user = $_SESSION["user_fullname"];
+    $trail_user_type = $_SESSION["usertype_fk"];
+    $trail_path = "Project View";
+    $trail_action = "view project ".$forprojectID.": ".$forprojectName;
+    $trail_date = date('Y-m-d H:i:s');
+
+    recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
+
+    // END OF TRAIL PHP SEGMENT
     $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_client, project_progress_architect, project_activity_Architect_1, project_status_Architect_1, project_activity_Architect_2, project_status_Architect_2, project_activity_Architect_3, project_status_Architect_3, project_activity_Architect_4, project_status_Architect_4, project_activity_Architect_5, project_status_Architect_5, project_activity_Architect_6, project_status_Architect_6, project_activity_Architect_7, project_status_Architect_7, project_activity_Architect_8, project_status_Architect_8, project_activity_additional_Architect_1, project_status_additional_Architect_1, project_activity_additional_Architect_2, project_status_additional_Architect_2, project_activity_additional_Architect_3, project_status_additional_Architect_3, project_activity_additional_Architect_4, project_status_additional_Architect_4, project_activity_additional_Architect_5, project_status_additional_Architect_5 FROM project_db WHERE project_id = $forprojectID;";
     $result = mysqli_query($conn, $sql);
 
@@ -61,6 +75,7 @@
                                 <h2><b>'.$row["project_name"].'</b></h2>
                             </div>
                             <input hidden name="project_id" value="'.$row["project_id"] .'">
+                            <input hidden name="project_name" value="'.$row["project_name"] .'">
                             <input hidden name="counter" value="0">
                             <div style="margin-top: 20px; margin-bottom: -10px">
                                 <div class="container" style="margin-bottom: 20px;">

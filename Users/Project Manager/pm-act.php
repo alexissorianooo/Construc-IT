@@ -1,6 +1,19 @@
 <?php 
+session_start();
     require_once '../../includes/db.php';
     require_once '../../includes/functions.php';
+
+    // TRAIL PHP SEGMENT
+
+    $trail_user = $_SESSION["user_fullname"];
+    $trail_user_type = $_SESSION["usertype_fk"];
+    $trail_path = "View Project";
+    $trail_action = "viewing activities";
+    $trail_date = date('Y-m-d H:i:s');
+
+    recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
+
+    // END OF TRAIL PHP SEGMENT
 
 ?>
 
@@ -29,7 +42,7 @@
             <div class="container" style="margin-top: -100px; margin-bottom: 30px;"> -->
                 
                 <?php 
-                session_start();
+                
 
                 $forpmID = $_SESSION['user_fullname'];
                 // echo $forpmID;
@@ -66,6 +79,7 @@
                                             
                                         </div>
                                         <input hidden name="project_id" value="'.$row["project_id"].'">
+                                        <input hidden name="project_name" value="'.$row["project_name"].'">
                                         <input hidden name="counter" value="0"> 
                                         <div style="margin-top: 20px;">
                                             <div class="container" style="margin-bottom: 20px;">

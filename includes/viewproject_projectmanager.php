@@ -7,6 +7,7 @@ if(isset($_POST["saveBUTTON"])){
     require_once 'functions.php';
 
     echo "<br>". $project_id = $_POST['project_id'];
+    echo "<br>". $project_name = $_POST['project_name'];
     echo "<br>". $select1 = $_POST['SELECTPM1'];
     echo "<br>". $select2 = $_POST['SELECTPM2'];
     echo "<br>". $select3 = $_POST['SELECTPM3'];
@@ -174,11 +175,42 @@ if(isset($_POST["saveBUTTON"])){
         updateProjectPM($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13, $select14, $select15, $select16, $select17, $select18, $select19, $select20, $select21, $select22, $select23, $select24, $select25, $select26, $input22, $input23, $input24, $input25, $input26);
         pmStatusComplete($conn, $project_pmSELECTid);
         projectCompletePM($conn, $project_id);
+
+        // TRAIL PHP SEGMENT
+
+        $trail_user = $_SESSION["user_fullname"];
+        $trail_user_type = $_SESSION["usertype_fk"];
+        $trail_path = "Project View";
+        $trail_action = "Complete project activities ".$project_id.": ".$project_name;
+        $trail_date = date('Y-m-d H:i:s');
+
+        recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
+
+        // END OF TRAIL PHP SEGMENT
+
+
+        header("Location: ../users/Project Manager/pm main.php?status=vacant");
+        exit;
     } 
 
     updateProjectPM($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13, $select14, $select15, $select16, $select17, $select18, $select19, $select20, $select21, $select22, $select23, $select24, $select25, $select26, $input22, $input23, $input24, $input25, $input26);
     pmStatusINC($conn, $project_pmSELECTid);
     projectNOTCompletePM($conn, $project_id);
+
+    // TRAIL PHP SEGMENT
+
+    $trail_user = $_SESSION["user_fullname"];
+    $trail_user_type = $_SESSION["usertype_fk"];
+    $trail_path = "Project View";
+    $trail_action = "Update project activities ".$project_id.": ".$project_name;
+    $trail_date = date('Y-m-d H:i:s');
+
+    recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
+
+    // END OF TRAIL PHP SEGMENT
+
+    header("Location: ../users/Project Manager/pm main.php?status=busy");
+    exit;
     
 }else{
     echo "what's wrong brother?";
