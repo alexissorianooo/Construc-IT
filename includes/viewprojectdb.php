@@ -1,9 +1,10 @@
 <?php
-
+session_start();
 
 if(isset($_POST["saveButton"])){
 
     $project_id = $_POST['project_id'];
+    $project_name = $_POST['project_name'];
     $select1 = $_POST['SELECT1'];
     $select2 = $_POST['SELECT2'];
     $select3 = $_POST['SELECT3'];
@@ -133,13 +134,46 @@ if(isset($_POST["saveButton"])){
     // } 
 
     if($numerator/$denominator==1){
+
         completeProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
+
+        // TRAIL PHP SEGMENT
+
+        $trail_user = $_SESSION["user_fullname"];
+        $trail_user_type = $_SESSION["usertype_fk"];
+        $trail_path = "Project View";
+        $trail_action = "Complete project activities ".$project_id.": ".$project_name;
+        $trail_date = date('Y-m-d H:i:s');
+
+        recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
+
+        // END OF TRAIL PHP SEGMENT
+
+        header("Location: ../users/Projects/project_arch.php?status=complete");
+        exit;
     } 
 
 
 
     updateProjectINC($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
 
+
+
+    // TRAIL PHP SEGMENT
+
+    $trail_user = $_SESSION["user_fullname"];
+    $trail_user_type = $_SESSION["usertype_fk"];
+    $trail_path = "Project View";
+    $trail_action = "Update project activities ".$project_id.": ".$project_name;
+    $trail_date = date('Y-m-d H:i:s');
+
+    recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
+
+    // END OF TRAIL PHP SEGMENT
+    
+    header("Location: ../users/Projects/project_arch.php?status=complete");
+    exit;
+    
 }else{
     echo 'what is wrong brother?';
 }

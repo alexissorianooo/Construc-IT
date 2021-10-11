@@ -8,6 +8,13 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
     require_once '../../includes/db.php';
     require_once '../../includes/functions.php';
 
+    echo"<br><br><br><br>".$trail_user = $_SESSION["user_fullname"];
+    echo"<br>".$trail_user_type = $_SESSION["usertype_fk"];
+    echo"<br>".$trail_path = "All projects";
+    echo"<br>".$trail_action = "none";
+    echo"<br>".$trail_date = date('Y-m-d H:i:s');
+
+    recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
 ?>
 
 
@@ -97,6 +104,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                 <div style="diplay: inline;">
                                                     <form method="post" action="view project.php">
                                                         <input name="projectView" value="'.$row["project_id"].'" hidden>
+                                                        <input name="projectViewName" value="'.$row["project_name"].'" hidden>
                                                         
                                                             <button class="btn btn-warning" data-bs-toggle="tooltip" data-bss-tooltip=""
                                                                 data-bs-placement="bottom" data-bss-hover-animate="pulse" type="submit"
@@ -111,6 +119,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                     
                                                     <form method="post" action="../../includes/deleteproject.php">
                                                         <input name="projectView" value="'.$row["project_id"].'" hidden>
+                                                        <input name="projectViewName" value="'.$row["project_name"].'" hidden>
                                                         <input name="pmincharge" value="'.$row["project_pm_id"] .'" hidden>
                                                         <input name="clientincharge" value="'.$row["project_client_id"] .'" hidden>
                                                             <button class="btn btn-danger confirm" style="float:left;font-size: 28px;margin: 10px;border-color: rgb(0, 0, 0);"
@@ -184,6 +193,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                             <h1></h1>
                                             <form method="post" action="view project.php">
                                                     <input name="projectView" value="'.$row["project_id"].'" hidden>
+                                                    <input name="projectViewName" value="'.$row["project_name"].'" hidden>
                                                     <button class="btn btn-warning" data-bs-toggle="tooltip" data-bss-tooltip=""
                                                         data-bs-placement="bottom" data-bss-hover-animate="pulse" type="submit"
                                                         data-toggle="modal" href="#myModal" 

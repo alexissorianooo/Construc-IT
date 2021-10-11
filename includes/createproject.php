@@ -125,6 +125,21 @@ if(isset($_POST['createButton'])){
     pmStatus($conn, $project_pmSELECTid);
     clientStatus($conn, $project_clientSELECTid);
 
+     // TRAIL PHP SEGMENT
+
+     echo $trail_user = $_SESSION["user_fullname"];
+     echo $trail_user_type = $_SESSION["usertype_fk"];
+     echo $trail_path = "Project View";
+     echo $trail_action = "Create project: ".$project_name;
+     echo $trail_date = date('Y-m-d H:i:s');
+ 
+     recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
+ 
+     // END OF TRAIL PHP SEGMENT
+
+    header("location: ../users/Projects/project_arch.php?error=noneFROMclientStatus");
+    exit();
+
 
 }
 else{
