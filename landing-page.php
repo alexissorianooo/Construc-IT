@@ -333,7 +333,7 @@
                                         <br><br>
                                         <input required type="password" id="password" placeholder="Password" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="password">
                                         <br> <br>
-                                        <a class="text-center d-block" id="forgot-password" href="forget_password.php" style="color:blue;border-color: var(--blue); cursor:pointer;">&nbsp;Forgot Your Password?</a>                                 
+                                        <a class="text-center d-block" id="forgot-password" href="./forgetPassword/forget_password.php" style="color:blue;border-color: var(--blue); cursor:pointer;">&nbsp;Forgot Your Password?</a>                                 
                                         <br>                            
                                         <button class="btn bg-info" type="submit" name="loginButton">Login</button>                                    
                                     </div>  
