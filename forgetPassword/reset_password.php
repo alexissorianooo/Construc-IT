@@ -74,7 +74,7 @@
         elseif(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($psw) < 8) {
             ?>
             <script>
-                alert("<?php echo "Password must be atleast (8) characters and must contain (1) small, capital letter and (1) number. " ?>");
+                alert("<?php echo "Password must be atleast (8) characters and must contain (1) small, capital letter, (1) number and (1) special character. " ?>");
             </script>
             <?php
         }
