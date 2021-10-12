@@ -569,7 +569,6 @@ function changeActivities_PM($conn, $project_id, $select1, $select2, $select3, $
           // echo "column name= ".$colname."<br>";
           // echo $value."<br>";
           
-          
           $sql = "UPDATE project_db SET $colname = 'Delayed' WHERE project_id='$project_id'";
           $stmt = mysqli_stmt_init($conn);
           mysqli_query($conn, $sql);

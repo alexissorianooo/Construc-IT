@@ -52,8 +52,8 @@
     while($row=mysqli_fetch_assoc($result)){
         //NEEDED FOR DELAY OF ACTIVITY FEATURE
 
-        // $dateToday = date("Y-m-d");
-        $dateToday = "2021-12-09";
+        $dateToday = date("Y-m-d");
+        // $dateToday = "2021-12-09";
         $deadline = $row['project_deadline']; 
 
         $project_id = $row["project_id"];
