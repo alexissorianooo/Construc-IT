@@ -27,13 +27,13 @@
 
             // TRAIL PHP SEGMENT
 
-            $trail_user = $_SESSION["user_fullname"];
-            $trail_user_type = $_SESSION["usertype_fk"];
-            $trail_path = "User Management";
-            $trail_action = "Viewing all the users registered in the system";
-            $trail_date = date('Y-m-d H:i:s');
+            // $trail_user = $_SESSION["user_fullname"];
+            // $trail_user_type = $_SESSION["usertype_fk"];
+            // $trail_path = "User Management";
+            // $trail_action = "Viewing all the users registered in the system";
+            // $trail_date = date('Y-m-d H:i:s');
 
-            recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
+            // recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
 
             // END OF TRAIL PHP SEGMENT
         ?>
