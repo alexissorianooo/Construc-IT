@@ -45,16 +45,56 @@
     recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
 
     // END OF TRAIL PHP SEGMENT
+
+    $sql = "SELECT * FROM project_db WHERE project_id = $forprojectID;";
+    $result = mysqli_query($conn, $sql);
+
+    while($row=mysqli_fetch_assoc($result)){
+        //NEEDED FOR DELAY OF ACTIVITY FEATURE
+
+        // $dateToday = date("Y-m-d");
+        $dateToday = "2021-12-09";
+        $deadline = $row['project_deadline']; 
+
+        $project_id = $row["project_id"];
+
+        $select1 = $row["project_status_Architect_1"];
+        $select2 = $row["project_status_Architect_2"];
+        $select3 = $row["project_status_Architect_3"];
+        $select4 = $row["project_status_Architect_4"];
+        $select5 = $row["project_status_Architect_5"];
+        $select6 = $row["project_status_Architect_6"];
+        $select7 = $row["project_status_Architect_7"];
+        $select8 = $row["project_status_Architect_8"];
+        $select9 = $row["project_status_additional_Architect_1"];
+        $select10 = $row["project_status_additional_Architect_2"];
+        $select11 = $row["project_status_additional_Architect_3"];
+        $select12 = $row["project_status_additional_Architect_4"];
+        $select13 = $row["project_status_additional_Architect_5"];
+
+
+        if($deadline<$dateToday){
+            // echo "$deadline is more older than $dateToday"; //sould be delayed
+            // echo "<br><br><br>";
+            changeActivities_architect($conn, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
+        }else{
+            // echo "$deadline is more rcent than $dateToday"; //HENCE DO NOTHING
+        }
+        //END OF DELAY OF ACTIVITY FEATURE
+    }
+
     $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_client, project_progress_architect, project_activity_Architect_1, project_status_Architect_1, project_activity_Architect_2, project_status_Architect_2, project_activity_Architect_3, project_status_Architect_3, project_activity_Architect_4, project_status_Architect_4, project_activity_Architect_5, project_status_Architect_5, project_activity_Architect_6, project_status_Architect_6, project_activity_Architect_7, project_status_Architect_7, project_activity_Architect_8, project_status_Architect_8, project_activity_additional_Architect_1, project_status_additional_Architect_1, project_activity_additional_Architect_2, project_status_additional_Architect_2, project_activity_additional_Architect_3, project_status_additional_Architect_3, project_activity_additional_Architect_4, project_status_additional_Architect_4, project_activity_additional_Architect_5, project_status_additional_Architect_5 FROM project_db WHERE project_id = $forprojectID;";
     $result = mysqli_query($conn, $sql);
 
     $numerator = 0;
     $denominator = 8;
     
-
     
 
     if(mysqli_num_rows($result)>0){
+
+        
+
         while($row=mysqli_fetch_assoc($result)){
 
             $status1 = "Pending";
@@ -63,8 +103,9 @@
             
 
             if($_SESSION["user_fullname"] == $row["project_client"] || $_SESSION["user_fullname"] == $row["project_architect"]){
-                                
-
+                
+                
+                
                 echo '
                 <form method="post" action="../../includes/viewprojectdb.php">
 
@@ -803,6 +844,7 @@
             }
         }
     }
+
 
 ?>
     

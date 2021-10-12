@@ -1,8 +1,8 @@
 <?php
 
-echo $dateToday = date("Y-m-d");
-echo $dateSample1 = "2021-12-10";
-echo $dateSample2 = "2021-12-09";
+$dateToday = date("Y-m-d");
+$dateSample1 = "2021-12-10";
+$dateSample2 = "2020-12-09";
 
 
 if($dateToday>$dateSample2){

@@ -46,6 +46,61 @@ session_start();
 
                 $forpmID = $_SESSION['user_fullname'];
                 // echo $forpmID;
+
+                //NEEDED FOR DELAY OF ACTIVITY FEATURE
+                $sql = "SELECT * FROM project_db WHERE project_pm = '$forpmID';";
+                $resultforprojectID = mysqli_query($conn, $sql);
+
+                while($row=mysqli_fetch_assoc($resultforprojectID)){
+                    
+            
+                    // $dateToday = date("Y-m-d");
+                    $dateToday = "2021-12-09";
+                    $deadline = $row['project_deadline']; 
+            
+                    $project_id = $row["project_id"];
+            
+                    $select1 = $row["project_status_PM_1"];
+                    $select2 = $row["project_status_PM_2"];
+                    $select3 = $row["project_status_PM_3"];
+                    $select4 = $row["project_status_PM_4"];
+                    $select5 = $row["project_status_PM_5"];
+                    $select6 = $row["project_status_PM_6"];
+                    $select7 = $row["project_status_PM_7"];
+                    $select8 = $row["project_status_PM_8"];
+                    $select9 = $row["project_status_PM_9"];
+                    $select10 = $row["project_status_PM_10"];
+                    $select11 = $row["project_status_PM_11"];
+                    $select12 = $row["project_status_PM_12"];
+                    $select13 = $row["project_status_PM_13"];
+                    $select14 = $row["project_status_PM_14"];
+                    $select15 = $row["project_status_PM_15"];
+                    $select16 = $row["project_status_PM_16"];
+                    $select17 = $row["project_status_PM_17"];
+                    $select18 = $row["project_status_PM_18"];
+                    $select19 = $row["project_status_PM_19"];
+                    $select20 = $row["project_status_PM_20"];
+                    $select21 = $row["project_status_PM_21"];
+                    $select22 = $row["project_status_PM_22"];
+                    $select23 = $row["project_status_PM_23"];
+                    $select24 = $row["project_status_PM_24"];
+                    $select25 = $row["project_status_PM_25"];
+                    $select26 = $row["project_status_PM_26"];
+
+            
+            
+                    if($deadline<$dateToday){
+                        // echo "$deadline is more older than $dateToday"; //sould be delayed
+                        // echo "<br><br><br>";
+                        changeActivities_PM($conn, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13, $select14, $select15, $select16, $select17, $select18, $select19, $select20, $select21, $select22, $select23, $select24, $select25, $select26);
+                    }else{
+                        // echo "$deadline is more rcent than $dateToday"; //HENCE DO NOTHING
+                    }
+                    
+                }
+                //END OF DELAY OF ACTIVITY FEATURE
+
+
                 $sql = "SELECT * FROM project_db WHERE project_pm = '$forpmID';";
                 $resultforprojectID = mysqli_query($conn, $sql);
 
