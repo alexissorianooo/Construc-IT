@@ -115,7 +115,7 @@
             if(!$mail->send()){
                 ?>
                     <script>
-                        alert("<?php echo " Invalid Email "?>");
+                        alert("<?php echo " Can't send to email, please check email security settings. "?>");
                     </script>
                 <?php
             }else{
