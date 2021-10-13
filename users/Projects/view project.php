@@ -51,7 +51,7 @@
 
     while($row=mysqli_fetch_assoc($result)){
         //NEEDED FOR DELAY OF ACTIVITY FEATURE
-
+        date_default_timezone_set('Asia/Manila');
         $dateToday = date("Y-m-d");
         // $dateToday = "2021-12-09";
         $deadline = $row['project_deadline']; 
