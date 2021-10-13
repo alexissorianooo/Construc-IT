@@ -312,7 +312,7 @@ recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $t
     <section class="text-center bg-dark">
         <h1 class="center CP" style="padding-top: 30px;">Hardware Locator</h1>        
             <form class="d-inline-flex tt-search">
-                <input id="locator" type="text" class="form-control" placeholder="Enter Municipality or City"/>
+                <input id="locator" type="text" class="form-control" placeholder="Enter Municipality or City with Barangay and Street name"/>
                 <button id="search-location" onclick="searchLocation()" class="btn btn-primary text-light" type="button" style="background: var(--yellow);width: 66px;height: 52px;"><i class="fa fa-search"></i></button>
                 <button id="search-area" onclick="getLocation()" class="btn btn-primary" type="button" style="color: var(--white);background: var(--yellow);width: 66px;height: 52px;"><i class="fa fa-map-marker fa-2x"></i></button>
             </form>

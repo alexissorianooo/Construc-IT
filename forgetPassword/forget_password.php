@@ -106,7 +106,8 @@
                 $mail->Body="<b>Dear User</b>
                 <h3>We received a request to reset your password.</h3>
                 <p>Kindly click the below link to reset your password</p>
-                http://localhost/Github%20Files/Construc-IT/forgetPassword/reset_password.php
+                <!-- http://localhost/Github%20Files/Construc-IT/forgetPassword/reset_password.php -->
+                http://localhost/GitHub%20Files/forgetPassword/reset_password.php
                 <br><br>
                 <p>With regrads,</p>
                 <b>Construc - IT</b>";
