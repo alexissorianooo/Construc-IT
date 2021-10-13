@@ -100,7 +100,7 @@
 
 
                     <section id="body-section">
-                    <h4 class="text-center" style="height: 35px;font-size: 34px;">Architect Activitites</h4>
+                    <h4 class="text-center" style="height: 35px;font-size: 34px;">Architect Activities</h4>
 
                         <div class="progress mx-auto" style="width: 80%;height: 30px; margin-top:3%;">
                             <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$row['project_progress_architect'].'%;">'.$row['project_progress_architect'].'</div>                                                     
@@ -793,7 +793,7 @@
                 
                 echo '
                 <div style="margin-top:3%;">
-                    <h4 class="text-center" style="height: 35px;font-size: 34px;">Foreman Activitites</h4> 
+                    <h4 class="text-center" style="height: 35px;font-size: 34px;">Foreman Activities</h4> 
                 </div>';
 
                     $forpmID = $_SESSION['user_fullname'];
