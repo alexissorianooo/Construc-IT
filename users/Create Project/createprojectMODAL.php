@@ -44,7 +44,7 @@
 
                                         $currentUser = $_SESSION["user_fullname"];
 
-
+                                        date_default_timezone_set('Asia/Manila');
                                         $maxdate = date("Y-m-d");
 
                                         $sql = "SELECT project_architect, MAX(project_deadline) AS maxdate FROM project_db WHERE project_architect = '$currentUser'";
@@ -54,7 +54,16 @@
                                             while($row=mysqli_fetch_assoc($result)){
                                                 if(!empty($row['maxdate'])){
                                                     $maxdate = $row['maxdate'];
-                                                    $row["project_architect"];
+                                                    $row["project_architect"]; //nakalimutan ko kung para san to, sa pagkakaalala ko nilagay ko to para iprint kung gumagana xD
+                                                    $dateToday =  date("Y-m-d");
+                                                    if ($dateToday>$maxdate){
+                                                        $maxdate = date("Y-m-d");
+                                                        
+                                                    }else{
+                                                        $maxdate = $row['maxdate'];
+                                                        
+                                                    }
+                                                    
                                                 }else{
                                                     $maxdate = date("Y-m-d");
                                                     $row["project_architect"];
