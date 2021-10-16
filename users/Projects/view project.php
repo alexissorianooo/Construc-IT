@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="assetsForViewProject/css/view.css">    
 </head>
 
-<body>
+<body class="body-image">
     <br>
     <br>
     <br>
