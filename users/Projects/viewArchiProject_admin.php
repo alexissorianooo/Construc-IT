@@ -909,6 +909,7 @@
                     
                     
                     <div class="bg-dark container borderbox">
+                    
                         <div class="progress progressdesign">
                                     <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$row['project_progress_architect'].'%;">'.$row['project_progress_architect'] .'</div>
                         </div>
