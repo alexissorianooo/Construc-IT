@@ -8,15 +8,15 @@
     padding-bottom: 5px;
 }
 
-.progressdesign {
+/* .progressdesign {
     width: 80%;
     height: 30px;
     margin: auto;
     margin-top: 2rem;
     margin-bottom: -1rem;
-}
+} */
 
-body {
+.bg-image {
     min-width: 100%;
     margin: auto;
     align-content: center;
@@ -110,6 +110,11 @@ body {
 
 .bg-dark {
     background-color: #343a40 !important; 
+}
+
+.spacing {
+    padding-top: 50px;
+    padding-bottom: 70px;
 }
 
 .rgb {
