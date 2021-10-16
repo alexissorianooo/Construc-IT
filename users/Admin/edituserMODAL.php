@@ -46,7 +46,15 @@
             
         ?>
         <?php 
-            $userID = $_POST['userid'];
+            
+
+            if(!empty( $_POST["userid"])){
+                $userID = $_POST["userid"]; // for getting specific project, from project_arch
+                $_SESSION['userid']= $userID;
+            }else{
+                $userID = $_SESSION['userid'];
+            }
+
             $sql = "SELECT * FROM user_db WHERE userid=$userID";
             $result = mysqli_query($conn, $sql);
     
