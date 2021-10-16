@@ -521,3 +521,59 @@ function recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_a
 
 
 }
+
+// -------------------------------------- FOR DELAYED ACTIVITIES --------------------------------------
+
+function changeActivities_architect($conn, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13){
+
+
+  $sql = "SELECT * FROM project_db WHERE project_id='$project_id'";
+  $result = mysqli_query($conn, $sql);
+
+
+  // echo mysqli_num_rows($result);
+  if(mysqli_num_rows($result)>0){
+    while($row=mysqli_fetch_assoc($result)){
+      foreach($row as $colname => $value){
+        // echo "column name= ".$colname."<br>";
+        // echo "value= ".$value. "<br>";
+        if($value == "Pending"){
+          // echo "column name= ".$colname."<br>";
+          // echo $value."<br>";
+          
+          
+          $sql = "UPDATE project_db SET $colname = 'Delayed' WHERE project_id='$project_id'";
+          $stmt = mysqli_stmt_init($conn);
+          mysqli_query($conn, $sql);
+        }
+      }
+    }
+  }
+
+  
+}
+
+function changeActivities_PM($conn, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13){
+
+  $sql = "SELECT * FROM project_db WHERE project_id='$project_id'";
+  $result = mysqli_query($conn, $sql);
+
+
+  // echo mysqli_num_rows($result);
+  if(mysqli_num_rows($result)>0){
+    while($row=mysqli_fetch_assoc($result)){
+      foreach($row as $colname => $value){
+        // echo "column name= ".$colname."<br>";
+        // echo "value= ".$value. "<br>";
+        if($value == "Pending"){
+          // echo "column name= ".$colname."<br>";
+          // echo $value."<br>";
+          
+          $sql = "UPDATE project_db SET $colname = 'Delayed' WHERE project_id='$project_id'";
+          $stmt = mysqli_stmt_init($conn);
+          mysqli_query($conn, $sql);
+        }
+      }
+    }
+  }
+}
