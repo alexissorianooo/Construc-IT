@@ -107,7 +107,7 @@
                 
                 
                 echo '
-                <form method="post" action="../../includes/viewprojectdb.php">
+                <form method="post" action="../../includes/uploadArchiProject_admin.php" enctype="multipart/form-data">
 
 
                     <section class="headerbox container" id="header-section" style="padding-top: 20px;">
@@ -181,8 +181,9 @@
                                                 
                                             echo'   
                                             </label>
-                                            <div style="margin-top: 10px;">
-                                            <button name="UPLOAD1">Upload</button>
+                                            <div style="margin-top: 10px;text-align: center;">
+                                                <button name="UPLOAD1">Upload</button>
+                                                <button name="DOWNLOAD1">Download</button>
                                             </div>
                                         </div>
                                     </div>
@@ -217,6 +218,10 @@
                                             
                                             echo '
                                             </label>
+                                            <div style="margin-top: 10px;text-align: center;">
+                                                <button name="UPLOAD2">Upload</button>
+                                                <button name="DOWNLOAD2">Download</button>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm3">
@@ -250,6 +255,9 @@
 
                                             echo '
                                             </label>
+                                            <div style="margin-top: 10px;text-align: center;">
+                                                <button name="UPLOAD3">Upload</button>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm4">
@@ -283,6 +291,9 @@
                                             
                                             echo '
                                             </label>
+                                            <div style="margin-top: 10px;text-align: center;">
+                                                <button name="UPLOAD4">Upload</button>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm5">
@@ -316,6 +327,9 @@
                                             
                                             echo '
                                             </label>
+                                            <div style="margin-top: 10px;text-align: center;">
+                                                <button name="UPLOAD5">Upload</button>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm6">
@@ -348,6 +362,9 @@
                                             }   
                                             echo '
                                             </label>
+                                            <div style="margin-top: 10px;text-align: center;">
+                                                <button name="UPLOAD6">Upload</button>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm7">
@@ -381,6 +398,9 @@
                                             
                                             echo '
                                             </label>
+                                            <div style="margin-top: 10px;text-align: center;">
+                                                <button name="UPLOAD7">Upload</button>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm8">
@@ -414,6 +434,9 @@
                                             
                                             echo '
                                             </label>
+                                            <div style="margin-top: 10px;text-align: center;">
+                                                <button name="UPLOAD8">Upload</button>
+                                            </div>
                                         </div>
                                     </div>
                                     ';
@@ -461,6 +484,9 @@
                                                     
                                                     echo '
                                                     </label>
+                                                    <div style="margin-top: 10px;text-align: center;">
+                                                        <button name="UPLOAD9">Upload</button>
+                                                    </div>
                                                 </div>
                                             </div>';
                                         }
@@ -507,6 +533,9 @@
                                                         
                                                         echo '
                                                         </label>
+                                                        <div style="margin-top: 10px;text-align: center;">
+                                                            <button name="UPLOAD10">Upload</button>
+                                                        </div>
                                                     </div>
                                                 </div>';
                                             }
@@ -553,6 +582,10 @@
                                                         
                                                         echo '
                                                         </label>
+
+                                                        <div style="margin-top: 10px;text-align: center;">
+                                                            <button name="UPLOAD11">Upload</button>
+                                                        </div>
                                                     </div>
                                                 </div>';
                                             }
@@ -598,7 +631,10 @@
                                                             }
                                                             
                                                             echo '
-                                                            </select>
+                                                            </label>
+                                                            <div style="margin-top: 10px;text-align: center;">
+                                                                <button name="UPLOAD12">Upload</button>
+                                                            </div>
                                                         </div>
                                                     </div>';
                                                 }
@@ -643,6 +679,9 @@
                                                                 
                                                         echo '
                                                         </label>
+                                                        <div style="margin-top: 10px;text-align: center;">
+                                                            <button name="UPLOAD13">Upload</button>
+                                                        </div>
                                                     </div>
                                                 </div>';
                                             }
@@ -652,17 +691,14 @@
                         </div>
                     </section>';
                    
-                    $progressbar = ($numerator / $denominator)*100;
-                    $roundvalue = round($progressbar);
+                    
                     
                     echo'
-                    <input hidden name="progressbarUPDATE" value="'.$roundvalue.'">
-                    <input hidden name="numeratorUPDATE" value="'.$numerator.'">
-                    <input hidden name="denominatorUPDATE" value="'.$denominator.'">
+                    
                     
                     <div class="bg-dark container borderbox">
                         <div class="progress progressdesign">
-                                    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$roundvalue.'%;">'.$roundvalue .'</div>
+                                    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$row['project_progress_architect'].'%;">'.$row['project_progress_architect'] .'</div>
                         </div>
                         <section class="text-center" id="footer-section">
                             <button class="btn btn-primary" style="background: rgb(229,234,239);color: rgb(0,0,0);margin: 10px;border-color: rgb(229,234,239);" type="button" onclick="history.go(-2)">
