@@ -33,7 +33,7 @@ if(isset($_POST["UPLOAD1"])){
             if(mysqli_num_rows($result)>0){
                 while($row=mysqli_fetch_assoc($result)){
                     if($row['files_project_id'] == $project_id){
-                        $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
+                        $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum' AND  files_project_id = '$project_id'";
 
                         if(mysqli_query($conn, $sql2)){
                             echo "file uploaded successfully";
@@ -865,7 +865,7 @@ elseif(isset($_POST["UPLOAD13"])){
     }
 }
 elseif(isset($_POST["DOWNLOAD1"])){
-    echo 'your at doownlaod';
+    
 
     $project_id = $_POST['project_id'];
     $filenum = 'FILE1';
@@ -893,7 +893,8 @@ elseif(isset($_POST["DOWNLOAD1"])){
         header('Expires: 0');
         header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
         header('Pragma: public');
-        header('Content-Length: ' . filesize('../uploads/' . $file['files_name']));
+        // header('Content-Length: ' . filesize('../uploads/' . $file['files_name']));
+        header('Content-Length:' . filesize($filepath));
         header('Content-Transfer-Encoding: binary');
         readfile($filepath);
 
@@ -906,6 +907,6 @@ elseif(isset($_POST["DOWNLOAD1"])){
         exit();
 
     }else{
-        echo 'file does not exist';
+        echo '<br>file does not exist';
     }
 }
