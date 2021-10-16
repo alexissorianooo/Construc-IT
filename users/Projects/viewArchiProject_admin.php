@@ -3,7 +3,8 @@
     require_once '../../includes/db.php';
     require_once '../../includes/functions.php';
 
-    
+    // include '../../includes/uploadArchiProject_admin.php';
+
 ?>
 
 
@@ -31,8 +32,20 @@
     <br>
 
 <?php 
-    $forprojectID = $_POST["projectView"]; // for getting specific project, from project_arch
-    $forprojectName = $_POST["projectViewName"];
+    if(!empty( $_POST["projectView"])){
+        $forprojectID = $_POST["projectView"]; // for getting specific project, from project_arch
+        $_SESSION['forprojectID']= $forprojectID;
+    }else{
+        $forprojectID = $_SESSION['forprojectID'];
+    }
+   
+    if(!empty( $_POST["projectViewName"])){
+        $forprojectName = $_POST["projectViewName"]; 
+        $_SESSION['projectViewName']= $forprojectName;
+    }else{
+        $forprojectName = $_SESSION['projectViewName'];
+    }
+    
 
     // // TRAIL PHP SEGMENT
 
@@ -166,28 +179,30 @@
                                             
                                             
                                             echo '
-                                            " style="width: 80%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT1">';
+                                            " style="width:100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT1">';
 
                                                 if($status1 == $row['project_status_Architect_1']){
-                                                    echo ' Pending ';
+                                                    echo ' Pending </label>';
                                                 }
                                                 elseif($status2 == $row['project_status_Architect_1']){
-                                                    echo ' Completed ';
+                                                    echo ' Completed </label>
+                                                    <div style="text-align: center; margin: 20px; width:100%;">
+                                                        <input type="file" name="FILE1" style="color: black; width:100%;">
+                                                    </div>
+                                                    <div style="margin-top: 10px;text-align: center;">
+                                                        <button name="UPLOAD1">Upload</button>
+                                                        <input hidden name="" value="">
+                                                         <button name="DOWNLOAD1">Download</button>
+                                                    </div>';
                                                 }
                                                 elseif($status3 == $row['project_status_Architect_1']){
-                                                    echo ' Delayed ';
+                                                    echo ' Delayed </label>';
                                                 }
                                             
                                                 
                                             echo'   
-                                            </label>
-                                            <div style="text-align: center; margin: 20px;">
-                                                <input type="file" name="myFile">
-                                            </div>
-                                            <div style="margin-top: 10px;text-align: center;">
-                                                <button name="UPLOAD1">Upload</button>
-                                                <button name="DOWNLOAD1">Download</button>
-                                            </div>
+                                            
+                                            
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm2">
@@ -207,24 +222,27 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT2">';
+                                        " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT2">';
                                             
                                             if($status1 == $row['project_status_Architect_2']){
-                                                echo ' Pending ';
+                                                echo ' Pending </label>';
                                             }
                                             elseif($status2 == $row['project_status_Architect_2']){
-                                                echo ' Completed ';
+                                                echo ' Completed </label>
+                                                <div style="text-align: center; margin: 20px; width:100%;">
+                                                    <input type="file" name="FILE2" style="color: black; width:100%;">
+                                                </div>
+                                                <div style="margin-top: 10px;text-align: center;">
+                                                    <button name="UPLOAD2">Upload</button>
+                                                    <button name="DOWNLOAD2">Download</button>
+                                                </div>';
                                             }
                                             elseif($status3 == $row['project_status_Architect_2']){
-                                                echo ' Delayed ';
+                                                echo ' Delayed </label>';
                                             }
                                             
                                             echo '
-                                            </label>
-                                            <div style="margin-top: 10px;text-align: center;">
-                                                <button name="UPLOAD2">Upload</button>
-                                                <button name="DOWNLOAD2">Download</button>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm3">
@@ -244,23 +262,28 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT3">';
+                                        " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT3">';
+                                            
                                             
                                             if($status1 == $row['project_status_Architect_3']){
-                                                echo ' Pending ';
+                                                echo ' Pending </label>';
                                             }
                                             elseif($status2 == $row['project_status_Architect_3']){
-                                                echo ' Completed ';
+                                                echo ' Completed </label>
+                                                <div style="text-align: center; margin: 20px; width:100%;">
+                                                    <input type="file" name="FILE3" style="color: black; width:100%;">
+                                                </div>
+                                                <div style="margin-top: 10px;text-align: center;">
+                                                    <button name="UPLOAD3">Upload</button>
+                                                    <button name="DOWNLOAD3">Download</button>
+                                                </div>';
                                             }
                                             elseif($status3 == $row['project_status_Architect_3']){
-                                                echo ' Delayed ';
+                                                echo ' Delayed </label>';
                                             }
 
                                             echo '
-                                            </label>
-                                            <div style="margin-top: 10px;text-align: center;">
-                                                <button name="UPLOAD3">Upload</button>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm4">
@@ -280,23 +303,27 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT4">';
+                                        " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT4">';
                                             
                                             if($status1 == $row['project_status_Architect_4']){
-                                                echo ' Pending ';
+                                                echo ' Pending </label>';
                                             }
                                             elseif($status2 == $row['project_status_Architect_4']){
-                                                echo ' Completed ';
+                                                echo ' Completed </label>
+                                                <div style="text-align: center; margin: 20px; width:100%;">
+                                                    <input type="file" name="FILE4" style="color: black; width:100%;">
+                                                </div>
+                                                <div style="margin-top: 10px;text-align: center;">
+                                                    <button name="UPLOAD4">Upload</button>
+                                                    <button name="DOWNLOAD4">Download</button>
+                                                </div>';
                                             }
                                             elseif($status3 == $row['project_status_Architect_4']){
-                                                echo ' Delayed ';
+                                                echo ' Delayed </label>';
                                             }
                                             
                                             echo '
-                                            </label>
-                                            <div style="margin-top: 10px;text-align: center;">
-                                                <button name="UPLOAD4">Upload</button>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm5">
@@ -316,23 +343,27 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT5">';
+                                        " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT5">';
                                             
                                             if($status1 == $row['project_status_Architect_5']){
-                                                echo ' Pending ';
+                                                echo ' Pending </label>';
                                             }
                                             elseif($status2 == $row['project_status_Architect_5']){
-                                                echo ' Completed ';
+                                                echo ' Completed </label>
+                                                <div style="text-align: center; margin: 20px; width:100%;">
+                                                    <input type="file" name="FILE5" style="color: black; width:100%;">
+                                                </div>
+                                                <div style="margin-top: 10px;text-align: center;">
+                                                    <button name="UPLOAD5">Upload</button>
+                                                    <button name="DOWNLOAD5">Download</button>
+                                                </div>';
                                             }
                                             elseif($status3 == $row['project_status_Architect_5']){
-                                                echo ' Delayed ';
+                                                echo ' Delayed </label>';
                                             }
                                             
                                             echo '
-                                            </label>
-                                            <div style="margin-top: 10px;text-align: center;">
-                                                <button name="UPLOAD5">Upload</button>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm6">
@@ -352,22 +383,26 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT6">';
+                                        " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT6">';
                                             
                                             if($status1 == $row['project_status_Architect_6']){
-                                                echo ' Pending ';
+                                                echo ' Pending </label>';
                                             }
                                             elseif($status2 == $row['project_status_Architect_6']){
-                                                echo ' Completed ';
+                                                echo ' Completed </label>
+                                                <div style="text-align: center; margin: 20px; width:100%;">
+                                                    <input type="file" name="FILE6" style="color: black; width:100%;">
+                                                </div>
+                                                <div style="margin-top: 10px;text-align: center;">
+                                                    <button name="UPLOAD6">Upload</button>
+                                                    <button name="DOWNLOAD6">Download</button>
+                                                </div>';
                                             }
                                             elseif($status3 == $row['project_status_Architect_6']){
-                                                echo ' Delayed ';
-                                            }   
+                                                echo ' Delayed </label>';
+                                            }
                                             echo '
-                                            </label>
-                                            <div style="margin-top: 10px;text-align: center;">
-                                                <button name="UPLOAD6">Upload</button>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm7">
@@ -387,23 +422,27 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT7">';
+                                        " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT7">';
                                             
-                                        if($status1 == $row['project_status_Architect_7']){
-                                            echo ' Pending ';
-                                        }
-                                        elseif($status2 == $row['project_status_Architect_7']){
-                                            echo ' Completed ';
-                                        }
-                                        elseif($status3 == $row['project_status_Architect_7']){
-                                            echo ' Delayed ';
-                                        }
+                                            if($status1 == $row['project_status_Architect_7']){
+                                                echo ' Pending </label>';
+                                            }
+                                            elseif($status2 == $row['project_status_Architect_7']){
+                                                echo ' Completed </label>
+                                                <div style="text-align: center; margin: 20px; width:100%;">
+                                                    <input type="file" name="FILE7" style="color: black; width:100%;">
+                                                </div>
+                                                <div style="margin-top: 10px;text-align: center;">
+                                                    <button name="UPLOAD7">Upload</button>
+                                                    <button name="DOWNLOAD7">Download</button>
+                                                </div>';
+                                            }
+                                            elseif($status3 == $row['project_status_Architect_7']){
+                                                echo ' Delayed </label>';
+                                            }
                                             
                                             echo '
-                                            </label>
-                                            <div style="margin-top: 10px;text-align: center;">
-                                                <button name="UPLOAD7">Upload</button>
-                                            </div>
+                                           
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm8">
@@ -423,23 +462,27 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT8">';
+                                        " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT8">';
                                             
                                             if($status1 == $row['project_status_Architect_8']){
-                                                echo ' Pending ';
+                                                echo ' Pending </label>';
                                             }
                                             elseif($status2 == $row['project_status_Architect_8']){
-                                                echo ' Completed ';
+                                                echo ' Completed </label>
+                                                <div style="text-align: center; margin: 20px; width:100%;">
+                                                    <input type="file" name="FILE8" style="color: black; width:100%;">
+                                                </div>
+                                                <div style="margin-top: 10px;text-align: center;">
+                                                    <button name="UPLOAD8">Upload</button>
+                                                    <button name="DOWNLOAD8">Download</button>
+                                                </div>';
                                             }
                                             elseif($status3 == $row['project_status_Architect_8']){
-                                                echo ' Delayed ';
+                                                echo ' Delayed </label>';
                                             }
                                             
                                             echo '
-                                            </label>
-                                            <div style="margin-top: 10px;text-align: center;">
-                                                <button name="UPLOAD8">Upload</button>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                     ';
@@ -473,23 +516,26 @@
                                                 
                                                 
                                                 echo '
-                                                " style="width: 80%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_1">';
+                                                " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_1">';
                                                     
                                                     if($status1 == $row['project_status_additional_Architect_1']){
-                                                        echo ' Pending ';
+                                                        echo ' Pending </label>';
                                                     }
                                                     elseif($status2 == $row['project_status_additional_Architect_1']){
-                                                        echo ' Completed ';
+                                                        echo ' Completed </label>
+                                                        <div style="text-align: center; margin: 20px; width:100%;">
+                                                            <input type="file" name="FILE9" style="color: black; width:100%;">
+                                                        </div>
+                                                        <div style="margin-top: 10px;text-align: center;">
+                                                            <button name="UPLOAD9">Upload</button>
+                                                            <button name="DOWNLOAD9">Download</button>
+                                                        </div>';
                                                     }
                                                     elseif($status3 == $row['project_status_additional_Architect_1']){
-                                                        echo ' Delayed ';
+                                                        echo ' Delayed </label>';
                                                     }
-                                                    
                                                     echo '
-                                                    </label>
-                                                    <div style="margin-top: 10px;text-align: center;">
-                                                        <button name="UPLOAD9">Upload</button>
-                                                    </div>
+                                                    
                                                 </div>
                                             </div>';
                                         }
@@ -522,23 +568,27 @@
                                                     
                                                     
                                                     echo '
-                                                    " style="width: 80%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_2">';
+                                                    " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_2">';
                                                         
-                                                        if($status1 == $row['project_status_additional_Architect_2']){
-                                                            echo ' Pending ';
-                                                        }
-                                                        elseif($status2 == $row['project_status_additional_Architect_2']){
-                                                            echo ' Completed ';
-                                                        }
-                                                        elseif($status3 == $row['project_status_additional_Architect_2']){
-                                                            echo ' Delayed ';
-                                                        }
-                                                        
-                                                        echo '
-                                                        </label>
+                                                    if($status1 == $row['project_status_additional_Architect_2']){
+                                                        echo ' Pending </label>';
+                                                    }
+                                                    elseif($status2 == $row['project_status_additional_Architect_2']){
+                                                        echo ' Completed </label>
+                                                        <div style="text-align: center; margin: 20px; width:100%;">
+                                                            <input type="file" name="FILE10" style="color: black; width:100%;">
+                                                        </div>
                                                         <div style="margin-top: 10px;text-align: center;">
                                                             <button name="UPLOAD10">Upload</button>
-                                                        </div>
+                                                            <button name="DOWNLOAD10">Download</button>
+                                                        </div>';
+                                                    }
+                                                    elseif($status3 == $row['project_status_additional_Architect_2']){
+                                                        echo ' Delayed </label>';
+                                                    }
+                                                        
+                                                        echo '
+                                                        
                                                     </div>
                                                 </div>';
                                             }
@@ -571,24 +621,27 @@
                                                     
                                                     
                                                     echo '
-                                                    " style="width: 80%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_3">';
+                                                    " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_3">';
                                                         
                                                         if($status1 == $row['project_status_additional_Architect_3']){
-                                                            echo ' Pending ';
+                                                            echo ' Pending </label>';
                                                         }
                                                         elseif($status2 == $row['project_status_additional_Architect_3']){
-                                                            echo ' Completed ';
+                                                            echo ' Completed </label>
+                                                            <div style="text-align: center; margin: 20px; width:100%;">
+                                                                <input type="file" name="FILE11" style="color: black; width:100%;">
+                                                            </div>
+                                                            <div style="margin-top: 10px;text-align: center;">
+                                                                <button name="UPLOAD11">Upload</button>
+                                                                <button name="DOWNLOAD11">Download</button>
+                                                            </div>';
                                                         }
                                                         elseif($status3 == $row['project_status_additional_Architect_3']){
-                                                            echo ' Delayed ';
+                                                            echo ' Delayed </label>';
                                                         }
                                                         
                                                         echo '
-                                                        </label>
-
-                                                        <div style="margin-top: 10px;text-align: center;">
-                                                            <button name="UPLOAD11">Upload</button>
-                                                        </div>
+                                                        
                                                     </div>
                                                 </div>';
                                             }
@@ -621,23 +674,26 @@
                                                         
                                                         
                                                     echo '
-                                                    " style="width: 80%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_4">';
+                                                    " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_4">';
                                                         
-                                                            if($status1 == $row['project_status_additional_Architect_4']){
-                                                                echo ' Pending ';
-                                                            }
-                                                            elseif($status2 == $row['project_status_additional_Architect_4']){
-                                                                echo ' Completed ';
-                                                            }
-                                                            elseif($status3 == $row['project_status_additional_Architect_4']){
-                                                                echo ' Delayed ';
-                                                            }
-                                                            
-                                                            echo '
-                                                            </label>
+                                                        if($status1 == $row['project_status_additional_Architect_4']){
+                                                            echo ' Pending </label>';
+                                                        }
+                                                        elseif($status2 == $row['project_status_additional_Architect_4']){
+                                                            echo ' Completed </label>
+                                                            <div style="text-align: center; margin: 20px; width:100%;">
+                                                                <input type="file" name="FILE12" style="color: black; width:100%;">
+                                                            </div>
                                                             <div style="margin-top: 10px;text-align: center;">
                                                                 <button name="UPLOAD12">Upload</button>
-                                                            </div>
+                                                                <button name="DOWNLOAD12">Download</button>
+                                                            </div>';
+                                                        }
+                                                        elseif($status3 == $row['project_status_additional_Architect_4']){
+                                                            echo ' Delayed </label>';
+                                                        }
+                                                            echo '
+                                                            
                                                         </div>
                                                     </div>';
                                                 }
@@ -668,23 +724,27 @@
                                                                     echo ' delayed-class ';
                                                                 }
                                                     echo '
-                                                    " style="width: 80%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_5">';
+                                                    " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_5">';
                                                         
-                                                                if($status1 == $row['project_status_additional_Architect_5']){
-                                                                    echo ' Pending ';
-                                                                }
-                                                                elseif($status2 == $row['project_status_additional_Architect_5']){
-                                                                    echo ' Completed ';
-                                                                }
-                                                                elseif($status3 == $row['project_status_additional_Architect_5']){
-                                                                    echo ' Delayed ';
-                                                                }
+                                                            if($status1 == $row['project_status_additional_Architect_5']){
+                                                                echo ' Pending </label>';
+                                                            }
+                                                            elseif($status2 == $row['project_status_additional_Architect_5']){
+                                                                echo ' Completed </label>
+                                                                <div style="text-align: center; margin: 20px; width:100%;">
+                                                                    <input type="file" name="FILE13" style="color: black; width:100%;">
+                                                                </div>
+                                                                <div style="margin-top: 10px;text-align: center;">
+                                                                    <button name="UPLOAD13">Upload</button>
+                                                                    <button name="DOWNLOAD13">Download</button>
+                                                                </div>';
+                                                            }
+                                                            elseif($status3 == $row['project_status_additional_Architect_5']){
+                                                                echo ' Delayed </label>';
+                                                            }
                                                                 
                                                         echo '
-                                                        </label>
-                                                        <div style="margin-top: 10px;text-align: center;">
-                                                            <button name="UPLOAD13">Upload</button>
-                                                        </div>
+                                                        
                                                     </div>
                                                 </div>';
                                             }
@@ -704,7 +764,7 @@
                                     <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$row['project_progress_architect'].'%;">'.$row['project_progress_architect'] .'</div>
                         </div>
                         <section class="text-center" id="footer-section">
-                            <button class="btn btn-primary" style="background: rgb(229,234,239);color: rgb(0,0,0);margin: 10px;border-color: rgb(229,234,239);" type="button" onclick="history.go(-2)">
+                            <button class="btn btn-primary" style="background: rgb(229,234,239);color: rgb(0,0,0);margin: 10px;border-color: rgb(229,234,239);" type="button" onclick="location.replace(document.referrer)">
                                 <i class="fa fa-arrow-circle-left"></i>&nbsp; Back</button>
                             <button class="btn btn-primary" type="submit" style="margin: 10px;" name="saveButton">
                                 <i class="fa fa-save"></i>&nbsp; Save</button>
