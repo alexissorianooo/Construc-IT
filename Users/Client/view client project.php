@@ -64,6 +64,10 @@
                                 
 
                 echo '
+
+                <div style="margin-top:3%; margin-bottom:50px;">
+                    <h4 class="text-center" style="height: 35px;font-size: 34px;">Architect Activities</h4> 
+                </div>
                 <div >
                 <form method="post" action="../../includes/uploadArchiProject_admin.php" enctype="multipart/form-data">
                 <section class="headerbox container" id="header-section" style="padding-top: 20px;">
@@ -94,6 +98,10 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="progress mx-auto" style="width: 80%;height: 30px; margin-top:3%;">
+                        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$row["project_progress_architect"].'%;">'.$row["project_progress_architect"].'</div>
                     </div>
                 </div>
             </section>
