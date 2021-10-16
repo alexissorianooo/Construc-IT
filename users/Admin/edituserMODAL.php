@@ -12,6 +12,13 @@
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css"> -->
+
+    <!-- FOR TABLE -->
+    <link rel="stylesheet" href="../../users/Projects/assetsFORPM_viewproject/css/styles.css">
+    <link rel="stylesheet" href="../../users/Projects/assetsFORPM_viewproject/css/Table-With-Search-1.css">
+    <link rel="stylesheet" href="../../users/Projects/assetsFORPM_viewproject/css/Table-With-Search.css"> 
+
+
 </head>
 
 <body id="page-top">
@@ -70,6 +77,74 @@
                                 </div>
                             </div>
                         </form>
+
+
+                        <br><br>
+                        <div style="">
+                            <h1 class="text-lg" style="text-align: center;"><strong>PROJECTS</strong></h1>
+                        </div>
+                        <br>
+                        <table class="table table-bordered table-hover">
+                        <thead class="bill-header cs">
+                            <tr>
+                                <th style="max-width: 12.5%;">Project ID</th>
+                                <th id="trs-hd" class="col-lg-1" style="max-width: 12.5%;">Project Name</th>
+                                <th style="max-width: 12.5%;">Status</th>
+                                <th id="trs-hd" class="col-lg-2" style="max-width: 12.5%;">Architect</th>
+                                <th id="trs-hd" class="col-lg-3" style="max-width: 12.5%;">Foreman</th>
+                                <th id="trs-hd" class="col-lg-2" style="max-width: 12.5%;">Startdate</th>
+                                <th id="trs-hd" class="col-lg-2" style="max-width: 12.5%;">Deadline</th>
+                                
+                                <th id="trs-hd" class="col-lg-2" style="max-width: 12.5%;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        ';
+                        
+                        require_once '../../includes/db.php';
+                        require_once '../../includes/functions.php';
+                        
+    
+                        $sql2 = "SELECT * FROM project_db";
+                        $result2 = mysqli_query($conn, $sql2);
+                        
+                        if(mysqli_num_rows($result2)>0){
+                            while($row2=mysqli_fetch_assoc($result2)){
+                                // if($row2["project_architect"]== $row["user_fullname"] || $row2["project_pm"] == $row["user_fullname"] || $row2["project_client"] == $row["user_fullname"])
+                                if($row2["project_architect"]== $row["user_fullname"]){
+                                echo'
+                                    <tr>
+                                        <td>'.$row2['project_id'].'</td>
+                                        <td>'.$row2['project_name'].'</td>
+                                        <td>'.$row2['project_status_fk'].'</td>
+                                        <td>'.$row2['project_architect'].'</td>
+                                        <td>'.$row2['project_pm'].'</td>
+                                        <td>'.$row2['project_startdate'].'</td>
+                                        <td>'.$row2['project_deadline'].'</td>
+                                        
+                                        <form method="post" action="../../users/Projects/viewArchiProject_admin.php">
+                                        <td>
+                                            <button class="btn btn-success" style="margin-left: 5px;background: var(--warning);" type="submit">
+                                            <input name="projectView" value="'.$row2["project_id"].'" hidden>
+                                            <input name="projectViewName" value="'.$row2["project_name"].'" hidden>
+                                                <i class="fa fa-folder-open-o" style="font-size: 15px;"> Open Project
+                                                </i>
+                                            </button>
+                                        </td>
+                                        </form>
+                                    </tr>
+                                ';
+                                }
+                            }
+                        }
+    
+                        echo'</table>          
+                        
+
+
+
+
+                        
                     </div>
 
 
@@ -139,8 +214,62 @@
                             </div>
                         </div>
                     </div>
-                    
                     ';
+
+                    // echo '
+                    // <table class="table table-bordered table-hover">
+                    // <thead class="bill-header cs">
+                    //     <tr>
+                    //         <th style="max-width: 12.5%;">Project ID</th>
+                    //         <th id="trs-hd" class="col-lg-1" style="max-width: 12.5%;">Project Name</th>
+                    //         <th id="trs-hd" class="col-lg-2" style="max-width: 12.5%;">Architect</th>
+                    //         <th id="trs-hd" class="col-lg-3" style="max-width: 12.5%;">Foreman</th>
+                    //         <th id="trs-hd" class="col-lg-2" style="max-width: 12.5%;">Startdate</th>
+                    //         <th id="trs-hd" class="col-lg-2" style="max-width: 12.5%;">Deadline</th>
+                    //         <th style="max-width: 12.5%;">Date Completed</th>
+                    //         <th id="trs-hd" class="col-lg-2" style="max-width: 12.5%;">Action</th>
+                    //     </tr>
+                    // </thead>
+                    // <tbody>
+                    // ';
+                    
+                    // require_once '../../includes/db.php';
+                    // require_once '../../includes/functions.php';
+                    
+
+                    // $sql = "SELECT * FROM project_db";
+                    // $result = mysqli_query($conn, $sql);
+                    
+                    // if(mysqli_num_rows($result)>0){
+                    //     while($row=mysqli_fetch_assoc($result)){
+                            
+                    //         echo'
+                    //             <tr>
+                    //                 <td>'.$row['project_id'].'</td>
+                    //                 <td>'.$row['project_name'].'</td>
+                    //                 <td>'.$row['project_architect'].'</td>
+                    //                 <td>'.$row['project_pm'].'</td>
+                    //                 <td>'.$row['project_startdate'].'</td>
+                    //                 <td>'.$row['project_deadline'].'</td>
+                    //                 <td>'.$row['project_completed_PM'].'</td>
+                    //                 <form method="post" action="PM_viewproject_completed.php">
+                    //                 <td>
+                    //                     <button class="btn btn-success" style="margin-left: 5px;background: var(--warning);" type="submit">
+                    //                     <input name="projectView" value="'.$row["project_id"].'" hidden>
+                    //                     <input name="projectViewName" value="'.$row["project_name"].'" hidden>
+                    //                         <i class="fa fa-folder-open-o" style="font-size: 15px;"> Open Project
+                    //                         </i>
+                    //                     </button>
+                    //                 </td>
+                    //                 </form>
+                    //             </tr>
+                    //         ';
+                            
+                    //     }
+                    // }
+
+                    // echo'</table>';            
+                    
 
                 }
             }
@@ -193,6 +322,8 @@
     <script src="assets/js/theme.js"></script> -->
 
     <!-- <script src="assets/js/edituserMODAL.js"></script> -->
+
+    
 </body>
 
 </html>
