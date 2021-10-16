@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="../Projects/assetsForViewProject/css/view.css">
 </head>
 
-<body style="width: 1000px;margin: auto;">
+<body style="width: 100%; margin: auto;">
     <br>
     <br>
     <br>
