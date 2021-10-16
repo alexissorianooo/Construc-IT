@@ -167,7 +167,7 @@ session_start();
                             '
                             
                             
-                            <div class="progress" style="width: 50%;height: 30px;margin: auto;">
+                            <div class="progress container progressdesign">
                                 <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$row["project_progress_PM"].'%;">'.$row["project_progress_PM"].'</div>
                             </div>
     
