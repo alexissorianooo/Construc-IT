@@ -5,6 +5,7 @@ if(isset($_POST['saveButton_admin'])){
     echo "<br>".$user_email = $_POST['user_email'];
     echo "<br>".$userid = $_POST['userid'];
     echo "<br>".$user_fullname_old = $_POST['user_fullname_old'];
+    $userTYPE = $_POST['userTYPE'];
 
 
     require_once 'db.php';
@@ -12,7 +13,7 @@ if(isset($_POST['saveButton_admin'])){
 
     edituser_admin($conn,  $user_fullname, $user_email, $userid);
     edituser_admin_userdb($conn, $user_fullname_old, $user_fullname);
-    edituser_admin_projectdb($conn, $user_fullname_old, $user_fullname);
+    edituser_admin_projectdb($conn, $user_fullname_old, $user_fullname, $userTYPE);
 
 
     // TRAIL PHP SEGMENT
