@@ -8,15 +8,15 @@
     padding-bottom: 5px;
 }
 
-/* .progressdesign {
+.progressdesign {
     width: 80%;
     height: 30px;
     margin: auto;
     margin-top: 2rem;
     margin-bottom: -1rem;
-} */
+}
 
-body {
+.body-image {
     min-width: 100%;
     margin: auto;
     align-content: center;
