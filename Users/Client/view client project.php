@@ -64,618 +64,499 @@
 
                 echo '
                 <div >
-                <form method="post" action="../../includes/viewprojectdb.php">
-
-                    <section id="header-section">
-                        <div style="width: 100%;">
-                            <div class="text-center" style="width: 100%;">
-                                <h2 style:"height: 50px; font-size: 50px;><b>'.$row["project_name"].'</b></h2>
-                            </div>                            
-                            <input hidden name="project_id" value="'.$row["project_id"] .'">
-                            <input hidden name="counter" value="0">
-                            <div style="margin-top: 20px;">
-                                <div class="container" style="margin-bottom: 20px;">
-                                    <div class="row">
-                                        <div class="col-md-6 text-center">
-                                            <p><b>Start Date:</b>    '.$row["project_startdate"] .'</p>
-                                        </div>
-                                        <div class="col-md-6 text-center"">
-                                            <p><b>Deadline:</b>    '.$row["project_deadline"] .'</p>
-                                        </div>
-                                        <div class="col-md-6 text-center"">
-                                            <p><b>Architect:</b>    '.$row["project_architect"] .'</p>
-                                        </div>
-                                        <div class="col-md-6 text-center"">
-                                            <p><b>Project Manager:</b>    '.$row["project_pm"] .'</p>
-                                        </div>                                    
-                                    </div>
-
-                                    
-
+                <form method="post" action="../../includes/uploadArchiProject_admin.php" enctype="multipart/form-data">
+                <section class="headerbox container" id="header-section" style="padding-top: 20px;">
+                <div style="width: 100%;">
+                    <div class="text-center" style="width: 100%;">
+                        <h2><b>'.$row["project_name"].'</b></h2>
+                    </div>
+                    <input hidden name="project_id" value="'.$row["project_id"] .'">
+                    <input hidden name="project_name" value="'.$row["project_name"] .'">
+                    <input hidden name="counter" value="0">
+                    <div style="margin-top: 20px; margin-bottom: -10px">
+                        <div class="container" style="margin-bottom: 20px;">
+                            <div class="row">
+                                <div class="col-md-6 info-h">
+                                    <p class="infotext">Start Date:</p><p class="info-text">    '.$row["project_startdate"] .'</p>
                                 </div>
-                                
+                                <div class="col-md-6 info-h">
+                                    <p class="infotext">Deadline:</p><p class="info-text">    '.$row["project_deadline"] .'</p>
+                                </div>
+                                <div class="col-md-6 info-h">
+                                    <p class="infotext">Architect:</p><p class="info-text">   '.$row["project_architect"] .'</p>
+                                </div>
+                                <div class="col-md-6 info-h">
+                                    <p class="infotext">Project Manager:</p><p class="info-text">    '.$row["project_pm"] .'</p>
+                                </div>
+                                <div class="col-md-6 info-h">
+                                    <p class="infotext">Client:</p><p class="info-text">    '.$row["project_client"] .'</p>
+                                </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
+                </div>
+            </section>
 
 
-                    <section id="body-section">
-                    <h4 class="text-center" style="height: 35px;font-size: 34px;">Architect Activities</h4>
 
-                        <div class="progress mx-auto" style="width: 80%;height: 30px; margin-top:3%;">
-                            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$row['project_progress_architect'].'%;">'.$row['project_progress_architect'].'</div>                                                     
-                        </div>
+            <section id="body-section" style="padding-bottom: 30px">
+                <h4 class="text-center">Activities</h4>
+                <div class="d-inline-flex" style="width: 100%;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 borderbox psm1">
+                                <div class="text-center" style="width: 100%;">
+                                    <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_1"] .'</p>
+                                    <label class="selectColor  ';
 
-                        <div class="d-inline-flex" style="width: 100%;">
-                            <div class="container">
-                                <div class="row">
-                                     <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                        <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
+                                        if($status1 == $row['project_status_Architect_1']){
+                                            echo ' pending-class ';
+                                        }
+                                        elseif($status2 == $row['project_status_Architect_1']){
+                                            echo ' completed-class ';
+                                        }
+                                        elseif($status3 == $row['project_status_Architect_1']){
+                                            echo ' delayed-class ';
+                                        }
+                                    
+                                    
+                                    echo '
+                                    " style="width:100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT1">';
+
+                                        if($status1 == $row['project_status_Architect_1']){
+                                            echo ' Pending </label>';
+                                        }
+                                        elseif($status2 == $row['project_status_Architect_1']){
+                                            echo ' Completed </label>
+                                            <div style="margin-top: 10px;text-align: center;">                                                                                           
+                                                <button name="DOWNLOAD1">Download</button>
+                                            </div>';
+                                        }
+                                        elseif($status3 == $row['project_status_Architect_1']){
+                                            echo ' Delayed </label>';
+                                        }
+                                    
+                                        
+                                    echo'   
+                                    
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-3 borderbox psm2">
+                                <div style="width: 100%;">
+                                    <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_2"] .'</p>
+                                    <label class="selectColor';
+
+                                    if($status1 == $row['project_status_Architect_2']){
+                                        echo ' pending-class ';
+                                    }
+                                    elseif($status2 == $row['project_status_Architect_2']){
+                                        echo ' completed-class ';
+                                    }
+                                    elseif($status3 == $row['project_status_Architect_2']){
+                                        echo ' delayed-class ';
+                                    }
+                                
+                                
+                                echo '
+                                " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT2">';
+                                    
+                                    if($status1 == $row['project_status_Architect_2']){
+                                        echo ' Pending </label>';
+                                    }
+                                    elseif($status2 == $row['project_status_Architect_2']){
+                                        echo ' Completed </label>
+                                        <div style="margin-top: 10px;text-align: center;">                                                                                                            
+                                            <button name="DOWNLOAD2">Download</button>
+                                        </div>';
+                                    }
+                                    elseif($status3 == $row['project_status_Architect_2']){
+                                        echo ' Delayed </label>';
+                                    }
+                                    
+                                    echo '
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-3 borderbox psm3">
+                                <div style="width: 100%;">
+                                    <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_3"] .'</p>
+                                    <label class="selectColor';
+
+                                    if($status1 == $row['project_status_Architect_3']){
+                                        echo ' pending-class ';
+                                    }
+                                    elseif($status2 == $row['project_status_Architect_3']){
+                                        echo ' completed-class ';
+                                    }
+                                    elseif($status3 == $row['project_status_Architect_3']){
+                                        echo ' delayed-class ';
+                                    }
+                                
+                                
+                                echo '
+                                " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT3">';
+                                    
+                                    
+                                    if($status1 == $row['project_status_Architect_3']){
+                                        echo ' Pending </label>';
+                                    }
+                                    elseif($status2 == $row['project_status_Architect_3']){
+                                        echo ' Completed </label>
+                                        <div style="margin-top: 10px;text-align: center;">                                         
+                                            <button name="DOWNLOAD3">Download</button>
+                                        </div>';
+                                    }
+                                    elseif($status3 == $row['project_status_Architect_3']){
+                                        echo ' Delayed </label>';
+                                    }
+
+                                    echo '
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-3 borderbox psm4">
+                                <div class="text-center" style="width: 100%;">
+                                    <p class="text-center text-muted viewfixds">'.$row["project_activity_Architect_4"] .'</p>
+                                    <label class="selectColor';
+
+                                    if($status1 == $row['project_status_Architect_4']){
+                                        echo ' pending-class ';
+                                    }
+                                    elseif($status2 == $row['project_status_Architect_4']){
+                                        echo ' completed-class ';
+                                    }
+                                    elseif($status3 == $row['project_status_Architect_4']){
+                                        echo ' delayed-class ';
+                                    }
+                                
+                                
+                                echo '
+                                " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT4">';
+                                    
+                                    if($status1 == $row['project_status_Architect_4']){
+                                        echo ' Pending </label>';
+                                    }
+                                    elseif($status2 == $row['project_status_Architect_4']){
+                                        echo ' Completed </label>
+                                        <div style="margin-top: 10px;text-align: center;">                                         
+                                            <button name="DOWNLOAD4">Download</button>
+                                        </div>';
+                                    }
+                                    elseif($status3 == $row['project_status_Architect_4']){
+                                        echo ' Delayed </label>';
+                                    }
+                                    
+                                    echo '
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-3 borderbox psm5">
+                                <div class="text-center" style="width: 100%;">
+                                    <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_5"] .'</p>
+                                    <label class="selectColor';
+
+                                    if($status1 == $row['project_status_Architect_5']){
+                                        echo ' pending-class ';
+                                    }
+                                    elseif($status2 == $row['project_status_Architect_5']){
+                                        echo ' completed-class ';
+                                    }
+                                    elseif($status3 == $row['project_status_Architect_5']){
+                                        echo ' delayed-class ';
+                                    }
+                                
+                                
+                                echo '
+                                " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT5">';
+                                    
+                                    if($status1 == $row['project_status_Architect_5']){
+                                        echo ' Pending </label>';
+                                    }
+                                    elseif($status2 == $row['project_status_Architect_5']){
+                                        echo ' Completed </label>
+                                        <div style="margin-top: 10px;text-align: center;">                               
+                                            <button name="DOWNLOAD5">Download</button>
+                                        </div>';
+                                    }
+                                    elseif($status3 == $row['project_status_Architect_5']){
+                                        echo ' Delayed </label>';
+                                    }
+                                    
+                                    echo '
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-3 borderbox psm6">
+                                <div class="text-center" style="width: 100%;">
+                                    <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_6"] .'</p>
+                                    <label class="selectColor';
+
+                                    if($status1 == $row['project_status_Architect_6']){
+                                        echo ' pending-class ';
+                                    }
+                                    elseif($status2 == $row['project_status_Architect_6']){
+                                        echo ' completed-class ';
+                                    }
+                                    elseif($status3 == $row['project_status_Architect_6']){
+                                        echo ' delayed-class ';
+                                    }
+                                
+                                
+                                echo '
+                                " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT6">';
+                                    
+                                    if($status1 == $row['project_status_Architect_6']){
+                                        echo ' Pending </label>';
+                                    }
+                                    elseif($status2 == $row['project_status_Architect_6']){
+                                        echo ' Completed </label>
+                                        <div style="margin-top: 10px;text-align: center;">                                       
+                                            <button name="DOWNLOAD6">Download</button>
+                                        </div>';
+                                    }
+                                    elseif($status3 == $row['project_status_Architect_6']){
+                                        echo ' Delayed </label>';
+                                    }
+                                    echo '
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-3 borderbox psm7">
+                                <div class="text-center" style="width: 100%;">
+                                    <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_7"] .'</p>
+                                    <label class="selectColor';
+
+                                    if($status1 == $row['project_status_Architect_7']){
+                                        echo ' pending-class ';
+                                    }
+                                    elseif($status2 == $row['project_status_Architect_7']){
+                                        echo ' completed-class ';
+                                    }
+                                    elseif($status3 == $row['project_status_Architect_7']){
+                                        echo ' delayed-class ';
+                                    }
+                                
+                                
+                                echo '
+                                " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT7">';
+                                    
+                                    if($status1 == $row['project_status_Architect_7']){
+                                        echo ' Pending </label>';
+                                    }
+                                    elseif($status2 == $row['project_status_Architect_7']){
+                                        echo ' Completed </label>
+                                        <div style="margin-top: 10px;text-align: center;">                
+                                            <button name="DOWNLOAD7">Download</button>
+                                        </div>';
+                                    }
+                                    elseif($status3 == $row['project_status_Architect_7']){
+                                        echo ' Delayed </label>';
+                                    }
+                                    
+                                    echo '
+                                   
+                                </div>
+                            </div>
+                            <div class="col-md-3 borderbox psm8">
+                                <div style="width: 100%;">
+                                    <p class="text-center text-muted viewfix">'.$row["project_activity_Architect_8"] .'</p>
+                                    <label class="selectColor';
+
+                                    if($status1 == $row['project_status_Architect_8']){
+                                        echo ' pending-class ';
+                                    }
+                                    elseif($status2 == $row['project_status_Architect_8']){
+                                        echo ' completed-class ';
+                                    }
+                                    elseif($status3 == $row['project_status_Architect_8']){
+                                        echo ' delayed-class ';
+                                    }
+                                
+                                
+                                echo '
+                                " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT8">';
+                                    
+                                    if($status1 == $row['project_status_Architect_8']){
+                                        echo ' Pending </label>';
+                                    }
+                                    elseif($status2 == $row['project_status_Architect_8']){
+                                        echo ' Completed </label>
+                                        <div style="margin-top: 10px;text-align: center;">                               
+                                            <button name="DOWNLOAD8">Download</button>
+                                        </div>';
+                                    }
+                                    elseif($status3 == $row['project_status_Architect_8']){
+                                        echo ' Delayed </label>';
+                                    }
+                                    
+                                    echo '
+                                    
+                                </div>
+                            </div>
+                            ';
+
+                            if($row["project_activity_additional_Architect_1"] == "empty"){
+                                echo '
+                                <input hidden name="additional_name_1" value="'.$row["project_activity_additional_Architect_1"].'">
+                                <select hidden name="SELECT_additional_1"></select>
+                                ';
+                            }
+                            elseif($row["project_activity_additional_Architect_1"] != "empty"){
+                                $denominator++;
+                                echo'
+                                    <div class="col-md-3 borderbox psm9">
+                                        <div style="width: 100%;">
+                                            <input hidden name="additional_name_1" value="'.$row["project_activity_additional_Architect_1"].'">
+                                            <input hidden name="counter" value="1">
+                                            <p class="text-center text-muted viewfix">'.$row["project_activity_additional_Architect_1"] .'</p>
+                                            <label class="selectColor';
+
+                                            if($status1 == $row['project_status_additional_Architect_1']){
+                                                echo ' pending-class ';
+                                            }
+                                            elseif($status2 == $row['project_status_additional_Architect_1']){
+                                                echo ' completed-class ';
+                                                
+                                            }
+                                            elseif($status3 == $row['project_status_additional_Architect_1']){
+                                                echo ' delayed-class ';
+                                            }
+                                        
+                                        
+                                        echo '
+                                        " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_1">';
                                             
-                                            <p class="text-center text-muted" style="height:38%;">'.$row["project_activity_Architect_1"] .'</p>
+                                            if($status1 == $row['project_status_additional_Architect_1']){
+                                                echo ' Pending </label>';
+                                            }
+                                            elseif($status2 == $row['project_status_additional_Architect_1']){
+                                                echo ' Completed </label>
+                                                <div style="margin-top: 10px;text-align: center;">      
+                                                    <button name="DOWNLOAD9">Download</button>
+                                                </div>';
+                                            }
+                                            elseif($status3 == $row['project_status_additional_Architect_1']){
+                                                echo ' Delayed </label>';
+                                            }
+                                            echo '
                                             
-                                            <select disabled class="selectColor';
+                                        </div>
+                                    </div>';
+                                }
+                                if($row["project_activity_additional_Architect_2"] == "empty"){
+                                    echo '
+                                    <input hidden name="additional_name_2" value="'.$row["project_activity_additional_Architect_2"].'">
+                                    <select hidden name="SELECT_additional_2"></select>
+                                    ';
+                                }
+                                elseif($row["project_activity_additional_Architect_2"] != "empty"){
+                                    $denominator++;
+                                    echo'
+                                        <div class="col-md-3 borderbox psm10">
+                                            <div style="width: 100%;">
+                                                <input hidden name="additional_name_2" value="'.$row["project_activity_additional_Architect_2"].'">
+                                                <input hidden name="counter" value="2">
+                                                <p class="text-center text-muted viewfix">'.$row["project_activity_additional_Architect_2"] .'</p>
+                                                <label class="selectColor';
 
-                                                if($status1 == $row['project_status_Architect_1']){
+                                                if($status1 == $row['project_status_additional_Architect_2']){
                                                     echo ' pending-class ';
                                                 }
-                                                elseif($status2 == $row['project_status_Architect_1']){
+                                                elseif($status2 == $row['project_status_additional_Architect_2']){
                                                     echo ' completed-class ';
+                                                    
                                                 }
-                                                elseif($status3 == $row['project_status_Architect_1']){
+                                                elseif($status3 == $row['project_status_additional_Architect_2']){
                                                     echo ' delayed-class ';
                                                 }
                                             
                                             
                                             echo '
-                                            " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT1">
+                                            " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_2">';
                                                 
-                                                <option value="Pending" class="pending-class" ';
-
-                                                    if($status1 == $row['project_status_Architect_1']){
-                                                        echo ' selected="" ';
-                                                         
-                                                    }
-                                                    
-                                                echo '>Pending</option>
-                                                <option value="Completed" class="completed-class" ';
+                                            if($status1 == $row['project_status_additional_Architect_2']){
+                                                echo ' Pending </label>';
+                                            }
+                                            elseif($status2 == $row['project_status_additional_Architect_2']){
+                                                echo ' Completed </label>
+                                                <div style="margin-top: 10px;text-align: center;">                          
+                                                    <button name="DOWNLOAD10">Download</button>
+                                                </div>';
+                                            }
+                                            elseif($status3 == $row['project_status_additional_Architect_2']){
+                                                echo ' Delayed </label>';
+                                            }
                                                 
-                                                    if($status2 == $row['project_status_Architect_1']){
-                                                        echo ' selected="" ';
-                                                        $numerator++;
-                                                        
-                                                    }
-
-                                                echo '>Completed</option>
-                                                <option value="Delayed" class="delayed-class" ';
-
-                                                    if($status3 == $row['project_status_Architect_1']){
-                                                        echo ' selected="" ';
-                                                         
-                                                    }
+                                                echo '
                                                 
-                                                echo '>Delayed</option>
-                                                
-
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                        <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
-                                            <p class="text-center text-muted" style="height:38%;">'.$row["project_activity_Architect_2"] .'</p>
-                                            <select disabled class="selectColor';
-
-                                            if($status1 == $row['project_status_Architect_2']){
-                                                echo ' pending-class ';
-                                            }
-                                            elseif($status2 == $row['project_status_Architect_2']){
-                                                echo ' completed-class ';
-                                            }
-                                            elseif($status3 == $row['project_status_Architect_2']){
-                                                echo ' delayed-class ';
-                                            }
-                                        
-                                        
-                                        echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT2">
-                                            
-                                            <option value="Pending" class="pending-class" ';
-
-                                                if($status1 == $row['project_status_Architect_2']){
-                                                    echo ' selected="" ';
-                                                     
-                                                }
-                                                
-                                            echo '>Pending</option>
-                                            <option value="Completed" class="completed-class" ';
-                                            
-                                                if($status2 == $row['project_status_Architect_2']){
-                                                    echo ' selected="" ';
-                                                    $numerator++;
-                                                }
-
-                                            echo '>Completed</option>
-                                            <option value="Delayed" class="delayed-class" ';
-
-                                                if($status3 == $row['project_status_Architect_2']){
-                                                    echo ' selected="" ';
-                                                     
-                                                }
-                                            
-                                            echo '>Delayed</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                        <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
-                                            <p class="text-center text-muted" style="height:38%;">'.$row["project_activity_Architect_3"] .'</p>
-                                            <select disabled class="selectColor';
-
-                                            if($status1 == $row['project_status_Architect_3']){
-                                                echo ' pending-class ';
-                                            }
-                                            elseif($status2 == $row['project_status_Architect_3']){
-                                                echo ' completed-class ';
-                                            }
-                                            elseif($status3 == $row['project_status_Architect_3']){
-                                                echo ' delayed-class ';
-                                            }
-                                        
-                                        
-                                        echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT3">
-                                            
-                                            <option value="Pending" class="pending-class" ';
-
-                                                if($status1 == $row['project_status_Architect_3']){
-                                                    echo ' selected="" ';
-                                                     
-                                                }
-                                                
-                                            echo '>Pending</option>
-                                            <option value="Completed" class="completed-class" ';
-                                            
-                                                if($status2 == $row['project_status_Architect_3']){
-                                                    echo ' selected="" ';
-                                                    $numerator++;
-                                                }
-
-                                            echo '>Completed</option>
-                                            <option value="Delayed" class="delayed-class" ';
-
-                                                if($status3 == $row['project_status_Architect_3']){
-                                                    echo ' selected="" ';
-                                                     
-                                                }
-                                            
-                                            echo '>Delayed</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                        <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
-                                            <p class="text-center text-muted" style="height:38%;">'.$row["project_activity_Architect_4"] .'</p>
-                                            <select disabled class="selectColor';
-
-                                            if($status1 == $row['project_status_Architect_4']){
-                                                echo ' pending-class ';
-                                            }
-                                            elseif($status2 == $row['project_status_Architect_4']){
-                                                echo ' completed-class ';
-                                            }
-                                            elseif($status3 == $row['project_status_Architect_4']){
-                                                echo ' delayed-class ';
-                                            }
-                                        
-                                        
-                                        echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT4">
-                                            
-                                            <option value="Pending" class="pending-class" ';
-
-                                                if($status1 == $row['project_status_Architect_4']){
-                                                    echo ' selected="" ';
-                                                     
-                                                }
-                                                
-                                            echo '>Pending</option>
-                                            <option value="Completed" class="completed-class" ';
-                                            
-                                                if($status2 == $row['project_status_Architect_4']){
-                                                    echo ' selected="" ';
-                                                    $numerator++;
-                                                }
-
-                                            echo '>Completed</option>
-                                            <option value="Delayed" class="delayed-class" ';
-
-                                                if($status3 == $row['project_status_Architect_4']){
-                                                    echo ' selected="" ';
-                                                     
-                                                }
-                                            
-                                            echo '>Delayed</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                        <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
-                                            <p class="text-center text-muted" style="height:38%;">'.$row["project_activity_Architect_5"] .'</p>
-                                            <select disabled class="selectColor';
-
-                                            if($status1 == $row['project_status_Architect_5']){
-                                                echo ' pending-class ';
-                                            }
-                                            elseif($status2 == $row['project_status_Architect_5']){
-                                                echo ' completed-class ';
-                                            }
-                                            elseif($status3 == $row['project_status_Architect_5']){
-                                                echo ' delayed-class ';
-                                            }
-                                        
-                                        
-                                        echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT5">
-                                            
-                                            <option value="Pending" class="pending-class" ';
-
-                                                if($status1 == $row['project_status_Architect_5']){
-                                                    echo ' selected="" ';
-                                                     
-                                                }
-                                                
-                                            echo '>Pending</option>
-                                            <option value="Completed" class="completed-class" ';
-                                            
-                                                if($status2 == $row['project_status_Architect_5']){
-                                                    echo ' selected="" ';
-                                                    $numerator++;
-                                                }
-
-                                            echo '>Completed</option>
-                                            <option value="Delayed" class="delayed-class" ';
-
-                                                if($status3 == $row['project_status_Architect_5']){
-                                                    echo ' selected="" ';
-                                                     
-                                                }
-                                            
-                                            echo '>Delayed</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                        <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
-                                            <p class="text-center text-muted" style="height:38%;">'.$row["project_activity_Architect_6"] .'</p>
-                                            <select disabled class="selectColor';
-
-                                            if($status1 == $row['project_status_Architect_6']){
-                                                echo ' pending-class ';
-                                            }
-                                            elseif($status2 == $row['project_status_Architect_6']){
-                                                echo ' completed-class ';
-                                            }
-                                            elseif($status3 == $row['project_status_Architect_6']){
-                                                echo ' delayed-class ';
-                                            }
-                                        
-                                        
-                                        echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT6">
-                                            
-                                            <option value="Pending" class="pending-class" ';
-
-                                                if($status1 == $row['project_status_Architect_6']){
-                                                    echo ' selected="" ';
-                                                     
-                                                }
-                                                
-                                            echo '>Pending</option>
-                                            <option value="Completed" class="completed-class" ';
-                                            
-                                                if($status2 == $row['project_status_Architect_6']){
-                                                    echo ' selected="" ';
-                                                    $numerator++;
-                                                }
-
-                                            echo '>Completed</option>
-                                            <option value="Delayed" class="delayed-class" ';
-
-                                                if($status3 == $row['project_status_Architect_6']){
-                                                    echo ' selected="" ';
-                                                     
-                                                }
-                                            
-                                            echo '>Delayed</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                        <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
-                                            <p class="text-center text-muted" style="height:38%;">'.$row["project_activity_Architect_7"] .'</p>
-                                            <select disabled class="selectColor';
-
-                                            if($status1 == $row['project_status_Architect_7']){
-                                                echo ' pending-class ';
-                                            }
-                                            elseif($status2 == $row['project_status_Architect_7']){
-                                                echo ' completed-class ';
-                                            }
-                                            elseif($status3 == $row['project_status_Architect_7']){
-                                                echo ' delayed-class ';
-                                            }
-                                        
-                                        
-                                        echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT7">
-                                            
-                                            <option value="Pending" class="pending-class" ';
-
-                                                if($status1 == $row['project_status_Architect_7']){
-                                                    echo ' selected="" ';
-                                                     
-                                                }
-                                                
-                                            echo '>Pending</option>
-                                            <option value="Completed" class="completed-class" ';
-                                            
-                                                if($status2 == $row['project_status_Architect_7']){
-                                                    echo ' selected="" ';
-                                                    $numerator++;
-                                                }
-
-                                            echo '>Completed</option>
-                                            <option value="Delayed" class="delayed-class" ';
-
-                                                if($status3 == $row['project_status_Architect_7']){
-                                                    echo ' selected="" ';
-                                                     
-                                                }
-                                            
-                                            echo '>Delayed</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                        <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
-                                            <p class="text-center text-muted" style="height:38%;">'.$row["project_activity_Architect_8"] .'</p>
-                                            <select disabled class="selectColor';
-
-                                            if($status1 == $row['project_status_Architect_8']){
-                                                echo ' pending-class ';
-                                            }
-                                            elseif($status2 == $row['project_status_Architect_8']){
-                                                echo ' completed-class ';
-                                            }
-                                            elseif($status3 == $row['project_status_Architect_8']){
-                                                echo ' delayed-class ';
-                                            }
-                                        
-                                        
-                                        echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT8">
-                                            
-                                            <option value="Pending" class="pending-class" ';
-
-                                                if($status1 == $row['project_status_Architect_8']){
-                                                    echo ' selected="" ';
-                                                     
-                                                }
-                                                
-                                            echo '>Pending</option>
-                                            <option value="Completed" class="completed-class" ';
-                                            
-                                                if($status2 == $row['project_status_Architect_8']){
-                                                    echo ' selected="" ';
-                                                    $numerator++;
-                                                }
-
-                                            echo '>Completed</option>
-                                            <option value="Delayed" class="delayed-class" ';
-
-                                                if($status3 == $row['project_status_Architect_8']){
-                                                    echo ' selected="" ';
-                                                     
-                                                }
-                                            
-                                            echo '>Delayed</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                            </div>
+                                        </div>';
+                                    }
+                                if($row["project_activity_additional_Architect_3"] == "empty"){
+                                    echo '
+                                    <input hidden name="additional_name_3" value="'.$row["project_activity_additional_Architect_3"].'">
+                                    <select hidden name="SELECT_additional_3"></select>
                                     ';
+                                }
+                                elseif($row["project_activity_additional_Architect_3"] != "empty"){
+                                    $denominator++;
+                                    echo'
+                                        <div class="col-md-3 borderbox psm11">
+                                            <div style="width: 100%;">
+                                                <input hidden name="additional_name_3" value="'.$row["project_activity_additional_Architect_3"].'">
+                                                <input hidden name="counter" value="3">
+                                                <p class="text-center text-muted viewfix">'.$row["project_activity_additional_Architect_3"] .'</p>
+                                                <label class="selectColor';
 
-                                    if($row["project_activity_additional_Architect_1"] == "empty"){
+                                                if($status1 == $row['project_status_additional_Architect_3']){
+                                                    echo ' pending-class ';
+                                                }
+                                                elseif($status2 == $row['project_status_additional_Architect_3']){
+                                                    echo ' completed-class ';
+                                                    
+                                                }
+                                                elseif($status3 == $row['project_status_additional_Architect_3']){
+                                                    echo ' delayed-class ';
+                                                }
+                                            
+                                            
+                                            echo '
+                                            " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_3">';
+                                                
+                                                if($status1 == $row['project_status_additional_Architect_3']){
+                                                    echo ' Pending </label>';
+                                                }
+                                                elseif($status2 == $row['project_status_additional_Architect_3']){
+                                                    echo ' Completed </label>
+                                                    <div style="margin-top: 10px;text-align: center;">                 
+                                                        <button name="DOWNLOAD11">Download</button>
+                                                    </div>';
+                                                }
+                                                elseif($status3 == $row['project_status_additional_Architect_3']){
+                                                    echo ' Delayed </label>';
+                                                }
+                                                
+                                                echo '
+                                                
+                                            </div>
+                                        </div>';
+                                    }
+                                    if($row["project_activity_additional_Architect_4"] == "empty"){
                                         echo '
-                                        <input hidden name="additional_name_1" value="'.$row["project_activity_additional_Architect_1"].'">
-                                        <select hidden name="SELECT_additional_1"></select>
+                                        <input hidden name="additional_name_4" value="'.$row["project_activity_additional_Architect_4"].'">
+                                        <select hidden name="SELECT_additional_4"></select>
                                         ';
                                     }
-                                    elseif($row["project_activity_additional_Architect_1"] != "empty"){
+                                    elseif($row["project_activity_additional_Architect_4"] != "empty"){
                                         $denominator++;
                                         echo'
-                                        <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                            <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
-                                                    <input hidden name="additional_name_1" value="'.$row["project_activity_additional_Architect_1"].'">
-                                                    <input hidden name="counter" value="1">
-                                                    <p class="text-center text-muted" style="height:38%;">'.$row["project_activity_additional_Architect_1"] .'</p>
-                                                    <select disabled class="selectColor';
-
-                                                    if($status1 == $row['project_status_additional_Architect_1']){
-                                                        echo ' pending-class ';
-                                                    }
-                                                    elseif($status2 == $row['project_status_additional_Architect_1']){
-                                                        echo ' completed-class ';
-                                                        
-                                                    }
-                                                    elseif($status3 == $row['project_status_additional_Architect_1']){
-                                                        echo ' delayed-class ';
-                                                    }
-                                                
-                                                
-                                                echo '
-                                                " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_1">
-                                                    
-                                                    <option value="Pending" class="pending-class" ';
-
-                                                        if($status1 == $row['project_status_additional_Architect_1']){
-                                                            echo ' selected="" ';
-                                                             
-                                                        }
-                                                        
-                                                    echo '>Pending</option>
-                                                    <option value="Completed" class="completed-class" ';
-                                                    
-                                                        if($status2 == $row['project_status_additional_Architect_1']){
-                                                            echo ' selected="" ';
-                                                            $numerator++;
-                                                        }
-
-                                                    echo '>Completed</option>
-                                                    <option value="Delayed" class="delayed-class" ';
-
-                                                        if($status3 == $row['project_status_additional_Architect_1']){
-                                                            echo ' selected="" ';
-                                                             
-                                                        }
-                                                    
-                                                    echo '>Delayed</option>
-                                                    </select>
-                                                </div>
-                                            </div>';
-                                        }
-                                        if($row["project_activity_additional_Architect_2"] == "empty"){
-                                            echo '
-                                            <input hidden name="additional_name_2" value="'.$row["project_activity_additional_Architect_2"].'">
-                                            <select hidden name="SELECT_additional_2"></select>
-                                            ';
-                                        }
-                                        elseif($row["project_activity_additional_Architect_2"] != "empty"){
-                                            $denominator++;
-                                            echo'
-                                                <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                                    <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
-                                                        <input hidden name="additional_name_2" value="'.$row["project_activity_additional_Architect_2"].'">
-                                                        <input hidden name="counter" value="2">
-                                                        <p class="text-center text-muted" style="height:38%;">'.$row["project_activity_additional_Architect_2"] .'</p>
-                                                        <select disabled class="selectColor';
-
-                                                        if($status1 == $row['project_status_additional_Architect_2']){
-                                                            echo ' pending-class ';
-                                                        }
-                                                        elseif($status2 == $row['project_status_additional_Architect_2']){
-                                                            echo ' completed-class ';
-                                                            
-                                                        }
-                                                        elseif($status3 == $row['project_status_additional_Architect_2']){
-                                                            echo ' delayed-class ';
-                                                        }
-                                                    
-                                                    
-                                                    echo '
-                                                    " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_2">
-                                                        
-                                                        <option value="Pending" class="pending-class" ';
-
-                                                            if($status1 == $row['project_status_additional_Architect_2']){
-                                                                echo ' selected="" ';
-                                                                 
-                                                            }
-                                                            
-                                                        echo '>Pending</option>
-                                                        <option value="Completed" class="completed-class" ';
-                                                        
-                                                            if($status2 == $row['project_status_additional_Architect_2']){
-                                                                echo ' selected="" ';
-                                                                $numerator++;
-                                                            }
-
-                                                        echo '>Completed</option>
-                                                        <option value="Delayed" class="delayed-class" ';
-
-                                                            if($status3 == $row['project_status_additional_Architect_2']){
-                                                                echo ' selected="" ';
-                                                                 
-                                                            }
-                                                        
-                                                        echo '>Delayed</option>
-                                                        </select>
-                                                    </div>
-                                                </div>';
-                                            }
-                                        if($row["project_activity_additional_Architect_3"] == "empty"){
-                                            echo '
-                                            <input hidden name="additional_name_3" value="'.$row["project_activity_additional_Architect_3"].'">
-                                            <select hidden name="SELECT_additional_3"></select>
-                                            ';
-                                        }
-                                        elseif($row["project_activity_additional_Architect_3"] != "empty"){
-                                            $denominator++;
-                                            echo'
-                                                <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                                    <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
-                                                        <input hidden name="additional_name_3" value="'.$row["project_activity_additional_Architect_3"].'">
-                                                        <input hidden name="counter" value="3">
-                                                        <p class="text-center text-muted" style="height:38%;">'.$row["project_activity_additional_Architect_3"] .'</p>
-                                                        <select disabled class="selectColor';
-
-                                                        if($status1 == $row['project_status_additional_Architect_3']){
-                                                            echo ' pending-class ';
-                                                        }
-                                                        elseif($status2 == $row['project_status_additional_Architect_3']){
-                                                            echo ' completed-class ';
-                                                            
-                                                        }
-                                                        elseif($status3 == $row['project_status_additional_Architect_3']){
-                                                            echo ' delayed-class ';
-                                                        }
-                                                    
-                                                    
-                                                    echo '
-                                                    " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_3">
-                                                        
-                                                        <option value="Pending" class="pending-class" ';
-
-                                                            if($status1 == $row['project_status_additional_Architect_3']){
-                                                                echo ' selected="" ';
-                                                                 
-                                                            }
-                                                            
-                                                        echo '>Pending</option>
-                                                        <option value="Completed" class="completed-class" ';
-                                                        
-                                                            if($status2 == $row['project_status_additional_Architect_3']){
-                                                                echo ' selected="" ';
-                                                                $numerator++;
-                                                            }
-
-                                                        echo '>Completed</option>
-                                                        <option value="Delayed" class="delayed-class" ';
-
-                                                            if($status3 == $row['project_status_additional_Architect_3']){
-                                                                echo ' selected="" ';
-                                                                 
-                                                            }
-                                                        
-                                                        echo '>Delayed</option>
-                                                        </select>
-                                                    </div>
-                                                </div>';
-                                            }
-                                            if($row["project_activity_additional_Architect_4"] == "empty"){
-                                                echo '
-                                                <input hidden name="additional_name_4" value="'.$row["project_activity_additional_Architect_4"].'">
-                                                <select hidden name="SELECT_additional_4" style="height:38%;"></select>
-                                                ';
-                                            }
-                                            elseif($row["project_activity_additional_Architect_4"] != "empty"){
-                                                $denominator++;
-                                                echo'
-                                                <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                                <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
+                                            <div class="col-md-3 borderbox psm12">
+                                                <div style="width: 100%;">
                                                     <input hidden name="additional_name_4" value="'.$row["project_activity_additional_Architect_4"].'">
                                                     <input hidden name="counter" value="4">
-                                                    <p class="text-center text-muted" style="height:38%;">'.$row["project_activity_additional_Architect_4"] .'</p>
-                                                    <select disabled class="selectColor';
+                                                    <p class="text-center text-muted viewfix">'.$row["project_activity_additional_Architect_4"] .'</p>
+                                                    <label class="selectColor';
 
                                                     if($status1 == $row['project_status_additional_Architect_4']){
                                                         echo ' pending-class ';
@@ -689,99 +570,78 @@
                                                     }
                                                 
                                                 
-                                                echo '
-                                                " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_3">
+                                            echo '
+                                            " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_4">';
+                                                
+                                                if($status1 == $row['project_status_additional_Architect_4']){
+                                                    echo ' Pending </label>';
+                                                }
+                                                elseif($status2 == $row['project_status_additional_Architect_4']){
+                                                    echo ' Completed </label>
+                                                    <div style="margin-top: 10px;text-align: center;">                                
+                                                        <button name="DOWNLOAD12">Download</button>
+                                                    </div>';
+                                                }
+                                                elseif($status3 == $row['project_status_additional_Architect_4']){
+                                                    echo ' Delayed </label>';
+                                                }
+                                                    echo '
                                                     
-                                                    <option value="Pending" class="pending-class" ';
-
-                                                        if($status1 == $row['project_status_additional_Architect_4']){
-                                                            echo ' selected="" ';
-                                                             
-                                                        }
-                                                        
-                                                    echo '>Pending</option>
-                                                    <option value="Completed" class="completed-class" ';
-                                                    
-                                                        if($status2 == $row['project_status_additional_Architect_4']){
-                                                            echo ' selected="" ';
-                                                            $numerator++;
-                                                        }
-
-                                                    echo '>Completed</option>
-                                                    <option value="Delayed" class="delayed-class" ';
-
-                                                        if($status3 == $row['project_status_additional_Architect_34']){
-                                                            echo ' selected="" ';
-                                                             
-                                                        }
-                                                    
-                                                    echo '>Delayed</option>
-                                                    </select>
                                                 </div>
                                             </div>';
-                                                }
-                                                if($row["project_activity_additional_Architect_5"] == "empty"){
-                                                    echo '
-                                                    <input hidden name="additional_name_5" value="'.$row["project_activity_additional_Architect_5"].'">
-                                                    <select hidden name="SELECT_additional_5"></select>
-                                                    ';
-                                                }
-                                                elseif($row["project_activity_additional_Architect_5"] != "empty"){
-                                                    $denominator++;
-                                                    echo'
-                                                        <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                                            <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
-                                                                <input hidden name="additional_name_5" value="'.$row["project_activity_additional_Architect_5"].'">
-                                                                <input hidden name="counter" value="5">
-                                                                <p class="text-center text-muted" style="height:38%;">'.$row["project_activity_additional_Architect_5"] .'</p>
-                                                                <select disabled class="selectColor';
-            
-                                                                if($status1 == $row['project_status_additional_Architect_5']){
-                                                                    echo ' pending-class ';
-                                                                }
-                                                                elseif($status2 == $row['project_status_additional_Architect_5']){
-                                                                    echo ' completed-class ';
-                                                                    
-                                                                }
-                                                                elseif($status3 == $row['project_status_additional_Architect_5']){
-                                                                    echo ' delayed-class ';
-                                                                }
-                                                    echo '
-                                                    " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_5">
-                                                        
-                                                        <option value="Pending" class="pending-class" ';
+                                        }
+                                        if($row["project_activity_additional_Architect_5"] == "empty"){
+                                            echo '
+                                            <input hidden name="additional_name_5" value="'.$row["project_activity_additional_Architect_5"].'">
+                                            <select hidden name="SELECT_additional_5"></select>
+                                            ';
+                                        }
+                                        elseif($row["project_activity_additional_Architect_5"] != "empty"){
+                                            $denominator++;
+                                            echo'
+                                                <div class="col-md-3 borderbox psm13">
+                                                    <div style="width: 100%;">
+                                                        <input hidden name="additional_name_5" value="'.$row["project_activity_additional_Architect_5"].'">
+                                                        <input hidden name="counter" value="5">
+                                                        <p class="text-center text-muted viewfix">'.$row["project_activity_additional_Architect_5"] .'</p>
+                                                        <label class="selectColor';
     
-                                                            if($status1 == $row['project_status_additional_Architect_5']){
-                                                                echo ' selected="" ';
-                                                                 
-                                                            }
+                                                        if($status1 == $row['project_status_additional_Architect_5']){
+                                                            echo ' pending-class ';
+                                                        }
+                                                        elseif($status2 == $row['project_status_additional_Architect_5']){
+                                                            echo ' completed-class ';
                                                             
-                                                        echo '>Pending</option>
-                                                        <option value="Completed" class="completed-class" ';
+                                                        }
+                                                        elseif($status3 == $row['project_status_additional_Architect_5']){
+                                                            echo ' delayed-class ';
+                                                        }
+                                            echo '
+                                            " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_5">';
+                                                
+                                                    if($status1 == $row['project_status_additional_Architect_5']){
+                                                        echo ' Pending </label>';
+                                                    }
+                                                    elseif($status2 == $row['project_status_additional_Architect_5']){
+                                                        echo ' Completed </label>
+                                                        <div style="margin-top: 10px;text-align: center;">                                               
+                                                            <button name="DOWNLOAD13">Download</button>
+                                                        </div>';
+                                                    }
+                                                    elseif($status3 == $row['project_status_additional_Architect_5']){
+                                                        echo ' Delayed </label>';
+                                                    }
                                                         
-                                                            if($status2 == $row['project_status_additional_Architect_5']){
-                                                                echo ' selected="" ';
-                                                                $numerator++;
-                                                            }
-    
-                                                        echo '>Completed</option>
-                                                        <option value="Delayed" class="delayed-class" ';
-    
-                                                            if($status3 == $row['project_status_additional_Architect_5']){
-                                                                echo ' selected="" ';
-                                                                 
-                                                            }
-                                                                
-                                                        echo '>Delayed</option>
-                                                        </select>
-                                                    </div>
-                                                </div>';
-                                            }
-                                    echo'  
-                                </div>
-                            </div>
+                                                echo '
+                                                
+                                            </div>
+                                        </div>';
+                                    }
+                            echo'  
                         </div>
-                    </section>';
+                    </div>
+                </div>
+            </section>';
 
 
 
