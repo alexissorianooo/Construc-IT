@@ -4,12 +4,12 @@ session_start();
 include 'db.php';
 
 if(isset($_POST["UPLOAD1"])){
-    echo 'UPLOAD 1';
+    // echo 'UPLOAD 1';
 
     $project_id = $_POST['project_id'];
     $filenum = 'FILE1';
 
-    $filename = $_FILES['FILE1']['name'];
+    echo $filename = $_FILES['FILE1']['name'];
     $destination =  '../uploads/'.$filename;
 
     $extension = pathinfo($filename, PATHINFO_EXTENSION);
@@ -54,7 +54,7 @@ if(isset($_POST["UPLOAD1"])){
                 
             }
             
-            $sql3 = "INSERT INTO files_db (files_project_id,files_activity,files_name,files_size,files_downloads) VALUES ('$project_id','$filenum','$filename','$size',0)";
+            $sql3 = "INSERT INTO files_db (files_project_id,files_activity,files_name,files_size,files_downloads) VALUES ('$project_id','$filenum','$filename',$size,0)";
 
             if(mysqli_query($conn, $sql3)){
                 echo "file uploaded successfully";
@@ -863,6 +863,49 @@ elseif(isset($_POST["UPLOAD13"])){
             
         }
     }
-}else{
-    echo 'You pressed download';
+}
+elseif(isset($_POST["DOWNLOAD1"])){
+    echo 'your at doownlaod';
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE1';
+
+    $sql = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    $result = mysqli_query($conn, $sql);
+
+    // if(mysqli_num_rows($result)>0){
+    //     while($row=mysqli_fetch_assoc($result)){
+          
+    //       echo $row['files_name'];
+          
+    //     }
+    // }
+
+    $file = mysqli_fetch_assoc($result);
+
+    echo $filepath = '../uploads/'.$file['files_name'];
+
+    if(file_exists($filepath)){
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        // header('Content-Type: application/force-download');
+        header('Content-Disposition: attachment; filename=' .basename($filepath));
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Pragma: public');
+        header('Content-Length: ' . filesize('../uploads/' . $file['files_name']));
+        header('Content-Transfer-Encoding: binary');
+        readfile($filepath);
+
+        $newCount = $file['files_downloads'] + 1;
+
+        $updateQuery = "UPDATE files_db SET files_downloads=$newCount WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+
+        mysqli_query($conn, $updateQuery);
+
+        exit();
+
+    }else{
+        echo 'file does not exist';
+    }
 }
