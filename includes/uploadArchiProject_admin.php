@@ -31,21 +31,27 @@ if(isset($_POST["UPLOAD1"])){
             $result = mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result)>0){
-                $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
+                while($row=mysqli_fetch_assoc($result)){
+                    if($row['files_project_id'] == $project_id){
+                        $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
 
-                if(mysqli_query($conn, $sql2)){
-                    echo "file uploaded successfully";
-                    echo'
-                    <script type="text/javascript">
-                    location.replace(document.referrer);
-                    </script>
-                    ';
-
-                }else{
-                    echo "Failed to upload AT IF";
+                        if(mysqli_query($conn, $sql2)){
+                            echo "file uploaded successfully";
+                            echo'
+                            <script type="text/javascript">
+                            location.replace(document.referrer);
+                            </script>
+                            ';
+        
+                        }else{
+                            echo "Failed to upload AT IF";
+                        }
+        
+                        // echo 'meron na pong file';
+                    }
                 }
 
-                // echo 'meron na pong file';
+                
             }
             
             $sql3 = "INSERT INTO files_db (files_project_id,files_activity,files_name,files_size,files_downloads) VALUES ('$project_id','$filenum','$filename','$size',0)";
@@ -93,21 +99,25 @@ elseif(isset($_POST["UPLOAD2"])){
             $result = mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result)>0){
-                $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
+                while($row=mysqli_fetch_assoc($result)){
+                    if($row['files_project_id'] == $project_id){
+                        $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
 
-                if(mysqli_query($conn, $sql2)){
-                    echo "file uploaded successfully";
-                    echo'
-                    <script type="text/javascript">
-                    location.replace(document.referrer);
-                    </script>
-                    ';
+                        if(mysqli_query($conn, $sql2)){
+                            echo "file uploaded successfully";
+                            echo'
+                            <script type="text/javascript">
+                            location.replace(document.referrer);
+                            </script>
+                            ';
 
-                }else{
-                    echo "Failed to upload AT IF";
+                        }else{
+                            echo "Failed to upload AT IF";
+                        }
+
+                        // echo 'meron na pong file'
+                    }
                 }
-
-                // echo 'meron na pong file';
             }
             
             $sql3 = "INSERT INTO files_db (files_project_id,files_activity,files_name,files_size,files_downloads) VALUES ('$project_id','$filenum','$filename','$size',0)";
@@ -155,21 +165,25 @@ elseif(isset($_POST["UPLOAD3"])){
             $result = mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result)>0){
-                $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
+                while($row=mysqli_fetch_assoc($result)){
+                    if($row['files_project_id'] == $project_id){
+                        $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
 
-                if(mysqli_query($conn, $sql2)){
-                    echo "file uploaded successfully";
-                    echo'
-                    <script type="text/javascript">
-                    location.replace(document.referrer);
-                    </script>
-                    ';
+                        if(mysqli_query($conn, $sql2)){
+                            echo "file uploaded successfully";
+                            echo'
+                            <script type="text/javascript">
+                            location.replace(document.referrer);
+                            </script>
+                            ';
 
-                }else{
-                    echo "Failed to upload AT IF";
+                        }else{
+                            echo "Failed to upload AT IF";
+                        }
+
+                        // echo 'meron na pong file';
+                    }
                 }
-
-                // echo 'meron na pong file';
             }
             
             $sql3 = "INSERT INTO files_db (files_project_id,files_activity,files_name,files_size,files_downloads) VALUES ('$project_id','$filenum','$filename','$size',0)";
@@ -217,21 +231,25 @@ elseif(isset($_POST["UPLOAD4"])){
             $result = mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result)>0){
-                $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
+                while($row=mysqli_fetch_assoc($result)){
+                    if($row['files_project_id'] == $project_id){
+                        $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
 
-                if(mysqli_query($conn, $sql2)){
-                    echo "file uploaded successfully";
-                    echo'
-                    <script type="text/javascript">
-                    location.replace(document.referrer);
-                    </script>
-                    ';
+                        if(mysqli_query($conn, $sql2)){
+                            echo "file uploaded successfully";
+                            echo'
+                            <script type="text/javascript">
+                            location.replace(document.referrer);
+                            </script>
+                            ';
 
-                }else{
-                    echo "Failed to upload AT IF";
+                        }else{
+                            echo "Failed to upload AT IF";
+                        }
+
+                        // echo 'meron na pong file';
+                    }
                 }
-
-                // echo 'meron na pong file';
             }
             
             $sql3 = "INSERT INTO files_db (files_project_id,files_activity,files_name,files_size,files_downloads) VALUES ('$project_id','$filenum','$filename','$size',0)";
@@ -279,21 +297,25 @@ elseif(isset($_POST["UPLOAD5"])){
             $result = mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result)>0){
-                $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
+                while($row=mysqli_fetch_assoc($result)){
+                    if($row['files_project_id'] == $project_id){
+                        $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
 
-                if(mysqli_query($conn, $sql2)){
-                    echo "file uploaded successfully";
-                    echo'
-                    <script type="text/javascript">
-                    location.replace(document.referrer);
-                    </script>
-                    ';
+                        if(mysqli_query($conn, $sql2)){
+                            echo "file uploaded successfully";
+                            echo'
+                            <script type="text/javascript">
+                            location.replace(document.referrer);
+                            </script>
+                            ';
 
-                }else{
-                    echo "Failed to upload AT IF";
+                        }else{
+                            echo "Failed to upload AT IF";
+                        }
+
+                        // echo 'meron na pong file';
+                    }
                 }
-
-                // echo 'meron na pong file';
             }
             
             $sql3 = "INSERT INTO files_db (files_project_id,files_activity,files_name,files_size,files_downloads) VALUES ('$project_id','$filenum','$filename','$size',0)";
@@ -341,21 +363,25 @@ elseif(isset($_POST["UPLOAD6"])){
             $result = mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result)>0){
-                $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
+                while($row=mysqli_fetch_assoc($result)){
+                    if($row['files_project_id'] == $project_id){
+                        $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
 
-                if(mysqli_query($conn, $sql2)){
-                    echo "file uploaded successfully";
-                    echo'
-                    <script type="text/javascript">
-                    location.replace(document.referrer);
-                    </script>
-                    ';
+                        if(mysqli_query($conn, $sql2)){
+                            echo "file uploaded successfully";
+                            echo'
+                            <script type="text/javascript">
+                            location.replace(document.referrer);
+                            </script>
+                            ';
 
-                }else{
-                    echo "Failed to upload AT IF";
+                        }else{
+                            echo "Failed to upload AT IF";
+                        }
+
+                        // echo 'meron na pong file';
+                    }
                 }
-
-                // echo 'meron na pong file';
             }
             
             $sql3 = "INSERT INTO files_db (files_project_id,files_activity,files_name,files_size,files_downloads) VALUES ('$project_id','$filenum','$filename','$size',0)";
@@ -403,21 +429,25 @@ elseif(isset($_POST["UPLOAD7"])){
             $result = mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result)>0){
-                $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
+                while($row=mysqli_fetch_assoc($result)){
+                    if($row['files_project_id'] == $project_id){
+                        $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
 
-                if(mysqli_query($conn, $sql2)){
-                    echo "file uploaded successfully";
-                    echo'
-                    <script type="text/javascript">
-                    location.replace(document.referrer);
-                    </script>
-                    ';
+                        if(mysqli_query($conn, $sql2)){
+                            echo "file uploaded successfully";
+                            echo'
+                            <script type="text/javascript">
+                            location.replace(document.referrer);
+                            </script>
+                            ';
 
-                }else{
-                    echo "Failed to upload AT IF";
+                        }else{
+                            echo "Failed to upload AT IF";
+                        }
+
+                        // echo 'meron na pong file';
+                    }
                 }
-
-                // echo 'meron na pong file';
             }
             
             $sql3 = "INSERT INTO files_db (files_project_id,files_activity,files_name,files_size,files_downloads) VALUES ('$project_id','$filenum','$filename','$size',0)";
@@ -465,21 +495,25 @@ elseif(isset($_POST["UPLOAD8"])){
             $result = mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result)>0){
-                $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
+                while($row=mysqli_fetch_assoc($result)){
+                    if($row['files_project_id'] == $project_id){
+                        $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
 
-                if(mysqli_query($conn, $sql2)){
-                    echo "file uploaded successfully";
-                    echo'
-                    <script type="text/javascript">
-                    location.replace(document.referrer);
-                    </script>
-                    ';
+                        if(mysqli_query($conn, $sql2)){
+                            echo "file uploaded successfully";
+                            echo'
+                            <script type="text/javascript">
+                            location.replace(document.referrer);
+                            </script>
+                            ';
 
-                }else{
-                    echo "Failed to upload AT IF";
+                        }else{
+                            echo "Failed to upload AT IF";
+                        }
+
+                        // echo 'meron na pong file';
+                    }
                 }
-
-                // echo 'meron na pong file';
             }
             
             $sql3 = "INSERT INTO files_db (files_project_id,files_activity,files_name,files_size,files_downloads) VALUES ('$project_id','$filenum','$filename','$size',0)";
@@ -527,21 +561,25 @@ elseif(isset($_POST["UPLOAD9"])){
             $result = mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result)>0){
-                $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
+                while($row=mysqli_fetch_assoc($result)){
+                    if($row['files_project_id'] == $project_id){
+                        $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
 
-                if(mysqli_query($conn, $sql2)){
-                    echo "file uploaded successfully";
-                    echo'
-                    <script type="text/javascript">
-                    location.replace(document.referrer);
-                    </script>
-                    ';
+                        if(mysqli_query($conn, $sql2)){
+                            echo "file uploaded successfully";
+                            echo'
+                            <script type="text/javascript">
+                            location.replace(document.referrer);
+                            </script>
+                            ';
 
-                }else{
-                    echo "Failed to upload AT IF";
+                        }else{
+                            echo "Failed to upload AT IF";
+                        }
+
+                        // echo 'meron na pong file';
+                    }
                 }
-
-                // echo 'meron na pong file';
             }
             
             $sql3 = "INSERT INTO files_db (files_project_id,files_activity,files_name,files_size,files_downloads) VALUES ('$project_id','$filenum','$filename','$size',0)";
@@ -589,21 +627,25 @@ elseif(isset($_POST["UPLOAD10"])){
             $result = mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result)>0){
-                $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
+                while($row=mysqli_fetch_assoc($result)){
+                    if($row['files_project_id'] == $project_id){
+                        $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
 
-                if(mysqli_query($conn, $sql2)){
-                    echo "file uploaded successfully";
-                    echo'
-                    <script type="text/javascript">
-                    location.replace(document.referrer);
-                    </script>
-                    ';
+                        if(mysqli_query($conn, $sql2)){
+                            echo "file uploaded successfully";
+                            echo'
+                            <script type="text/javascript">
+                            location.replace(document.referrer);
+                            </script>
+                            ';
 
-                }else{
-                    echo "Failed to upload AT IF";
+                        }else{
+                            echo "Failed to upload AT IF";
+                        }
+
+                        // echo 'meron na pong file';
+                    }
                 }
-
-                // echo 'meron na pong file';
             }
             
             $sql3 = "INSERT INTO files_db (files_project_id,files_activity,files_name,files_size,files_downloads) VALUES ('$project_id','$filenum','$filename','$size',0)";
@@ -651,21 +693,25 @@ elseif(isset($_POST["UPLOAD11"])){
             $result = mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result)>0){
-                $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
+                while($row=mysqli_fetch_assoc($result)){
+                    if($row['files_project_id'] == $project_id){
+                        $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
 
-                if(mysqli_query($conn, $sql2)){
-                    echo "file uploaded successfully";
-                    echo'
-                    <script type="text/javascript">
-                    location.replace(document.referrer);
-                    </script>
-                    ';
+                        if(mysqli_query($conn, $sql2)){
+                            echo "file uploaded successfully";
+                            echo'
+                            <script type="text/javascript">
+                            location.replace(document.referrer);
+                            </script>
+                            ';
 
-                }else{
-                    echo "Failed to upload AT IF";
+                        }else{
+                            echo "Failed to upload AT IF";
+                        }
+
+                        // echo 'meron na pong file';
+                    }
                 }
-
-                // echo 'meron na pong file';
             }
             
             $sql3 = "INSERT INTO files_db (files_project_id,files_activity,files_name,files_size,files_downloads) VALUES ('$project_id','$filenum','$filename','$size',0)";
@@ -713,21 +759,26 @@ elseif(isset($_POST["UPLOAD12"])){
             $result = mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result)>0){
-                $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
+                while($row=mysqli_fetch_assoc($result)){
+                    if($row['files_project_id'] == $project_id){
+                        $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
 
-                if(mysqli_query($conn, $sql2)){
-                    echo "file uploaded successfully";
-                    echo'
-                    <script type="text/javascript">
-                    location.replace(document.referrer);
-                    </script>
-                    ';
+                        if(mysqli_query($conn, $sql2)){
+                            echo "file uploaded successfully";
+                            echo'
+                            <script type="text/javascript">
+                            location.replace(document.referrer);
+                            </script>
+                            ';
 
-                }else{
-                    echo "Failed to upload AT IF";
+                        }else{
+                            echo "Failed to upload AT IF";
+                        }
+
+                        // echo 'meron na pong file';
+                    }
                 }
 
-                // echo 'meron na pong file';
             }
             
             $sql3 = "INSERT INTO files_db (files_project_id,files_activity,files_name,files_size,files_downloads) VALUES ('$project_id','$filenum','$filename','$size',0)";
@@ -775,21 +826,25 @@ elseif(isset($_POST["UPLOAD13"])){
             $result = mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result)>0){
-                $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
+                while($row=mysqli_fetch_assoc($result)){
+                    if($row['files_project_id'] == $project_id){
+                        $sql2 = "DELETE FROM files_db WHERE files_activity = '$filenum'";
 
-                if(mysqli_query($conn, $sql2)){
-                    echo "file uploaded successfully";
-                    echo'
-                    <script type="text/javascript">
-                    location.replace(document.referrer);
-                    </script>
-                    ';
+                        if(mysqli_query($conn, $sql2)){
+                            echo "file uploaded successfully";
+                            echo'
+                            <script type="text/javascript">
+                            location.replace(document.referrer);
+                            </script>
+                            ';
 
-                }else{
-                    echo "Failed to upload AT IF";
+                        }else{
+                            echo "Failed to upload AT IF";
+                        }
+
+                        // echo 'meron na pong file';\
+                    }
                 }
-
-                // echo 'meron na pong file';
             }
             
             $sql3 = "INSERT INTO files_db (files_project_id,files_activity,files_name,files_size,files_downloads) VALUES ('$project_id','$filenum','$filename','$size',0)";
