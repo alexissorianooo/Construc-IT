@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="../Projects/assetsForViewProject/css/view.css">
 </head>
 
-<body style="width: 100%; margin: auto;">
+<body class="masthead" style="width: 100%; margin: auto;">
     <br>
     <br>
     <br>
@@ -839,7 +839,7 @@
                             '
                             
                             
-                            <div class="progress mx-auto" style="width: 80%;height: 30px; margin-top:3%;">
+                            <div class="progress mx-auto container" style="width: 80%;height: 30px; margin-top:3%;">
                                 <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$row["project_progress_PM"].'%;">'.$row["project_progress_PM"].'</div>
                             </div>
     
