@@ -888,15 +888,18 @@ elseif(isset($_POST["DOWNLOAD1"])){
     if(file_exists($filepath)){
         header('Content-Description: File Transfer');
         header('Content-Type: application/octet-stream');
-        // header('Content-Type: application/force-download');
-        header('Content-Disposition: attachment; filename=' .basename($filepath));
+        // header('Content-Type: '. mime_content_type($filepath));
+        header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+        // header('Content-Disposition: inline; filename="'.basename($filepath).'"');
         header('Expires: 0');
-        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Cache-Control: must-revalidate');
         header('Pragma: public');
         // header('Content-Length: ' . filesize('../uploads/' . $file['files_name']));
-        header('Content-Length:' . filesize($filepath));
+        header('Content-Length:'.filesize($filepath));
         header('Content-Transfer-Encoding: binary');
-        readfile($filepath);
+        ob_clean();
+        flush();
+        readfile("../uploads/".$file['files_name']);
 
         $newCount = $file['files_downloads'] + 1;
 
