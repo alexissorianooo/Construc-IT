@@ -28,7 +28,7 @@ if(isset($_POST['saveButton_admin_password'])){
                 echo '
                 <script>
                     alert("Password must contain atleast 8 characters with one number, special character, small and capital letters.");
-                    var page = window.history.go(-2);
+                    location.replace(document.referrer);
                     window.location.reload(page)
                 </script>
                 ';
@@ -49,7 +49,7 @@ if(isset($_POST['saveButton_admin_password'])){
 
                 echo '<script type="text/javascript">
                 alert("PASSWORD SUCCESSFULLY UPDATED");
-                var page = window.history.go(-2);
+                location.replace(document.referrer);
                 // window.location.reload(page);
                 // location.replace(document.referrer);
                 </script>';
@@ -61,7 +61,7 @@ if(isset($_POST['saveButton_admin_password'])){
             echo '
             <script>
                 alert("NEW PASSWORDS DOES NOT MATCH");
-                var page = window.history.go(-2);
+                location.replace(document.referrer);
                 
             </script>
             ';
@@ -72,7 +72,7 @@ if(isset($_POST['saveButton_admin_password'])){
         echo '
         <script>
             alert("OLD PASSWORD DOES NOT MATCH");
-            var page = window.history.go(-2);
+            location.replace(document.referrer);
             
         </script>
         ';

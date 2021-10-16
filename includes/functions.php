@@ -408,26 +408,77 @@ if(mysqli_num_rows($result)>0){
   
 }
 
-function edituser_admin_projectdb($conn, $user_fullname_old, $user_fullname){
-//project_architect
-$sql = "SELECT * FROM project_db WHERE project_architect='$user_fullname_old'";
-$result = mysqli_query($conn, $sql);
+function edituser_admin_projectdb($conn, $user_fullname_old, $user_fullname, $userTYPE){
 
-// echo mysqli_num_rows($result);
-if(mysqli_num_rows($result)>0){
-    while($row=mysqli_fetch_assoc($result)){
-      
-      $sql2 = "UPDATE project_db SET project_architect = '$user_fullname' WHERE project_architect = '$user_fullname_old'";
-      $stmt = mysqli_stmt_init($conn);
-      mysqli_query($conn, $sql2);
-      
-    }
-}
+  if($userTYPE =="projectmanager"){
 
-echo '<script type="text/javascript">
-  var page = window.history.go(-2);
-  window.location.reload(page);
-  </script>';
+  
+  $sql = "SELECT * FROM project_db WHERE project_pm='$user_fullname_old'";
+  $result = mysqli_query($conn, $sql);
+
+  // echo mysqli_num_rows($result);
+  if(mysqli_num_rows($result)>0){
+      while($row=mysqli_fetch_assoc($result)){
+        
+        $sql2 = "UPDATE project_db SET project_pm = '$user_fullname' WHERE project_pm = '$user_fullname_old'";
+        $stmt = mysqli_stmt_init($conn);
+        mysqli_query($conn, $sql2);
+        
+      }
+  }
+
+  echo '<script type="text/javascript">
+    location.replace(document.referrer);
+    window.location.reload(page);
+    </script>';
+
+  }
+  elseif($userTYPE =="architect"){
+  //project_architect
+  $sql = "SELECT * FROM project_db WHERE project_architect='$user_fullname_old'";
+  $result = mysqli_query($conn, $sql);
+
+  // echo mysqli_num_rows($result);
+  if(mysqli_num_rows($result)>0){
+      while($row=mysqli_fetch_assoc($result)){
+        
+        $sql2 = "UPDATE project_db SET project_architect = '$user_fullname' WHERE project_architect = '$user_fullname_old'";
+        $stmt = mysqli_stmt_init($conn);
+        mysqli_query($conn, $sql2);
+        
+      }
+  }
+
+  echo '<script type="text/javascript">
+    location.replace(document.referrer);
+    window.location.reload(page);
+    </script>';
+
+  }
+  elseif($userTYPE =="client"){
+  //project_architect
+  $sql = "SELECT * FROM project_db WHERE project_client='$user_fullname_old'";
+  $result = mysqli_query($conn, $sql);
+
+  // echo mysqli_num_rows($result);
+  if(mysqli_num_rows($result)>0){
+      while($row=mysqli_fetch_assoc($result)){
+        
+        $sql2 = "UPDATE project_db SET project_client = '$user_fullname' WHERE project_client = '$user_fullname_old'";
+        $stmt = mysqli_stmt_init($conn);
+        mysqli_query($conn, $sql2);
+        
+      }
+  }
+
+  echo '<script type="text/javascript">
+    location.replace(document.referrer);
+    window.location.reload(page);
+    </script>';
+  }
+
+
+
 }
 
 function passVerify($conn, $oldpass, $userid){
@@ -503,6 +554,13 @@ function deleteuser_admin($conn,  $user_fullname, $user_email, $userid){
 
   
 }
+
+// // ----- BACK FOR ADMIN (viewArchiProject_admin) --------
+
+// function goBack_admin(){
+//   header("location: ../users/Admin/edituserMODAL.php");
+//   exit();
+// }
 
 
 // -------------------------------------- FOR RECORD TRAIL --------------------------------------

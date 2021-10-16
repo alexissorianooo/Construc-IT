@@ -73,13 +73,14 @@
                                         <h1 class="text-lg" style="text-align: center;"><strong>EDIT USER</strong></h1>
                                     </div>
                                     <input name="userid" value="'.$row['userid'].'" hidden>
+                                    <input name="userTYPE" value="'.$row['usertype_fk'].'" hidden>
                                     <input name="user_fullname_old" value="'.$row['user_fullname'].'" hidden>
                                     <div><label>Full Name</label><input class="float-right" type="text" style="width: 70%;" value="'.$row['user_fullname'].'" name="user_fullname" required="required"></div>
                                     <div><label>Email</label><input class="float-right" type="email" style="width: 70%;" value="'.$row['user_email'].'" name="user_email" required="required"></div>
                                     <div class="text-center" style="margin-top: 10px;"><button class="btn btn-primary" type="button" data-toggle="modal" role="button" data-target="#changepassModal" data-dismiss="modal">Change Password</button></div>
                                     <div class="text-right">
                                         <button class="btn btn-danger" style="margin-right: 5px;margin-left: 5px;margin-top: 10px; float:left;" type="submit" name="deleteButton_admin">Delete</button>
-                                        <button class="btn btn-light" type="button" style="margin-right: 5px;margin-left: 5px;margin-top: 10px;" onclick="location.replace(document.referrer)">Back</button>
+                                        <button class="btn btn-light" type="button" style="margin-right: 5px;margin-left: 5px;margin-top: 10px;" onclick="goBack_admin()">Back</button>
                                         <button class="btn btn-primary" type="submit" style="margin-right: 5px;margin-left: 5px;margin-top: 10px;" name="saveButton_admin">Save</button>
                                     </div>
                                 </div>
@@ -331,7 +332,7 @@
 
     <!-- <script src="assets/js/edituserMODAL.js"></script> -->
 
-    
+    <script src="assets-admin/js/forback.js"></script>
 </body>
 
 </html>
