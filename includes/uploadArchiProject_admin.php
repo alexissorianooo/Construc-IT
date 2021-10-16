@@ -3,6 +3,9 @@
 session_start();
 include 'db.php';
 
+
+
+
 if(isset($_POST["UPLOAD1"])){
     // echo 'UPLOAD 1';
 
@@ -19,7 +22,14 @@ if(isset($_POST["UPLOAD1"])){
     $size = $_FILES['FILE1']['size'];
 
     if(!in_array($extension,['zip','pdf','png','jpg'])){
-        echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        // echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        echo '
+        <script>
+        alert("Your file extension must be .zip, .pdf, .jpg or .png");
+        location.replace(document.referrer);
+        </script>
+        
+        ';
     }
     elseif($_FILES['FILE1']['size']>1000000){
         echo 'File is too large';
@@ -87,7 +97,14 @@ elseif(isset($_POST["UPLOAD2"])){
     $size = $_FILES['FILE2']['size'];
 
     if(!in_array($extension,['zip','pdf','png','jpg'])){
-        echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        // echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        echo '
+        <script>
+        alert("Your file extension must be .zip, .pdf, .jpg or .png");
+        location.replace(document.referrer);
+        </script>
+        
+        ';
     }
     elseif($_FILES['FILE2']['size']>1000000){
         echo 'File is too large';
@@ -153,7 +170,14 @@ elseif(isset($_POST["UPLOAD3"])){
     $size = $_FILES['FILE3']['size'];
 
     if(!in_array($extension,['zip','pdf','png','jpg'])){
-        echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        // echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        echo '
+        <script>
+        alert("Your file extension must be .zip, .pdf, .jpg or .png");
+        location.replace(document.referrer);
+        </script>
+        
+        ';
     }
     elseif($_FILES['FILE3']['size']>1000000){
         echo 'File is too large';
@@ -219,7 +243,14 @@ elseif(isset($_POST["UPLOAD4"])){
     $size = $_FILES['FILE4']['size'];
 
     if(!in_array($extension,['zip','pdf','png','jpg'])){
-        echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        // echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        echo '
+        <script>
+        alert("Your file extension must be .zip, .pdf, .jpg or .png");
+        location.replace(document.referrer);
+        </script>
+        
+        ';
     }
     elseif($_FILES['FILE4']['size']>1000000){
         echo 'File is too large';
@@ -285,7 +316,14 @@ elseif(isset($_POST["UPLOAD5"])){
     $size = $_FILES['FILE5']['size'];
 
     if(!in_array($extension,['zip','pdf','png','jpg'])){
-        echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        // echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        echo '
+        <script>
+        alert("Your file extension must be .zip, .pdf, .jpg or .png");
+        location.replace(document.referrer);
+        </script>
+        
+        ';
     }
     elseif($_FILES['FILE5']['size']>1000000){
         echo 'File is too large';
@@ -351,7 +389,14 @@ elseif(isset($_POST["UPLOAD6"])){
     $size = $_FILES['FILE6']['size'];
 
     if(!in_array($extension,['zip','pdf','png','jpg'])){
-        echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        // echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        echo '
+        <script>
+        alert("Your file extension must be .zip, .pdf, .jpg or .png");
+        location.replace(document.referrer);
+        </script>
+        
+        ';
     }
     elseif($_FILES['FILE6']['size']>1000000){
         echo 'File is too large';
@@ -417,7 +462,14 @@ elseif(isset($_POST["UPLOAD7"])){
     $size = $_FILES['FILE7']['size'];
 
     if(!in_array($extension,['zip','pdf','png','jpg'])){
-        echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        // echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        echo '
+        <script>
+        alert("Your file extension must be .zip, .pdf, .jpg or .png");
+        location.replace(document.referrer);
+        </script>
+        
+        ';
     }
     elseif($_FILES['FILE7']['size']>1000000){
         echo 'File is too large';
@@ -483,7 +535,14 @@ elseif(isset($_POST["UPLOAD8"])){
     $size = $_FILES['FILE8']['size'];
 
     if(!in_array($extension,['zip','pdf','png','jpg'])){
-        echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        // echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        echo '
+        <script>
+        alert("Your file extension must be .zip, .pdf, .jpg or .png");
+        location.replace(document.referrer);
+        </script>
+        
+        ';
     }
     elseif($_FILES['FILE8']['size']>1000000){
         echo 'File is too large';
@@ -549,7 +608,14 @@ elseif(isset($_POST["UPLOAD9"])){
     $size = $_FILES['FILE9']['size'];
 
     if(!in_array($extension,['zip','pdf','png','jpg'])){
-        echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        // echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        echo '
+        <script>
+        alert("Your file extension must be .zip, .pdf, .jpg or .png");
+        location.replace(document.referrer);
+        </script>
+        
+        ';
     }
     elseif($_FILES['FILE9']['size']>1000000){
         echo 'File is too large';
@@ -615,7 +681,14 @@ elseif(isset($_POST["UPLOAD10"])){
     $size = $_FILES['FILE10']['size'];
 
     if(!in_array($extension,['zip','pdf','png','jpg'])){
-        echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        // echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        echo '
+        <script>
+        alert("Your file extension must be .zip, .pdf, .jpg or .png");
+        location.replace(document.referrer);
+        </script>
+        
+        ';
     }
     elseif($_FILES['FILE10']['size']>1000000){
         echo 'File is too large';
@@ -681,7 +754,14 @@ elseif(isset($_POST["UPLOAD11"])){
     $size = $_FILES['FILE11']['size'];
 
     if(!in_array($extension,['zip','pdf','png','jpg'])){
-        echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        // echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        echo '
+        <script>
+        alert("Your file extension must be .zip, .pdf, .jpg or .png");
+        location.replace(document.referrer);
+        </script>
+        
+        ';
     }
     elseif($_FILES['FILE11']['size']>1000000){
         echo 'File is too large';
@@ -747,7 +827,14 @@ elseif(isset($_POST["UPLOAD12"])){
     $size = $_FILES['FILE12']['size'];
 
     if(!in_array($extension,['zip','pdf','png','jpg'])){
-        echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        // echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        echo '
+        <script>
+        alert("Your file extension must be .zip, .pdf, .jpg or .png");
+        location.replace(document.referrer);
+        </script>
+        
+        ';
     }
     elseif($_FILES['FILE12']['size']>1000000){
         echo 'File is too large';
@@ -814,7 +901,14 @@ elseif(isset($_POST["UPLOAD13"])){
     $size = $_FILES['FILE13']['size'];
 
     if(!in_array($extension,['zip','pdf','png','jpg'])){
-        echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        // echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+        echo '
+        <script>
+        alert("Your file extension must be .zip, .pdf, .jpg or .png");
+        location.replace(document.referrer);
+        </script>
+        
+        ';
     }
     elseif($_FILES['FILE13']['size']>1000000){
         echo 'File is too large';
@@ -1504,3 +1598,15 @@ elseif(isset($_POST["DOWNLOAD13"])){
         echo '<br>file does not exist';
     }
 }
+
+// TRAIL PHP SEGMENT
+require_once 'functions.php';
+$trail_user = $_SESSION["user_fullname"];
+$trail_user_type = $_SESSION["usertype_fk"];
+$trail_path = "Project View";
+$trail_action = "Uploaded and downloaded files from project code: " . $project_id;
+$trail_date = date('Y-m-d H:i:s');
+
+recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
+
+// END OF TRAIL PHP SEGMENT
