@@ -913,3 +913,602 @@ elseif(isset($_POST["DOWNLOAD1"])){
         echo '<br>file does not exist';
     }
 }
+
+elseif(isset($_POST["DOWNLOAD2"])){
+    
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE2';
+
+    $sql = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    $result = mysqli_query($conn, $sql);
+
+    // if(mysqli_num_rows($result)>0){
+    //     while($row=mysqli_fetch_assoc($result)){
+          
+    //       echo $row['files_name'];
+          
+    //     }
+    // }
+
+    $file = mysqli_fetch_assoc($result);
+
+    echo $filepath = '../uploads/'.$file['files_name'];
+
+    if(file_exists($filepath)){
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        // header('Content-Type: '. mime_content_type($filepath));
+        header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+        // header('Content-Disposition: inline; filename="'.basename($filepath).'"');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        // header('Content-Length: ' . filesize('../uploads/' . $file['files_name']));
+        header('Content-Length:'.filesize($filepath));
+        header('Content-Transfer-Encoding: binary');
+        ob_clean();
+        flush();
+        readfile("../uploads/".$file['files_name']);
+
+        $newCount = $file['files_downloads'] + 1;
+
+        $updateQuery = "UPDATE files_db SET files_downloads=$newCount WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+
+        mysqli_query($conn, $updateQuery);
+
+        exit();
+
+    }else{
+        echo '<br>file does not exist';
+    }
+}
+
+elseif(isset($_POST["DOWNLOAD3"])){
+    
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE3';
+
+    $sql = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    $result = mysqli_query($conn, $sql);
+
+    // if(mysqli_num_rows($result)>0){
+    //     while($row=mysqli_fetch_assoc($result)){
+          
+    //       echo $row['files_name'];
+          
+    //     }
+    // }
+
+    $file = mysqli_fetch_assoc($result);
+
+    echo $filepath = '../uploads/'.$file['files_name'];
+
+    if(file_exists($filepath)){
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        // header('Content-Type: '. mime_content_type($filepath));
+        header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+        // header('Content-Disposition: inline; filename="'.basename($filepath).'"');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        // header('Content-Length: ' . filesize('../uploads/' . $file['files_name']));
+        header('Content-Length:'.filesize($filepath));
+        header('Content-Transfer-Encoding: binary');
+        ob_clean();
+        flush();
+        readfile("../uploads/".$file['files_name']);
+
+        $newCount = $file['files_downloads'] + 1;
+
+        $updateQuery = "UPDATE files_db SET files_downloads=$newCount WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+
+        mysqli_query($conn, $updateQuery);
+
+        exit();
+
+    }else{
+        echo '<br>file does not exist';
+    }
+}
+
+elseif(isset($_POST["DOWNLOAD4"])){
+    
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE4';
+
+    $sql = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    $result = mysqli_query($conn, $sql);
+
+    // if(mysqli_num_rows($result)>0){
+    //     while($row=mysqli_fetch_assoc($result)){
+          
+    //       echo $row['files_name'];
+          
+    //     }
+    // }
+
+    $file = mysqli_fetch_assoc($result);
+
+    echo $filepath = '../uploads/'.$file['files_name'];
+
+    if(file_exists($filepath)){
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        // header('Content-Type: '. mime_content_type($filepath));
+        header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+        // header('Content-Disposition: inline; filename="'.basename($filepath).'"');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        // header('Content-Length: ' . filesize('../uploads/' . $file['files_name']));
+        header('Content-Length:'.filesize($filepath));
+        header('Content-Transfer-Encoding: binary');
+        ob_clean();
+        flush();
+        readfile("../uploads/".$file['files_name']);
+
+        $newCount = $file['files_downloads'] + 1;
+
+        $updateQuery = "UPDATE files_db SET files_downloads=$newCount WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+
+        mysqli_query($conn, $updateQuery);
+
+        exit();
+
+    }else{
+        echo '<br>file does not exist';
+    }
+}
+elseif(isset($_POST["DOWNLOAD5"])){
+    
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE5';
+
+    $sql = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    $result = mysqli_query($conn, $sql);
+
+    // if(mysqli_num_rows($result)>0){
+    //     while($row=mysqli_fetch_assoc($result)){
+          
+    //       echo $row['files_name'];
+          
+    //     }
+    // }
+
+    $file = mysqli_fetch_assoc($result);
+
+    echo $filepath = '../uploads/'.$file['files_name'];
+
+    if(file_exists($filepath)){
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        // header('Content-Type: '. mime_content_type($filepath));
+        header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+        // header('Content-Disposition: inline; filename="'.basename($filepath).'"');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        // header('Content-Length: ' . filesize('../uploads/' . $file['files_name']));
+        header('Content-Length:'.filesize($filepath));
+        header('Content-Transfer-Encoding: binary');
+        ob_clean();
+        flush();
+        readfile("../uploads/".$file['files_name']);
+
+        $newCount = $file['files_downloads'] + 1;
+
+        $updateQuery = "UPDATE files_db SET files_downloads=$newCount WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+
+        mysqli_query($conn, $updateQuery);
+
+        exit();
+
+    }else{
+        echo '<br>file does not exist';
+    }
+}
+
+elseif(isset($_POST["DOWNLOAD6"])){
+    
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE6';
+
+    $sql = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    $result = mysqli_query($conn, $sql);
+
+    // if(mysqli_num_rows($result)>0){
+    //     while($row=mysqli_fetch_assoc($result)){
+          
+    //       echo $row['files_name'];
+          
+    //     }
+    // }
+
+    $file = mysqli_fetch_assoc($result);
+
+    echo $filepath = '../uploads/'.$file['files_name'];
+
+    if(file_exists($filepath)){
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        // header('Content-Type: '. mime_content_type($filepath));
+        header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+        // header('Content-Disposition: inline; filename="'.basename($filepath).'"');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        // header('Content-Length: ' . filesize('../uploads/' . $file['files_name']));
+        header('Content-Length:'.filesize($filepath));
+        header('Content-Transfer-Encoding: binary');
+        ob_clean();
+        flush();
+        readfile("../uploads/".$file['files_name']);
+
+        $newCount = $file['files_downloads'] + 1;
+
+        $updateQuery = "UPDATE files_db SET files_downloads=$newCount WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+
+        mysqli_query($conn, $updateQuery);
+
+        exit();
+
+    }else{
+        echo '<br>file does not exist';
+    }
+}
+
+elseif(isset($_POST["DOWNLOAD7"])){
+    
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE7';
+
+    $sql = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    $result = mysqli_query($conn, $sql);
+
+    // if(mysqli_num_rows($result)>0){
+    //     while($row=mysqli_fetch_assoc($result)){
+          
+    //       echo $row['files_name'];
+          
+    //     }
+    // }
+
+    $file = mysqli_fetch_assoc($result);
+
+    echo $filepath = '../uploads/'.$file['files_name'];
+
+    if(file_exists($filepath)){
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        // header('Content-Type: '. mime_content_type($filepath));
+        header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+        // header('Content-Disposition: inline; filename="'.basename($filepath).'"');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        // header('Content-Length: ' . filesize('../uploads/' . $file['files_name']));
+        header('Content-Length:'.filesize($filepath));
+        header('Content-Transfer-Encoding: binary');
+        ob_clean();
+        flush();
+        readfile("../uploads/".$file['files_name']);
+
+        $newCount = $file['files_downloads'] + 1;
+
+        $updateQuery = "UPDATE files_db SET files_downloads=$newCount WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+
+        mysqli_query($conn, $updateQuery);
+
+        exit();
+
+    }else{
+        echo '<br>file does not exist';
+    }
+}
+
+elseif(isset($_POST["DOWNLOAD8"])){
+    
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE8';
+
+    $sql = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    $result = mysqli_query($conn, $sql);
+
+    // if(mysqli_num_rows($result)>0){
+    //     while($row=mysqli_fetch_assoc($result)){
+          
+    //       echo $row['files_name'];
+          
+    //     }
+    // }
+
+    $file = mysqli_fetch_assoc($result);
+
+    echo $filepath = '../uploads/'.$file['files_name'];
+
+    if(file_exists($filepath)){
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        // header('Content-Type: '. mime_content_type($filepath));
+        header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+        // header('Content-Disposition: inline; filename="'.basename($filepath).'"');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        // header('Content-Length: ' . filesize('../uploads/' . $file['files_name']));
+        header('Content-Length:'.filesize($filepath));
+        header('Content-Transfer-Encoding: binary');
+        ob_clean();
+        flush();
+        readfile("../uploads/".$file['files_name']);
+
+        $newCount = $file['files_downloads'] + 1;
+
+        $updateQuery = "UPDATE files_db SET files_downloads=$newCount WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+
+        mysqli_query($conn, $updateQuery);
+
+        exit();
+
+    }else{
+        echo '<br>file does not exist';
+    }
+}
+
+elseif(isset($_POST["DOWNLOAD9"])){
+    
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE9';
+
+    $sql = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    $result = mysqli_query($conn, $sql);
+
+    // if(mysqli_num_rows($result)>0){
+    //     while($row=mysqli_fetch_assoc($result)){
+          
+    //       echo $row['files_name'];
+          
+    //     }
+    // }
+
+    $file = mysqli_fetch_assoc($result);
+
+    echo $filepath = '../uploads/'.$file['files_name'];
+
+    if(file_exists($filepath)){
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        // header('Content-Type: '. mime_content_type($filepath));
+        header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+        // header('Content-Disposition: inline; filename="'.basename($filepath).'"');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        // header('Content-Length: ' . filesize('../uploads/' . $file['files_name']));
+        header('Content-Length:'.filesize($filepath));
+        header('Content-Transfer-Encoding: binary');
+        ob_clean();
+        flush();
+        readfile("../uploads/".$file['files_name']);
+
+        $newCount = $file['files_downloads'] + 1;
+
+        $updateQuery = "UPDATE files_db SET files_downloads=$newCount WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+
+        mysqli_query($conn, $updateQuery);
+
+        exit();
+
+    }else{
+        echo '<br>file does not exist';
+    }
+}
+
+elseif(isset($_POST["DOWNLOAD10"])){
+    
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE10';
+
+    $sql = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    $result = mysqli_query($conn, $sql);
+
+    // if(mysqli_num_rows($result)>0){
+    //     while($row=mysqli_fetch_assoc($result)){
+          
+    //       echo $row['files_name'];
+          
+    //     }
+    // }
+
+    $file = mysqli_fetch_assoc($result);
+
+    echo $filepath = '../uploads/'.$file['files_name'];
+
+    if(file_exists($filepath)){
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        // header('Content-Type: '. mime_content_type($filepath));
+        header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+        // header('Content-Disposition: inline; filename="'.basename($filepath).'"');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        // header('Content-Length: ' . filesize('../uploads/' . $file['files_name']));
+        header('Content-Length:'.filesize($filepath));
+        header('Content-Transfer-Encoding: binary');
+        ob_clean();
+        flush();
+        readfile("../uploads/".$file['files_name']);
+
+        $newCount = $file['files_downloads'] + 1;
+
+        $updateQuery = "UPDATE files_db SET files_downloads=$newCount WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+
+        mysqli_query($conn, $updateQuery);
+
+        exit();
+
+    }else{
+        echo '<br>file does not exist';
+    }
+}
+
+elseif(isset($_POST["DOWNLOAD11"])){
+    
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE11';
+
+    $sql = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    $result = mysqli_query($conn, $sql);
+
+    // if(mysqli_num_rows($result)>0){
+    //     while($row=mysqli_fetch_assoc($result)){
+          
+    //       echo $row['files_name'];
+          
+    //     }
+    // }
+
+    $file = mysqli_fetch_assoc($result);
+
+    echo $filepath = '../uploads/'.$file['files_name'];
+
+    if(file_exists($filepath)){
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        // header('Content-Type: '. mime_content_type($filepath));
+        header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+        // header('Content-Disposition: inline; filename="'.basename($filepath).'"');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        // header('Content-Length: ' . filesize('../uploads/' . $file['files_name']));
+        header('Content-Length:'.filesize($filepath));
+        header('Content-Transfer-Encoding: binary');
+        ob_clean();
+        flush();
+        readfile("../uploads/".$file['files_name']);
+
+        $newCount = $file['files_downloads'] + 1;
+
+        $updateQuery = "UPDATE files_db SET files_downloads=$newCount WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+
+        mysqli_query($conn, $updateQuery);
+
+        exit();
+
+    }else{
+        echo '<br>file does not exist';
+    }
+}
+
+elseif(isset($_POST["DOWNLOAD12"])){
+    
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE12';
+
+    $sql = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    $result = mysqli_query($conn, $sql);
+
+    // if(mysqli_num_rows($result)>0){
+    //     while($row=mysqli_fetch_assoc($result)){
+          
+    //       echo $row['files_name'];
+          
+    //     }
+    // }
+
+    $file = mysqli_fetch_assoc($result);
+
+    echo $filepath = '../uploads/'.$file['files_name'];
+
+    if(file_exists($filepath)){
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        // header('Content-Type: '. mime_content_type($filepath));
+        header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+        // header('Content-Disposition: inline; filename="'.basename($filepath).'"');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        // header('Content-Length: ' . filesize('../uploads/' . $file['files_name']));
+        header('Content-Length:'.filesize($filepath));
+        header('Content-Transfer-Encoding: binary');
+        ob_clean();
+        flush();
+        readfile("../uploads/".$file['files_name']);
+
+        $newCount = $file['files_downloads'] + 1;
+
+        $updateQuery = "UPDATE files_db SET files_downloads=$newCount WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+
+        mysqli_query($conn, $updateQuery);
+
+        exit();
+
+    }else{
+        echo '<br>file does not exist';
+    }
+}
+
+elseif(isset($_POST["DOWNLOAD13"])){
+    
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE13';
+
+    $sql = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    $result = mysqli_query($conn, $sql);
+
+    // if(mysqli_num_rows($result)>0){
+    //     while($row=mysqli_fetch_assoc($result)){
+          
+    //       echo $row['files_name'];
+          
+    //     }
+    // }
+
+    $file = mysqli_fetch_assoc($result);
+
+    echo $filepath = '../uploads/'.$file['files_name'];
+
+    if(file_exists($filepath)){
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        // header('Content-Type: '. mime_content_type($filepath));
+        header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+        // header('Content-Disposition: inline; filename="'.basename($filepath).'"');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        // header('Content-Length: ' . filesize('../uploads/' . $file['files_name']));
+        header('Content-Length:'.filesize($filepath));
+        header('Content-Transfer-Encoding: binary');
+        ob_clean();
+        flush();
+        readfile("../uploads/".$file['files_name']);
+
+        $newCount = $file['files_downloads'] + 1;
+
+        $updateQuery = "UPDATE files_db SET files_downloads=$newCount WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+
+        mysqli_query($conn, $updateQuery);
+
+        exit();
+
+    }else{
+        echo '<br>file does not exist';
+    }
+}
