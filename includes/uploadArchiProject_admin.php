@@ -1472,14 +1472,6 @@ elseif(isset($_POST["DOWNLOAD13"])){
     $sql = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
     $result = mysqli_query($conn, $sql);
 
-    // if(mysqli_num_rows($result)>0){
-    //     while($row=mysqli_fetch_assoc($result)){
-          
-    //       echo $row['files_name'];
-          
-    //     }
-    // }
-
     $file = mysqli_fetch_assoc($result);
 
     echo $filepath = '../uploads/'.$file['files_name'];

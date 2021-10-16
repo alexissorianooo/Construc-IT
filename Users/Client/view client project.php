@@ -58,12 +58,18 @@
             $status1 = "Pending";
             $status2 = "Completed";
             $status3 = "Delayed";
+
+            $project_id = $row["project_id"];
             
 
             if($_SESSION["user_fullname"] == $row["project_client"] || $forprojectID == $row["project_id"]){
                                 
 
                 echo '
+
+                <div style="margin-top:3%; margin-bottom:50px;">
+                    <h4 class="text-center" style="height: 35px;font-size: 34px;">Architect Activities</h4> 
+                </div>
                 <div >
                 <form method="post" action="../../includes/uploadArchiProject_admin.php" enctype="multipart/form-data">
                 <section class="headerbox container" id="header-section" style="padding-top: 20px;">
@@ -94,6 +100,10 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="progress mx-auto" style="width: 80%;height: 30px; margin-top:3%;">
+                        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$row["project_progress_architect"].'%;">'.$row["project_progress_architect"].'</div>
                     </div>
                 </div>
             </section>
@@ -129,9 +139,20 @@
                                         }
                                         elseif($status2 == $row['project_status_Architect_1']){
                                             echo ' Completed </label>
-                                            <div style="margin-top: 10px;text-align: center;">                                                                                           
-                                                <button name="DOWNLOAD1">Download</button>
-                                            </div>';
+                                            <div style="margin-top: 10px;text-align: center;">';
+                                                   
+                                            $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE1'";
+                                            $result2 = mysqli_query($conn, $sql2);
+
+                                            if(mysqli_num_rows($result2)>0){
+                                                
+                                                echo'
+                                                    <button name="DOWNLOAD1">Download</button>
+                                                ';
+                                                 
+                                            }
+
+                                        echo'</div>';
                                         }
                                         elseif($status3 == $row['project_status_Architect_1']){
                                             echo ' Delayed </label>';
@@ -167,9 +188,20 @@
                                     }
                                     elseif($status2 == $row['project_status_Architect_2']){
                                         echo ' Completed </label>
-                                        <div style="margin-top: 10px;text-align: center;">                                                                                                            
-                                            <button name="DOWNLOAD2">Download</button>
-                                        </div>';
+                                        <div style="margin-top: 10px;text-align: center;">';
+                                                   
+                                        $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE2'";
+                                        $result2 = mysqli_query($conn, $sql2);
+
+                                        if(mysqli_num_rows($result2)>0){
+                                            
+                                            echo'
+                                                <button name="DOWNLOAD2">Download</button>
+                                            ';
+                                             
+                                        }
+
+                                    echo'</div>';
                                     }
                                     elseif($status3 == $row['project_status_Architect_2']){
                                         echo ' Delayed </label>';
@@ -204,9 +236,20 @@
                                     }
                                     elseif($status2 == $row['project_status_Architect_3']){
                                         echo ' Completed </label>
-                                        <div style="margin-top: 10px;text-align: center;">                                         
-                                            <button name="DOWNLOAD3">Download</button>
-                                        </div>';
+                                        <div style="margin-top: 10px;text-align: center;">';
+                                                   
+                                        $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE3'";
+                                        $result2 = mysqli_query($conn, $sql2);
+
+                                        if(mysqli_num_rows($result2)>0){
+                                            
+                                            echo'
+                                                <button name="DOWNLOAD3">Download</button>
+                                            ';
+                                             
+                                        }
+
+                                    echo'</div>';
                                     }
                                     elseif($status3 == $row['project_status_Architect_3']){
                                         echo ' Delayed </label>';
@@ -240,9 +283,20 @@
                                     }
                                     elseif($status2 == $row['project_status_Architect_4']){
                                         echo ' Completed </label>
-                                        <div style="margin-top: 10px;text-align: center;">                                         
-                                            <button name="DOWNLOAD4">Download</button>
-                                        </div>';
+                                        <div style="margin-top: 10px;text-align: center;">';
+                                                   
+                                        $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE4'";
+                                        $result2 = mysqli_query($conn, $sql2);
+
+                                        if(mysqli_num_rows($result2)>0){
+                                            
+                                            echo'
+                                                <button name="DOWNLOAD4">Download</button>
+                                            ';
+                                             
+                                        }
+
+                                    echo'</div>';
                                     }
                                     elseif($status3 == $row['project_status_Architect_4']){
                                         echo ' Delayed </label>';
@@ -276,9 +330,20 @@
                                     }
                                     elseif($status2 == $row['project_status_Architect_5']){
                                         echo ' Completed </label>
-                                        <div style="margin-top: 10px;text-align: center;">                               
-                                            <button name="DOWNLOAD5">Download</button>
-                                        </div>';
+                                        <div style="margin-top: 10px;text-align: center;">  ';
+                                                   
+                                        $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE5'";
+                                        $result2 = mysqli_query($conn, $sql2);
+
+                                        if(mysqli_num_rows($result2)>0){
+                                            
+                                            echo'
+                                                <button name="DOWNLOAD5">Download</button>
+                                            ';
+                                             
+                                        }
+
+                                    echo'</div>';
                                     }
                                     elseif($status3 == $row['project_status_Architect_5']){
                                         echo ' Delayed </label>';
@@ -312,9 +377,20 @@
                                     }
                                     elseif($status2 == $row['project_status_Architect_6']){
                                         echo ' Completed </label>
-                                        <div style="margin-top: 10px;text-align: center;">                                       
-                                            <button name="DOWNLOAD6">Download</button>
-                                        </div>';
+                                        <div style="margin-top: 10px;text-align: center;"> ';
+                                                   
+                                        $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE6'";
+                                        $result2 = mysqli_query($conn, $sql2);
+
+                                        if(mysqli_num_rows($result2)>0){
+                                            
+                                            echo'
+                                                <button name="DOWNLOAD6">Download</button>
+                                            ';
+                                             
+                                        }
+
+                                    echo'</div>';
                                     }
                                     elseif($status3 == $row['project_status_Architect_6']){
                                         echo ' Delayed </label>';
@@ -347,9 +423,20 @@
                                     }
                                     elseif($status2 == $row['project_status_Architect_7']){
                                         echo ' Completed </label>
-                                        <div style="margin-top: 10px;text-align: center;">                
-                                            <button name="DOWNLOAD7">Download</button>
-                                        </div>';
+                                        <div style="margin-top: 10px;text-align: center;"> ';
+                                                   
+                                        $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE7'";
+                                        $result2 = mysqli_query($conn, $sql2);
+
+                                        if(mysqli_num_rows($result2)>0){
+                                            
+                                            echo'
+                                                <button name="DOWNLOAD7">Download</button>
+                                            ';
+                                             
+                                        }
+
+                                    echo'</div>';
                                     }
                                     elseif($status3 == $row['project_status_Architect_7']){
                                         echo ' Delayed </label>';
@@ -383,9 +470,20 @@
                                     }
                                     elseif($status2 == $row['project_status_Architect_8']){
                                         echo ' Completed </label>
-                                        <div style="margin-top: 10px;text-align: center;">                               
-                                            <button name="DOWNLOAD8">Download</button>
-                                        </div>';
+                                        <div style="margin-top: 10px;text-align: center;">  ';
+                                                   
+                                        $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE8'";
+                                        $result2 = mysqli_query($conn, $sql2);
+
+                                        if(mysqli_num_rows($result2)>0){
+                                            
+                                            echo'
+                                                <button name="DOWNLOAD8">Download</button>
+                                            ';
+                                             
+                                        }
+
+                                    echo'</div>';
                                     }
                                     elseif($status3 == $row['project_status_Architect_8']){
                                         echo ' Delayed </label>';
@@ -433,9 +531,20 @@
                                             }
                                             elseif($status2 == $row['project_status_additional_Architect_1']){
                                                 echo ' Completed </label>
-                                                <div style="margin-top: 10px;text-align: center;">      
-                                                    <button name="DOWNLOAD9">Download</button>
-                                                </div>';
+                                                <div style="margin-top: 10px;text-align: center;">   ';
+                                                   
+                                                $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE9'";
+                                                $result2 = mysqli_query($conn, $sql2);
+        
+                                                if(mysqli_num_rows($result2)>0){
+                                                    
+                                                    echo'
+                                                        <button name="DOWNLOAD9">Download</button>
+                                                    ';
+                                                     
+                                                }
+        
+                                            echo'</div>';
                                             }
                                             elseif($status3 == $row['project_status_additional_Architect_1']){
                                                 echo ' Delayed </label>';
@@ -481,9 +590,20 @@
                                             }
                                             elseif($status2 == $row['project_status_additional_Architect_2']){
                                                 echo ' Completed </label>
-                                                <div style="margin-top: 10px;text-align: center;">                          
-                                                    <button name="DOWNLOAD10">Download</button>
-                                                </div>';
+                                                <div style="margin-top: 10px;text-align: center;">  ';
+                                                   
+                                                $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE10'";
+                                                $result2 = mysqli_query($conn, $sql2);
+        
+                                                if(mysqli_num_rows($result2)>0){
+                                                    
+                                                    echo'
+                                                        <button name="DOWNLOAD10">Download</button>
+                                                    ';
+                                                     
+                                                }
+        
+                                            echo'</div>';
                                             }
                                             elseif($status3 == $row['project_status_additional_Architect_2']){
                                                 echo ' Delayed </label>';
@@ -530,9 +650,20 @@
                                                 }
                                                 elseif($status2 == $row['project_status_additional_Architect_3']){
                                                     echo ' Completed </label>
-                                                    <div style="margin-top: 10px;text-align: center;">                 
-                                                        <button name="DOWNLOAD11">Download</button>
-                                                    </div>';
+                                                    <div style="margin-top: 10px;text-align: center;">   ';
+                                                   
+                                                    $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE11'";
+                                                    $result2 = mysqli_query($conn, $sql2);
+            
+                                                    if(mysqli_num_rows($result2)>0){
+                                                        
+                                                        echo'
+                                                            <button name="DOWNLOAD11">Download</button>
+                                                        ';
+                                                         
+                                                    }
+            
+                                                echo'</div>';
                                                 }
                                                 elseif($status3 == $row['project_status_additional_Architect_3']){
                                                     echo ' Delayed </label>';
@@ -579,9 +710,20 @@
                                                 }
                                                 elseif($status2 == $row['project_status_additional_Architect_4']){
                                                     echo ' Completed </label>
-                                                    <div style="margin-top: 10px;text-align: center;">                                
-                                                        <button name="DOWNLOAD12">Download</button>
-                                                    </div>';
+                                                    <div style="margin-top: 10px;text-align: center;">    ';
+                                                   
+                                                    $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE12'";
+                                                    $result2 = mysqli_query($conn, $sql2);
+            
+                                                    if(mysqli_num_rows($result2)>0){
+                                                        
+                                                        echo'
+                                                            <button name="DOWNLOAD12">Download</button>
+                                                        ';
+                                                         
+                                                    }
+            
+                                                echo'</div>';
                                                 }
                                                 elseif($status3 == $row['project_status_additional_Architect_4']){
                                                     echo ' Delayed </label>';
@@ -625,9 +767,20 @@
                                                     }
                                                     elseif($status2 == $row['project_status_additional_Architect_5']){
                                                         echo ' Completed </label>
-                                                        <div style="margin-top: 10px;text-align: center;">                                               
-                                                            <button name="DOWNLOAD13">Download</button>
-                                                        </div>';
+                                                        <div style="margin-top: 10px;text-align: center;">  ';
+                                                   
+                                                        $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE13'";
+                                                        $result2 = mysqli_query($conn, $sql2);
+                
+                                                        if(mysqli_num_rows($result2)>0){
+                                                            
+                                                            echo'
+                                                                <button name="DOWNLOAD13">Download</button>
+                                                            ';
+                                                             
+                                                        }
+                
+                                                    echo'</div>';
                                                     }
                                                     elseif($status3 == $row['project_status_additional_Architect_5']){
                                                         echo ' Delayed </label>';
