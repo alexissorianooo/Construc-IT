@@ -36,7 +36,7 @@ session_start();
     <link rel="stylesheet" href="assets-act/css/styles.css">
 </head>
 
-<body>
+<body style="width:100%">
     <main class="page landing-page">
         <!-- <section class="clean-block">
             <div class="container" style="margin-top: -100px; margin-bottom: 30px;"> -->
@@ -126,7 +126,7 @@ session_start();
     
                                 <br><br>
                                 <br><br>
-                                
+                            <div class="container">    
                                 <div>
                                     <div style="width: 100%;">
                                         <div class="text-center" style="width: 100%;">
@@ -167,10 +167,10 @@ session_start();
                             '
                             
                             
-                            <div class="progress" style="width: 50%;height: 30px;margin: auto;">
-                                <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$row["project_progress_PM"].'%;">'.$row["project_progress_PM"].'</div>
+                                <div class="progress" style="width: 80%;height: 30px;margin: auto;">
+                                    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$row["project_progress_PM"].'%;">'.$row["project_progress_PM"].'</div>
+                                </div>
                             </div>
-    
                             <br><br>
                             <br><br>
     
