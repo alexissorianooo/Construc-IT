@@ -181,6 +181,9 @@
                                                 
                                             echo'   
                                             </label>
+                                            <div style="text-align: center; margin: 20px;">
+                                                <input type="file" name="myFile">
+                                            </div>
                                             <div style="margin-top: 10px;text-align: center;">
                                                 <button name="UPLOAD1">Upload</button>
                                                 <button name="DOWNLOAD1">Download</button>
