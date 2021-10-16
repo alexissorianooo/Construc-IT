@@ -190,9 +190,9 @@
                                                         <input type="file" name="FILE1" style="color: black; width:100%;">
                                                     </div>
                                                     <div style="margin-top: 10px;text-align: center;">
+                                                        
                                                         <button name="UPLOAD1">Upload</button>
-                                                        <input hidden name="" value="">
-                                                         <button name="DOWNLOAD1">Download</button>
+                                                        <button name="DOWNLOAD1">Download</button>
                                                     </div>';
                                                 }
                                                 elseif($status3 == $row['project_status_Architect_1']){
@@ -233,7 +233,8 @@
                                                     <input type="file" name="FILE2" style="color: black; width:100%;">
                                                 </div>
                                                 <div style="margin-top: 10px;text-align: center;">
-                                                    <button name="UPLOAD2">Upload</button>
+                                                    
+                                                    <button name="UPLOAD2" >Upload</button>
                                                     <button name="DOWNLOAD2">Download</button>
                                                 </div>';
                                             }
@@ -764,10 +765,10 @@
                                     <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$row['project_progress_architect'].'%;">'.$row['project_progress_architect'] .'</div>
                         </div>
                         <section class="text-center" id="footer-section">
-                            <button class="btn btn-primary" style="background: rgb(229,234,239);color: rgb(0,0,0);margin: 10px;border-color: rgb(229,234,239);" type="button" onclick="location.replace(document.referrer)">
+                            <button class="btn btn-primary" style="background: rgb(229,234,239);color: rgb(0,0,0);margin: 10px;border-color: rgb(229,234,239);" type="button" onclick="goBack_admin()">
                                 <i class="fa fa-arrow-circle-left"></i>&nbsp; Back</button>
-                            <button class="btn btn-primary" type="submit" style="margin: 10px;" name="saveButton">
-                                <i class="fa fa-save"></i>&nbsp; Save</button>
+                            <!--<button class="btn btn-primary" type="submit" style="margin: 10px;" name="saveButton">
+                                <i class="fa fa-save"></i>&nbsp; Save</button>-->
                         </section>
                     </div>
                 

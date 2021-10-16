@@ -32,7 +32,7 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
     <link rel="stylesheet" href="assets-act/css/smoothproducts.css">
     <link rel="stylesheet" href="assets-act/css/Projects-Horizontal.css">    
-
+    <link rel="stylesheet" href="assets-act/css/pmstyle.css">
     <link rel="stylesheet" href="assets-act/css/styles.css">
 </head>
 
@@ -175,7 +175,7 @@ session_start();
                             <br><br>
     
                             <div id="body-section" class="sectionPADDING">
-                                <div style="margin-bottom: 50px;">
+                                <div class="bg-dark spacing" style="margin-bottom: 50px;">
                                     <h4 class="text-center" style="height: 35px;font-size: 34px;">Mobilization</h4>
                                     <div class="d-inline-flex" style="width: 100%;">
                                         <div class="container">
@@ -333,6 +333,8 @@ session_start();
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div style="margin-bottom: 50px;">
                                     <br><br><br>
                                     <h4 class="text-center" style="height: 35px;font-size: 34px;">FOUNDATION WORKS</h4>
                                     <div class="d-inline-flex" style="width: 100%;">
@@ -692,6 +694,8 @@ session_start();
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="bg-dark spacing" style="padding-top:5px;">
                                     <br><br><br>
                                     <h4 class="text-center" style="height: 35px;font-size: 34px;">Architectural/Structural works</h4>
                                     <div class="d-inline-flex" style="width: 100%;">
@@ -1101,6 +1105,8 @@ session_start();
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div style="margin-bottom: 50px;">
                                     <br><br><br>
                                     <h4 class="text-center" style="height: 35px;font-size: 34px;">Finishing works</h4>
                                     <div class="d-inline-flex" style="width: 100%;">
