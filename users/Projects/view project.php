@@ -234,9 +234,15 @@
                                                     $result2 = mysqli_query($conn, $sql2);
 
                                                     if(mysqli_num_rows($result2)>0){
-                                                        
+                                                        $row2=mysqli_fetch_assoc($result2);
                                                         echo'
                                                             <button name="DOWNLOAD1">Download</button>
+                                                            <br>
+                                                            <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                            <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                            type="submit" name="deleteFile1">
+                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                            </button> 
                                                         ';
                                                         
                                                     }
@@ -319,11 +325,16 @@
                                                     $result2 = mysqli_query($conn, $sql2);
 
                                                     if(mysqli_num_rows($result2)>0){
-                                                        
+                                                        $row2=mysqli_fetch_assoc($result2);
                                                         echo'
                                                             <button name="DOWNLOAD2">Download</button>
-                                                        ';
-                                                        
+                                                            <br>
+                                                            <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                            <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                            type="submit" name="deleteFile2">
+                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                            </button> 
+                                                        '; 
                                                     }
 
                                                     echo'
@@ -404,11 +415,16 @@
                                                     $result2 = mysqli_query($conn, $sql2);
 
                                                     if(mysqli_num_rows($result2)>0){
-                                                        
+                                                        $row2=mysqli_fetch_assoc($result2);
                                                         echo'
                                                             <button name="DOWNLOAD3">Download</button>
-                                                        ';
-                                                        
+                                                            <br>
+                                                            <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                            <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                            type="submit" name="deleteFile3">
+                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                            </button> 
+                                                        '; 
                                                     }
 
                                                     echo'
@@ -489,11 +505,16 @@
                                                     $result2 = mysqli_query($conn, $sql2);
 
                                                     if(mysqli_num_rows($result2)>0){
-                                                        
+                                                        $row2=mysqli_fetch_assoc($result2);
                                                         echo'
                                                             <button name="DOWNLOAD4">Download</button>
-                                                        ';
-                                                        
+                                                            <br>
+                                                            <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                            <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                            type="submit" name="deleteFile4">
+                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                            </button> 
+                                                        '; 
                                                     }
 
                                                     echo'
@@ -574,11 +595,16 @@
                                                     $result2 = mysqli_query($conn, $sql2);
 
                                                     if(mysqli_num_rows($result2)>0){
-                                                        
+                                                        $row2=mysqli_fetch_assoc($result2);
                                                         echo'
                                                             <button name="DOWNLOAD5">Download</button>
-                                                        ';
-                                                        
+                                                            <br>
+                                                            <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                            <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                            type="submit" name="deleteFile5">
+                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                            </button> 
+                                                        '; 
                                                     }
 
                                                     echo'
@@ -659,11 +685,16 @@
                                                     $result2 = mysqli_query($conn, $sql2);
 
                                                     if(mysqli_num_rows($result2)>0){
-                                                        
+                                                        $row2=mysqli_fetch_assoc($result2);
                                                         echo'
                                                             <button name="DOWNLOAD6">Download</button>
-                                                        ';
-                                                        
+                                                            <br>
+                                                            <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                            <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                            type="submit" name="deleteFile6">
+                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                            </button> 
+                                                        '; 
                                                     }
 
                                                     echo'
@@ -744,11 +775,16 @@
                                                     $result2 = mysqli_query($conn, $sql2);
 
                                                     if(mysqli_num_rows($result2)>0){
-                                                        
+                                                        $row2=mysqli_fetch_assoc($result2);
                                                         echo'
                                                             <button name="DOWNLOAD7">Download</button>
-                                                        ';
-                                                        
+                                                            <br>
+                                                            <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                            <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                            type="submit" name="deleteFile7">
+                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                            </button> 
+                                                        '; 
                                                     }
 
                                                     echo'
@@ -829,11 +865,16 @@
                                                     $result2 = mysqli_query($conn, $sql2);
 
                                                     if(mysqli_num_rows($result2)>0){
-                                                        
+                                                        $row2=mysqli_fetch_assoc($result2);
                                                         echo'
                                                             <button name="DOWNLOAD8">Download</button>
-                                                        ';
-                                                        
+                                                            <br>
+                                                            <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                            <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                            type="submit" name="deleteFile8">
+                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                            </button> 
+                                                        '; 
                                                     }
 
                                                     echo'
@@ -928,11 +969,16 @@
                                                             $result2 = mysqli_query($conn, $sql2);
         
                                                             if(mysqli_num_rows($result2)>0){
-                                                                
+                                                                $row2=mysqli_fetch_assoc($result2);
                                                                 echo'
                                                                     <button name="DOWNLOAD9">Download</button>
-                                                                ';
-                                                                
+                                                                    <br>
+                                                                    <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                                    <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                                    type="submit" name="deleteFile9">
+                                                                        <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                                    </button> 
+                                                                '; 
                                                             }
         
                                                             echo'
@@ -1026,11 +1072,16 @@
                                                                 $result2 = mysqli_query($conn, $sql2);
             
                                                                 if(mysqli_num_rows($result2)>0){
-                                                                    
+                                                                    $row2=mysqli_fetch_assoc($result2);
                                                                     echo'
                                                                         <button name="DOWNLOAD10">Download</button>
-                                                                    ';
-                                                                    
+                                                                        <br>
+                                                                        <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                                        <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                                        type="submit" name="deleteFile10">
+                                                                            <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                                        </button> 
+                                                                    '; 
                                                                 }
             
                                                                 echo'
@@ -1124,11 +1175,16 @@
                                                                 $result2 = mysqli_query($conn, $sql2);
             
                                                                 if(mysqli_num_rows($result2)>0){
-                                                                    
+                                                                    $row2=mysqli_fetch_assoc($result2);
                                                                     echo'
                                                                         <button name="DOWNLOAD11">Download</button>
-                                                                    ';
-                                                                    
+                                                                        <br>
+                                                                        <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                                        <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                                        type="submit" name="deleteFile11">
+                                                                            <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                                        </button> 
+                                                                    '; 
                                                                 }
             
                                                                 echo'
@@ -1222,11 +1278,16 @@
                                                                     $result2 = mysqli_query($conn, $sql2);
                 
                                                                     if(mysqli_num_rows($result2)>0){
-                                                                        
+                                                                        $row2=mysqli_fetch_assoc($result2);
                                                                         echo'
                                                                             <button name="DOWNLOAD12">Download</button>
-                                                                        ';
-                                                                        
+                                                                            <br>
+                                                                            <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                                            <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                                            type="submit" name="deleteFile12">
+                                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                                            </button> 
+                                                                        '; 
                                                                     }
                 
                                                                     echo'
@@ -1318,11 +1379,16 @@
                                                                 $result2 = mysqli_query($conn, $sql2);
             
                                                                 if(mysqli_num_rows($result2)>0){
-                                                                    
+                                                                    $row2=mysqli_fetch_assoc($result2);
                                                                     echo'
                                                                         <button name="DOWNLOAD13">Download</button>
-                                                                    ';
-                                                                    
+                                                                        <br>
+                                                                        <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                                        <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                                        type="submit" name="deleteFile13">
+                                                                            <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                                        </button> 
+                                                                    '; 
                                                                 }
             
                                                                 echo'
@@ -1338,7 +1404,18 @@
                                 </div>
                             </div>
                         </div>
-                    </section>';
+                    </section>
+                    
+                    <script>
+                        $(".confirm").on("click", function(event){
+                            if(confirm("Are you sure to delete?")){
+                            return true;
+                            } else {
+                                event.preventDefault();
+                                return false;
+                            }
+                        });
+                    </script>';
                    
                     $progressbar = ($numerator / $denominator)*100;
                     $roundvalue = round($progressbar);
