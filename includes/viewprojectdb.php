@@ -150,7 +150,7 @@ if(isset($_POST["saveButton"])){
 
         // END OF TRAIL PHP SEGMENT
 
-        header("Location: ../users/Projects/project_arch.php?status=complete");
+        header("Location: ../users/Projects/view project.php?status=complete");
         exit;
     } 
 

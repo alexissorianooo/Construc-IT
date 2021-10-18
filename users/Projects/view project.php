@@ -1353,7 +1353,7 @@
                                     <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$roundvalue.'%;">'.$roundvalue .'</div>
                         </div>
                         <section class="text-center" id="footer-section">
-                            <button class="btn btn-primary" style="background: rgb(229,234,239);color: rgb(0,0,0);margin: 10px;border-color: rgb(229,234,239);" type="button" onclick="history.back()">
+                            <button class="btn btn-primary" style="background: rgb(229,234,239);color: rgb(0,0,0);margin: 10px;border-color: rgb(229,234,239);" type="button" onclick="goBack()">
                                 <i class="fa fa-arrow-circle-left"></i>&nbsp; Back</button>
                             <button class="btn btn-primary" type="submit" style="margin: 10px;" name="saveButton">
                                 <i class="fa fa-save"></i>&nbsp; Save</button>
