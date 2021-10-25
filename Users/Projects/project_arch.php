@@ -68,6 +68,9 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                     $sql = "SELECT project_id, project_name, project_status_fk, project_startdate, project_deadline, project_architect, project_pm, project_pm_id, project_client, project_client_id, project_progress_architect FROM project_db";
                     $result = mysqli_query($conn, $sql);
 
+                    $name = "desk.jpg";
+                    $filepath = "assets/img/" . $name;
+
                     if(mysqli_num_rows($result)>0){
                         while($row=mysqli_fetch_assoc($result)){
                             if($row["project_status_fk"]=="Not Complete" && $_SESSION["user_fullname"] == $row["project_architect"]){
@@ -76,7 +79,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                     <div class="col-sm-6 item" style="border-style: none;border-color: var(--bs-gray-dark);">
                                         <div class="row">
                                             <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid"
-                                                        src="assets/img/desk.jpg"></a></div>
+                                                        src="'.$filepath.'"></a></div>
                                             <div class="col text-end" style="background: #f9eeca;">
                                                 <h3 class="text-start name" style="color: var(--bs-dark);"> '. $row["project_name"] . '&nbsp;</h3>
                                                 <h3 class="text-start name" style="color: var(--bs-dark);"> Project Code: '. $row["project_id"] . '&nbsp;</h3>
