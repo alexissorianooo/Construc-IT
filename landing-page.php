@@ -129,7 +129,7 @@
                 </div>
             </div>
             <div class="col-sm-6">
-                <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/pakalu.jpg" />
+                <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/thomas.jpg" />
                     <h4>Thomas Broñola</h4>
                     <p>Single #1</p>
                     <ul class="list-inline social-buttons">
