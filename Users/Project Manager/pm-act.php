@@ -176,14 +176,14 @@ session_start();
     
                             <div id="body-section" class="sectionPADDING">
                                 <div class="bg-dark spacing" style="margin-bottom: 30px; padding-top: 110px; padding-bottom:110px">
-                                    <h4 class="text-center" style="height: 35px;font-size: 34px;">Mobilization</h4>
+                                    <h4 class="text-center darktext">Mobilization</h4>
                                     <div class="d-inline-flex" style="width: 100%;">
                                         <div class="container">
                                             <div class="row">
     
                                                 <!--FIRST DIV-->
                                                 <div class="col-md-4" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                                    <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
+                                                    <div class="text-center border rounded border-dark shadow darkbox">
                                                         <p class="text-center text-muted" style="height: 38px;font-size: 20px;">'.$row['project_activity_PM_1'].'</p>
                                                         <br><br>
                                                         <select class="selectColor form-control ';
@@ -233,7 +233,7 @@ session_start();
     
                                                 <!--SECOND DIV-->
                                                 <div class="col-md-4" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                                    <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
+                                                    <div class="text-center border rounded border-dark shadow darkbox">
                                                         <p class="text-center text-muted" style="height: 38px;font-size: 20px;">'.$row['project_activity_PM_2'].'</p>
                                                         <br><br>
                                                         <select class="selectColor form-control ';
@@ -283,7 +283,7 @@ session_start();
     
                                                 <!--3rd DIV-->
                                                 <div class="col-md-4" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                                    <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
+                                                    <div class="text-center border rounded border-dark shadow darkbox">
                                                         <p class="text-center text-muted" style="height: 38px;font-size: 20px;">'.$row['project_activity_PM_3'].'</p>
                                                         <br><br>
                                                         <select class="selectColor form-control ';
@@ -697,14 +697,14 @@ session_start();
                                 </div>
                                 <div class="bg-dark spacing" style="padding-top:15px;">
                                     <br><br><br>
-                                    <h4 class="text-center" style="height: 35px;font-size: 34px;">Architectural/Structural works</h4>
+                                    <h4 class="text-center darktext">Architectural/Structural works</h4>
                                     <div class="d-inline-flex" style="width: 100%;">
                                         <div class="container">
                                             <div class="row">
     
                                                 <!--11th DIV-->
                                                 <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                                    <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
+                                                    <div class="text-center border rounded border-dark shadow darkbox">
                                                         <p class="text-center text-muted" style="height: 38px;font-size: 20px;">'.$row['project_activity_PM_11'].'</p>
                                                         <br><br>
                                                         <select class="selectColor form-control ';
@@ -754,7 +754,7 @@ session_start();
                                                 
                                                 <!--12th DIV-->
                                                 <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                                    <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
+                                                    <div class="text-center border rounded border-dark shadow darkbox">
                                                         <p class="text-center text-muted" style="height: 38px;font-size: 20px;">'.$row['project_activity_PM_12'].'</p>
                                                         <br><br>
                                                         <select class="selectColor form-control ';
@@ -804,7 +804,7 @@ session_start();
     
                                                 <!--13th DIV-->
                                                 <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                                    <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
+                                                    <div class="text-center border rounded border-dark shadow darkbox">
                                                         <p class="text-center text-muted" style="height: 38px;font-size: 20px;">'.$row['project_activity_PM_13'].'</p>
                                                         <br><br>
                                                         <select class="selectColor form-control ';
@@ -854,7 +854,7 @@ session_start();
     
                                                 <!--14th DIV-->
                                                 <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                                    <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
+                                                    <div class="text-center border rounded border-dark shadow darkbox">
                                                         <p class="text-center text-muted" style="height: 38px;font-size: 20px;">'.$row['project_activity_PM_14'].'</p>
                                                         <br><br>
                                                         <select class="selectColor form-control ';
@@ -904,7 +904,7 @@ session_start();
     
                                                 <!--15th DIV-->
                                                 <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                                    <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
+                                                    <div class="text-center border rounded border-dark shadow darkbox">
                                                         <p class="text-center text-muted" style="height: 38px;font-size: 20px;">'.$row['project_activity_PM_15'].'</p>
                                                         <br><br>
                                                         <select class="selectColor form-control ';
@@ -954,7 +954,7 @@ session_start();
     
                                                 <!--16th DIV-->
                                                 <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                                    <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
+                                                    <div class="text-center border rounded border-dark shadow darkbox">
                                                         <p class="text-center text-muted" style="height: 38px;font-size: 20px;">'.$row['project_activity_PM_16'].'</p>
                                                         <br><br>
                                                         <select class="selectColor form-control ';
@@ -1004,7 +1004,7 @@ session_start();
     
                                                 <!--17th DIV-->
                                                 <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                                    <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
+                                                    <div class="text-center border rounded border-dark shadow darkbox">
                                                         <p class="text-center text-muted" style="height: 38px;font-size: 20px;">'.$row['project_activity_PM_17'].'</p>
                                                         <br><br>
                                                         <select class="selectColor form-control ';
@@ -1054,7 +1054,7 @@ session_start();
     
                                                 <!--18th DIV-->
                                                 <div class="col-md-3" style="margin-bottom: 10px;margin-right: 0px;margin-top: 10px;margin-left: 0px;">
-                                                    <div class="text-center border rounded border-dark shadow" style="width: 100%;border-color: rgb(0,0,0);padding: 10px;">
+                                                    <div class="text-center border rounded border-dark shadow darkbox">
                                                         <p class="text-center text-muted" style="height: 38px;font-size: 20px;">'.$row['project_activity_PM_18'].'</p>
                                                         <br><br>
                                                         <select class="selectColor form-control ';

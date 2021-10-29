@@ -135,6 +135,20 @@
     }
 }
 
+.darktext{
+    height: 35px;
+    font-size: 34px;
+    color: white;
+    -webkit-text-stroke: 0.1px;
+    -webkit-text-stroke-color: gray;
+}
+
+.darkbox {
+    background-color: ivory;
+    width: 100%;
+    padding: 10px;
+}
+
 /* .containeredit {
     width:100%;
     padding-right:15px;
