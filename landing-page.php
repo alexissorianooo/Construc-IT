@@ -142,7 +142,7 @@
             <div class="col-sm-6">
                 <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/laczy.jpg" />
                     <h4>Eris Lacsamana</h4>
-                    <p class="text-secondary">Single #2</p>
+                    <p>Single #2</p>
                     <ul class="list-inline social-buttons">
                         <li class="list-inline-item"><a href="https://twitter.com/LaczFeli" target="_blank"><i class="fa fa-twitter"></i></a></li>
                         <li class="list-inline-item"><a href="https://web.facebook.com/Laczie" target="_blank"><i class="fa fa-facebook"></i></a></li>
@@ -153,7 +153,7 @@
             <div class="col-sm-6">
                 <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/Perfy.jpg" />
                     <h4>Perf John Gomera</h4>
-                    <p class="text-muted">May Jowa #2</p>
+                    <p>May Jowa #2</p>
                     <ul class="list-inline social-buttons">
                         <li class="list-inline-item"><a href="https://twitter.com/theperfgomera" target="_blank"><i class="fa fa-twitter"></i></a></li>
                         <li class="list-inline-item"><a href="https://web.facebook.com/perf.gomera" target="_blank"><i class="fa fa-facebook"></i></a></li>
