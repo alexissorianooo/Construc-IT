@@ -2,7 +2,7 @@
 <?php
 session_start();
 include 'db.php';
-
+$project_id = $_POST['project_id'];
 
 
 
@@ -1597,6 +1597,226 @@ elseif(isset($_POST["DOWNLOAD13"])){
     }else{
         echo '<br>file does not exist';
     }
+}
+elseif(isset($_POST["deleteFile1"])){
+    echo 'you\'re deleting huh?';
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE1';
+
+    $sql = "DELETE FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    mysqli_query($conn, $sql);
+
+    echo'
+    <script type="text/javascript">
+    location.replace(document.referrer);
+    </script>
+    ';
+    
+    exit();
+}
+elseif(isset($_POST["deleteFile2"])){
+    echo 'you\'re deleting huh?';
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE2';
+
+    $sql = "DELETE FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    mysqli_query($conn, $sql);
+
+    echo'
+    <script type="text/javascript">
+    location.replace(document.referrer);
+    </script>
+    ';
+    
+    exit();
+}
+elseif(isset($_POST["deleteFile3"])){
+    echo 'you\'re deleting huh?';
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE3';
+
+    $sql = "DELETE FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    mysqli_query($conn, $sql);
+
+    echo'
+    <script type="text/javascript">
+    location.replace(document.referrer);
+    </script>
+    ';
+    
+    exit();
+}
+elseif(isset($_POST["deleteFile4"])){
+    echo 'you\'re deleting huh?';
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE4';
+
+    $sql = "DELETE FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    mysqli_query($conn, $sql);
+
+    echo'
+    <script type="text/javascript">
+    location.replace(document.referrer);
+    </script>
+    ';
+    
+    exit();
+}
+elseif(isset($_POST["deleteFile5"])){
+    echo 'you\'re deleting huh?';
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE5';
+
+    $sql = "DELETE FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    mysqli_query($conn, $sql);
+
+    echo'
+    <script type="text/javascript">
+    location.replace(document.referrer);
+    </script>
+    ';
+    
+    exit();
+}
+elseif(isset($_POST["deleteFile6"])){
+    echo 'you\'re deleting huh?';
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE6';
+
+    $sql = "DELETE FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    mysqli_query($conn, $sql);
+
+    echo'
+    <script type="text/javascript">
+    location.replace(document.referrer);
+    </script>
+    ';
+    
+    exit();
+}
+elseif(isset($_POST["deleteFile7"])){
+    echo 'you\'re deleting huh?';
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE7';
+
+    $sql = "DELETE FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    mysqli_query($conn, $sql);
+
+    echo'
+    <script type="text/javascript">
+    location.replace(document.referrer);
+    </script>
+    ';
+    
+    exit();
+}
+elseif(isset($_POST["deleteFile8"])){
+    echo 'you\'re deleting huh?';
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE8';
+
+    $sql = "DELETE FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    mysqli_query($conn, $sql);
+
+    echo'
+    <script type="text/javascript">
+    location.replace(document.referrer);
+    </script>
+    ';
+    
+    exit();
+}
+elseif(isset($_POST["deleteFile9"])){
+    echo 'you\'re deleting huh?';
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE9';
+
+    $sql = "DELETE FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    mysqli_query($conn, $sql);
+
+    echo'
+    <script type="text/javascript">
+    location.replace(document.referrer);
+    </script>
+    ';
+    
+    exit();
+}
+elseif(isset($_POST["deleteFile10"])){
+    echo 'you\'re deleting huh?';
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE10';
+
+    $sql = "DELETE FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    mysqli_query($conn, $sql);
+
+    echo'
+    <script type="text/javascript">
+    location.replace(document.referrer);
+    </script>
+    ';
+    
+    exit();
+}
+elseif(isset($_POST["deleteFile11"])){
+    echo 'you\'re deleting huh?';
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE11';
+
+    $sql = "DELETE FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    mysqli_query($conn, $sql);
+
+    echo'
+    <script type="text/javascript">
+    location.replace(document.referrer);
+    </script>
+    ';
+    
+    exit();
+}
+elseif(isset($_POST["deleteFile12"])){
+    echo 'you\'re deleting huh?';
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE12';
+
+    $sql = "DELETE FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    mysqli_query($conn, $sql);
+
+    echo'
+    <script type="text/javascript">
+    location.replace(document.referrer);
+    </script>
+    ';
+    
+    exit();
+}elseif(isset($_POST["deleteFile13"])){
+    echo 'you\'re deleting huh?';
+
+    $project_id = $_POST['project_id'];
+    $filenum = 'FILE13';
+
+    $sql = "DELETE FROM files_db WHERE files_project_id = '$project_id' AND files_activity = '$filenum'";
+    mysqli_query($conn, $sql);
+
+    echo'
+    <script type="text/javascript">
+    location.replace(document.referrer);
+    </script>
+    ';
+    
+    exit();
 }
 
 // TRAIL PHP SEGMENT

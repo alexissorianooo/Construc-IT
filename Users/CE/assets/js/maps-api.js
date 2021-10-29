@@ -61,7 +61,7 @@ function searchLocation() {
       
 
     max = result.results.length;   
-    console.log(max)
+    console.log(max); //undefined
     if (max==1 || max==0) {
       lati = '12.8797';
       long = '121.7740';
@@ -101,12 +101,17 @@ function tomtom() {
 //FUNCTION FOR SHOWING NEXT & PREVIOUS BUTTONS ON DISPLAYING 
 //HARDWARE STORES
 function nextStore(){
+  
   i++;  
+  console.log(max);
+  console.log(i);
+  maxCount = max-1;
+  console.log(maxCount);
   if (i>0) {
     document.getElementById('prev-store').style.visibility = 'visible';
     search();
   }
-  if (i==(max-1)) {
+  if (i==maxCount) {
       document.getElementById('next-store').style.visibility = 'hidden';
       search();
   } 
@@ -118,7 +123,7 @@ function prevStore(){
     document.getElementById('prev-store').style.visibility = 'hidden';
     search();
   }   
-  else if (i<max){
+  if (i<max){
       document.getElementById('next-store').style.visibility = 'visible';
       search();
   }    
@@ -132,7 +137,10 @@ function prevStore(){
 //FINDING NEAREST HARDWARE STORE NEAR THE USERS CURRENT LOCATION
 // GETS THE LOCATION OF THE HARDWARE STORE 
 // CAN SWITCH THROUGH DIFFERENT HARDWARE STORES
+// let maxCount=0;
+// console.log(maxCount);
 function search() {  
+  
   tt.services.fuzzySearch({
     key: APIKEY,
     query: "Hardware Store",
@@ -155,7 +163,21 @@ function search() {
       loc = {lat: '12.8797', lng: '121.7740'};
       document.getElementById('next-store').style.visibility = 'hidden';    
       document.getElementById('hw-desc').innerHTML = "<b class='text-warning'>NO MUNICIPALITY FOUND, PLEASE CHECK FOR MISPELLED WORDS.</b>";  
-    } else {
+    // } else {
+    //   document.getElementById('next-store').style.visibility = 'visible';   
+
+    //   // maxCount++;
+    //   // console.log(maxCount);
+
+    //   // else if(max==maxCount){
+    //   //   document.getElementById('next-store').style.visibility = 'hidden';
+    //   //   console.log(maxCount);
+    //   // }
+    // }
+    } if (i==(max-1)) {
+      document.getElementById('next-store').style.visibility = 'hidden';
+      
+    } else{
       document.getElementById('next-store').style.visibility = 'visible';   
     }
 

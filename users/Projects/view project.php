@@ -31,8 +31,22 @@
     <br>
 
 <?php 
-    $forprojectID = $_POST["projectView"]; // for getting specific project, from project_arch
-    $forprojectName = $_POST["projectViewName"];
+    // $forprojectID = $_POST["projectView"]; // for getting specific project, from project_arch
+    // $forprojectName = $_POST["projectViewName"];
+
+    if(!empty( $_POST["projectView"])){ //for backing purposes, if empty it will refer to the session variables
+        $forprojectID = $_POST["projectView"]; // for getting specific project, from project_arch
+        $_SESSION['forprojectID']= $forprojectID;
+    }else{
+        $forprojectID = $_SESSION['forprojectID'];
+    }
+   
+    if(!empty( $_POST["projectViewName"])){
+        $forprojectName = $_POST["projectViewName"]; 
+        $_SESSION['projectViewName']= $forprojectName;
+    }else{
+        $forprojectName = $_SESSION['projectViewName'];
+    }
 
     // TRAIL PHP SEGMENT
 
@@ -107,7 +121,7 @@
                 
                 
                 echo '
-                <form method="post" action="../../includes/viewprojectdb.php">
+                <form method="post" action="../../includes/viewprojectdb.php" enctype="multipart/form-data">
 
 
                     <section class="headerbox container" id="header-section" style="padding-top: 20px;">
@@ -164,9 +178,9 @@
                                                     echo ' delayed-class ';
                                                 }
                                             
-                                            
+                                            //; showDiv(\'hidden_div\', this);
                                             echo '
-                                            " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT1">
+                                            " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className; showDiv(\'hidden_div1\', this);" name="SELECT1">
                                                 
                                                 <option value="Pending" class="pending-class" ';
 
@@ -193,7 +207,52 @@
                                                     }
                                                 
                                                 echo '>Delayed</option>
-                                            </select>
+                                            </select>';
+
+
+                                            
+
+                                            echo'
+                                            <div style="display:';
+                                            
+                                                if($status2 == $row['project_status_Architect_1']){
+                                                    echo ' block ';
+                                                }else{
+                                                    echo ' none';
+                                                }
+                                            
+                                             echo ';" id="hidden_div1">
+                                                
+                                                <div style="text-align: center; margin: 20px; width:100%;">
+                                                    <input type="file" name="FILE1" style="color: black; width:100%;">
+                                                </div>
+                                                <div style="margin-top: 10px;text-align: center;">
+                                                    
+                                                    <button name="UPLOAD1">Upload</button>';
+
+                                                    $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE1'";
+                                                    $result2 = mysqli_query($conn, $sql2);
+
+                                                    if(mysqli_num_rows($result2)>0){
+                                                        $row2=mysqli_fetch_assoc($result2);
+                                                        echo'
+                                                            <button name="DOWNLOAD1">Download</button>
+                                                            <br>
+                                                            <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                            <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                            type="submit" name="deleteFile1">
+                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                            </button> 
+                                                        ';
+                                                        
+                                                    }
+
+                                                    echo'
+                                                </div>
+                                            </div>
+                                            ';
+
+                                        echo'
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm2">
@@ -213,7 +272,7 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT2">
+                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className; showDiv(\'hidden_div2\', this);" name="SELECT2">
                                             
                                             <option value="Pending" class="pending-class" ';
 
@@ -239,7 +298,51 @@
                                                 }
                                             
                                             echo '>Delayed</option>
-                                            </select>
+                                            </select>';
+
+
+                                            
+
+                                            echo'
+                                            <div style="display:';
+                                            
+                                                if($status2 == $row['project_status_Architect_2']){
+                                                    echo ' block ';
+                                                }else{
+                                                    echo ' none';
+                                                }
+                                            
+                                             echo ';" id="hidden_div2">
+                                                
+                                                <div style="text-align: center; margin: 20px; width:100%;">
+                                                    <input type="file" name="FILE2" style="color: black; width:100%;">
+                                                </div>
+                                                <div style="margin-top: 10px;text-align: center;">
+                                                    
+                                                    <button name="UPLOAD2">Upload</button>';
+
+                                                    $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE2'";
+                                                    $result2 = mysqli_query($conn, $sql2);
+
+                                                    if(mysqli_num_rows($result2)>0){
+                                                        $row2=mysqli_fetch_assoc($result2);
+                                                        echo'
+                                                            <button name="DOWNLOAD2">Download</button>
+                                                            <br>
+                                                            <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                            <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                            type="submit" name="deleteFile2">
+                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                            </button> 
+                                                        '; 
+                                                    }
+
+                                                    echo'
+                                                </div>
+                                            </div>
+                                            ';
+
+                                        echo'
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm3">
@@ -259,7 +362,7 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT3">
+                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className; showDiv(\'hidden_div3\', this);" name="SELECT3">
                                             
                                             <option value="Pending" class="pending-class" ';
 
@@ -285,7 +388,51 @@
                                                 }
                                             
                                             echo '>Delayed</option>
-                                            </select>
+                                            </select>';
+
+
+                                            
+
+                                            echo'
+                                            <div style="display:';
+                                            
+                                                if($status2 == $row['project_status_Architect_3']){
+                                                    echo ' block ';
+                                                }else{
+                                                    echo ' none';
+                                                }
+                                            
+                                             echo ';" id="hidden_div3">
+                                                
+                                                <div style="text-align: center; margin: 20px; width:100%;">
+                                                    <input type="file" name="FILE3" style="color: black; width:100%;">
+                                                </div>
+                                                <div style="margin-top: 10px;text-align: center;">
+                                                    
+                                                    <button name="UPLOAD3">Upload</button>';
+
+                                                    $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE3'";
+                                                    $result2 = mysqli_query($conn, $sql2);
+
+                                                    if(mysqli_num_rows($result2)>0){
+                                                        $row2=mysqli_fetch_assoc($result2);
+                                                        echo'
+                                                            <button name="DOWNLOAD3">Download</button>
+                                                            <br>
+                                                            <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                            <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                            type="submit" name="deleteFile3">
+                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                            </button> 
+                                                        '; 
+                                                    }
+
+                                                    echo'
+                                                </div>
+                                            </div>
+                                            ';
+
+                                        echo'
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm4">
@@ -305,7 +452,7 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT4">
+                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className; showDiv(\'hidden_div4\', this);" name="SELECT4">
                                             
                                             <option value="Pending" class="pending-class" ';
 
@@ -331,7 +478,51 @@
                                                 }
                                             
                                             echo '>Delayed</option>
-                                            </select>
+                                            </select>';
+
+
+                                            
+
+                                            echo'
+                                            <div style="display:';
+                                            
+                                                if($status2 == $row['project_status_Architect_4']){
+                                                    echo ' block ';
+                                                }else{
+                                                    echo ' none';
+                                                }
+                                            
+                                             echo ';" id="hidden_div4">
+                                                
+                                                <div style="text-align: center; margin: 20px; width:100%;">
+                                                    <input type="file" name="FILE4" style="color: black; width:100%;">
+                                                </div>
+                                                <div style="margin-top: 10px;text-align: center;">
+                                                    
+                                                    <button name="UPLOAD4">Upload</button>';
+
+                                                    $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE4'";
+                                                    $result2 = mysqli_query($conn, $sql2);
+
+                                                    if(mysqli_num_rows($result2)>0){
+                                                        $row2=mysqli_fetch_assoc($result2);
+                                                        echo'
+                                                            <button name="DOWNLOAD4">Download</button>
+                                                            <br>
+                                                            <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                            <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                            type="submit" name="deleteFile4">
+                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                            </button> 
+                                                        '; 
+                                                    }
+
+                                                    echo'
+                                                </div>
+                                            </div>
+                                            ';
+
+                                        echo'
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm5">
@@ -351,7 +542,7 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT5">
+                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className; showDiv(\'hidden_div5\', this);" name="SELECT5">
                                             
                                             <option value="Pending" class="pending-class" ';
 
@@ -377,7 +568,51 @@
                                                 }
                                             
                                             echo '>Delayed</option>
-                                            </select>
+                                            </select>';
+
+
+                                            
+
+                                            echo'
+                                            <div style="display:';
+                                            
+                                                if($status2 == $row['project_status_Architect_5']){
+                                                    echo ' block ';
+                                                }else{
+                                                    echo ' none';
+                                                }
+                                            
+                                             echo ';" id="hidden_div5">
+                                                
+                                                <div style="text-align: center; margin: 20px; width:100%;">
+                                                    <input type="file" name="FILE5" style="color: black; width:100%;">
+                                                </div>
+                                                <div style="margin-top: 10px;text-align: center;">
+                                                    
+                                                    <button name="UPLOAD5">Upload</button>';
+
+                                                    $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE5'";
+                                                    $result2 = mysqli_query($conn, $sql2);
+
+                                                    if(mysqli_num_rows($result2)>0){
+                                                        $row2=mysqli_fetch_assoc($result2);
+                                                        echo'
+                                                            <button name="DOWNLOAD5">Download</button>
+                                                            <br>
+                                                            <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                            <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                            type="submit" name="deleteFile5">
+                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                            </button> 
+                                                        '; 
+                                                    }
+
+                                                    echo'
+                                                </div>
+                                            </div>
+                                            ';
+
+                                        echo'
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm6">
@@ -397,7 +632,7 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT6">
+                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className; showDiv(\'hidden_div6\', this);" name="SELECT6">
                                             
                                             <option value="Pending" class="pending-class" ';
 
@@ -423,7 +658,51 @@
                                                 }
                                             
                                             echo '>Delayed</option>
-                                            </select>
+                                            </select>';
+
+
+                                            
+
+                                            echo'
+                                            <div style="display:';
+                                            
+                                                if($status2 == $row['project_status_Architect_6']){
+                                                    echo ' block ';
+                                                }else{
+                                                    echo ' none';
+                                                }
+                                            
+                                             echo ';" id="hidden_div6">
+                                                
+                                                <div style="text-align: center; margin: 20px; width:100%;">
+                                                    <input type="file" name="FILE6" style="color: black; width:100%;">
+                                                </div>
+                                                <div style="margin-top: 10px;text-align: center;">
+                                                    
+                                                    <button name="UPLOAD6">Upload</button>';
+
+                                                    $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE6'";
+                                                    $result2 = mysqli_query($conn, $sql2);
+
+                                                    if(mysqli_num_rows($result2)>0){
+                                                        $row2=mysqli_fetch_assoc($result2);
+                                                        echo'
+                                                            <button name="DOWNLOAD6">Download</button>
+                                                            <br>
+                                                            <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                            <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                            type="submit" name="deleteFile6">
+                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                            </button> 
+                                                        '; 
+                                                    }
+
+                                                    echo'
+                                                </div>
+                                            </div>
+                                            ';
+
+                                        echo'
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm7">
@@ -443,7 +722,7 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT7">
+                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className; showDiv(\'hidden_div7\', this);" name="SELECT7">
                                             
                                             <option value="Pending" class="pending-class" ';
 
@@ -469,7 +748,51 @@
                                                 }
                                             
                                             echo '>Delayed</option>
-                                            </select>
+                                            </select>';
+
+
+                                            
+
+                                            echo'
+                                            <div style="display:';
+                                            
+                                                if($status2 == $row['project_status_Architect_7']){
+                                                    echo ' block ';
+                                                }else{
+                                                    echo ' none';
+                                                }
+                                            
+                                             echo ';" id="hidden_div7">
+                                                
+                                                <div style="text-align: center; margin: 20px; width:100%;">
+                                                    <input type="file" name="FILE7" style="color: black; width:100%;">
+                                                </div>
+                                                <div style="margin-top: 10px;text-align: center;">
+                                                    
+                                                    <button name="UPLOAD7">Upload</button>';
+
+                                                    $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE7'";
+                                                    $result2 = mysqli_query($conn, $sql2);
+
+                                                    if(mysqli_num_rows($result2)>0){
+                                                        $row2=mysqli_fetch_assoc($result2);
+                                                        echo'
+                                                            <button name="DOWNLOAD7">Download</button>
+                                                            <br>
+                                                            <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                            <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                            type="submit" name="deleteFile7">
+                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                            </button> 
+                                                        '; 
+                                                    }
+
+                                                    echo'
+                                                </div>
+                                            </div>
+                                            ';
+
+                                        echo'
                                         </div>
                                     </div>
                                     <div class="col-md-3 borderbox psm8">
@@ -489,7 +812,7 @@
                                         
                                         
                                         echo '
-                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT8">
+                                        " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className; showDiv(\'hidden_div8\', this);" name="SELECT8">
                                             
                                             <option value="Pending" class="pending-class" ';
 
@@ -515,7 +838,51 @@
                                                 }
                                             
                                             echo '>Delayed</option>
-                                            </select>
+                                            </select>';
+
+
+                                            
+
+                                            echo'
+                                            <div style="display:';
+                                            
+                                                if($status2 == $row['project_status_Architect_8']){
+                                                    echo ' block ';
+                                                }else{
+                                                    echo ' none';
+                                                }
+                                            
+                                             echo ';" id="hidden_div8">
+                                                
+                                                <div style="text-align: center; margin: 20px; width:100%;">
+                                                    <input type="file" name="FILE8" style="color: black; width:100%;">
+                                                </div>
+                                                <div style="margin-top: 10px;text-align: center;">
+                                                    
+                                                    <button name="UPLOAD8">Upload</button>';
+
+                                                    $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE8'";
+                                                    $result2 = mysqli_query($conn, $sql2);
+
+                                                    if(mysqli_num_rows($result2)>0){
+                                                        $row2=mysqli_fetch_assoc($result2);
+                                                        echo'
+                                                            <button name="DOWNLOAD8">Download</button>
+                                                            <br>
+                                                            <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                            <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                            type="submit" name="deleteFile8">
+                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                            </button> 
+                                                        '; 
+                                                    }
+
+                                                    echo'
+                                                </div>
+                                            </div>
+                                            ';
+
+                                        echo'
                                         </div>
                                     </div>
                                     ';
@@ -549,7 +916,7 @@
                                                 
                                                 
                                                 echo '
-                                                " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_1">
+                                                " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className; showDiv(\'hidden_div9\', this);" name="SELECT_additional_1">
                                                     
                                                     <option value="Pending" class="pending-class" ';
 
@@ -575,7 +942,51 @@
                                                         }
                                                     
                                                     echo '>Delayed</option>
-                                                    </select>
+                                                    </select>';
+
+
+                                            
+
+                                                    echo'
+                                                    <div style="display:';
+                                                    
+                                                        if($status2 == $row['project_status_additional_Architect_1']){
+                                                            echo ' block ';
+                                                        }else{
+                                                            echo ' none';
+                                                        }
+                                                    
+                                                     echo ';" id="hidden_div9">
+                                                        
+                                                        <div style="text-align: center; margin: 20px; width:100%;">
+                                                            <input type="file" name="FILE9" style="color: black; width:100%;">
+                                                        </div>
+                                                        <div style="margin-top: 10px;text-align: center;">
+                                                            
+                                                            <button name="UPLOAD9">Upload</button>';
+        
+                                                            $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE9'";
+                                                            $result2 = mysqli_query($conn, $sql2);
+        
+                                                            if(mysqli_num_rows($result2)>0){
+                                                                $row2=mysqli_fetch_assoc($result2);
+                                                                echo'
+                                                                    <button name="DOWNLOAD9">Download</button>
+                                                                    <br>
+                                                                    <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                                    <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                                    type="submit" name="deleteFile9">
+                                                                        <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                                    </button> 
+                                                                '; 
+                                                            }
+        
+                                                            echo'
+                                                        </div>
+                                                    </div>
+                                                    ';
+        
+                                                echo'
                                                 </div>
                                             </div>';
                                         }
@@ -608,7 +1019,7 @@
                                                     
                                                     
                                                     echo '
-                                                    " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_2">
+                                                    " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className; showDiv(\'hidden_div10\', this);" name="SELECT_additional_2">
                                                         
                                                         <option value="Pending" class="pending-class" ';
 
@@ -634,7 +1045,51 @@
                                                             }
                                                         
                                                         echo '>Delayed</option>
-                                                        </select>
+                                                        </select>';
+
+
+                                            
+
+                                                        echo'
+                                                        <div style="display:';
+                                                        
+                                                            if($status2 == $row['project_status_additional_Architect_2']){
+                                                                echo ' block ';
+                                                            }else{
+                                                                echo ' none';
+                                                            }
+                                                        
+                                                         echo ';" id="hidden_div10">
+                                                            
+                                                            <div style="text-align: center; margin: 20px; width:100%;">
+                                                                <input type="file" name="FILE10" style="color: black; width:100%;">
+                                                            </div>
+                                                            <div style="margin-top: 10px;text-align: center;">
+                                                                
+                                                                <button name="UPLOAD10">Upload</button>';
+            
+                                                                $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE10'";
+                                                                $result2 = mysqli_query($conn, $sql2);
+            
+                                                                if(mysqli_num_rows($result2)>0){
+                                                                    $row2=mysqli_fetch_assoc($result2);
+                                                                    echo'
+                                                                        <button name="DOWNLOAD10">Download</button>
+                                                                        <br>
+                                                                        <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                                        <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                                        type="submit" name="deleteFile10">
+                                                                            <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                                        </button> 
+                                                                    '; 
+                                                                }
+            
+                                                                echo'
+                                                            </div>
+                                                        </div>
+                                                        ';
+            
+                                                    echo'
                                                     </div>
                                                 </div>';
                                             }
@@ -667,7 +1122,7 @@
                                                     
                                                     
                                                     echo '
-                                                    " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_3">
+                                                    " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className; showDiv(\'hidden_div11\', this);" name="SELECT_additional_3">
                                                         
                                                         <option value="Pending" class="pending-class" ';
 
@@ -693,7 +1148,51 @@
                                                             }
                                                         
                                                         echo '>Delayed</option>
-                                                        </select>
+                                                        </select>';
+
+
+                                            
+
+                                                        echo'
+                                                        <div style="display:';
+                                                        
+                                                            if($status2 == $row['project_status_additional_Architect_3']){
+                                                                echo ' block ';
+                                                            }else{
+                                                                echo ' none';
+                                                            }
+                                                        
+                                                         echo ';" id="hidden_div11">
+                                                            
+                                                            <div style="text-align: center; margin: 20px; width:100%;">
+                                                                <input type="file" name="FILE11" style="color: black; width:100%;">
+                                                            </div>
+                                                            <div style="margin-top: 10px;text-align: center;">
+                                                                
+                                                                <button name="UPLOAD11">Upload</button>';
+            
+                                                                $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE11'";
+                                                                $result2 = mysqli_query($conn, $sql2);
+            
+                                                                if(mysqli_num_rows($result2)>0){
+                                                                    $row2=mysqli_fetch_assoc($result2);
+                                                                    echo'
+                                                                        <button name="DOWNLOAD11">Download</button>
+                                                                        <br>
+                                                                        <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                                        <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                                        type="submit" name="deleteFile11">
+                                                                            <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                                        </button> 
+                                                                    '; 
+                                                                }
+            
+                                                                echo'
+                                                            </div>
+                                                        </div>
+                                                        ';
+            
+                                                    echo'
                                                     </div>
                                                 </div>';
                                             }
@@ -726,7 +1225,7 @@
                                                         
                                                         
                                                     echo '
-                                                    " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_4">
+                                                    " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className; showDiv(\'hidden_div12\', this);" name="SELECT_additional_4">
                                                         
                                                         <option value="Pending" class="pending-class" ';
 
@@ -752,7 +1251,51 @@
                                                                 }
                                                             
                                                             echo '>Delayed</option>
-                                                            </select>
+                                                            </select>';
+
+
+                                            
+
+                                                            echo'
+                                                            <div style="display:';
+                                                            
+                                                                if($status2 == $row['project_status_additional_Architect_4']){
+                                                                    echo ' block ';
+                                                                }else{
+                                                                    echo ' none';
+                                                                }
+                                                            
+                                                             echo ';" id="hidden_div12">
+                                                                
+                                                                <div style="text-align: center; margin: 20px; width:100%;">
+                                                                    <input type="file" name="FILE12" style="color: black; width:100%;">
+                                                                </div>
+                                                                <div style="margin-top: 10px;text-align: center;">
+                                                                    
+                                                                    <button name="UPLOAD12">Upload</button>';
+                
+                                                                    $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE12'";
+                                                                    $result2 = mysqli_query($conn, $sql2);
+                
+                                                                    if(mysqli_num_rows($result2)>0){
+                                                                        $row2=mysqli_fetch_assoc($result2);
+                                                                        echo'
+                                                                            <button name="DOWNLOAD12">Download</button>
+                                                                            <br>
+                                                                            <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                                            <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                                            type="submit" name="deleteFile12">
+                                                                                <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                                            </button> 
+                                                                        '; 
+                                                                    }
+                
+                                                                    echo'
+                                                                </div>
+                                                            </div>
+                                                            ';
+                
+                                                        echo'
                                                         </div>
                                                     </div>';
                                                 }
@@ -783,7 +1326,7 @@
                                                                     echo ' delayed-class ';
                                                                 }
                                                     echo '
-                                                    " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_5">
+                                                    " style="width: 80%;margin: auto;" onchange="this.className=this.options[this.selectedIndex].className; showDiv(\'hidden_div13\', this);" name="SELECT_additional_5">
                                                         
                                                         <option value="Pending" class="pending-class" ';
     
@@ -809,7 +1352,51 @@
                                                             }
                                                                 
                                                         echo '>Delayed</option>
-                                                        </select>
+                                                        </select>';
+
+
+                                            
+
+                                                        echo'
+                                                        <div style="display:';
+                                                        
+                                                            if($status2 == $row['project_status_additional_Architect_5']){
+                                                                echo ' block ';
+                                                            }else{
+                                                                echo ' none';
+                                                            }
+                                                        
+                                                         echo ';" id="hidden_div13">
+                                                            
+                                                            <div style="text-align: center; margin: 20px; width:100%;">
+                                                                <input type="file" name="FILE13" style="color: black; width:100%;">
+                                                            </div>
+                                                            <div style="margin-top: 10px;text-align: center;">
+                                                                
+                                                                <button name="UPLOAD13">Upload</button>';
+            
+                                                                $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE13'";
+                                                                $result2 = mysqli_query($conn, $sql2);
+            
+                                                                if(mysqli_num_rows($result2)>0){
+                                                                    $row2=mysqli_fetch_assoc($result2);
+                                                                    echo'
+                                                                        <button name="DOWNLOAD13">Download</button>
+                                                                        <br>
+                                                                        <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
+                                                                        <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
+                                                                        type="submit" name="deleteFile13">
+                                                                            <i class="fa fa-trash-o" style="font-size: 20px;">  Delete</i>
+                                                                        </button> 
+                                                                    '; 
+                                                                }
+            
+                                                                echo'
+                                                            </div>
+                                                        </div>
+                                                        ';
+            
+                                                    echo'
                                                     </div>
                                                 </div>';
                                             }
@@ -817,7 +1404,18 @@
                                 </div>
                             </div>
                         </div>
-                    </section>';
+                    </section>
+                    
+                    <script>
+                        $(".confirm").on("click", function(event){
+                            if(confirm("Are you sure to delete?")){
+                            return true;
+                            } else {
+                                event.preventDefault();
+                                return false;
+                            }
+                        });
+                    </script>';
                    
                     $progressbar = ($numerator / $denominator)*100;
                     $roundvalue = round($progressbar);
@@ -832,7 +1430,7 @@
                                     <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: '.$roundvalue.'%;">'.$roundvalue .'</div>
                         </div>
                         <section class="text-center" id="footer-section">
-                            <button class="btn btn-primary" style="background: rgb(229,234,239);color: rgb(0,0,0);margin: 10px;border-color: rgb(229,234,239);" type="button" onclick="history.back()">
+                            <button class="btn btn-primary" style="background: rgb(229,234,239);color: rgb(0,0,0);margin: 10px;border-color: rgb(229,234,239);" type="button" onclick="goBack()">
                                 <i class="fa fa-arrow-circle-left"></i>&nbsp; Back</button>
                             <button class="btn btn-primary" type="submit" style="margin: 10px;" name="saveButton">
                                 <i class="fa fa-save"></i>&nbsp; Save</button>
@@ -851,6 +1449,8 @@
     <script src="assetsForViewProject/js/jquery.min.js"></script>
     <script src="assetsForViewProject/bootstrap/js/bootstrap.min.js"></script>
     <script src="assetsForViewProject/js/forProjectView.js"></script>
+
+    <script src="assetsForViewProject/js/forUpload.js"></script>
 </body>
 
 </html>
