@@ -118,7 +118,7 @@
         </div>   
         <div class="row" >
             <div class="col-sm-6">
-                <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/pakalu.jpg"/>
+                <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/papalexis.png">
                     <h4>Alexis Soriano</h4>
                     <p>May Jowa #1</p>
                     <ul class="list-inline social-buttons">
@@ -129,7 +129,7 @@
                 </div>
             </div>
             <div class="col-sm-6">
-                <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/pakalu.jpg" />
+                <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/thomas.jpg" />
                     <h4>Thomas Broñola</h4>
                     <p>Single #1</p>
                     <ul class="list-inline social-buttons">
@@ -140,9 +140,9 @@
                 </div>
             </div>
             <div class="col-sm-6">
-                <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/pakalu.jpg" />
+                <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/laczy.jpg" />
                     <h4>Eris Lacsamana</h4>
-                    <p class="text-secondary">Single #2</p>
+                    <p>Single #2</p>
                     <ul class="list-inline social-buttons">
                         <li class="list-inline-item"><a href="https://twitter.com/LaczFeli" target="_blank"><i class="fa fa-twitter"></i></a></li>
                         <li class="list-inline-item"><a href="https://web.facebook.com/Laczie" target="_blank"><i class="fa fa-facebook"></i></a></li>
@@ -151,9 +151,9 @@
                 </div>
             </div>
             <div class="col-sm-6">
-                <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/pakalu.jpg" />
+                <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/Perfy.jpg" />
                     <h4>Perf John Gomera</h4>
-                    <p class="text-muted">May Jowa #2</p>
+                    <p>May Jowa #2</p>
                     <ul class="list-inline social-buttons">
                         <li class="list-inline-item"><a href="https://twitter.com/theperfgomera" target="_blank"><i class="fa fa-twitter"></i></a></li>
                         <li class="list-inline-item"><a href="https://web.facebook.com/perf.gomera" target="_blank"><i class="fa fa-facebook"></i></a></li>
@@ -388,7 +388,7 @@
                                                 
                                                 <!-- FOR ARCHITECT AND PM (code at js)-->
 
-                                                <div style="" id="usertype1" ><input required type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="usercode">                                                                 
+                                                <div id="usertype1" ><input required type="text" id="user-code" placeholder="User Code" style="border-style:none; border-bottom-style:solid;border-bottom-color:black;" name="usercode">                                                                 
                                                 </div>
                                                 <br> <br>   
 

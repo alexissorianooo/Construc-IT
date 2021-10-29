@@ -36,7 +36,7 @@ session_start();
     <link rel="stylesheet" href="assets-act/css/styles.css">
 </head>
 
-<body style="width:100%">
+<body class="bgmain" style="width:100%">
     <main class="page landing-page">
         <!-- <section class="clean-block">
             <div class="container" style="margin-top: -100px; margin-bottom: 30px;"> -->
@@ -174,7 +174,7 @@ session_start();
                             <br><br>
                             <br><br>
     
-                            <div id="body-section" class="sectionPADDING">
+                            <div id="body-section" class="sectionPADDING bgmain2 masthead">
                                 <div class="bg-dark spacing" style="margin-bottom: 30px; padding-top: 110px; padding-bottom:110px">
                                     <h4 class="text-center darktext">Mobilization</h4>
                                     <div class="d-inline-flex" style="width: 100%;">
