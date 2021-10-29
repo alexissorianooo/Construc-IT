@@ -322,7 +322,7 @@ recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $t
                     <div class="d-inline-flex">
                         <button id="prev-store" onclick="prevStore()" class="btn text-light" type="button" style="visibility: hidden; width: 66px;height: 52px;"><i class="fa fa-arrow-left fa-2x"></i></button>
                         <p class="text-left text-light" id="hw-desc"> </p>
-                        <button id="next-store" onclick="nextStore()" class="btn text-light" type="button" style="width: 66px;height: 52px;"><i class="fa fa-arrow-right fa-2x"></i></button>
+                        <button id="next-store" onclick="nextStore()" class="btn text-light" type="button" style="visibility: hidden;width: 66px;height: 52px;" ><i class="fa fa-arrow-right fa-2x"></i></button>
                     </div>   
                 </div>                 
             </div>
