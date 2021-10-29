@@ -1,5 +1,6 @@
 //DECLARATION OF TEMPORARY LOCATION(PUP) IN THE MAP
 // VARIABLES FOR THEIR LOCATION 
+// https://developer.tomtom.com/
 var lati;    //NORTH
 var long;  //EAST
 var map;
