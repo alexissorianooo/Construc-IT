@@ -151,7 +151,7 @@
                 </div>
             </div>
             <div class="col-sm-6">
-                <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/pakalu.jpg" />
+                <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/Perfy.jpg" />
                     <h4>Perf John Gomera</h4>
                     <p class="text-muted">May Jowa #2</p>
                     <ul class="list-inline social-buttons">
