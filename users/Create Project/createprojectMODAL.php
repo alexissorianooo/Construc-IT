@@ -147,7 +147,8 @@
 
                                                         }
 
-                                                        $sql = "SELECT user_fullname, userid, user_status FROM user_db WHERE usertype_fk = 'client' AND architect_assigned = '$architect';";
+                                                        // $sql = "SELECT user_fullname, userid, user_status FROM user_db WHERE usertype_fk = 'client' AND architect_assigned = '$architect';";
+                                                        $sql = "SELECT user_fullname, userid, user_status, project_counter FROM user_db WHERE usertype_fk = 'client';";
                                                         $stmt = mysqli_stmt_init($conn);
 
                                                         if (!mysqli_stmt_prepare($stmt, $sql)){
@@ -157,7 +158,7 @@
                                                         $records = mysqli_query($conn, $sql);
 
                                                         while($data = mysqli_fetch_array($records)){
-                                                            if($data['user_status']!="Occupied"){
+                                                            if($data['user_status']!="Occupied" && $data['project_counter']<"5"){
                                                                 echo "<option value='". $data['user_fullname']."|". $data['userid']."'>" .$data['user_fullname']."</option>";
                                                             }
                                                         }
