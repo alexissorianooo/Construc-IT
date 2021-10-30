@@ -99,30 +99,51 @@
                         </script>
 
 
-                        <br><br>
-                        <div style="">
-                            <h1 class="text-lg" style="text-align: center;"><strong>PROJECTS</strong></h1>
-                        </div>
-                        <br>
-                        <table class="table table-bordered table-hover">
-                        <thead class="bill-header cs">
-                            <tr>
-                                <th style="max-width: 12.5%;">Project ID</th>
-                                <th id="trs-hd" class="col-lg-1" style="max-width: 12.5%;">Project Name</th>
-                                <th style="max-width: 12.5%;">Status</th>
-                                <th id="trs-hd" class="col-lg-2" style="max-width: 12.5%;">Architect</th>
-                                <th id="trs-hd" class="col-lg-3" style="max-width: 12.5%;">Foreman</th>
-                                <th id="trs-hd" class="col-lg-2" style="max-width: 12.5%;">Startdate</th>
-                                <th id="trs-hd" class="col-lg-2" style="max-width: 12.5%;">Deadline</th>
-                                
-                                <th id="trs-hd" class="col-lg-2" style="max-width: 12.5%;">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        ';
+                        <br><br>';
+
+                        require_once '../../includes/db.php';
+                        require_once '../../includes/functions.php';
+
+                        $ArchiName = $row["user_fullname"];
+
+                        $sql3 = "SELECT project_architect FROM project_db WHERE project_architect = '$ArchiName'";
+                        $result3 = mysqli_query($conn, $sql3);
+
+                        $row3=mysqli_fetch_assoc($result3);
+                        if(mysqli_num_rows($result3)>0){
+                            if($row3["project_architect"]== $row["user_fullname"]){
+                                echo'
+                                <div style="">
+                                    <h1 class="text-lg" style="text-align: center;"><strong>PROJECTS</strong></h1>
+                                </div>
+                                <br>
+                                <table class="table table-bordered table-hover">
+                                <thead class="bill-header cs">
+                                    <tr>
+                                        <th style="max-width: 12.5%;">Project ID</th>
+                                        <th id="trs-hd" class="col-lg-1" style="max-width: 12.5%;">Project Name</th>
+                                        <th style="max-width: 12.5%;">Status</th>
+                                        <th id="trs-hd" class="col-lg-2" style="max-width: 12.5%;">Architect</th>
+                                        <th id="trs-hd" class="col-lg-3" style="max-width: 12.5%;">Foreman</th>
+                                        <th id="trs-hd" class="col-lg-2" style="max-width: 12.5%;">Startdate</th>
+                                        <th id="trs-hd" class="col-lg-2" style="max-width: 12.5%;">Deadline</th>
+                                        
+                                        <th id="trs-hd" class="col-lg-2" style="max-width: 12.5%;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                ';
+                                // echo $row3["project_architect"];
+                                // echo $row["user_fullname"];
+                            }
+                        }
+
+                        
+
                         
                         require_once '../../includes/db.php';
                         require_once '../../includes/functions.php';
+                        
                         
     
                         $sql2 = "SELECT * FROM project_db";
