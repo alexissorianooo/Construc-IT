@@ -120,7 +120,7 @@
             <div class="col-sm-6">
                 <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/papalexis.png">
                     <h4>Alexis Soriano</h4>
-                    <p>May Jowa #1</p>
+                    <p>Lead Developer</p>
                     <ul class="list-inline social-buttons">
                         <li class="list-inline-item"><a href="https://twitter.com/AlexisSorianooo" target="_blank"><i class="fa fa-twitter"></i></a></li>
                         <li class="list-inline-item"><a href="https://web.facebook.com/alexis.j.soriano" target="_blank"><i class="fa fa-facebook"></i></a></li>
@@ -131,7 +131,7 @@
             <div class="col-sm-6">
                 <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/thomas.jpg" />
                     <h4>Thomas Broñola</h4>
-                    <p>Single #1</p>
+                    <p>Developer</p>
                     <ul class="list-inline social-buttons">
                         <li class="list-inline-item"><a href="https://twitter.com/bronolathomas" target="_blank"><i class="fa fa-twitter"></i></a></li>
                         <li class="list-inline-item"><a href="https://web.facebook.com/thomas.bronola/" target="_blank"><i class="fa fa-facebook"></i></a></li>
@@ -142,7 +142,7 @@
             <div class="col-sm-6">
                 <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/laczy.jpg" />
                     <h4>Eris Lacsamana</h4>
-                    <p>Single #2</p>
+                    <p>Developer</p>
                     <ul class="list-inline social-buttons">
                         <li class="list-inline-item"><a href="https://twitter.com/LaczFeli" target="_blank"><i class="fa fa-twitter"></i></a></li>
                         <li class="list-inline-item"><a href="https://web.facebook.com/Laczie" target="_blank"><i class="fa fa-facebook"></i></a></li>
@@ -153,7 +153,7 @@
             <div class="col-sm-6">
                 <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/Perfy.jpg" />
                     <h4>Perf John Gomera</h4>
-                    <p>May Jowa #2</p>
+                    <p>Developer</p>
                     <ul class="list-inline social-buttons">
                         <li class="list-inline-item"><a href="https://twitter.com/theperfgomera" target="_blank"><i class="fa fa-twitter"></i></a></li>
                         <li class="list-inline-item"><a href="https://web.facebook.com/perf.gomera" target="_blank"><i class="fa fa-facebook"></i></a></li>
@@ -175,7 +175,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="text-uppercase">About</h2>
-                    <h3 class="text-muted section-subheading">The Inspiration to Develop</h3>
+                    <h3 class="text-muted section-subheading">About Construc-IT</h3>
                 </div> 
             </div>            
             <div class="row">
