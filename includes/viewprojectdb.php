@@ -8,6 +8,9 @@ if(isset($_POST["saveButton"])){
 
     $project_id = $_POST['project_id'];
     $project_name = $_POST['project_name'];
+    $project_client_id = $_POST['project_client']; // SAME
+    echo "<br>".$project_clientSELECTid = $project_client_id; // SAME
+
     $select1 = $_POST['SELECT1'];
     $select2 = $_POST['SELECT2'];
     $select3 = $_POST['SELECT3'];
@@ -17,6 +20,10 @@ if(isset($_POST["saveButton"])){
     $select7 = $_POST['SELECT7'];
     $select8 = $_POST['SELECT8'];
     $progressbar =  $_POST['progressbarUPDATE'];
+
+    
+
+
     // $numerator = $_POST['numeratorUPDATE'];
     // $denominator = $_POST['denominatorUPDATE'];
 
@@ -139,6 +146,7 @@ if(isset($_POST["saveButton"])){
     if($numerator/$denominator==1){
 
         completeProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
+        changeCLIENTstatus($conn, $project_client_id); // to lessen the project counter
 
         // TRAIL PHP SEGMENT
 
@@ -159,7 +167,7 @@ if(isset($_POST["saveButton"])){
 
 
     updateProjectINC($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
-
+    clientStatus($conn, $project_clientSELECTid);
 
 
     // TRAIL PHP SEGMENT
