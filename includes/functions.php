@@ -202,12 +202,35 @@ function pmStatus($conn, $project_pmSELECTid){
 }
 
 function clientStatus($conn, $project_clientSELECTid){
-  $sql = "UPDATE user_db SET user_status = 'Occupied' WHERE userid = $project_clientSELECTid";
-  $stmt = mysqli_stmt_init($conn);
-  mysqli_query($conn, $sql);
+  // $sql = "UPDATE user_db SET user_status = 'Occupied' WHERE userid = $project_clientSELECTid";
+  // $stmt = mysqli_stmt_init($conn);
+  // mysqli_query($conn, $sql);
 
   // header("location: ../users/Projects/project_arch.php?error=noneFROMclientStatus");
   // exit();
+
+  $sql = "SELECT project_counter FROM user_db WHERE userid='$project_clientSELECTid'";
+  $result = mysqli_query($conn, $sql);
+
+  $row2=mysqli_fetch_assoc($result);
+  $currentCount = $row2["project_counter"];
+
+  $currentCount++;
+
+  echo "Current Count: ".$currentCount;
+
+  $sql = "SELECT project_counter FROM user_db WHERE userid='$project_clientSELECTid'";
+  $result = mysqli_query($conn, $sql);
+
+  if(mysqli_num_rows($result)>0){
+      while($row=mysqli_fetch_assoc($result)){
+        echo "Current Count 2: ".$currentCount;
+        $sql2 = "UPDATE user_db SET project_counter = $currentCount WHERE userid = $project_clientSELECTid";
+        $stmt = mysqli_stmt_init($conn);
+        mysqli_query($conn, $sql2);
+        
+      }
+  }
 }
 
 function emptyInputcreate($project_name, $project_startdate, $project_deadline, $project_architect, $project_pmSELECT, $project_clientSELECT, $project_input1, $project_input2, $project_input3, $project_input4, $project_input5, $project_input6, $project_input7, $project_input8){
@@ -251,14 +274,38 @@ function changePMstatus($conn, $project_pm_id){
 }
 
 function changeCLIENTstatus($conn, $project_client_id){
-  $sql = "UPDATE user_db SET user_status = 'Vacant' WHERE userid = '$project_client_id'";
-  $stmt = mysqli_stmt_init($conn);
-  mysqli_query($conn, $sql);
+  // $sql = "UPDATE user_db SET user_status = 'Vacant' WHERE userid = '$project_client_id'";
+  // $stmt = mysqli_stmt_init($conn);
+  // mysqli_query($conn, $sql);
 
   // header("location: ../users/Projects/project_arch.php?error=PLSWORK");
   // exit();
 
   // mysqli_close($conn);
+
+
+  $sql = "SELECT project_counter FROM user_db WHERE userid='$project_client_id'";
+  $result = mysqli_query($conn, $sql);
+
+  $row2=mysqli_fetch_assoc($result);
+  $currentCount = $row2["project_counter"];
+
+  $currentCount--;
+
+  echo "Current Count: ".$currentCount;
+
+  $sql = "SELECT project_counter FROM user_db WHERE userid='$project_client_id'";
+  $result = mysqli_query($conn, $sql);
+
+  if(mysqli_num_rows($result)>0){
+      while($row=mysqli_fetch_assoc($result)){
+        echo "Current Count 2: ".$currentCount;
+        $sql2 = "UPDATE user_db SET project_counter = $currentCount WHERE userid = $project_client_id";
+        $stmt = mysqli_stmt_init($conn);
+        mysqli_query($conn, $sql2);
+        
+      }
+  }
 }
 //  -------------------------------------------------------------  FOR PROJECT VIEW ---------------------------------------------------------------------
 

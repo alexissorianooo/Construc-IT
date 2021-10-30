@@ -62,7 +62,8 @@
             $project_id = $row["project_id"];
             
 
-            if($_SESSION["user_fullname"] == $row["project_client"] || $forprojectID == $row["project_id"]){
+            // if($_SESSION["user_fullname"] == $row["project_client"] || $forprojectID == $row["project_id"]){
+            if($_SESSION["user_fullname"] == $row["project_client"] && $forprojectID == $row["project_id"]){
                                 
 
                 echo '

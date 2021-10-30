@@ -32,8 +32,8 @@ if(isset($_POST['createButton'])){
 
     $result2 = $_POST['project_clientSELECT'];
     $result2_explode = explode('|', $result2);
-    echo "<br>".$project_clientSELECT = $result2_explode[0]; //NAME
-    echo "<br>".$project_clientSELECTid = $result2_explode[1]; //user ID
+    $project_clientSELECT = $result2_explode[0]; //NAME
+    $project_clientSELECTid = $result2_explode[1]; //user ID
 
 
 
@@ -127,11 +127,11 @@ if(isset($_POST['createButton'])){
 
      // TRAIL PHP SEGMENT
 
-     echo $trail_user = $_SESSION["user_fullname"];
-     echo $trail_user_type = $_SESSION["usertype_fk"];
-     echo $trail_path = "Project View";
-     echo $trail_action = "Create project: ".$project_name;
-     echo $trail_date = date('Y-m-d H:i:s');
+     $trail_user = $_SESSION["user_fullname"];
+     $trail_user_type = $_SESSION["usertype_fk"];
+     $trail_path = "Project View";
+     $trail_action = "Create project: ".$project_name;
+     $trail_date = date('Y-m-d H:i:s');
  
      recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
  
