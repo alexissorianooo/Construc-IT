@@ -209,23 +209,69 @@ function clientStatus($conn, $project_clientSELECTid){
   // header("location: ../users/Projects/project_arch.php?error=noneFROMclientStatus");
   // exit();
 
-  $sql = "SELECT project_counter FROM user_db WHERE userid='$project_clientSELECTid'";
-  $result = mysqli_query($conn, $sql);
+  // $sql = "SELECT project_counter FROM user_db WHERE userid='$project_clientSELECTid'";
+  // $result = mysqli_query($conn, $sql);
 
-  $row2=mysqli_fetch_assoc($result);
-  $currentCount = $row2["project_counter"];
+  // $row2=mysqli_fetch_assoc($result);
+  // $currentCount = $row2["project_counter"];
 
-  $currentCount++;
+  // $currentCount++;
 
-  echo "Current Count: ".$currentCount;
+  // echo "Current Count: ".$currentCount;
+
+  // $sql = "SELECT project_counter FROM user_db WHERE userid='$project_clientSELECTid'";
+  // $result = mysqli_query($conn, $sql);
+
+  // if(mysqli_num_rows($result)>0){
+  //     while($row=mysqli_fetch_assoc($result)){
+  //       echo "Current Count 2: ".$currentCount;
+  //       $sql2 = "UPDATE user_db SET project_counter = $currentCount WHERE userid = $project_clientSELECTid";
+  //       $stmt = mysqli_stmt_init($conn);
+  //       mysqli_query($conn, $sql2);
+        
+  //     }
+  // }
+
+  // $sql2 = "SELECT COUNT(*) AS ProjCounter FROM project_db WHERE project_client_id='$project_clientSELECTid' AND project_status_fk = 'Not Complete'";
+  // $result2 = mysqli_query($conn, $sql2);
+
+  // $row2=mysqli_fetch_assoc($result2);
+
+  // $currentCount= $row2['ProjCounter'];
+
+  // $sql = "SELECT project_counter FROM user_db WHERE userid='$project_clientSELECTid'";
+  // $result = mysqli_query($conn, $sql);
+
+  // if(mysqli_num_rows($result)>0){
+  //     while($row=mysqli_fetch_assoc($result)){
+  //       echo "Current Count 2: ".$currentCount;
+  //       $sql2 = "UPDATE user_db SET project_counter = $currentCount WHERE userid = $project_clientSELECTid";
+  //       $stmt = mysqli_stmt_init($conn);
+  //       mysqli_query($conn, $sql2);
+        
+  //     }
+  // }
+
+
+  $sql2 = "SELECT COUNT(*) AS ProjCounter FROM project_db WHERE project_client_id='$project_clientSELECTid' AND project_status_fk = 'Not Complete'";
+  $result2 = mysqli_query($conn, $sql2);
+  $row2=mysqli_fetch_assoc($result2);
+  echo "<br>Ongoing at clientStatus: ".$ongoingCount= $row2['ProjCounter'];
+
+  $sql3 = "SELECT COUNT(*) AS ProjCounter FROM project_db WHERE project_client_id='$project_clientSELECTid' AND project_status_fk = 'Complete'";
+  $result3 = mysqli_query($conn, $sql3);
+  $row3=mysqli_fetch_assoc($result3);
+  echo "<br>Completed at clientStatus: ".$completedCount= $row3['ProjCounter'];
+
+  echo "answer is at clientStatus: ".$totalProjectCount = $ongoingCount - $completedCount;
 
   $sql = "SELECT project_counter FROM user_db WHERE userid='$project_clientSELECTid'";
   $result = mysqli_query($conn, $sql);
 
   if(mysqli_num_rows($result)>0){
       while($row=mysqli_fetch_assoc($result)){
-        echo "Current Count 2: ".$currentCount;
-        $sql2 = "UPDATE user_db SET project_counter = $currentCount WHERE userid = $project_clientSELECTid";
+        
+        $sql2 = "UPDATE user_db SET project_counter = $ongoingCount WHERE userid = $project_clientSELECTid";
         $stmt = mysqli_stmt_init($conn);
         mysqli_query($conn, $sql2);
         
@@ -284,23 +330,51 @@ function changeCLIENTstatus($conn, $project_client_id){
   // mysqli_close($conn);
 
 
-  $sql = "SELECT project_counter FROM user_db WHERE userid='$project_client_id'";
-  $result = mysqli_query($conn, $sql);
+  // $sql = "SELECT project_counter FROM user_db WHERE userid='$project_client_id'";
+  // $result = mysqli_query($conn, $sql);
 
-  $row2=mysqli_fetch_assoc($result);
-  $currentCount = $row2["project_counter"];
+  // $row2=mysqli_fetch_assoc($result);
+  // $currentCount = $row2["project_counter"];
 
-  $currentCount--;
+  // $currentCount--;
 
-  echo "Current Count: ".$currentCount;
+  // echo "Current Count: ".$currentCount;
+
+  // $sql = "SELECT project_counter FROM user_db WHERE userid='$project_client_id'";
+  // $result = mysqli_query($conn, $sql);
+
+  // if(mysqli_num_rows($result)>0){
+  //     while($row=mysqli_fetch_assoc($result)){
+  //       echo "Current Count 2: ".$currentCount;
+  //       $sql2 = "UPDATE user_db SET project_counter = $currentCount WHERE userid = $project_client_id";
+  //       $stmt = mysqli_stmt_init($conn);
+  //       mysqli_query($conn, $sql2);
+        
+  //     }
+  // }
+
+
+
+
+  $sql2 = "SELECT COUNT(*) AS ProjCounter FROM project_db WHERE project_client_id='$project_client_id' AND project_status_fk = 'Not Complete'";
+  $result2 = mysqli_query($conn, $sql2);
+  $row2=mysqli_fetch_assoc($result2);
+  echo "<br>Ongoing at changeCLIENTstatus: ".$ongoingCount= $row2['ProjCounter'];
+
+  $sql3 = "SELECT COUNT(*) AS ProjCounter FROM project_db WHERE project_client_id='$project_client_id' AND project_status_fk = 'Complete'";
+  $result3 = mysqli_query($conn, $sql3);
+  $row3=mysqli_fetch_assoc($result3);
+  echo "<br>Completed at changeCLIENTstatus: ".$completedCount= $row3['ProjCounter'];
+
+  echo "<br>Answer at changeCLIENTstatus: ".$totalProjectCount = $ongoingCount - $completedCount;
 
   $sql = "SELECT project_counter FROM user_db WHERE userid='$project_client_id'";
   $result = mysqli_query($conn, $sql);
 
   if(mysqli_num_rows($result)>0){
       while($row=mysqli_fetch_assoc($result)){
-        echo "Current Count 2: ".$currentCount;
-        $sql2 = "UPDATE user_db SET project_counter = $currentCount WHERE userid = $project_client_id";
+        
+        $sql2 = "UPDATE user_db SET project_counter = $ongoingCount WHERE userid = $project_client_id";
         $stmt = mysqli_stmt_init($conn);
         mysqli_query($conn, $sql2);
         
