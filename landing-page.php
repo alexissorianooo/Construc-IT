@@ -175,7 +175,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="text-uppercase">About</h2>
-                    <h3 class="text-muted section-subheading">About Construc-IT</h3>
+                    <h3 class="text-muted section-subheading">Construc-IT Features</h3>
                 </div> 
             </div>            
             <div class="row">
