@@ -47,7 +47,7 @@
                                         date_default_timezone_set('Asia/Manila');
                                         $maxdate = date("Y-m-d");
 
-                                        $sql = "SELECT project_architect, MAX(project_deadline) AS maxdate FROM project_db WHERE project_architect = '$currentUser'";
+                                        $sql = "SELECT project_architect, MAX(project_deadline) AS maxdate FROM project_db WHERE project_architect = '$currentUser' AND project_status_fk = 'Not Complete'";
                                         $result = mysqli_query($conn, $sql);
                                         
                                         if(mysqli_num_rows($result)>0){
