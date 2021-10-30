@@ -371,7 +371,7 @@
                                                 <select style="width: 280px;height: 38px;" id="usertype" name="usertypeSELECT" required>
                                                     <option class="text-center" disabled selected>--Select Usertype--</option>
                                                     <option value="architect" >Architect</option>
-                                                    <option value="projectmanager">Project Manager</option>
+                                                    <option value="projectmanager">Foreman</option>
                                                     <option value="admin">Admin</option>
                                                 </select>
 
