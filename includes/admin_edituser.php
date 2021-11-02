@@ -27,6 +27,10 @@ if(isset($_POST['saveButton_admin'])){
     recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $trail_date);
 
     // END OF TRAIL PHP SEGMENT
+
+    header("location: ../users/Admin/edituserMODAL.php?status=EditSuccess");
+    exit();
+
 }else{
     echo "<br>".'what is wrong brother?1';
 }
