@@ -191,7 +191,7 @@
                                     <h4 class="subheading"></h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted"></p>
+                                    <p class="text-muted">The Construc-IT allows users to have computations for specific amount of materials</p>
                                 </div>
                             </div>
                         </li>
