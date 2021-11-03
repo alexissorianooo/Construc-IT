@@ -284,7 +284,7 @@
             <h2 class="text-uppercase" style="color: white; padding-bottom:20px; -webkit-text-stroke:1px; text-align:center">Join Us! Use Construc-IT Now!</h2>
         </div>
         <div id="slideshow">
-            <div>
+            <!-- <div>
                 <img src="assets/img/sk1.jpg">
             </div>
             <div>
@@ -295,6 +295,18 @@
             </div>
             <div>
                 <img src="assets/img/sk2.jpg">
+            </div> -->
+            <div>
+                <img src="assets/img/DOWNLOAD FILE.PNG">
+            </div>
+            <div>
+                <img src="assets/img/admin.PNG">
+            </div>
+            <div>
+                <img src="assets/img/HARDWARE CALCULATOR.PNG">
+            </div>
+            <div>
+                <img src="assets/img/HARDWARE LOCATOR.PNG">
             </div>
         </div>
     </section>
