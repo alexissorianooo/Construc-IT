@@ -296,17 +296,18 @@
             <div>
                 <img src="assets/img/sk2.jpg">
             </div> -->
-            <div>
-                <img src="assets/img/DOWNLOAD FILE.PNG">
-            </div>
-            <div>
-                <img src="assets/img/admin.PNG">
-            </div>
+            
             <div>
                 <img src="assets/img/HARDWARE CALCULATOR.PNG">
             </div>
             <div>
                 <img src="assets/img/HARDWARE LOCATOR.PNG">
+            </div>
+            <div>
+                <img src="assets/img/DOWNLOAD FILE.PNG">
+            </div>
+            <div>
+                <img src="assets/img/admin.PNG">
             </div>
         </div>
     </section>
