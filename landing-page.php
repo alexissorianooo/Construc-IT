@@ -219,7 +219,7 @@
                                     <h4 class="subheading"></h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Filler</p>
+                                    <p class="text-muted">The Construc-IT allows the architect and admin to upload softcopy of permits and other files for client to download</p>
                                 </div>
                             </div>
                         </li>
