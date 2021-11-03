@@ -184,7 +184,7 @@
 
                         <!-- FIRST CIRLCE -->
                         <li class="list-group-item">                            
-                            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg"></div>
+                            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/estimator.png"></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4>Construction Estimator</h4>
@@ -198,7 +198,7 @@
 
                         <!-- SECOND CIRCLE -->
                         <li class="list-group-item timeline-inverted">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg"></div>
+                            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/locator.png"></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4>Hardware Locator</h4>
@@ -212,7 +212,7 @@
 
                         <!-- THIRD CIRCLE -->
                         <li class="list-group-item">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg"></div>
+                            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/download.png"></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4>Upload/Download Files</h4>
@@ -226,7 +226,7 @@
 
                         <!-- FOURTH CIRCLE -->
                         <li class="list-group-item timeline-inverted">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/admin.PNG"></div>
+                            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/admin.png"></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4>Admin Management</h4>
