@@ -191,7 +191,7 @@
                                     <h4 class="subheading"></h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Filler</p>
+                                    <p class="text-muted"></p>
                                 </div>
                             </div>
                         </li>
@@ -205,7 +205,7 @@
                                     <h4 class="subheading"></h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Filler</p>
+                                    <p class="text-muted">The Construc-IT allows both architect and foreman to locate hardware stores nationwide.</p>
                                 </div>
                             </div>
                         </li>
@@ -226,14 +226,14 @@
 
                         <!-- FOURTH CIRCLE -->
                         <li class="list-group-item timeline-inverted">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg"></div>
+                            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/admin.PNG"></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4>Admin Management</h4>
                                     <h4 class="subheading"></h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Filler</p>
+                                    <p class="text-muted">Admin will be able to tract activities done by the users inside the system for secure and logged data.</p>
                                 </div>
                             </div>
                         </li>
