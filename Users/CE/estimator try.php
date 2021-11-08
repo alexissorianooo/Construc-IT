@@ -83,7 +83,9 @@ recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $t
 
                 
                 <div class="col-md-6 offset-xl-0" style="background: var(--light);margin-bottom: 20px; min-height: 100px"><h1 class="text-center" id="changetitle" value="none" style="padding-bottom: 20px; display:none;">Heading</h1><div class="text-left" id="brickDIV" style="display:none;">
-    <div class="text-center" style="margin-bottom: 15px;"><img class="img-fluid" src="assets/img/brick.png" style="width: 400px;margin: 0px;" alt="brick pricture" /></div>
+    <div class="text-center" style="margin-bottom: 15px;">
+    <!-- <img class="img-fluid" src="assets/img/brick.png" style="width: 400px;margin: 0px;" alt="brick pricture" /> -->
+</div>
     <!-- <div><input type="text" class="form-control-plaintext float-left" value="Brick Length (l)" readonly style="width: 250px;font-size: 16px;text-align: left;"/><input type="text" class="d-flex float-right" style="width: 280px;height: 38px;opacity: 1;text-align: right;" placeholder="millimeter (mm)" id="bricklength"/><input type="text" class="form-control-plaintext float-left" value="Brick Height (h)" readonly style="width: 250px;font-size: 16px;text-align: left;" /><input type="text" class="d-flex float-right" style="width: 280px;height: 38px;opacity: 1;text-align: right;" placeholder="millimeter (mm)" id="brickheight"/><input type="text" class="form-control-plaintext float-left" value="Brick Width (w)" readonly style="width: 250px;font-size: 16px;text-align: left;" /><input type="text" class="d-flex float-right" style="width: 280px;height: 38px;text-align: right;" placeholder="millimeter (mm)" id="brickwidth"/><input type="text" class="form-control-plaintext float-left" value="Mortar joint thickness (t)" readonly style="width: 250px;font-size: 16px;text-align: left;" /><input type="text" class="float-right" style="width: 280px;height: 38px;text-align: right;" placeholder="millimeter (mm)" id="mortarjoint"/><input type="text" class="form-control-plaintext float-left" value="Wall length (L)" readonly style="width: 250px;font-size: 16px;text-align: left;" /><input type="text" class="float-right" style="width: 280px;height: 38px;text-align: right;" placeholder="meter (m)" id="walllength"/><input type="text" class="form-control-plaintext float-left" value="Wall Height (H)" readonly style="width: 250px;font-size: 16px;text-align: left;" /><input type="text" class="float-right" style="width: 280px;height: 38px;text-align: right;" placeholder="meter (m)" id="wallheight"/><input type="text" class="form-control-plaintext float-left" value="Wall area" readonly style="width: 250px;font-size: 16px;text-align: left;" /><input type="text" class="float-right" style="width: 280px;height: 38px;text-align: right;" placeholder="square meters (sqm)" id="wallarea" disabled/><input type="text" class="form-control-plaintext float-left" value="Type of wall" readonly style="width: 250px;font-size: 16px;text-align: left;" /><select class="float-right" style="width: 280px;height: 38px;" id="typeofwall">
             <option value="single">Single</option>
             <option value="double">Double</option>
@@ -93,12 +95,21 @@ recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $t
     </div> -->
 
         <div >
-            <div class="gigacalculator" data-tool="/calculators/brick-calculator.php" data-width="auto">
+            <!-- <div class="gigacalculator" data-tool="/calculators/brick-calculator.php" data-width="auto">
             <div class="gigacalctitle"></div>
             <div class="gigacalcfooter">
                 <a href="https://www.gigacalculator.com/calculators/brick-calculator.php">Brick Calculator</a> by <a class="gigacalclink" href="https://www.gigacalculator.com/">GIGAcalculator.com</a>
             </div>
+            </div> -->
+
+
+            <div class="omni-calculator" data-calculator="construction/brick" data-width="auto" data-config='{}' data-currency="PHP" data-show-row-controls="false" data-version="3" data-t="1636343792005">
+            <div class="omni-calculator-header"></div>
+            <div class="omni-calculator-footer">
+                <a href="https://www.omnicalculator.com/construction/brick" target="_blank"><img alt="Omni" class="omni-calculator-logo" src="https://cdn.omnicalculator.com/embed/omni-calculator-logo-long.svg" /></a>
             </div>
+            </div>
+            <script async src="https://cdn.omnicalculator.com/sdk.js"></script>
 
         </div>
 </div><div class="text-left" id="metalDIV" style="display:none;">
