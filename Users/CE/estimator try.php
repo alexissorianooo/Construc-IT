@@ -64,7 +64,7 @@ recordTrail($conn, $trail_user, $trail_user_type, $trail_path, $trail_action, $t
                 <!-- FOR THE CALCULATOR BUTTONS -->
 
                 <div class="col-md-6">
-                    <h1 class="text-center" style="padding-bottom: 10px;padding-top:30px">Hardware Calculator</h1>
+                    <h1 class="text-center" style="padding-bottom: 10px;padding-top:30px">Construction materials Calculator</h1>
                     <div class="text-center">
                         <a href="#changetitle"><button class="btn btn-primary" type="button" onclick="change('brick')" id="brick">Brick Calculator</button></a>
                         <a href="#changetitle"><button class="btn btn-primary" type="button" onclick="change('metal')" id="metal">Metal Weight Calculator</button></a>
