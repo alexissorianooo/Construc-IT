@@ -551,7 +551,7 @@ session_start();
                                                                             <button name="DOWNLOAD_PM_4">Download</button>
                                                                             <br>
                                                                             <br>
-                                                                            <img src="../'.$row2['files_path'].'" height=200 width=300/>
+                                                                            <img src="../'.$row2['files_path'].'" height=200 width=230/>
                                                                             <br>
                                                                             <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
                                                                             <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
@@ -646,7 +646,7 @@ session_start();
                                                                             <button name="DOWNLOAD_PM_5">Download</button>
                                                                             <br>
                                                                             <br>
-                                                                            <img src="../'.$row2['files_path'].'" height=200 width=300/>
+                                                                            <img src="../'.$row2['files_path'].'" height=200 width=230/>
                                                                             <br>
                                                                             <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
                                                                             <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
@@ -740,7 +740,7 @@ session_start();
                                                                             <button name="DOWNLOAD_PM_6">Download</button>
                                                                             <br>
                                                                             <br>
-                                                                            <img src="../'.$row2['files_path'].'" height=200 width=300/>
+                                                                            <img src="../'.$row2['files_path'].'" height=200 width=230/>
                                                                             <br>
                                                                             <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
                                                                             <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
@@ -834,7 +834,7 @@ session_start();
                                                                             <button name="DOWNLOAD_PM_7">Download</button>
                                                                             <br>
                                                                             <br>
-                                                                            <img src="../'.$row2['files_path'].'" height=200 width=300/>
+                                                                            <img src="../'.$row2['files_path'].'" height=200 width=230/>
                                                                             <br>
                                                                             <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
                                                                             <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
@@ -1221,7 +1221,7 @@ session_start();
                                                                             <button name="DOWNLOAD_PM_11">Download</button>
                                                                             <br>
                                                                             <br>
-                                                                            <img src="../'.$row2['files_path'].'" height=200 width=300/>
+                                                                            <img src="../'.$row2['files_path'].'" height=200 width=230/>
                                                                             <br>
                                                                             <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
                                                                             <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
@@ -1315,7 +1315,7 @@ session_start();
                                                                             <button name="DOWNLOAD_PM_12">Download</button>
                                                                             <br>
                                                                             <br>
-                                                                            <img src="../'.$row2['files_path'].'" height=200 width=300/>
+                                                                            <img src="../'.$row2['files_path'].'" height=200 width=230/>
                                                                             <br>
                                                                             <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
                                                                             <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
@@ -1410,7 +1410,7 @@ session_start();
                                                                             <button name="DOWNLOAD_PM_13">Download</button>
                                                                             <br>
                                                                             <br>
-                                                                            <img src="../'.$row2['files_path'].'" height=200 width=300/>
+                                                                            <img src="../'.$row2['files_path'].'" height=200 width=230/>
                                                                             <br>
                                                                             <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
                                                                             <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
@@ -1504,7 +1504,7 @@ session_start();
                                                                             <button name="DOWNLOAD_PM_14">Download</button>
                                                                             <br>
                                                                             <br>
-                                                                            <img src="../'.$row2['files_path'].'" height=200 width=300/>
+                                                                            <img src="../'.$row2['files_path'].'" height=200 width=230/>
                                                                             <br>
                                                                             <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
                                                                             <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
@@ -1598,7 +1598,7 @@ session_start();
                                                                             <button name="DOWNLOAD_PM_15">Download</button>
                                                                             <br>
                                                                             <br>
-                                                                            <img src="../'.$row2['files_path'].'" height=200 width=300/>
+                                                                            <img src="../'.$row2['files_path'].'" height=200 width=230/>
                                                                             <br>
                                                                             <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
                                                                             <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
@@ -1692,7 +1692,7 @@ session_start();
                                                                             <button name="DOWNLOAD_PM_16">Download</button>
                                                                             <br>
                                                                             <br>
-                                                                            <img src="../'.$row2['files_path'].'" height=200 width=300/>
+                                                                            <img src="../'.$row2['files_path'].'" height=200 width=230/>
                                                                             <br>
                                                                             <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
                                                                             <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
@@ -1786,7 +1786,7 @@ session_start();
                                                                             <button name="DOWNLOAD_PM_17">Download</button>
                                                                             <br>
                                                                             <br>
-                                                                            <img src="../'.$row2['files_path'].'" height=200 width=300/>
+                                                                            <img src="../'.$row2['files_path'].'" height=200 width=230/>
                                                                             <br>
                                                                             <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
                                                                             <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
@@ -1881,7 +1881,7 @@ session_start();
                                                                             <button name="DOWNLOAD_PM_18">Download</button>
                                                                             <br>
                                                                             <br>
-                                                                            <img src="../'.$row2['files_path'].'" height=200 width=300/>
+                                                                            <img src="../'.$row2['files_path'].'" height=200 width=230/>
                                                                             <br>
                                                                             <label style="margin-top:20px;">'.$row2['files_name'].'</label><br>
                                                                             <button class="btn btn-danger confirm" style="font-size: 20px;margin: 10px;border-color: rgb(0, 0, 0);"
