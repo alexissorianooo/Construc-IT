@@ -1866,7 +1866,7 @@ session_start();
                                                             echo ';" id="hidden_div18">
                                                                 
                                                                 <div style="text-align: center; margin: 20px; width:100%;">
-                                                                    <input type="file" name="FILE_PM_2" style="color: black; width:100%;">
+                                                                    <input type="file" name="FILE_PM_18" style="color: black; width:100%;">
                                                                 </div>
                                                                 <div style="margin-top: 10px;text-align: center;">
                                                                     
