@@ -153,6 +153,9 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div>
+                                <button>View Foreman\'s Activities</button>
+                                </div>
                             </div>
                         </div>
                     </section>
