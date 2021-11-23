@@ -291,7 +291,7 @@ elseif(isset($_POST["UPLOAD_PM_1"])){
 }
 
 elseif(isset($_POST["UPLOAD_PM_2"])){
-    //echo 'UPLOAD 1';
+    echo 'UPLOAD 1';
 
     $project_id = $_POST['project_id'];
     $filenum = 'FILE_PM_2';
@@ -305,17 +305,18 @@ elseif(isset($_POST["UPLOAD_PM_2"])){
 
     $size = $_FILES['FILE_PM_2']['size'];
 
-    if(!in_array($extension,['zip','pdf','png','jpg'])){
-        // echo 'Your file extension must be .zip, .pdf, .jpg or .png';
-        // echo '
-        // <script>
-        // alert("Your file extension must be .zip, .pdf, .jpg or .png");
-        // location.replace(document.referrer);
-        // </script>
+    // if(!in_array($extension,['zip','pdf','png','jpg'])){
+    //     echo 'Your file extension must be .zip, .pdf, .jpg or .png';
+    //     // echo '
+    //     // <script>
+    //     // alert("Your file extension must be .zip, .pdf, .jpg or .png");
+    //     // location.replace(document.referrer);
+    //     // </script>
         
-        // ';
-    }
-    elseif($_FILES['FILE_PM_2']['size']>1000000){
+    //     // ';
+    // }
+    // else
+    if($_FILES['FILE_PM_2']['size']>1000000){
         echo 'File is too large';
     }
 
@@ -365,6 +366,8 @@ elseif(isset($_POST["UPLOAD_PM_2"])){
         }
     }
 }
+
+
 elseif(isset($_POST["UPLOAD_PM_3"])){
     //echo 'UPLOAD 1';
 

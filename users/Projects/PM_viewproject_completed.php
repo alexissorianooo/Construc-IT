@@ -877,7 +877,7 @@ $project_id = $_POST['projectView'];
                                                             
                                                             <button name="UPLOAD_PM_8">Upload</button>';
 
-                                                            $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE_PM_28'";
+                                                            $sql2 = "SELECT * FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE_PM_8'";
                                                             $result2 = mysqli_query($conn, $sql2);
 
                                                             if(mysqli_num_rows($result2)>0){
