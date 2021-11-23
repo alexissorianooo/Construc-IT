@@ -50,7 +50,7 @@ $project_id = $_POST['projectView'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
     <link rel="stylesheet" href="../Project Manager/assets-act/css/smoothproducts.css">
     <link rel="stylesheet" href="../Project Manager/assets-act/css/Projects-Horizontal.css">    
-
+    <link rel="stylesheet" href="../Project Manager/assets-act/css/pmstyle.css">
     <link rel="stylesheet" href="../Project Manager/assets-act/css/styles.css">
 </head>
 
