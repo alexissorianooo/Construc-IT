@@ -73,23 +73,23 @@
                     require_once '../../includes/db.php';
                     require_once '../../includes/functions.php';
                 
-                    $sql = "SELECT * FROM user_db";
+                    $sql = "SELECT * FROM user_db ORDER BY user_fullname ASC";
                     $result = mysqli_query($conn, $sql);
 
                     if(isset($_POST['display_architect'])){
-                        $sql = "SELECT * FROM user_db WHERE usertype_fk = 'architect'";
+                        $sql = "SELECT * FROM user_db WHERE usertype_fk = 'architect' ORDER BY user_fullname ASC";
                         $result = mysqli_query($conn, $sql);
                     }
                     if(isset($_POST['display_PM'])){
-                        $sql = "SELECT * FROM user_db WHERE usertype_fk = 'projectmanager'";
+                        $sql = "SELECT * FROM user_db WHERE usertype_fk = 'projectmanager' ORDER BY user_fullname ASC";
                         $result = mysqli_query($conn, $sql);
                     }
                     if(isset($_POST['display_client'])){
-                        $sql = "SELECT * FROM user_db WHERE usertype_fk = 'client'";
+                        $sql = "SELECT * FROM user_db WHERE usertype_fk = 'client' ORDER BY user_fullname ASC";
                         $result = mysqli_query($conn, $sql);
                     }
                     if(isset($_POST['display_all'])){
-                        $sql = "SELECT * FROM user_db";
+                        $sql = "SELECT * FROM user_db ORDER BY user_fullname ASC";
                         $result = mysqli_query($conn, $sql);
                     }
                     echo '<ul id="myUL">';

@@ -14,10 +14,16 @@
                         style="border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;color: rgb(0,0,0);"><i
                             class="fas fa-tachometer-alt" style="color: rgb(172,135,43);"></i>User
                         Profiles</span></a>
-                <a class="nav-link" data-bss-hover-animate="pulse" href="admin-audit.php"><i class="fas fa-user"
+                <a class="nav-link" data-bss-hover-animate="pulse" href="admin-audit.php"><i class="fas fa-eye"
                         style="color: rgb(0,0,0);"></i><span style="color: rgb(0,0,0);">Audit Trail</span></a>
             </li>
             
+            <li class="nav-item"><a class="nav-link" data-bss-hover-animate="pulse" href="admin-userreport.php"
+                    style="color: rgba(0,0,0,0.8);"><i class="far fa-user"
+                        style="color: rgba(0,0,0,0.3);"></i><span
+                        style="color: rgba(0,0,0,0.8);">Employee Report</span></a></li>
+
+
             <li class="nav-item"><a class="nav-link" data-bss-hover-animate="pulse" href="../../includes/logoutdb.php"
                     style="color: rgba(0,0,0,0.8);"><i class="far fa-user-circle"
                         style="color: rgba(0,0,0,0.3);"></i><span
