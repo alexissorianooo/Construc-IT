@@ -31,10 +31,10 @@
                         class="fas fa-eye" style="color: rgba(0,0,0,0.3);"></i><span
                         style="color: rgba(0,0,0,0.8);">Audit Trail</span></a></li>
 
-            <li class="nav-item"><a class="nav-link" data-bss-hover-animate="pulse" href="admin-userreport.php"
+            <!-- <li class="nav-item"><a class="nav-link" data-bss-hover-animate="pulse" href="admin-userreport.php"
                 style="color: rgba(0,0,0,0.8);"><i class="far fa-user"
                     style="color: rgba(0,0,0,0.3);"></i><span
-                    style="color: rgba(0,0,0,0.8);">Employee Report</span></a></li>
+                    style="color: rgba(0,0,0,0.8);">Employee Report</span></a></li> -->
             
             <li class="nav-item"><a class="nav-link" data-bss-hover-animate="pulse" href="../../includes/logoutdb.php"
                     style="color: rgba(0,0,0,0.8);"><i class="far fa-user-circle"
