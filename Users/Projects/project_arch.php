@@ -105,6 +105,7 @@ CHANGED IT AT assets/bootstrap/css/bootstrap.min.css -->
                                                     <form method="post" action="view project.php">
                                                         <input name="projectView" value="'.$row["project_id"].'" hidden>
                                                         <input name="projectViewName" value="'.$row["project_name"].'" hidden>
+                                                        <input name="projectViewName_pm" value="'.$row["project_pm"].'" hidden>
                                                         
                                                             <button class="btn btn-warning" data-bs-toggle="tooltip" data-bss-tooltip=""
                                                                 data-bs-placement="bottom" data-bss-hover-animate="pulse" type="submit"

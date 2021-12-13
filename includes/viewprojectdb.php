@@ -2000,10 +2000,7 @@ elseif(isset($_POST["deleteFile12"])){
     exit();
 }
 
-elseif(isset($_POST["viewForeman"])){
-    header("Location: ../users/Projects/architect_viewforeman.php");
 
-}
 
 
 // TRAIL PHP SEGMENT
