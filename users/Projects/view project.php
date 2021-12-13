@@ -154,7 +154,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                <button>View Foreman\'s Activities</button>
+                                <button name="viewForeman" >View Foreman\'s Activities</button>
                                 </div>
                             </div>
                         </div>
