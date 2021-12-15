@@ -136,7 +136,40 @@
                                     " style="width:100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT1">';
 
                                         if($status1 == $row['project_status_Architect_1']){
-                                            echo ' Pending </label>';
+                                            echo ' Pending </label>
+                                            <div style="margin-top: 10px;text-align: center;>';
+                                                
+                                            $sql3 = "SELECT notes_content1 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                            $result3 = mysqli_query($conn, $sql3);
+
+                                                if(mysqli_num_rows($result3)>0){
+                                                    $row3=mysqli_fetch_assoc($result3);
+                                                    $output = $row3['notes_content1'];
+                                                    if($output=="Enter notes here.." || empty($output)){
+                                                        echo'
+                                                        
+                                                        <textarea name="notes_arch1" value="">
+                                                        
+                                                        
+                                                        
+                                                        </textarea>
+                                                        ';
+                                                    }else{
+                                                        echo'
+                                                        
+                                                        <textarea name="notes_arch1" value="">
+                                                        <h5>Architect Notes: </h5>
+                                                        <br>
+                                                        
+                                                        
+                                                        '.$row3['notes_content1'].'
+                                                        </textarea>
+                                                        ';
+                                                    }
+                                                    
+
+                                                }
+                                            echo'</div>';
                                         }
                                         elseif($status2 == $row['project_status_Architect_1']){
                                             echo ' Completed </label>
@@ -185,7 +218,40 @@
                                 " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT2">';
                                     
                                     if($status1 == $row['project_status_Architect_2']){
-                                        echo ' Pending </label>';
+                                        echo ' Pending </label>
+                                        <div style="margin-top: 10px;text-align: center;>';
+                                            
+                                        $sql3 = "SELECT notes_content2 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                        $result3 = mysqli_query($conn, $sql3);
+
+                                            if(mysqli_num_rows($result3)>0){
+                                                $row3=mysqli_fetch_assoc($result3);
+                                                $output = $row3['notes_content2'];
+                                                if($output=="Enter notes here.." || empty($output)){
+                                                    echo'
+                                                    
+                                                    <textarea name="notes_arch2" value="">
+                                                    
+                                                    
+                                                    
+                                                    </textarea>
+                                                    ';
+                                                }else{
+                                                    echo'
+                                                    
+                                                    <textarea name="notes_arch2" value="">
+                                                    <h5>Architect Notes: </h5>
+                                                    <br>
+                                                    
+                                                    
+                                                    '.$row3['notes_content2'].'
+                                                    </textarea>
+                                                    ';
+                                                }
+                                                
+
+                                            }
+                                        echo'</div>';
                                     }
                                     elseif($status2 == $row['project_status_Architect_2']){
                                         echo ' Completed </label>
@@ -233,7 +299,41 @@
                                     
                                     
                                     if($status1 == $row['project_status_Architect_3']){
-                                        echo ' Pending </label>';
+                                        echo ' Pending </label>
+                                        
+                                        <div style="margin-top: 10px;text-align: center;>';
+                                                
+                                        $sql3 = "SELECT notes_content3 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                        $result3 = mysqli_query($conn, $sql3);
+
+                                            if(mysqli_num_rows($result3)>0){
+                                                $row3=mysqli_fetch_assoc($result3);
+                                                $output = $row3['notes_content3'];
+                                                if($output=="Enter notes here.." || empty($output)){
+                                                    echo'
+                                                    
+                                                    <textarea name="notes_arch3" value="">
+                                                    
+                                                    
+                                                    
+                                                    </textarea>
+                                                    ';
+                                                }else{
+                                                    echo'
+                                                    
+                                                    <textarea name="notes_arch3" value="">
+                                                    <h5>Architect Notes: </h5>
+                                                    <br>
+                                                    
+                                                    
+                                                    '.$row3['notes_content3'].'
+                                                    </textarea>
+                                                    ';
+                                                }
+                                                
+
+                                            }
+                                        echo'</div>';
                                     }
                                     elseif($status2 == $row['project_status_Architect_3']){
                                         echo ' Completed </label>
@@ -280,7 +380,41 @@
                                 " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT4">';
                                     
                                     if($status1 == $row['project_status_Architect_4']){
-                                        echo ' Pending </label>';
+                                        echo ' Pending </label>
+                                        
+                                        <div style="margin-top: 10px;text-align: center;>';
+                                                
+                                        $sql3 = "SELECT notes_content4 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                        $result3 = mysqli_query($conn, $sql3);
+
+                                            if(mysqli_num_rows($result3)>0){
+                                                $row3=mysqli_fetch_assoc($result3);
+                                                $output = $row3['notes_content4'];
+                                                if($output=="Enter notes here.." || empty($output)){
+                                                    echo'
+                                                    
+                                                    <textarea name="notes_arch4" value="">
+                                                    
+                                                    
+                                                    
+                                                    </textarea>
+                                                    ';
+                                                }else{
+                                                    echo'
+                                                    
+                                                    <textarea name="notes_arch4" value="">
+                                                    <h5>Architect Notes: </h5>
+                                                    <br>
+                                                    
+                                                    
+                                                    '.$row3['notes_content4'].'
+                                                    </textarea>
+                                                    ';
+                                                }
+                                                
+
+                                            }
+                                        echo'</div>';
                                     }
                                     elseif($status2 == $row['project_status_Architect_4']){
                                         echo ' Completed </label>
@@ -327,7 +461,41 @@
                                 " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT5">';
                                     
                                     if($status1 == $row['project_status_Architect_5']){
-                                        echo ' Pending </label>';
+                                        echo ' Pending </label>
+                                        
+                                        <div style="margin-top: 10px;text-align: center;>';
+                                                
+                                        $sql3 = "SELECT notes_content5 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                        $result3 = mysqli_query($conn, $sql3);
+
+                                            if(mysqli_num_rows($result3)>0){
+                                                $row3=mysqli_fetch_assoc($result3);
+                                                $output = $row3['notes_content5'];
+                                                if($output=="Enter notes here.." || empty($output)){
+                                                    echo'
+                                                    
+                                                    <textarea name="notes_arch5" value="">
+                                                    
+                                                    
+                                                    
+                                                    </textarea>
+                                                    ';
+                                                }else{
+                                                    echo'
+                                                    
+                                                    <textarea name="notes_arch5" value="">
+                                                    <h5>Architect Notes: </h5>
+                                                    <br>
+                                                    
+                                                    
+                                                    '.$row3['notes_content5'].'
+                                                    </textarea>
+                                                    ';
+                                                }
+                                                
+
+                                            }
+                                        echo'</div>';
                                     }
                                     elseif($status2 == $row['project_status_Architect_5']){
                                         echo ' Completed </label>
@@ -374,7 +542,41 @@
                                 " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT6">';
                                     
                                     if($status1 == $row['project_status_Architect_6']){
-                                        echo ' Pending </label>';
+                                        echo ' Pending </label>
+                                        
+                                        <div style="margin-top: 10px;text-align: center;>';
+                                                
+                                        $sql3 = "SELECT notes_content6 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                        $result3 = mysqli_query($conn, $sql3);
+
+                                            if(mysqli_num_rows($result3)>0){
+                                                $row3=mysqli_fetch_assoc($result3);
+                                                $output = $row3['notes_content6'];
+                                                if($output=="Enter notes here.." || empty($output)){
+                                                    echo'
+                                                    
+                                                    <textarea name="notes_arch6" value="">
+                                                    
+                                                    
+                                                    
+                                                    </textarea>
+                                                    ';
+                                                }else{
+                                                    echo'
+                                                    
+                                                    <textarea name="notes_arch6" value="">
+                                                    <h5>Architect Notes: </h5>
+                                                    <br>
+                                                    
+                                                    
+                                                    '.$row3['notes_content6'].'
+                                                    </textarea>
+                                                    ';
+                                                }
+                                                
+
+                                            }
+                                        echo'</div>';
                                     }
                                     elseif($status2 == $row['project_status_Architect_6']){
                                         echo ' Completed </label>
@@ -420,7 +622,41 @@
                                 " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT7">';
                                     
                                     if($status1 == $row['project_status_Architect_7']){
-                                        echo ' Pending </label>';
+                                        echo ' Pending </label>
+                                        
+                                        <div style="margin-top: 10px;text-align: center;>';
+                                                
+                                        $sql3 = "SELECT notes_content7 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                        $result3 = mysqli_query($conn, $sql3);
+
+                                            if(mysqli_num_rows($result3)>0){
+                                                $row3=mysqli_fetch_assoc($result3);
+                                                $output = $row3['notes_content7'];
+                                                if($output=="Enter notes here.." || empty($output)){
+                                                    echo'
+                                                    
+                                                    <textarea name="notes_arch7" value="">
+                                                    
+                                                    
+                                                    
+                                                    </textarea>
+                                                    ';
+                                                }else{
+                                                    echo'
+                                                    
+                                                    <textarea name="notes_arch7" value="">
+                                                    <h5>Architect Notes: </h5>
+                                                    <br>
+                                                    
+                                                    
+                                                    '.$row3['notes_content7'].'
+                                                    </textarea>
+                                                    ';
+                                                }
+                                                
+
+                                            }
+                                        echo'</div>';
                                     }
                                     elseif($status2 == $row['project_status_Architect_7']){
                                         echo ' Completed </label>
@@ -467,7 +703,42 @@
                                 " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT8">';
                                     
                                     if($status1 == $row['project_status_Architect_8']){
-                                        echo ' Pending </label>';
+                                        echo ' Pending </label>
+                                        
+                                        
+                                        <div style="margin-top: 10px;text-align: center;>';
+                                                
+                                        $sql3 = "SELECT notes_content8 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                        $result3 = mysqli_query($conn, $sql3);
+
+                                            if(mysqli_num_rows($result3)>0){
+                                                $row3=mysqli_fetch_assoc($result3);
+                                                $output = $row3['notes_content8'];
+                                                if($output=="Enter notes here.." || empty($output)){
+                                                    echo'
+                                                    
+                                                    <textarea name="notes_arch8" value="">
+                                                    
+                                                    
+                                                    
+                                                    </textarea>
+                                                    ';
+                                                }else{
+                                                    echo'
+                                                    
+                                                    <textarea name="notes_arch8" value="">
+                                                    <h5>Architect Notes: </h5>
+                                                    <br>
+                                                    
+                                                    
+                                                    '.$row3['notes_content8'].'
+                                                    </textarea>
+                                                    ';
+                                                }
+                                                
+
+                                            }
+                                        echo'</div>';
                                     }
                                     elseif($status2 == $row['project_status_Architect_8']){
                                         echo ' Completed </label>
@@ -528,7 +799,41 @@
                                         " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_1">';
                                             
                                             if($status1 == $row['project_status_additional_Architect_1']){
-                                                echo ' Pending </label>';
+                                                echo ' Pending </label>
+                                        
+                                                <div style="margin-top: 10px;text-align: center;>';
+                                                        
+                                                $sql3 = "SELECT notes_content9 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                                $result3 = mysqli_query($conn, $sql3);
+        
+                                                    if(mysqli_num_rows($result3)>0){
+                                                        $row3=mysqli_fetch_assoc($result3);
+                                                        $output = $row3['notes_content9'];
+                                                        if($output=="Enter notes here.." || empty($output)){
+                                                            echo'
+                                                            
+                                                            <textarea name="notes_arch9" value="">
+                                                            
+                                                            
+                                                            
+                                                            </textarea>
+                                                            ';
+                                                        }else{
+                                                            echo'
+                                                            
+                                                            <textarea name="notes_arch9" value="">
+                                                            <h5>Architect Notes: </h5>
+                                                            <br>
+                                                            
+                                                            
+                                                            '.$row3['notes_content9'].'
+                                                            </textarea>
+                                                            ';
+                                                        }
+                                                        
+        
+                                                    }
+                                                echo'</div>';
                                             }
                                             elseif($status2 == $row['project_status_additional_Architect_1']){
                                                 echo ' Completed </label>
@@ -587,7 +892,41 @@
                                             " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_2">';
                                                 
                                             if($status1 == $row['project_status_additional_Architect_2']){
-                                                echo ' Pending </label>';
+                                                echo ' Pending </label>
+                                        
+                                                <div style="margin-top: 10px;text-align: center;>';
+                                                        
+                                                $sql3 = "SELECT notes_content10 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                                $result3 = mysqli_query($conn, $sql3);
+        
+                                                    if(mysqli_num_rows($result3)>0){
+                                                        $row3=mysqli_fetch_assoc($result3);
+                                                        $output = $row3['notes_content10'];
+                                                        if($output=="Enter notes here.." || empty($output)){
+                                                            echo'
+                                                            
+                                                            <textarea name="notes_arch10" value="">
+                                                            
+                                                            
+                                                            
+                                                            </textarea>
+                                                            ';
+                                                        }else{
+                                                            echo'
+                                                            
+                                                            <textarea name="notes_arch10" value="">
+                                                            <h5>Architect Notes: </h5>
+                                                            <br>
+                                                            
+                                                            
+                                                            '.$row3['notes_content10'].'
+                                                            </textarea>
+                                                            ';
+                                                        }
+                                                        
+        
+                                                    }
+                                                echo'</div>';
                                             }
                                             elseif($status2 == $row['project_status_additional_Architect_2']){
                                                 echo ' Completed </label>
@@ -647,7 +986,41 @@
                                             " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_3">';
                                                 
                                                 if($status1 == $row['project_status_additional_Architect_3']){
-                                                    echo ' Pending </label>';
+                                                    echo ' Pending </label>
+                                        
+                                                    <div style="margin-top: 10px;text-align: center;>';
+                                                            
+                                                    $sql3 = "SELECT notes_content11 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                                    $result3 = mysqli_query($conn, $sql3);
+            
+                                                        if(mysqli_num_rows($result3)>0){
+                                                            $row3=mysqli_fetch_assoc($result3);
+                                                            $output = $row3['notes_content11'];
+                                                            if($output=="Enter notes here.." || empty($output)){
+                                                                echo'
+                                                                
+                                                                <textarea name="notes_arch11" value="">
+                                                                
+                                                                
+                                                                
+                                                                </textarea>
+                                                                ';
+                                                            }else{
+                                                                echo'
+                                                                
+                                                                <textarea name="notes_arch11" value="">
+                                                                <h5>Architect Notes: </h5>
+                                                                <br>
+                                                                
+                                                                
+                                                                '.$row3['notes_content11'].'
+                                                                </textarea>
+                                                                ';
+                                                            }
+                                                            
+            
+                                                        }
+                                                    echo'</div>';
                                                 }
                                                 elseif($status2 == $row['project_status_additional_Architect_3']){
                                                     echo ' Completed </label>
@@ -707,7 +1080,41 @@
                                             " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_4">';
                                                 
                                                 if($status1 == $row['project_status_additional_Architect_4']){
-                                                    echo ' Pending </label>';
+                                                    echo ' Pending </label>
+                                        
+                                                    <div style="margin-top: 10px;text-align: center;>';
+                                                            
+                                                    $sql3 = "SELECT notes_content12 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                                    $result3 = mysqli_query($conn, $sql3);
+            
+                                                        if(mysqli_num_rows($result3)>0){
+                                                            $row3=mysqli_fetch_assoc($result3);
+                                                            $output = $row3['notes_content12'];
+                                                            if($output=="Enter notes here.." || empty($output)){
+                                                                echo'
+                                                                
+                                                                <textarea name="notes_arch12" value="">
+                                                                
+                                                                
+                                                                
+                                                                </textarea>
+                                                                ';
+                                                            }else{
+                                                                echo'
+                                                                
+                                                                <textarea name="notes_arch12" value="">
+                                                                <h5>Architect Notes: </h5>
+                                                                <br>
+                                                                
+                                                                
+                                                                '.$row3['notes_content12'].'
+                                                                </textarea>
+                                                                ';
+                                                            }
+                                                            
+            
+                                                        }
+                                                    echo'</div>';
                                                 }
                                                 elseif($status2 == $row['project_status_additional_Architect_4']){
                                                     echo ' Completed </label>
@@ -764,7 +1171,42 @@
                                             " style="width: 100%;margin: auto;text-align: center;" onchange="this.className=this.options[this.selectedIndex].className" name="SELECT_additional_5">';
                                                 
                                                     if($status1 == $row['project_status_additional_Architect_5']){
-                                                        echo ' Pending </label>';
+                                                        echo ' Pending </label>
+                                                        
+                                        
+                                                        <div style="margin-top: 10px;text-align: center;>';
+                                                                
+                                                        $sql3 = "SELECT notes_content13 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                                        $result3 = mysqli_query($conn, $sql3);
+
+                                                            if(mysqli_num_rows($result3)>0){
+                                                                $row3=mysqli_fetch_assoc($result3);
+                                                                $output = $row3['notes_content13'];
+                                                                if($output=="Enter notes here.." || empty($output)){
+                                                                    echo'
+                                                                    
+                                                                    <textarea name="notes_arch13" value="">
+                                                                    
+                                                                    
+                                                                    
+                                                                    </textarea>
+                                                                    ';
+                                                                }else{
+                                                                    echo'
+                                                                    
+                                                                    <textarea name="notes_arch13" value="">
+                                                                    <h5>Architect Notes: </h5>
+                                                                    <br>
+                                                                    
+                                                                    
+                                                                    '.$row3['notes_content13'].'
+                                                                    </textarea>
+                                                                    ';
+                                                                }
+                                                                
+
+                                                            }
+                                                        echo'</div>';
                                                     }
                                                     elseif($status2 == $row['project_status_additional_Architect_5']){
                                                         echo ' Completed </label>
