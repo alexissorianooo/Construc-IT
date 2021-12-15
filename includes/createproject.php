@@ -36,6 +36,7 @@ if(isset($_POST['createButton'])){
     $project_clientSELECTid = $result2_explode[1]; //user ID
 
 
+ 
 
 
     // echo $project_pmSELECT = $_POST['project_pmSELECT'];
@@ -96,6 +97,7 @@ if(isset($_POST['createButton'])){
     }
 
 
+    
 
     // echo $project_input9 .'<br>';
     // echo $project_input10 .'<br>';
@@ -124,6 +126,12 @@ if(isset($_POST['createButton'])){
     // createProjectPM($conn);
     pmStatus($conn, $project_pmSELECTid);
     clientStatus($conn, $project_clientSELECTid);
+
+
+    // for notes
+    notesforArchitect_create($conn);
+
+    
 
      // TRAIL PHP SEGMENT
 

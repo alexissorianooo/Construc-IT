@@ -756,3 +756,73 @@ function changeActivities_PM($conn, $project_id, $select1, $select2, $select3, $
     }
   }
 }
+
+function notesforArchitect_update($conn, $project_id, $notes_arch1, $notes_arch2, $notes_arch3, $notes_arch4, $notes_arch5, $notes_arch6, $notes_arch7, $notes_arch8, $notes_arch9, $notes_arch10, $notes_arch11, $notes_arch12, $notes_arch13){
+  // $sql = "INSERT INTO notes_db (notes_project_id, notes_content1, notes_content2, notes_content3, notes_content4, notes_content5, notes_content6, notes_content7, notes_content8, notes_content9, notes_content10, notes_content11, notes_content12, notes_content13) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+  $sql = "UPDATE notes_db SET notes_content1='$notes_arch1', notes_content2='$notes_arch2', notes_content3='$notes_arch3', notes_content4='$notes_arch4', notes_content5='$notes_arch5', notes_content6='$notes_arch6', notes_content7='$notes_arch7', notes_content8='$notes_arch8', notes_content9='$notes_arch9', notes_content10='$notes_arch10', notes_content11='$notes_arch11', notes_content12='$notes_arch12', notes_content13='$notes_arch13' WHERE notes_project_id= '$project_id'";
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_query($conn, $sql);
+
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: ../loggedInPages/homePage.php?error=stmtfailedNOTES");
+    exit();
+  }
+
+  
+
+
+
+//   $sql2 = "UPDATE project_db SET project_client = '$user_fullname' WHERE project_client = '$user_fullname_old'";
+//         $stmt = mysqli_stmt_init($conn);
+//         mysqli_query($conn, $sql2);
+}
+
+function notesforArchitect_create($conn){
+
+  $sql1 = "SELECT MAX(project_id) AS new_project FROM project_db";
+  $result1 = mysqli_query($conn, $sql1);
+
+
+  
+  if(mysqli_num_rows($result1)>0){
+    while($row=mysqli_fetch_assoc($result1)){
+      $project_id=$row['new_project'];
+      $sql = "INSERT INTO notes_db (notes_project_id) VALUES ($project_id);";
+      $stmt = mysqli_stmt_init($conn);
+
+      if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../loggedInPages/homePage.php?error=stmtfailedNOTES");
+        exit();
+      }
+
+      
+      mysqli_stmt_execute($stmt);
+      mysqli_stmt_close($stmt);
+    }
+  }
+
+
+
+
+
+
+
+  // $sql = "INSERT INTO notes_db (notes_project_id) VALUES (?);";
+  // // $sql = "UPDATE notes_db SET notes_content1='$notes_arch1', notes_content2='$notes_arch2', notes_content3='$notes_arch3', notes_content4='$notes_arch4', notes_content5='$notes_arch5', notes_content6='$notes_arch6', notes_content7='$notes_arch7', notes_content8='$notes_arch8', notes_content9='$notes_arch9', notes_content10='$notes_arch10', notes_content11='$notes_arch11', notes_content12='$notes_arch12', notes_content13='$notes_arch13' WHERE notes_project_id= '$project_id'";
+  // $stmt = mysqli_stmt_init($conn);
+
+  // if (!mysqli_stmt_prepare($stmt, $sql)) {
+  //   header("location: ../loggedInPages/homePage.php?error=stmtfailedNOTES");
+  //   exit();
+  // }
+
+  // mysqli_stmt_bind_param($stmt, "s", $project_id);
+  // mysqli_stmt_execute($stmt);
+  // mysqli_stmt_close($stmt);
+
+
+
+//   $sql2 = "UPDATE project_db SET project_client = '$user_fullname' WHERE project_client = '$user_fullname_old'";
+//         $stmt = mysqli_stmt_init($conn);
+//         mysqli_query($conn, $sql2);
+}

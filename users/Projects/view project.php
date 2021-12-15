@@ -196,6 +196,7 @@
                                                     }
                                                     
                                                 echo '>Pending</option>
+                                                
                                                 <option value="Completed" class="completed-class" ';
                                                 
                                                     if($status2 == $row['project_status_Architect_1']){
@@ -255,6 +256,39 @@
 
                                                     echo'
                                                 </div>
+                                            </div>
+                                            ';
+
+                                            echo'
+                                            <div style="display:';
+                                            
+                                                if($status1 == $row['project_status_Architect_1'] || $status3 == $row['project_status_Architect_1']){
+                                                    echo ' block ';
+                                                }else{
+                                                    echo ' none';
+                                                }
+                                            
+                                             echo ';" id="hidden_div1">
+                                                
+                                             
+                                                <br>
+                                                <h5>Notes: </h5>';
+                                                
+                                                $sql3 = "SELECT notes_content1 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                                $result3 = mysqli_query($conn, $sql3);
+
+                                                
+
+                                                    if(mysqli_num_rows($result3)>0){
+                                                        $row3=mysqli_fetch_assoc($result3);
+                                                        echo'
+                                                        <textarea name="notes_arch1" value="">'.$row3['notes_content1'].'</textarea>
+                                                        
+                                                        ';
+
+                                                    }
+
+                                                echo'
                                             </div>
                                             ';
 
@@ -348,6 +382,40 @@
                                             </div>
                                             ';
 
+                                            echo'
+                                            <div style="display:';
+                                            
+                                                if($status1 == $row['project_status_Architect_2'] || $status3 == $row['project_status_Architect_2']){
+                                                    echo ' block ';
+                                                }else{
+                                                    echo ' none';
+                                                }
+                                            
+                                             echo ';" id="hidden_div2">
+                                                
+                                             
+                                                <br>
+                                                <h5>Notes: </h5>';
+                                                
+                                                $sql3 = "SELECT notes_content2 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                                $result3 = mysqli_query($conn, $sql3);
+
+                                                
+
+                                                    if(mysqli_num_rows($result3)>0){
+                                                        $row3=mysqli_fetch_assoc($result3);
+                                                        echo'
+                                                        <textarea name="notes_arch2" value="">'.$row3['notes_content2'].'</textarea>
+                                                        
+                                                        ';
+
+                                                    }
+
+                                                echo'
+                                            </div>
+                                            ';
+
+
                                         echo'
                                         </div>
                                     </div>
@@ -435,6 +503,39 @@
 
                                                     echo'
                                                 </div>
+                                            </div>
+                                            ';
+
+                                            echo'
+                                            <div style="display:';
+                                            
+                                                if($status1 == $row['project_status_Architect_3'] || $status3 == $row['project_status_Architect_3']){
+                                                    echo ' block ';
+                                                }else{
+                                                    echo ' none';
+                                                }
+                                            
+                                             echo ';" id="hidden_div3">
+                                                
+                                             
+                                                <br>
+                                                <h5>Notes: </h5>';
+                                                
+                                                $sql3 = "SELECT notes_content3 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                                $result3 = mysqli_query($conn, $sql3);
+
+                                                
+
+                                                    if(mysqli_num_rows($result3)>0){
+                                                        $row3=mysqli_fetch_assoc($result3);
+                                                        echo'
+                                                        <textarea name="notes_arch3" value="">'.$row3['notes_content3'].'</textarea>
+                                                        
+                                                        ';
+
+                                                    }
+
+                                                echo'
                                             </div>
                                             ';
 
@@ -528,6 +629,39 @@
                                             </div>
                                             ';
 
+                                            echo'
+                                            <div style="display:';
+                                            
+                                                if($status1 == $row['project_status_Architect_4'] || $status3 == $row['project_status_Architect_4']){
+                                                    echo ' block ';
+                                                }else{
+                                                    echo ' none';
+                                                }
+                                            
+                                             echo ';" id="hidden_div4">
+                                                
+                                             
+                                                <br>
+                                                <h5>Notes: </h5>';
+                                                
+                                                $sql3 = "SELECT notes_content4 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                                $result3 = mysqli_query($conn, $sql3);
+
+                                                
+
+                                                    if(mysqli_num_rows($result3)>0){
+                                                        $row3=mysqli_fetch_assoc($result3);
+                                                        echo'
+                                                        <textarea name="notes_arch4" value="">'.$row3['notes_content4'].'</textarea>
+                                                        
+                                                        ';
+
+                                                    }
+
+                                                echo'
+                                            </div>
+                                            ';
+
                                         echo'
                                         </div>
                                     </div>
@@ -615,6 +749,39 @@
 
                                                     echo'
                                                 </div>
+                                            </div>
+                                            ';
+
+                                            echo'
+                                            <div style="display:';
+                                            
+                                                if($status1 == $row['project_status_Architect_5'] || $status3 == $row['project_status_Architect_5']){
+                                                    echo ' block ';
+                                                }else{
+                                                    echo ' none';
+                                                }
+                                            
+                                             echo ';" id="hidden_div5">
+                                                
+                                             
+                                                <br>
+                                                <h5>Notes: </h5>';
+                                                
+                                                $sql3 = "SELECT notes_content5 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                                $result3 = mysqli_query($conn, $sql3);
+
+                                                
+
+                                                    if(mysqli_num_rows($result3)>0){
+                                                        $row3=mysqli_fetch_assoc($result3);
+                                                        echo'
+                                                        <textarea name="notes_arch5" value="">'.$row3['notes_content5'].'</textarea>
+                                                        
+                                                        ';
+
+                                                    }
+
+                                                echo'
                                             </div>
                                             ';
 
@@ -708,6 +875,39 @@
                                             </div>
                                             ';
 
+                                            echo'
+                                            <div style="display:';
+                                            
+                                                if($status1 == $row['project_status_Architect_6'] || $status3 == $row['project_status_Architect_6']){
+                                                    echo ' block ';
+                                                }else{
+                                                    echo ' none';
+                                                }
+                                            
+                                             echo ';" id="hidden_div6">
+                                                
+                                             
+                                                <br>
+                                                <h5>Notes: </h5>';
+                                                
+                                                $sql3 = "SELECT notes_content6 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                                $result3 = mysqli_query($conn, $sql3);
+
+                                                
+
+                                                    if(mysqli_num_rows($result3)>0){
+                                                        $row3=mysqli_fetch_assoc($result3);
+                                                        echo'
+                                                        <textarea name="notes_arch6" value="">'.$row3['notes_content6'].'</textarea>
+                                                        
+                                                        ';
+
+                                                    }
+
+                                                echo'
+                                            </div>
+                                            ';
+
                                         echo'
                                         </div>
                                     </div>
@@ -798,6 +998,39 @@
                                             </div>
                                             ';
 
+                                            echo'
+                                            <div style="display:';
+                                            
+                                                if($status1 == $row['project_status_Architect_7'] || $status3 == $row['project_status_Architect_7']){
+                                                    echo ' block ';
+                                                }else{
+                                                    echo ' none';
+                                                }
+                                            
+                                             echo ';" id="hidden_div7">
+                                                
+                                             
+                                                <br>
+                                                <h5>Notes: </h5>';
+                                                
+                                                $sql3 = "SELECT notes_content7 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                                $result3 = mysqli_query($conn, $sql3);
+
+                                                
+
+                                                    if(mysqli_num_rows($result3)>0){
+                                                        $row3=mysqli_fetch_assoc($result3);
+                                                        echo'
+                                                        <textarea name="notes_arch7" value="">'.$row3['notes_content7'].'</textarea>
+                                                        
+                                                        ';
+
+                                                    }
+
+                                                echo'
+                                            </div>
+                                            ';
+
                                         echo'
                                         </div>
                                     </div>
@@ -885,6 +1118,39 @@
 
                                                     echo'
                                                 </div>
+                                            </div>
+                                            ';
+
+                                            echo'
+                                            <div style="display:';
+                                            
+                                                if($status1 == $row['project_status_Architect_8'] || $status3 == $row['project_status_Architect_8']){
+                                                    echo ' block ';
+                                                }else{
+                                                    echo ' none';
+                                                }
+                                            
+                                             echo ';" id="hidden_div8">
+                                                
+                                             
+                                                <br>
+                                                <h5>Notes: </h5>';
+                                                
+                                                $sql3 = "SELECT notes_content8 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                                $result3 = mysqli_query($conn, $sql3);
+
+                                                
+
+                                                    if(mysqli_num_rows($result3)>0){
+                                                        $row3=mysqli_fetch_assoc($result3);
+                                                        echo'
+                                                        <textarea name="notes_arch8" value="">'.$row3['notes_content8'].'</textarea>
+                                                        
+                                                        ';
+
+                                                    }
+
+                                                echo'
                                             </div>
                                             ';
 
@@ -991,6 +1257,39 @@
                                                         </div>
                                                     </div>
                                                     ';
+
+                                                    echo'
+                                                    <div style="display:';
+                                                    
+                                                        if($status1 == $row['project_status_additional_Architect_1'] || $status3 == $row['project_status_additional_Architect_1']){
+                                                            echo ' block ';
+                                                        }else{
+                                                            echo ' none';
+                                                        }
+                                                    
+                                                     echo ';" id="hidden_div9">
+                                                        
+                                                     
+                                                        <br>
+                                                        <h5>Notes: </h5>';
+                                                        
+                                                        $sql3 = "SELECT notes_content9 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                                        $result3 = mysqli_query($conn, $sql3);
+        
+                                                        
+        
+                                                            if(mysqli_num_rows($result3)>0){
+                                                                $row3=mysqli_fetch_assoc($result3);
+                                                                echo'
+                                                                <textarea name="notes_arch9" value="">'.$row3['notes_content9'].'</textarea>
+                                                                
+                                                                ';
+        
+                                                            }
+        
+                                                        echo'
+                                                    </div>
+                                                    ';
         
                                                 echo'
                                                 </div>
@@ -1092,6 +1391,39 @@
             
                                                                 echo'
                                                             </div>
+                                                        </div>
+                                                        ';
+
+                                                        echo'
+                                                        <div style="display:';
+                                                        
+                                                            if($status1 == $row['project_status_additional_Architect_2'] || $status3 == $row['project_status_additional_Architect_2']){
+                                                                echo ' block ';
+                                                            }else{
+                                                                echo ' none';
+                                                            }
+                                                        
+                                                         echo ';" id="hidden_div10">
+                                                            
+                                                         
+                                                            <br>
+                                                            <h5>Notes: </h5>';
+                                                            
+                                                            $sql3 = "SELECT notes_content10 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                                            $result3 = mysqli_query($conn, $sql3);
+            
+                                                            
+            
+                                                                if(mysqli_num_rows($result3)>0){
+                                                                    $row3=mysqli_fetch_assoc($result3);
+                                                                    echo'
+                                                                    <textarea name="notes_arch10" value="">'.$row3['notes_content10'].'</textarea>
+                                                                    
+                                                                    ';
+            
+                                                                }
+            
+                                                            echo'
                                                         </div>
                                                         ';
             
@@ -1197,6 +1529,39 @@
                                                             </div>
                                                         </div>
                                                         ';
+
+                                                        echo'
+                                                        <div style="display:';
+                                                        
+                                                            if($status1 == $row['project_status_additional_Architect_3'] || $status3 == $row['project_status_additional_Architect_3']){
+                                                                echo ' block ';
+                                                            }else{
+                                                                echo ' none';
+                                                            }
+                                                        
+                                                         echo ';" id="hidden_div11">
+                                                            
+                                                         
+                                                            <br>
+                                                            <h5>Notes: </h5>';
+                                                            
+                                                            $sql3 = "SELECT notes_content11 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                                            $result3 = mysqli_query($conn, $sql3);
+            
+                                                            
+            
+                                                                if(mysqli_num_rows($result3)>0){
+                                                                    $row3=mysqli_fetch_assoc($result3);
+                                                                    echo'
+                                                                    <textarea name="notes_arch11" value="">'.$row3['notes_content11'].'</textarea>
+                                                                    
+                                                                    ';
+            
+                                                                }
+            
+                                                            echo'
+                                                        </div>
+                                                        ';
             
                                                     echo'
                                                     </div>
@@ -1300,6 +1665,39 @@
                                                                 </div>
                                                             </div>
                                                             ';
+
+                                                            echo'
+                                                            <div style="display:';
+                                                            
+                                                                if($status1 == $row['project_status_additional_Architect_4'] || $status3 == $row['project_status_additional_Architect_4']){
+                                                                    echo ' block ';
+                                                                }else{
+                                                                    echo ' none';
+                                                                }
+                                                            
+                                                             echo ';" id="hidden_div12">
+                                                                
+                                                             
+                                                                <br>
+                                                                <h5>Notes: </h5>';
+                                                                
+                                                                $sql3 = "SELECT notes_content12 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                                                $result3 = mysqli_query($conn, $sql3);
+                
+                                                                
+                
+                                                                    if(mysqli_num_rows($result3)>0){
+                                                                        $row3=mysqli_fetch_assoc($result3);
+                                                                        echo'
+                                                                        <textarea name="notes_arch12" value="">'.$row3['notes_content12'].'</textarea>
+                                                                        
+                                                                        ';
+                
+                                                                    }
+                
+                                                                echo'
+                                                            </div>
+                                                            ';
                 
                                                         echo'
                                                         </div>
@@ -1399,6 +1797,39 @@
             
                                                                 echo'
                                                             </div>
+                                                        </div>
+                                                        ';
+
+                                                        echo'
+                                                        <div style="display:';
+                                                        
+                                                            if($status1 == $row['project_status_additional_Architect_5'] || $status3 == $row['project_status_additional_Architect_5']){
+                                                                echo ' block ';
+                                                            }else{
+                                                                echo ' none';
+                                                            }
+                                                        
+                                                         echo ';" id="hidden_div13">
+                                                            
+                                                         
+                                                            <br>
+                                                            <h5>Notes: </h5>';
+                                                            
+                                                            $sql3 = "SELECT notes_content13 FROM notes_db WHERE notes_project_id = '$project_id'";
+                                                            $result3 = mysqli_query($conn, $sql3);
+            
+                                                            
+            
+                                                                if(mysqli_num_rows($result3)>0){
+                                                                    $row3=mysqli_fetch_assoc($result3);
+                                                                    echo'
+                                                                    <textarea name="notes_arch13" value="">'.$row3['notes_content13'].'</textarea>
+                                                                    
+                                                                    ';
+            
+                                                                }
+            
+                                                            echo'
                                                         </div>
                                                         ';
             

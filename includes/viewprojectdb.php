@@ -11,6 +11,19 @@ if(isset($_POST["saveButton"])){
     $project_client_id = $_POST['project_client']; // SAME
     echo "<br>".$project_clientSELECTid = $project_client_id; // SAME
 
+    //for notes
+    $notes_arch1 = $_POST["notes_arch1"];
+    $notes_arch2 = $_POST["notes_arch2"];
+    $notes_arch3 = $_POST["notes_arch3"];
+    $notes_arch4 = $_POST["notes_arch4"];
+    $notes_arch5 = $_POST["notes_arch5"];
+    $notes_arch6 = $_POST["notes_arch6"];
+    $notes_arch7 = $_POST["notes_arch7"];
+    $notes_arch8 = $_POST["notes_arch8"];
+
+
+
+
     $select1 = $_POST['SELECT1'];
     $select2 = $_POST['SELECT2'];
     $select3 = $_POST['SELECT3'];
@@ -54,26 +67,36 @@ if(isset($_POST["saveButton"])){
     //LONG VERSION
     if(($_POST['additional_name_1']!="empty")){
         $select9 = $_POST['SELECT_additional_1'];
+
+        $notes_arch9 = $_POST["notes_arch9"];
     }else{
         $select9 = "empty";
     }
     if(($_POST['additional_name_2']!="empty")){
         $select10 = $_POST['SELECT_additional_2'];
+
+        $notes_arch10 = $_POST["notes_arch10"];
     }else{
         $select10 = "empty";
     }
     if(($_POST['additional_name_3']!="empty")){
         $select11 = $_POST['SELECT_additional_3'];
+
+        $notes_arch11 = $_POST["notes_arch11"];
     }else{
         $select11 = "empty";
     }
     if(($_POST['additional_name_4']!="empty")){
         $select12 = $_POST['SELECT_additional_4'];
+
+        $notes_arch12 = $_POST["notes_arch12"];
     }else{
         $select12 = "empty";
     }
     if(($_POST['additional_name_5']!="empty")){
         $select13 = $_POST['SELECT_additional_5'];
+
+        $notes_arch13 = $_POST["notes_arch13"];
     }else{
         $select13 = "empty";
     }
@@ -148,6 +171,8 @@ if(isset($_POST["saveButton"])){
         completeProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
         changeCLIENTstatus($conn, $project_client_id); // to lessen the project counter
 
+        //for notes
+
         // TRAIL PHP SEGMENT
 
         $trail_user = $_SESSION["user_fullname"];
@@ -169,6 +194,8 @@ if(isset($_POST["saveButton"])){
     updateProjectINC($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13);
     clientStatus($conn, $project_clientSELECTid);
 
+    // for notes
+    notesforArchitect_update($conn, $project_id, $notes_arch1, $notes_arch2, $notes_arch3, $notes_arch4, $notes_arch5, $notes_arch6, $notes_arch7, $notes_arch8, $notes_arch9, $notes_arch10, $notes_arch11, $notes_arch12, $notes_arch13);
 
     // TRAIL PHP SEGMENT
 
