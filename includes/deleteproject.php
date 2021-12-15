@@ -10,10 +10,17 @@ if(isset($_POST['deleteProject'])){
     require_once 'db.php';
     require_once 'functions.php';
 
+    
     deleteproject($conn, $project_ID);
     changePMstatus($conn, $project_pm_id);
+
+    
+    
     changeCLIENTstatus($conn, $project_client_id);
 
+    // deletealluploadedfiles($conn, $project_ID); for deleting all files
+    
+    
 
     // TRAIL PHP SEGMENT
 

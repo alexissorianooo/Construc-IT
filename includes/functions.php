@@ -381,6 +381,32 @@ function changeCLIENTstatus($conn, $project_client_id){
       }
   }
 }
+
+
+//FOR DELETING ALL FILES
+
+// function deletealluploadedfiles($conn, $project_ID){
+//   echo 'you\'re deleting huh?';
+
+//   $project_id = $project_ID;
+
+//   $sql = "DELETE FROM files_db WHERE files_project_id = '$project_id' AND files_activity = 'FILE1'";
+//   mysqli_query($conn, $sql);
+
+
+//   $sql1 = "SELECT files_activity FROM files_db WHERE files_project_id = '$project_id'";
+//   $result = mysqli_query($conn, $sql);
+
+//   if(mysqli_num_rows($result)>0){
+//       while($row=mysqli_fetch_assoc($result)){
+
+//       }
+//   }
+
+  
+//   exit();
+
+// }
 //  -------------------------------------------------------------  FOR PROJECT VIEW ---------------------------------------------------------------------
 
 function updateProject($conn, $numerator, $denominator, $project_id, $select1, $select2, $select3, $select4, $select5, $select6, $select7, $select8, $select9, $select10, $select11, $select12, $select13){
@@ -801,6 +827,8 @@ function notesforArchitect_create($conn){
     }
   }
 
+
+  
 
 
 
