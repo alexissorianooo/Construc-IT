@@ -22,7 +22,7 @@
     ?>
 
     <p>HI YOU'RE AT PROJECT MANAGER PAGE</p>
-    <?php include '../../Users/Project Manager/pm-act.php' ?>
+    <?php include '../../users/Project Manager/pm-act.php' ?>
 
 
 
