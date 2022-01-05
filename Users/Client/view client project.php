@@ -184,6 +184,13 @@
                                                     <button name="DOWNLOAD1">Download</button>
                                                 ';
                                                  
+                                            }else{
+                                                echo
+                                                '
+                                                    <br>
+                                                    <h6> The Architect has not  uploaded a file yet </h6>
+                                                    <br>
+                                                ';
                                             }
 
                                         echo'</div>';
