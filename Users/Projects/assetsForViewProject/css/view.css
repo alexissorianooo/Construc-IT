@@ -132,6 +132,17 @@
 #hidden_div{
     display: block;
 }
+
+.fixnotes {
+    text-align: center;
+}
+
+.fixtextarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* .containeredit {
     width:100%;
     padding-right:15px;

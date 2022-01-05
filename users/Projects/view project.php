@@ -272,7 +272,7 @@
                                                 
                                              
                                                 <br>
-                                                <h5>Notes: </h5>';
+                                                <h5 class="fixnotes">Notes: </h5>';
                                                 
                                                 $sql3 = "SELECT notes_content1 FROM notes_db WHERE notes_project_id = '$project_id'";
                                                 $result3 = mysqli_query($conn, $sql3);
@@ -282,7 +282,7 @@
                                                     if(mysqli_num_rows($result3)>0){
                                                         $row3=mysqli_fetch_assoc($result3);
                                                         echo'
-                                                        <textarea name="notes_arch1" value="">'.$row3['notes_content1'].'</textarea>
+                                                        <textarea class="fixtextarea" name="notes_arch1" value="">'.$row3['notes_content1'].'</textarea>
                                                         
                                                         ';
 
@@ -395,7 +395,7 @@
                                                 
                                              
                                                 <br>
-                                                <h5>Notes: </h5>';
+                                                <h5 class="fixnotes">Notes: </h5>';
                                                 
                                                 $sql3 = "SELECT notes_content2 FROM notes_db WHERE notes_project_id = '$project_id'";
                                                 $result3 = mysqli_query($conn, $sql3);
@@ -405,7 +405,7 @@
                                                     if(mysqli_num_rows($result3)>0){
                                                         $row3=mysqli_fetch_assoc($result3);
                                                         echo'
-                                                        <textarea name="notes_arch2" value="">'.$row3['notes_content2'].'</textarea>
+                                                        <textarea class="fixtextarea" name="notes_arch2" value="">'.$row3['notes_content2'].'</textarea>
                                                         
                                                         ';
 
@@ -519,7 +519,7 @@
                                                 
                                              
                                                 <br>
-                                                <h5>Notes: </h5>';
+                                                <h5 class="fixnotes" >Notes: </h5>';
                                                 
                                                 $sql3 = "SELECT notes_content3 FROM notes_db WHERE notes_project_id = '$project_id'";
                                                 $result3 = mysqli_query($conn, $sql3);
@@ -529,7 +529,7 @@
                                                     if(mysqli_num_rows($result3)>0){
                                                         $row3=mysqli_fetch_assoc($result3);
                                                         echo'
-                                                        <textarea name="notes_arch3" value="">'.$row3['notes_content3'].'</textarea>
+                                                        <textarea class="fixtextarea" name="notes_arch3" value="">'.$row3['notes_content3'].'</textarea>
                                                         
                                                         ';
 
@@ -642,7 +642,7 @@
                                                 
                                              
                                                 <br>
-                                                <h5>Notes: </h5>';
+                                                <h5 class="fixnotes">Notes: </h5>';
                                                 
                                                 $sql3 = "SELECT notes_content4 FROM notes_db WHERE notes_project_id = '$project_id'";
                                                 $result3 = mysqli_query($conn, $sql3);
@@ -652,7 +652,7 @@
                                                     if(mysqli_num_rows($result3)>0){
                                                         $row3=mysqli_fetch_assoc($result3);
                                                         echo'
-                                                        <textarea name="notes_arch4" value="">'.$row3['notes_content4'].'</textarea>
+                                                        <textarea class="fixtextarea" name="notes_arch4" value="">'.$row3['notes_content4'].'</textarea>
                                                         
                                                         ';
 
@@ -765,7 +765,7 @@
                                                 
                                              
                                                 <br>
-                                                <h5>Notes: </h5>';
+                                                <h5 class="fixnotes">Notes: </h5>';
                                                 
                                                 $sql3 = "SELECT notes_content5 FROM notes_db WHERE notes_project_id = '$project_id'";
                                                 $result3 = mysqli_query($conn, $sql3);
@@ -775,7 +775,7 @@
                                                     if(mysqli_num_rows($result3)>0){
                                                         $row3=mysqli_fetch_assoc($result3);
                                                         echo'
-                                                        <textarea name="notes_arch5" value="">'.$row3['notes_content5'].'</textarea>
+                                                        <textarea class="fixtextarea" name="notes_arch5" value="">'.$row3['notes_content5'].'</textarea>
                                                         
                                                         ';
 
@@ -888,7 +888,7 @@
                                                 
                                              
                                                 <br>
-                                                <h5>Notes: </h5>';
+                                                <h5 class="fixnotes">Notes: </h5>';
                                                 
                                                 $sql3 = "SELECT notes_content6 FROM notes_db WHERE notes_project_id = '$project_id'";
                                                 $result3 = mysqli_query($conn, $sql3);
@@ -898,7 +898,7 @@
                                                     if(mysqli_num_rows($result3)>0){
                                                         $row3=mysqli_fetch_assoc($result3);
                                                         echo'
-                                                        <textarea name="notes_arch6" value="">'.$row3['notes_content6'].'</textarea>
+                                                        <textarea class="fixtextarea" name="notes_arch6" value="">'.$row3['notes_content6'].'</textarea>
                                                         
                                                         ';
 
@@ -1011,7 +1011,7 @@
                                                 
                                              
                                                 <br>
-                                                <h5>Notes: </h5>';
+                                                <h5 class="fixnotes">Notes: </h5>';
                                                 
                                                 $sql3 = "SELECT notes_content7 FROM notes_db WHERE notes_project_id = '$project_id'";
                                                 $result3 = mysqli_query($conn, $sql3);
@@ -1021,7 +1021,7 @@
                                                     if(mysqli_num_rows($result3)>0){
                                                         $row3=mysqli_fetch_assoc($result3);
                                                         echo'
-                                                        <textarea name="notes_arch7" value="">'.$row3['notes_content7'].'</textarea>
+                                                        <textarea class="fixtextarea" name="notes_arch7" value="">'.$row3['notes_content7'].'</textarea>
                                                         
                                                         ';
 
@@ -1134,7 +1134,7 @@
                                                 
                                              
                                                 <br>
-                                                <h5>Notes: </h5>';
+                                                <h5 class="fixnotes">Notes: </h5>';
                                                 
                                                 $sql3 = "SELECT notes_content8 FROM notes_db WHERE notes_project_id = '$project_id'";
                                                 $result3 = mysqli_query($conn, $sql3);
@@ -1144,7 +1144,7 @@
                                                     if(mysqli_num_rows($result3)>0){
                                                         $row3=mysqli_fetch_assoc($result3);
                                                         echo'
-                                                        <textarea name="notes_arch8" value="">'.$row3['notes_content8'].'</textarea>
+                                                        <textarea class="fixtextarea" name="notes_arch8" value="">'.$row3['notes_content8'].'</textarea>
                                                         
                                                         ';
 
@@ -1271,7 +1271,7 @@
                                                         
                                                      
                                                         <br>
-                                                        <h5>Notes: </h5>';
+                                                        <h5 class="fixnotes">Notes: </h5>';
                                                         
                                                         $sql3 = "SELECT notes_content9 FROM notes_db WHERE notes_project_id = '$project_id'";
                                                         $result3 = mysqli_query($conn, $sql3);
@@ -1281,7 +1281,7 @@
                                                             if(mysqli_num_rows($result3)>0){
                                                                 $row3=mysqli_fetch_assoc($result3);
                                                                 echo'
-                                                                <textarea name="notes_arch9" value="">'.$row3['notes_content9'].'</textarea>
+                                                                <textarea class="fixtextarea" name="notes_arch9" value="">'.$row3['notes_content9'].'</textarea>
                                                                 
                                                                 ';
         
@@ -1407,7 +1407,7 @@
                                                             
                                                          
                                                             <br>
-                                                            <h5>Notes: </h5>';
+                                                            <h5 class="fixnotes">Notes: </h5>';
                                                             
                                                             $sql3 = "SELECT notes_content10 FROM notes_db WHERE notes_project_id = '$project_id'";
                                                             $result3 = mysqli_query($conn, $sql3);
@@ -1417,7 +1417,7 @@
                                                                 if(mysqli_num_rows($result3)>0){
                                                                     $row3=mysqli_fetch_assoc($result3);
                                                                     echo'
-                                                                    <textarea name="notes_arch10" value="">'.$row3['notes_content10'].'</textarea>
+                                                                    <textarea class="fixtextarea" name="notes_arch10" value="">'.$row3['notes_content10'].'</textarea>
                                                                     
                                                                     ';
             
@@ -1543,7 +1543,7 @@
                                                             
                                                          
                                                             <br>
-                                                            <h5>Notes: </h5>';
+                                                            <h5 class="fixnotes">Notes: </h5>';
                                                             
                                                             $sql3 = "SELECT notes_content11 FROM notes_db WHERE notes_project_id = '$project_id'";
                                                             $result3 = mysqli_query($conn, $sql3);
@@ -1553,7 +1553,7 @@
                                                                 if(mysqli_num_rows($result3)>0){
                                                                     $row3=mysqli_fetch_assoc($result3);
                                                                     echo'
-                                                                    <textarea name="notes_arch11" value="">'.$row3['notes_content11'].'</textarea>
+                                                                    <textarea class="fixtextarea" name="notes_arch11" value="">'.$row3['notes_content11'].'</textarea>
                                                                     
                                                                     ';
             
@@ -1679,7 +1679,7 @@
                                                                 
                                                              
                                                                 <br>
-                                                                <h5>Notes: </h5>';
+                                                                <h5 class="fixnotes">Notes: </h5>';
                                                                 
                                                                 $sql3 = "SELECT notes_content12 FROM notes_db WHERE notes_project_id = '$project_id'";
                                                                 $result3 = mysqli_query($conn, $sql3);
@@ -1689,7 +1689,7 @@
                                                                     if(mysqli_num_rows($result3)>0){
                                                                         $row3=mysqli_fetch_assoc($result3);
                                                                         echo'
-                                                                        <textarea name="notes_arch12" value="">'.$row3['notes_content12'].'</textarea>
+                                                                        <textarea class="fixtextarea" name="notes_arch12" value="">'.$row3['notes_content12'].'</textarea>
                                                                         
                                                                         ';
                 
@@ -1813,7 +1813,7 @@
                                                             
                                                          
                                                             <br>
-                                                            <h5>Notes: </h5>';
+                                                            <h5 class="fixnotes">Notes: </h5>';
                                                             
                                                             $sql3 = "SELECT notes_content13 FROM notes_db WHERE notes_project_id = '$project_id'";
                                                             $result3 = mysqli_query($conn, $sql3);
@@ -1823,7 +1823,7 @@
                                                                 if(mysqli_num_rows($result3)>0){
                                                                     $row3=mysqli_fetch_assoc($result3);
                                                                     echo'
-                                                                    <textarea name="notes_arch13" value="">'.$row3['notes_content13'].'</textarea>
+                                                                    <textarea class="fixtextarea" name="notes_arch13" value="">'.$row3['notes_content13'].'</textarea>
                                                                     
                                                                     ';
             
